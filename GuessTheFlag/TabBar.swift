@@ -38,6 +38,12 @@ struct TabBar: View {
                     
             }.tag(4)
             
+            WorldFlags().tabItem {
+                Image(systemName: "globe")
+                Text("World")
+                    
+            }.tag(5)
+            
             
         }
         .accentColor(.white)

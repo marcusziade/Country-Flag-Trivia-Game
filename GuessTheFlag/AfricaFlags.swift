@@ -41,14 +41,23 @@ struct AfricaFlags: View {
                         self.flagTapped(number)
                     }) {
                         Image(self.countries[number])
-                        .renderingMode(.original)
-                        .clipShape(Rectangle())
-                        .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
-                        .shadow(color: .black, radius: 2)
+                            .resizable()
+                            .renderingMode(.original)
+                            .clipShape(Capsule())
+                            .overlay(Capsule().stroke(Color.black, lineWidth: 2))
+                            .shadow(color: .black, radius: 2)
+                        
+                        
                     }
-                }.frame(minWidth: 112.5, idealWidth: 600, maxWidth: 600, minHeight: 75, idealHeight: 400, maxHeight: 400)
+                }.frame(minWidth: 0, maxWidth: 600, minHeight: 0, maxHeight: 400)
+                    .padding(.leading)
+                    .padding(.trailing)
                 
                 Text("Your score: \(score)")
+                .padding()
+                    .background(Color.black)
+                .cornerRadius(20)
+                    .opacity(0.9)
                     .font(.largeTitle)
                     .foregroundColor(.white)
                 

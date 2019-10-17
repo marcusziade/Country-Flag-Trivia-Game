@@ -1,14 +1,14 @@
 //
-//  EuropeFlags.swift
+//  WorldFlags.swift
 //  GuessTheFlag
 //
-//  Created by Marcus Ziadé on 15.10.2019.
+//  Created by Marcus Ziadé on 17.10.2019.
 //  Copyright © 2019 Marcus Ziadé. All rights reserved.
 //
 
 import SwiftUI
 
-struct EuropeFlags: View {
+struct WorldFlags: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     
@@ -89,8 +89,8 @@ struct EuropeFlags: View {
     }
 }
 
-struct EuropeFlags_Previews: PreviewProvider {
+struct WorldFlags_Previews: PreviewProvider {
     static var previews: some View {
-        EuropeFlags()
+        WorldFlags()
     }
 }
