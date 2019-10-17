@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2C38413F235637B200F56257 /* EuropeFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38413E235637B200F56257 /* EuropeFlags.swift */; };
+		2C38414323563BB400F56257 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38414223563BB400F56257 /* TabBar.swift */; };
+		2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38414423563E2500F56257 /* AsiaFlags.swift */; };
+		2C384147235641A900F56257 /* AfricaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C384146235641A900F56257 /* AfricaFlags.swift */; };
+		2C384169235765BB00F56257 /* AmericaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C384168235765BB00F56257 /* AmericaFlags.swift */; };
 		2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */; };
 		2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */; };
 		2CB7C6FB2352EC490068ADE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FA2352EC490068ADE2 /* ContentView.swift */; };
@@ -18,6 +22,10 @@
 
 /* Begin PBXFileReference section */
 		2C38413E235637B200F56257 /* EuropeFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuropeFlags.swift; sourceTree = "<group>"; };
+		2C38414223563BB400F56257 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		2C38414423563E2500F56257 /* AsiaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsiaFlags.swift; sourceTree = "<group>"; };
+		2C384146235641A900F56257 /* AfricaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfricaFlags.swift; sourceTree = "<group>"; };
+		2C384168235765BB00F56257 /* AmericaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericaFlags.swift; sourceTree = "<group>"; };
 		2CB7C6F32352EC490068ADE2 /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +68,12 @@
 			children = (
 				2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */,
 				2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */,
+				2C38414223563BB400F56257 /* TabBar.swift */,
 				2CB7C6FA2352EC490068ADE2 /* ContentView.swift */,
 				2C38413E235637B200F56257 /* EuropeFlags.swift */,
+				2C38414423563E2500F56257 /* AsiaFlags.swift */,
+				2C384146235641A900F56257 /* AfricaFlags.swift */,
+				2C384168235765BB00F56257 /* AmericaFlags.swift */,
 				2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */,
 				2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */,
 				2CB7C7042352EC4B0068ADE2 /* Info.plist */,
@@ -153,6 +165,10 @@
 				2C38413F235637B200F56257 /* EuropeFlags.swift in Sources */,
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,
 				2CB7C6FB2352EC490068ADE2 /* ContentView.swift in Sources */,
+				2C384169235765BB00F56257 /* AmericaFlags.swift in Sources */,
+				2C38414323563BB400F56257 /* TabBar.swift in Sources */,
+				2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */,
+				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

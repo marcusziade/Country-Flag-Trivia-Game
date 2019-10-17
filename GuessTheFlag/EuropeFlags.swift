@@ -12,7 +12,7 @@ struct EuropeFlags: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     
-    @State private var countries = ["Albania", "Andorra", "Austria", "Belarus", "Belgium", "Bosnia & Herzegovina", "bulgaria", "croatia", "Czech Republic", "Denmark", "Finland", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Ukraine", "United Kingdom", "Vatican City"].shuffled()
+    @State private var countries = ["Albania", "Andorra", "Austria", "Belarus", "Belgium", "Bosnia Herzegovina", "Bulgaria", "Croatia", "Czech Republic", "Denmark", "Finland", "Estonia", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Ukraine", "United Kingdom", "Vatican City"].shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
     
@@ -25,16 +25,17 @@ struct EuropeFlags: View {
             .edgesIgnoringSafeArea(.all)
             
             VStack {
-                VStack(spacing: 30) {
+                VStack {
                     Text("Tap the flag of")
                         .foregroundColor(.white)
+                        .padding(.top)
                         
                     Text(countries[correctAnswer])
                         .font(.largeTitle)
                         .fontWeight(.black)
                         .foregroundColor(.white)
                     
-                }.padding(.top, 30)
+                }
                 ForEach(0 ..< 3) { number in
                     Button(action: {
                         self.flagTapped(number)
@@ -44,11 +45,10 @@ struct EuropeFlags: View {
                         .clipShape(Rectangle())
                         .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
                         .shadow(color: .black, radius: 2)
-                        .padding()
                     }
-                }
+                }.frame(minWidth: 112.5, idealWidth: 600, maxWidth: 600, minHeight: 75, idealHeight: 400, maxHeight: 400)
                 
-                Text("Your score: \(score)").padding(.top, 20)
+                Text("Your score: \(score)")
                     .font(.largeTitle)
                     .foregroundColor(.white)
                 
