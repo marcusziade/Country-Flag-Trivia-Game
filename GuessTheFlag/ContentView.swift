@@ -9,11 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @State private var showingScore = false
     @State private var scoreTitle = ""
     
-    @State private var countries = ["Albania", "Andorra", "Austria", "Belarus", "Belgium", "Bosnia & Herzegovina", "bulgaria", "croatia", "Czech Republic", "Denmark", "Finland", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Ukraine", "United Kingdom", "Vatican City"].shuffled()
+    @State private var countries = ["Albania", "Andorra", "Austria", "Belarus", "Belgium", "Bosnia Herzegovina", "Bulgaria", "Croatia", "Czech Republic", "Denmark", "Finland", "Estonia", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Ukraine", "United Kingdom", "Vatican City"].shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
     
@@ -26,30 +25,39 @@ struct ContentView: View {
             .edgesIgnoringSafeArea(.all)
             
             VStack {
-                VStack(spacing: 30) {
+                VStack {
                     Text("Tap the flag of")
                         .foregroundColor(.white)
+                        .padding(.top)
                         
                     Text(countries[correctAnswer])
                         .font(.largeTitle)
                         .fontWeight(.black)
                         .foregroundColor(.white)
                     
-                }.padding(.top, 30)
+                }
                 ForEach(0 ..< 3) { number in
                     Button(action: {
                         self.flagTapped(number)
                     }) {
                         Image(self.countries[number])
-                        .renderingMode(.original)
-                        .clipShape(Rectangle())
-                        .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
-                        .shadow(color: .black, radius: 2)
-                        .padding()
+                            .resizable()
+                            .renderingMode(.original)
+                            .clipShape(Capsule())
+                            .overlay(Capsule().stroke(Color.black, lineWidth: 2))
+                            .shadow(color: .black, radius: 2)
+                        
+                        
                     }
-                }
+                }.frame(minWidth: 0, maxWidth: 600, minHeight: 0, maxHeight: 400)
+                    .padding(.leading)
+                    .padding(.trailing)
                 
-                Text("Your score: \(score)").padding(.top, 20)
+                Text("Total score: \(score)")
+                .padding()
+                    .background(Color.black)
+                .cornerRadius(20)
+                    .opacity(0.9)
                     .font(.largeTitle)
                     .foregroundColor(.white)
                 
@@ -57,7 +65,7 @@ struct ContentView: View {
             }
         }
         .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text("Score \(self.score)"), dismissButton: .default(Text("Continue")) {
+            Alert(title: Text(scoreTitle), message: Text("\(self.score)"), dismissButton: .default(Text("Continue")) {
                 self.askQuestion()
             })
         }
@@ -65,7 +73,7 @@ struct ContentView: View {
     
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
-            scoreTitle = "Correct ✅"
+            scoreTitle = "Correct! ✅"
             score += 1
         } else {
             scoreTitle = "Wrong 🚫"

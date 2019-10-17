@@ -20,68 +20,68 @@ struct EuropeFlags: View {
     
     var body: some View {
         ZStack {
-            
-            LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
-            .edgesIgnoringSafeArea(.all)
-            
-            VStack {
+                
+                LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+                
                 VStack {
-                    Text("Tap the flag of")
-                        .foregroundColor(.white)
-                        .padding(.top)
-                        
-                    Text(countries[correctAnswer])
-                        .font(.largeTitle)
-                        .fontWeight(.black)
-                        .foregroundColor(.white)
-                    
-                }
-                ForEach(0 ..< 3) { number in
-                    Button(action: {
-                        self.flagTapped(number)
-                    }) {
-                        Image(self.countries[number])
-                            .resizable()
-                            .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black, lineWidth: 2))
-                            .shadow(color: .black, radius: 2)
-                        
+                    VStack {
+                        Text("Tap the flag of")
+                            .foregroundColor(.white)
+                            .padding(.top)
+                            
+                        Text(countries[correctAnswer])
+                            .font(.largeTitle)
+                            .fontWeight(.black)
+                            .foregroundColor(.white)
                         
                     }
-                }.frame(minWidth: 0, maxWidth: 600, minHeight: 0, maxHeight: 400)
-                    .padding(.leading)
-                    .padding(.trailing)
-                
-                Text("Your score: \(score)")
-                .padding()
-                    .background(Color.black)
-                .cornerRadius(20)
-                    .opacity(0.9)
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                
-                Spacer()
+                    ForEach(0 ..< 3) { number in
+                        Button(action: {
+                            self.flagTapped(number)
+                        }) {
+                            Image(self.countries[number])
+                                .resizable()
+                                .renderingMode(.original)
+                                .clipShape(Capsule())
+                                .overlay(Capsule().stroke(Color.black, lineWidth: 2))
+                                .shadow(color: .black, radius: 2)
+                            
+                            
+                        }
+                    }.frame(minWidth: 0, maxWidth: 600, minHeight: 0, maxHeight: 400)
+                        .padding(.leading)
+                        .padding(.trailing)
+                    
+                    Text("Total score: \(score)")
+                    .padding()
+                        .background(Color.black)
+                    .cornerRadius(20)
+                        .opacity(0.9)
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                }
+            }
+            .alert(isPresented: $showingScore) {
+                Alert(title: Text(scoreTitle), message: Text("\(self.score)"), dismissButton: .default(Text("Continue")) {
+                    self.askQuestion()
+                })
             }
         }
-        .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text("Score \(self.score)"), dismissButton: .default(Text("Continue")) {
-                self.askQuestion()
-            })
-        }
-    }
-    
-    func flagTapped(_ number: Int) {
-        if number == correctAnswer {
-            scoreTitle = "Correct ✅"
-            score += 1
-        } else {
-            scoreTitle = "Wrong 🚫"
-            score -= 1
-        }
         
-        showingScore = true
-    }
+        func flagTapped(_ number: Int) {
+            if number == correctAnswer {
+                scoreTitle = "Correct! ✅"
+                score += 1
+            } else {
+                scoreTitle = "Wrong 🚫"
+                score -= 1
+            }
+            
+            showingScore = true
+        }
     
     func askQuestion() {
         countries.shuffle()
