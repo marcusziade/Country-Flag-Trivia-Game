@@ -53,32 +53,45 @@ struct ContentView: View {
                     .padding(.leading)
                     .padding(.trailing)
                 
-                Text("Total score: \(score)")
-                .padding()
-                    .background(Color.black)
-                .cornerRadius(20)
-                    .opacity(0.9)
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
+                HStack {
+                    Button(action: {
+                        self.newGame()
+                    }) {
+                        Image(systemName: "gobackward")
+                            .font(.title)
+                    }
+                    Spacer()
+                    Text("Score: \(score)")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .padding(4)
+                        .background(Color.black)
+                        .cornerRadius(15)
+                    
+                    Spacer()
+                    
+                }
+                .padding(.leading)
+                .padding(.trailing)
                 
-                Spacer()
+                 Spacer()
             }
         }
         .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text("\(self.score)"), dismissButton: .default(Text("Continue")) {
+            Alert(title: Text(scoreTitle), message: nil, dismissButton: .default(Text("Next")) {
                 self.askQuestion()
             })
         }
     }
     
     func flagTapped(_ number: Int) {
-        if number == correctAnswer {
-            scoreTitle = "Correct! ✅"
-            score += 1
-        } else {
-            scoreTitle = "Wrong 🚫"
-            score -= 1
-        }
+       if number == correctAnswer {
+           scoreTitle = "Correct ✅\n" + "+15 points!"
+           score += 15
+       } else {
+           scoreTitle = "Wrong 🚫\n" + "-5 points"
+           score -= 5
+       }
         
         showingScore = true
     }
@@ -86,6 +99,11 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+    }
+    
+    func newGame() {
+        score = 0
+        askQuestion()
     }
 }
 
