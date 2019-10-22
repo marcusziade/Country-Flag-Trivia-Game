@@ -21,12 +21,10 @@ struct TabBar: View {
                 Text("Europe")
             }.tag(1)
             
-            
             AsiaFlags().tabItem {
                 Image(systemName: "globe")
                 Text("Asia")
             }.tag(2)
-            
             
             AfricaFlags().tabItem {
                 Image(systemName: "globe")
@@ -40,17 +38,11 @@ struct TabBar: View {
                     
             }.tag(4)
                 
-                
-            
             WorldFlags().tabItem {
                 Image(systemName: "globe")
                 Text("World")
                     
             }.tag(5)
-            
-            
-            
-            
         }
         .accentColor(.white)
         .edgesIgnoringSafeArea(.top)
