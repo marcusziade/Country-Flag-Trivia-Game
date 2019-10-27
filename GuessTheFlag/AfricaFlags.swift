@@ -21,6 +21,11 @@ struct AfricaFlags: View {
     @State private var correctAnswer = Int.random(in: 0...2)
     
     @State private var score = 0
+    @State private var dragAmount = CGSize.zero
+    
+    @State private var rotation = 1
+    
+    @State private var didSelectCorrectFlag = true
     
     var body: some View {
         ZStack {
@@ -43,17 +48,36 @@ struct AfricaFlags: View {
                 ForEach(0 ..< 3) { number in
                     Button(action: {
                         self.impact.impactOccurred()
+                        if self.didSelectCorrectFlag {
+                            withAnimation(.interpolatingSpring(mass: 40, stiffness: 500, damping: 200, initialVelocity: 2.2)) {
+                                self.rotation += 360
+                            }
+                        }
                         self.flagTapped(number)
                     }) {
                         Image(self.countries[number])
                             .resizable()
                             .renderingMode(.original)
-                            .clipShape(Rectangle())
-                            .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 2))
                             .shadow(color: .black, radius: 2)
+                            .offset(self.dragAmount)
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { self.dragAmount = $0.translation }
+                                    .onEnded { _ in
+                                        withAnimation(.spring()) {
+                                            self.dragAmount = .zero
+                                        }
+                                }
+                        )
+                        
                         
                         
                     }
+                    
+                    .rotation3DEffect(.degrees((number == self.correctAnswer) ? Double(self.rotation) : 0), axis: (x: 1, y: 0, z: 0))
+                    
                 }.frame(minWidth: 0, maxWidth: 600, minHeight: 0, maxHeight: 400)
                     .padding(.leading)
                     .padding(.trailing)
@@ -94,6 +118,7 @@ struct AfricaFlags: View {
     
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
+            didSelectCorrectFlag = true
             scoreTitle = "Correct ✅\n" + "+15 points!"
             alertMessage = "That's the flag of \(countries[number])"
             score += 15
