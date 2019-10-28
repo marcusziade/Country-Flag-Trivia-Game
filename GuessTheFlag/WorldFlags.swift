@@ -27,6 +27,9 @@ struct WorldFlags: View {
     
     @State private var didSelectCorrectFlag = true
     
+    @State private var showSettingsScreen = false
+    @State private var showNewGameAlert = false
+    
     var body: some View {
         ZStack {
             
@@ -84,13 +87,15 @@ struct WorldFlags: View {
                 
                 HStack {
                     Button(action: {
+                        self.showNewGameAlert.toggle()
                         self.notification.notificationOccurred(.error)
                         self.newGame()
-                    }) {
+                    }, label: {
                         Image(systemName: "gobackward")
                             .font(.title)
                             .foregroundColor(.white)
-                    }
+                        })
+                    
                     Spacer()
                     Text("Score: \(score)")
                         .font(.title)
@@ -101,6 +106,14 @@ struct WorldFlags: View {
                     
                     Spacer()
                     
+                    Button(action: {
+                        self.notification.notificationOccurred(.success)
+                        self.showSettingsScreen.toggle()
+                    }, label: {
+                        Image(systemName: "gear")
+                            .font(.title)
+                            .foregroundColor(.white)
+                        }).sheet(isPresented: $showSettingsScreen, content: { Settings() })
                     
                 }
                 .padding(.leading)
