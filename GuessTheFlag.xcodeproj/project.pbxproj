@@ -12,7 +12,7 @@
 		2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38414423563E2500F56257 /* AsiaFlags.swift */; };
 		2C384147235641A900F56257 /* AfricaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C384146235641A900F56257 /* AfricaFlags.swift */; };
 		2C384169235765BB00F56257 /* AmericaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C384168235765BB00F56257 /* AmericaFlags.swift */; };
-		2C556CBA236708480038F2D5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C556CB9236708480038F2D5 /* Settings.swift */; };
+		2C556CBA236708480038F2D5 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C556CB9236708480038F2D5 /* About.swift */; };
 		2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C96E2C42358B7E600E5D154 /* WorldFlags.swift */; };
 		2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */; };
 		2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */; };
@@ -27,7 +27,7 @@
 		2C38414423563E2500F56257 /* AsiaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsiaFlags.swift; sourceTree = "<group>"; };
 		2C384146235641A900F56257 /* AfricaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfricaFlags.swift; sourceTree = "<group>"; };
 		2C384168235765BB00F56257 /* AmericaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericaFlags.swift; sourceTree = "<group>"; };
-		2C556CB9236708480038F2D5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2C556CB9236708480038F2D5 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		2C96E2C42358B7E600E5D154 /* WorldFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldFlags.swift; sourceTree = "<group>"; };
 		2CB7C6F32352EC490068ADE2 /* Know Your Flags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Know Your Flags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 				2C384146235641A900F56257 /* AfricaFlags.swift */,
 				2C384168235765BB00F56257 /* AmericaFlags.swift */,
 				2C96E2C42358B7E600E5D154 /* WorldFlags.swift */,
-				2C556CB9236708480038F2D5 /* Settings.swift */,
+				2C556CB9236708480038F2D5 /* About.swift */,
 				2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */,
 				2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */,
 				2CB7C7042352EC4B0068ADE2 /* Info.plist */,
@@ -170,7 +170,7 @@
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,
 				2C384169235765BB00F56257 /* AmericaFlags.swift in Sources */,
 				2C38414323563BB400F56257 /* TabBar.swift in Sources */,
-				2C556CBA236708480038F2D5 /* Settings.swift in Sources */,
+				2C556CBA236708480038F2D5 /* About.swift in Sources */,
 				2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */,
 				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
 			);

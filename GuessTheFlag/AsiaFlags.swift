@@ -20,15 +20,15 @@ struct AsiaFlags: View {
     
     @State private var correctAnswer = Int.random(in: 0...2)
     
-    @State private var score = 0
+    @State private var score = UserDefaults.standard.integer(forKey: "ScoreAsia")
+    @State private var playerLevel = UserDefaults.standard.integer(forKey: "LevelAsia")
     @State private var dragAmount = CGSize.zero
     
     @State private var rotation = 1
     
     @State private var didSelectCorrectFlag = true
     
-    @State private var showSettingsScreen = false
-    @State private var showNewGameAlert = false
+    @State private var showAboutScreen = false
     
     var body: some View {
         ZStack {
@@ -40,7 +40,7 @@ struct AsiaFlags: View {
                 VStack {
                     Text("Tap the flag of")
                         .foregroundColor(.white)
-                        .padding(.top)
+                        .padding(.top, 8)
                     
                     Text(countries[correctAnswer])
                         .font(.largeTitle)
@@ -78,7 +78,7 @@ struct AsiaFlags: View {
                         
                         
                     }
-                    
+                        
                     .rotation3DEffect(.degrees((number == self.correctAnswer) ? Double(self.rotation) : 0), axis: (x: 1, y: 0, z: 0))
                     
                 }.frame(minWidth: 0, maxWidth: 600, minHeight: 0, maxHeight: 400)
@@ -86,34 +86,46 @@ struct AsiaFlags: View {
                     .padding(.trailing)
                 
                 HStack {
-                    Button(action: {
-                        self.showNewGameAlert.toggle()
-                        self.notification.notificationOccurred(.error)
-                        self.newGame()
-                    }, label: {
-                        Image(systemName: "gobackward")
-                            .font(.title)
-                            .foregroundColor(.white)
-                        })
+                    
+                    Text("XP: \(score)")
+                        .font(.system(size: 20))
+                        .foregroundColor(.white)
+                        .padding(.top, 3)
+                        .padding(.bottom, 3)
+                        .padding(.trailing, 8)
+                        .padding(.leading, 8)
+                        .background(Color.blue)
+                        .cornerRadius(15)
+                        .shadow(color: .blue, radius: 2)
                     
                     Spacer()
-                    Text("Score: \(score)")
-                        .font(.title)
+                    
+                    Text("Level: \(playerLevel)")
+                        .font(.system(size: 20))
                         .foregroundColor(.white)
-                        .padding(4)
-                        .background(Color.black)
+                        .padding(.top, 3)
+                        .padding(.bottom, 3)
+                        .padding(.trailing, 8)
+                        .padding(.leading, 8)
+                        .background(Color.green)
                         .cornerRadius(15)
+                        .shadow(color: .green, radius: 2)
                     
                     Spacer()
                     
                     Button(action: {
                         self.notification.notificationOccurred(.success)
-                        self.showSettingsScreen.toggle()
+                        self.showAboutScreen.toggle()
                     }, label: {
-                        Image(systemName: "gear")
-                            .font(.title)
+                        Image(systemName: "info")
+                            .font(.system(size: 17))
                             .foregroundColor(.white)
-                        }).sheet(isPresented: $showSettingsScreen, content: { Settings() })
+                            .padding(10)
+                            .background(Color.yellow)
+                            .clipShape(Circle())
+                            .shadow(color: .yellow, radius: 3)
+                        
+                    }).sheet(isPresented: $showAboutScreen, content: { About() })
                     
                 }
                 .padding(.leading)
@@ -131,14 +143,23 @@ struct AsiaFlags: View {
     
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
-            didSelectCorrectFlag = true
-            scoreTitle = "Correct ✅\n" + "+15 points!"
+            scoreTitle = "Correct ✅\n" + "+15 XP!"
             alertMessage = "That's the flag of \(countries[number])"
             score += 15
+            UserDefaults.standard.set(self.score, forKey: "ScoreAsia")
+            
+            if score >= 450 {
+                playerLevel += 1
+                UserDefaults.standard.set(self.playerLevel, forKey: "LevelAsia")
+                score = 0
+                UserDefaults.standard.set(self.score, forKey: "ScoreAsia")
+            }
+            
         } else {
-            scoreTitle = "Wrong 🚫\n" + "-5 points"
+            scoreTitle = "Wrong 🚫\n" + "-10 XP"
             alertMessage = "That's the flag of \(countries[number])"
-            score -= 5
+            score -= 10
+            UserDefaults.standard.set(self.score, forKey: "ScoreAsia")
         }
         
         showingScore = true
@@ -147,11 +168,6 @@ struct AsiaFlags: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
-    }
-    
-    func newGame() {
-        score = 0
-        askQuestion()
     }
 }
 
