@@ -29,7 +29,7 @@
 		2C384168235765BB00F56257 /* AmericaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericaFlags.swift; sourceTree = "<group>"; };
 		2C556CB9236708480038F2D5 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		2C96E2C42358B7E600E5D154 /* WorldFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldFlags.swift; sourceTree = "<group>"; };
-		2CB7C6F32352EC490068ADE2 /* Know Your Flags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Know Your Flags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CB7C6F32352EC490068ADE2 /* Flagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		2CB7C6F42352EC490068ADE2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CB7C6F32352EC490068ADE2 /* Know Your Flags.app */,
+				2CB7C6F32352EC490068ADE2 /* Flagger.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,7 +110,7 @@
 			);
 			name = GuessTheFlag;
 			productName = GuessTheFlag;
-			productReference = 2CB7C6F32352EC490068ADE2 /* Know Your Flags.app */;
+			productReference = 2CB7C6F32352EC490068ADE2 /* Flagger.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -309,7 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlag/Preview Content\"";
 				DEVELOPMENT_TEAM = P4DQK6SRKR;
 				ENABLE_PREVIEWS = YES;
@@ -318,9 +318,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusziade.knowtheflag;
-				PRODUCT_NAME = "Know Your Flags";
+				PRODUCT_NAME = Flagger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -331,7 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlag/Preview Content\"";
 				DEVELOPMENT_TEAM = P4DQK6SRKR;
 				ENABLE_PREVIEWS = YES;
@@ -340,9 +340,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusziade.knowtheflag;
-				PRODUCT_NAME = "Know Your Flags";
+				PRODUCT_NAME = Flagger;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
