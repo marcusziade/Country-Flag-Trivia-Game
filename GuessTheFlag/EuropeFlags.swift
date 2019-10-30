@@ -12,6 +12,7 @@ struct EuropeFlags: View {
     
     let impact = UIImpactFeedbackGenerator()
     let notification = UINotificationFeedbackGenerator()
+    let selection = UISelectionFeedbackGenerator()
     
     @State private var showingScore = false
     @State private var scoreTitle = ""
@@ -53,7 +54,7 @@ struct EuropeFlags: View {
                 }
                 ForEach(0 ..< 3) { number in
                     Button(action: {
-                        self.impact.impactOccurred()
+                        self.selection.selectionChanged()
                         if self.didSelectCorrectFlag {
                             withAnimation(.interpolatingSpring(mass: 40, stiffness: 500, damping: 200, initialVelocity: 2.2)) {
                                 self.rotation += 360
