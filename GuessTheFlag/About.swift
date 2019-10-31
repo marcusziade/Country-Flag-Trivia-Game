@@ -18,7 +18,6 @@ struct About: View {
         func body(content: Content) -> some View {
             return content
                 .foregroundColor(.primary)
-                .padding(.top, 6)
                 .padding(.bottom, 20)
                 .font(Font.custom("Arial Rounded MT Bold", size: 30))
         }
@@ -43,25 +42,30 @@ struct About: View {
                 .edgesIgnoringSafeArea(.all)
             Group {
                 VStack {
-                    Text("🏳️ Master of Flags 🏴").modifier(HeadingStyle())
-                    Text("This is Master of Flags, the game where you gather experience points (XP) and level up as you become familiar with the world's flags. There are 196 different flags in this game! Your objective is to learn them all.🤓").modifier(TextStyle())
-                    Text("You gain 15 XP from a correct answer and lose 10 XP from a wrong answer. The correct answer is indicated by the spinning flag!🌀").modifier(TextStyle())
-                    Text("You need 450 points to level up.☄️").modifier(TextStyle())
                     
+                    Spacer()
                     
+                    Text("Master of Flags").modifier(HeadingStyle())
+                    Text("This is Master of Flags, the game where you gather experience points (XP) and level up as you become familiar with the world's flags. There are 196 different flags in this game! Your objective is to learn them all.🤓").multilineTextAlignment(.center).modifier(TextStyle())
+                    Text("You gain 15 XP from a correct answer and lose 10 XP from a wrong answer. The correct answer is indicated by the spinning flag!🌀").multilineTextAlignment(.center).modifier(TextStyle())
+                    Text("You need 450 points to level up.☄️").multilineTextAlignment(.center).modifier(TextStyle())
+                    
+                    Spacer()
                     
                     Button("Got it 👍") {
                         self.impact.impactOccurred()
                         self.presentationMode.wrappedValue.dismiss()
                     }
-                .padding(20)
+                .padding(18)
                     .background(Color.blue)
-                    .foregroundColor(.white)
-                    .font(.subheadline)
-                .cornerRadius(10)
                     
+                    .foregroundColor(.white)
+                    .font(.title)
+                .cornerRadius(10)
+                    .shadow(color: .blue, radius: 5)
+                    
+                    Spacer()
                 }
-            .navigationBarTitle("About Flagger")
             }
         }
     }
