@@ -42,6 +42,7 @@ struct AsiaFlags: View {
                     Text("Tap the flag of")
                         .foregroundColor(.white)
                         .padding(.top, 8)
+                        .layoutPriority(1)
                     
                     Text(countries[correctAnswer])
                         .font(.title)
