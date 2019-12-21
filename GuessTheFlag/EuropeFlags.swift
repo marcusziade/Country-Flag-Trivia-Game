@@ -53,6 +53,8 @@ struct EuropeFlags: View {
                         .foregroundColor(.white)
                     
                 }
+                    .accessibilityElement(children: .ignore)
+                .accessibility(label: Text("Tap the flag of \(countries[correctAnswer])"))
                 ForEach(0 ..< 3) { number in
                     Button(action: {
                         self.selection.selectionChanged()
@@ -142,7 +144,7 @@ struct EuropeFlags: View {
             }
         }
         .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text(alertMessage), dismissButton: .default(Text("👏 NEXT 👏")) {
+            Alert(title: Text(scoreTitle), message: Text(alertMessage), dismissButton: .default(Text("Continue").foregroundColor(Color.purple)) {
                 self.askQuestion()
                 })
         }
@@ -182,3 +184,5 @@ struct EuropeFlags_Previews: PreviewProvider {
         EuropeFlags()
     }
 }
+
+
