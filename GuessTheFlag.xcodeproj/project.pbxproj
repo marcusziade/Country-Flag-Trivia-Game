@@ -12,6 +12,7 @@
 		2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38414423563E2500F56257 /* AsiaFlags.swift */; };
 		2C384147235641A900F56257 /* AfricaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C384146235641A900F56257 /* AfricaFlags.swift */; };
 		2C384169235765BB00F56257 /* AmericaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C384168235765BB00F56257 /* AmericaFlags.swift */; };
+		2C4DD4E223B6155B009B9B61 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4DD4E123B6155B009B9B61 /* StoreKit.framework */; };
 		2C556CBA236708480038F2D5 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C556CB9236708480038F2D5 /* About.swift */; };
 		2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C96E2C42358B7E600E5D154 /* WorldFlags.swift */; };
 		2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 		2C38414423563E2500F56257 /* AsiaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsiaFlags.swift; sourceTree = "<group>"; };
 		2C384146235641A900F56257 /* AfricaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfricaFlags.swift; sourceTree = "<group>"; };
 		2C384168235765BB00F56257 /* AmericaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericaFlags.swift; sourceTree = "<group>"; };
+		2C4DD4E123B6155B009B9B61 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2C556CB9236708480038F2D5 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		2C96E2C42358B7E600E5D154 /* WorldFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldFlags.swift; sourceTree = "<group>"; };
 		2CB7C6F32352EC490068ADE2 /* Master of Flags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Master of Flags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,17 +45,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4DD4E223B6155B009B9B61 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C4DD4E023B6155B009B9B61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C4DD4E123B6155B009B9B61 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2CB7C6EA2352EC490068ADE2 = {
 			isa = PBXGroup;
 			children = (
 				2CB7C6F52352EC490068ADE2 /* GuessTheFlag */,
 				2CB7C6F42352EC490068ADE2 /* Products */,
+				2C4DD4E023B6155B009B9B61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
