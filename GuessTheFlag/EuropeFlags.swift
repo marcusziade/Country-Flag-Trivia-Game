@@ -22,16 +22,11 @@ struct EuropeFlags: View {
     @State private var countries = ["Albania", "Andorra", "Austria", "Belarus", "Belgium", "Bosnia Herzegovina", "Bulgaria", "Croatia", "Czech Republic", "Denmark", "Finland", "Estonia", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Ukraine", "United Kingdom", "Vatican City"].shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
-    
     @State private var score = UserDefaults.standard.integer(forKey: "ScoreEurope")
-    
     @State private var dragAmount = CGSize.zero
     @State private var rotation = 1
-    
     @State private var didSelectCorrectFlag = true
-    
     @State private var showAboutScreen = false
-    
     @State private var playerLevel = UserDefaults.standard.integer(forKey: "LevelEurope")
     
     var body: some View {
@@ -48,7 +43,7 @@ struct EuropeFlags: View {
                         .layoutPriority(1)
                     
                     Text(countries[correctAnswer])
-                        .font(.title)
+                        .font(.headline)
                         .fontWeight(.black)
                         .foregroundColor(.white)
                     
@@ -79,9 +74,6 @@ struct EuropeFlags: View {
                                         }
                                 }
                         )
-                        
-                        
-                        
                     }
                         
                     .rotation3DEffect(.degrees((number == self.correctAnswer) ? Double(self.rotation) : 0), axis: (x: 1, y: 0, z: 0))
@@ -152,20 +144,26 @@ struct EuropeFlags: View {
         if number == correctAnswer {
             scoreTitle = "Correct ✅\n" + "+15 XP!"
             alertMessage = "That's the flag of \(countries[number])"
-            score += 15
+            UIView.animate(withDuration: 0.2) {
+                self.score += 15
+            }
             UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
             
             if score >= 450 {
-                playerLevel += 1
+                UIView.animate(withDuration: 0.2) {
+                    self.playerLevel += 1
+                    self.score = 0
+                }
                 UserDefaults.standard.set(self.playerLevel, forKey: "LevelEurope")
-                score = 0
                 UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
             }
             
         } else {
             scoreTitle = "Wrong 🚫\n" + "-10 XP"
             alertMessage = "That's the flag of \(countries[number])"
-            score -= 10
+            UIView.animate(withDuration: 0.2) {
+                self.score -= 10
+            }
             UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
         }
         

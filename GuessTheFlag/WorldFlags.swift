@@ -20,15 +20,11 @@ struct WorldFlags: View {
     @State private var countries = ["Australia", "East Timor", "Fiji", "Kiribati", "Marshall Islands", "Micronesia", "Nauru", "New Zealand", "Niue", "Palau", "Papua New Guinea", "Samoa", "Solomon Islands", "Tonga", "Tuvalu", "Antigua and Barbuda", "Argentina", "Bahama", "Barbados", "Belize", "Bolivia", "Brazil", "Canada", "Chile", "Colombia", "Costa Rica", "Cuba", "Dominica", "Dominican Republic", "Ecuador", "El Salvador", "Grenada", "Guatemala", "Guyana", "Haiti", "Honduras", "Jamaica", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent & Grenadines", "Suriname", "The United States", "Trinidad and Tobago", "Uruguay", "Venezuela", "Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cameroon", "Cape Verde", "Central-African Republic", "Chad", "Comoros", "Congo-Brazzaville", "Congo-Kinshasa", "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea-Bissau", "Guinea", "Ivory Coast", "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique", "Namibia", "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe", "Senegal", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", "Swaziland", "Tanzania", "The Seychelles", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe", "Afghanistan", "Armenia", "Azerbaijan", "Bahrain", "Bangladesh", "Bhutan", "Brunei", "Cambodia", "China", "Cyprus", "India", "Indonesia", "Iran", "Iraq", "Israel", "Japan", "Jordan", "Kazakhstan", "Kuwait", "Kyrgyzstan", "Laos", "Lebanon", "Malaysia", "Maldives", "Mongolia", "Myanmar", "Nepal", "North Korea", "Oman", "Pakistan", "Philippines", "Qatar", "Russia", "Saudi Arabia", "Singapore", "South Korea", "Sri Lanka", "Syria", "Taiwan", "Tajikistan", "Thailand", "Turkey", "Turkmenistan", "United Arab Emirates", "Uzbekistan", "Vietnam", "Yemen", "Albania", "Andorra", "Austria", "Belarus", "Belgium", "Bosnia Herzegovina", "Bulgaria", "Croatia", "Czech Republic", "Denmark", "Finland", "Estonia", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Ukraine", "United Kingdom", "Vatican City"].shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
-    
     @State private var score = UserDefaults.standard.integer(forKey: "ScoreWorld")
     @State private var playerLevel = UserDefaults.standard.integer(forKey: "LevelWorld")
     @State private var dragAmount = CGSize.zero
-    
     @State private var rotation = 1
-    
     @State private var didSelectCorrectFlag = true
-    
     @State private var showAboutScreen = false
     
     var body: some View {
@@ -45,7 +41,7 @@ struct WorldFlags: View {
                         .layoutPriority(1)
                     
                     Text(countries[correctAnswer])
-                        .font(.title)
+                        .font(.headline)
                         .fontWeight(.black)
                         .foregroundColor(.white)
                     
@@ -76,9 +72,6 @@ struct WorldFlags: View {
                                         }
                                 }
                         )
-                        
-                        
-                        
                     }
                         
                     .rotation3DEffect(.degrees((number == self.correctAnswer) ? Double(self.rotation) : 0), axis: (x: 1, y: 0, z: 0))
@@ -130,7 +123,6 @@ struct WorldFlags: View {
                             .shadow(color: .yellow, radius: 3)
                         
                     }).sheet(isPresented: $showAboutScreen, content: { About() })
-                    
                 }
                 .padding(.leading)
                 .padding(.trailing)
@@ -149,21 +141,27 @@ struct WorldFlags: View {
         if number == correctAnswer {
             scoreTitle = "Correct ✅\n" + "+15 XP!"
             alertMessage = "That's the flag of \(countries[number])"
-            score += 15
-            UserDefaults.standard.set(self.score, forKey: "ScoreWorld")
+            UIView.animate(withDuration: 0.2) {
+                self.score += 15
+            }
+            UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
             
             if score >= 450 {
-                playerLevel += 1
-                UserDefaults.standard.set(self.playerLevel, forKey: "LevelWorld")
-                score = 0
-                UserDefaults.standard.set(self.score, forKey: "ScoreWorld")
+                UIView.animate(withDuration: 0.2) {
+                    self.playerLevel += 1
+                    self.score = 0
+                }
+                UserDefaults.standard.set(self.playerLevel, forKey: "LevelEurope")
+                UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
             }
             
         } else {
             scoreTitle = "Wrong 🚫\n" + "-10 XP"
             alertMessage = "That's the flag of \(countries[number])"
-            score -= 10
-            UserDefaults.standard.set(self.score, forKey: "ScoreWorld")
+            UIView.animate(withDuration: 0.2) {
+                self.score -= 10
+            }
+            UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
         }
         
         showingScore = true
