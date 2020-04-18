@@ -56,12 +56,12 @@ struct About: View {
                         self.impact.impactOccurred()
                         self.presentationMode.wrappedValue.dismiss()
                     }
-                .padding(18)
+                    .padding(18)
                     .background(Color.blue)
-                    
+                        
                     .foregroundColor(.white)
                     .font(.title)
-                .cornerRadius(10)
+                    .cornerRadius(10)
                     .shadow(color: .blue, radius: 5)
                     
                     Spacer()

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct TabBar: View {
-
+    
     init() {
         UITabBar.appearance().barTintColor = UIColor.black
     }
@@ -29,24 +29,22 @@ struct TabBar: View {
             AfricaFlags().tabItem {
                 Image(systemName: "globe")
                 Text("Africa")
-                    
+                
             }.tag(3)
             
             AmericaFlags().tabItem {
                 Image(systemName: "globe")
                 Text("Americas")
-                    
-            }.tag(4)
                 
+            }.tag(4)
+            
             WorldFlags().tabItem {
                 Image(systemName: "globe")
                 Text("World")
-                    
+                
             }.tag(5)
         }
-        .accentColor(.white)
-        .edgesIgnoringSafeArea(.top)
-            
+        .accentColor(.white)            
     }
 }
 

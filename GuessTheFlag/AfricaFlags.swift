@@ -20,15 +20,11 @@ struct AfricaFlags: View {
     @State private var countries = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cameroon", "Cape Verde", "Central-African Republic", "Chad", "Comoros", "Congo-Brazzaville", "Congo-Kinshasa", "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea-Bissau", "Guinea", "Ivory Coast", "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique", "Namibia", "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe", "Senegal", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", "Swaziland", "Tanzania", "The Seychelles", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe"].shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
-    
     @State private var score = UserDefaults.standard.integer(forKey: "ScoreAfrica")
     @State private var playerLevel = UserDefaults.standard.integer(forKey: "LevelAfrica")
     @State private var dragAmount = CGSize.zero
-    
     @State private var rotation = 1
-    
     @State private var didSelectCorrectFlag = true
-    
     @State private var showAboutScreen = false
     
     var body: some View {
@@ -45,7 +41,7 @@ struct AfricaFlags: View {
                         .layoutPriority(1)
                     
                     Text(countries[correctAnswer])
-                        .font(.title)
+                        .font(.headline)
                         .fontWeight(.black)
                         .foregroundColor(.white)
                     
@@ -76,9 +72,6 @@ struct AfricaFlags: View {
                                         }
                                 }
                         )
-                        
-                        
-                        
                     }
                         
                     .rotation3DEffect(.degrees((number == self.correctAnswer) ? Double(self.rotation) : 0), axis: (x: 1, y: 0, z: 0))
@@ -149,21 +142,27 @@ struct AfricaFlags: View {
         if number == correctAnswer {
             scoreTitle = "Correct ✅\n" + "+15 XP!"
             alertMessage = "That's the flag of \(countries[number])"
-            score += 15
-            UserDefaults.standard.set(self.score, forKey: "ScoreAfrica")
+            UIView.animate(withDuration: 0.2) {
+                self.score += 15
+            }
+            UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
             
             if score >= 450 {
-                playerLevel += 1
-                UserDefaults.standard.set(self.playerLevel, forKey: "LevelAfrica")
-                score = 0
-                UserDefaults.standard.set(self.score, forKey: "ScoreAfrica")
+                UIView.animate(withDuration: 0.2) {
+                    self.playerLevel += 1
+                    self.score = 0
+                }
+                UserDefaults.standard.set(self.playerLevel, forKey: "LevelEurope")
+                UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
             }
             
         } else {
             scoreTitle = "Wrong 🚫\n" + "-10 XP"
             alertMessage = "That's the flag of \(countries[number])"
-            score -= 10
-            UserDefaults.standard.set(self.score, forKey: "ScoreAfrica")
+            UIView.animate(withDuration: 0.2) {
+                self.score -= 10
+            }
+            UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
         }
         
         showingScore = true
