@@ -136,6 +136,7 @@
 				2CB7C6EF2352EC490068ADE2 /* Sources */,
 				2CB7C6F02352EC490068ADE2 /* Frameworks */,
 				2CB7C6F12352EC490068ADE2 /* Resources */,
+				5A026E832530E62800572CEA /* Set Build Number */,
 			);
 			buildRules = (
 			);
@@ -191,6 +192,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A026E832530E62800572CEA /* Set Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`expr $(\"$git\" rev-list \"$(\"$git\" rev-list --max-parents=0 HEAD)..HEAD\" --count)`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CB7C6EF2352EC490068ADE2 /* Sources */ = {
@@ -345,7 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlag/Preview Content\"";
 				DEVELOPMENT_TEAM = P4DQK6SRKR;
 				ENABLE_PREVIEWS = YES;
@@ -354,7 +376,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusziade.knowtheflag;
 				PRODUCT_NAME = "Master of Flags";
 				SWIFT_VERSION = 5.0;
@@ -367,7 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlag/Preview Content\"";
 				DEVELOPMENT_TEAM = P4DQK6SRKR;
 				ENABLE_PREVIEWS = YES;
@@ -376,7 +398,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusziade.knowtheflag;
 				PRODUCT_NAME = "Master of Flags";
 				SWIFT_VERSION = 5.0;
