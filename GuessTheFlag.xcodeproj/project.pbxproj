@@ -19,6 +19,7 @@
 		2CB7C6FD2352EC4B0068ADE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */; };
 		2CB7C7002352EC4B0068ADE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */; };
 		2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */; };
+		5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C12530A76000C4FC39 /* FlagStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CB7C7022352EC4B0068ADE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB7C7042352EC4B0068ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A2690C12530A76000C4FC39 /* FlagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		2CB7C6F52352EC490068ADE2 /* GuessTheFlag */ = {
 			isa = PBXGroup;
 			children = (
+				5A2690BE2530A74C00C4FC39 /* Data */,
 				2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */,
 				2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */,
 				2C38414223563BB400F56257 /* TabBar.swift */,
@@ -91,6 +94,14 @@
 				2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A2690BE2530A74C00C4FC39 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5A2690C12530A76000C4FC39 /* FlagStore.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */,
+				5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */,
 				2C38413F235637B200F56257 /* EuropeFlags.swift in Sources */,
 				2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */,
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,

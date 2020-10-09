@@ -17,7 +17,7 @@ struct AmericaFlags: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var alertMessage = ""
-    @State private var countries = ["Antigua and Barbuda", "Argentina", "Bahama", "Barbados", "Belize", "Bolivia", "Brazil", "Canada", "Chile", "Colombia", "Costa Rica", "Cuba", "Dominica", "Dominican Republic", "Ecuador", "El Salvador", "Grenada", "Guatemala", "Guyana", "Haiti", "Honduras", "Jamaica", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent & Grenadines", "Suriname", "The United States", "Trinidad and Tobago", "Uruguay", "Venezuela"].shuffled()
+    @State private var countries = FlagStore().americaFlags.shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var score = UserDefaults.standard.integer(forKey: "ScoreAmericas")

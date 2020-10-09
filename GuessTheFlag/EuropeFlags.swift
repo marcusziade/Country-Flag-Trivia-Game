@@ -19,7 +19,7 @@ struct EuropeFlags: View {
     @State private var alertMessage = ""
     @State private var flagNumber = 1
     
-    @State private var countries = ["Albania", "Andorra", "Austria", "Belarus", "Belgium", "Bosnia Herzegovina", "Bulgaria", "Croatia", "Czech Republic", "Denmark", "Finland", "Estonia", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Ukraine", "United Kingdom", "Vatican City"].shuffled()
+    @State private var countries = FlagStore().europeFlags.shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var score = UserDefaults.standard.integer(forKey: "ScoreEurope")
