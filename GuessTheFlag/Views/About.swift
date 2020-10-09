@@ -33,9 +33,7 @@ struct About: View {
                 .font(Font.custom("Arial Rounded MT Bold", size: 16))
         }
     }
-    
-    let backgroundColor = Color(red: 255.0 / 255.0, green: 214.0 / 255.0, blue: 255.0 / 255.0)
-    
+        
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.green, .black]), startPoint: .top, endPoint: .bottom)

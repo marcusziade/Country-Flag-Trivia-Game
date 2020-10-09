@@ -1,14 +1,14 @@
 //
-//  AsiaFlags.swift
+//  WorldFlags.swift
 //  GuessTheFlag
 //
-//  Created by Marcus Ziadé on 15.10.2019.
+//  Created by Marcus Ziadé on 17.10.2019.
 //  Copyright © 2019 Marcus Ziadé. All rights reserved.
 //
 
 import SwiftUI
 
-struct AsiaFlags: View {
+struct WorldFlags: View {
     
     let impact = UIImpactFeedbackGenerator()
     let notification = UINotificationFeedbackGenerator()
@@ -17,11 +17,11 @@ struct AsiaFlags: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var alertMessage = ""
-    @State private var countries = FlagStore().asiaFlags.shuffled()
+    @State private var countries = FlagStore().allFlags().shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
-    @State private var score = UserDefaults.standard.integer(forKey: "ScoreAsia")
-    @State private var playerLevel = UserDefaults.standard.integer(forKey: "LevelAsia")
+    @State private var score = UserDefaults.standard.integer(forKey: "ScoreWorld")
+    @State private var playerLevel = UserDefaults.standard.integer(forKey: "LevelWorld")
     @State private var dragAmount = CGSize.zero
     @State private var rotation = 1
     @State private var didSelectCorrectFlag = true
@@ -29,8 +29,7 @@ struct AsiaFlags: View {
     
     var body: some View {
         ZStack {
-            
-            LinearGradient(gradient: Gradient(colors: [.yellow, .black]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [.pink, .black]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
@@ -70,43 +69,24 @@ struct AsiaFlags: View {
                                         withAnimation(.spring()) {
                                             self.dragAmount = .zero
                                         }
-                                }
-                        )
+                                    }
+                            )
                     }
-                        
+                    
                     .rotation3DEffect(.degrees((number == self.correctAnswer) ? Double(self.rotation) : 0), axis: (x: 1, y: 0, z: 0))
                     
-                }.frame(minWidth: 0, maxWidth: 600, minHeight: 0, maxHeight: 400)
-                    .padding(.leading)
-                    .padding(.trailing)
+                }
+                .padding([.leading, .trailing])
                 
                 HStack {
                     
                     Text("XP: \(score)")
-                        .font(.system(size: 20))
-                        .foregroundColor(.white)
-                        .frame(width: 80, height: 20, alignment: .leading)
-                        .padding(.top, 3)
-                        .padding(.bottom, 3)
-                        .padding(.trailing)
-                        .padding(.leading)
-                        .background(Color.blue)
-                        .cornerRadius(15)
-                        .shadow(color: .blue, radius: 2)
+                        .modifier(ExperiencePill())
                     
                     Spacer()
                     
                     Text("Level: \(playerLevel)")
-                        .font(.system(size: 20))
-                        .foregroundColor(.white)
-                        .frame(width: 80, height: 20, alignment: .leading)
-                        .padding(.top, 3)
-                        .padding(.bottom, 3)
-                        .padding(.trailing)
-                        .padding(.leading)
-                        .background(Color.green)
-                        .cornerRadius(15)
-                        .shadow(color: .green, radius: 2)
+                        .modifier(LevelPill())
                     
                     Spacer()
                     
@@ -122,11 +102,10 @@ struct AsiaFlags: View {
                             .clipShape(Circle())
                             .shadow(color: .yellow, radius: 3)
                         
-                    }).sheet(isPresented: $showAboutScreen, content: { About() })
-                    
+                    })
+                    .sheet(isPresented: $showAboutScreen, content: { About() })
                 }
-                .padding(.leading)
-                .padding(.trailing)
+                .padding([.leading, .trailing])
                 
                 Spacer()
             }
@@ -134,7 +113,7 @@ struct AsiaFlags: View {
         .alert(isPresented: $showingScore) {
             Alert(title: Text(scoreTitle), message: Text(alertMessage), dismissButton: .default(Text("👏 NEXT 👏")) {
                 self.askQuestion()
-                })
+            })
         }
     }
     
@@ -142,16 +121,11 @@ struct AsiaFlags: View {
         if number == correctAnswer {
             scoreTitle = "Correct ✅\n" + "+15 XP!"
             alertMessage = "That's the flag of \(countries[number])"
-            UIView.animate(withDuration: 0.2) {
-                self.score += 15
-            }
             UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
             
             if score >= 450 {
-                UIView.animate(withDuration: 0.2) {
-                    self.playerLevel += 1
-                    self.score = 0
-                }
+                self.playerLevel += 1
+                self.score = 0
                 UserDefaults.standard.set(self.playerLevel, forKey: "LevelEurope")
                 UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
             }
@@ -174,8 +148,12 @@ struct AsiaFlags: View {
     }
 }
 
-struct AsiaFlags_Previews: PreviewProvider {
+struct WorldFlags_Previews: PreviewProvider {
     static var previews: some View {
-        AsiaFlags()
+        Group {
+            WorldFlags()
+            WorldFlags()
+                .previewDevice("iPhone SE (1st generation)")
+        }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  AfricaFlags.swift
+//  EuropeFlags.swift
 //  GuessTheFlag
 //
 //  Created by Marcus Ziadé on 15.10.2019.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AfricaFlags: View {
+struct EuropeFlags: View {
     
     let impact = UIImpactFeedbackGenerator()
     let notification = UINotificationFeedbackGenerator()
@@ -17,20 +17,22 @@ struct AfricaFlags: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var alertMessage = ""
-    @State private var countries = FlagStore().africaFlags.shuffled()
+    @State private var flagNumber = 1
+    
+    @State private var countries = FlagStore().europeFlags.shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
-    @State private var score = UserDefaults.standard.integer(forKey: "ScoreAfrica")
-    @State private var playerLevel = UserDefaults.standard.integer(forKey: "LevelAfrica")
+    @State private var score = UserDefaults.standard.integer(forKey: "ScoreEurope")
     @State private var dragAmount = CGSize.zero
     @State private var rotation = 1
     @State private var didSelectCorrectFlag = true
     @State private var showAboutScreen = false
+    @State private var playerLevel = UserDefaults.standard.integer(forKey: "LevelEurope")
     
     var body: some View {
         ZStack {
             
-            LinearGradient(gradient: Gradient(colors: [.red, .black]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [.purple, .black]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
@@ -76,37 +78,18 @@ struct AfricaFlags: View {
                         
                     .rotation3DEffect(.degrees((number == self.correctAnswer) ? Double(self.rotation) : 0), axis: (x: 1, y: 0, z: 0))
                     
-                }.frame(minWidth: 0, maxWidth: 600, minHeight: 0, maxHeight: 400)
-                    .padding(.leading)
-                    .padding(.trailing)
+                }
+                .padding([.leading, .trailing])
                 
                 HStack {
                     
                     Text("XP: \(score)")
-                        .font(.system(size: 20))
-                        .foregroundColor(.white)
-                        .frame(width: 80, height: 20, alignment: .leading)
-                        .padding(.top, 3)
-                        .padding(.bottom, 3)
-                        .padding(.trailing)
-                        .padding(.leading)
-                        .background(Color.blue)
-                        .cornerRadius(15)
-                        .shadow(color: .blue, radius: 2)
+                        .modifier(ExperiencePill())
                     
                     Spacer()
                     
                     Text("Level: \(playerLevel)")
-                        .font(.system(size: 20))
-                        .foregroundColor(.white)
-                        .frame(width: 80, height: 20, alignment: .leading)
-                        .padding(.top, 3)
-                        .padding(.bottom, 3)
-                        .padding(.trailing)
-                        .padding(.leading)
-                        .background(Color.green)
-                        .cornerRadius(15)
-                        .shadow(color: .green, radius: 2)
+                        .modifier(LevelPill())
                     
                     Spacer()
                     
@@ -125,8 +108,7 @@ struct AfricaFlags: View {
                     }).sheet(isPresented: $showAboutScreen, content: { About() })
                     
                 }
-                .padding(.leading)
-                .padding(.trailing)
+                .padding([.leading, .trailing])
                 
                 Spacer()
             }
@@ -170,12 +152,11 @@ struct AfricaFlags: View {
     
     func askQuestion() {
         countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
-    }
+        correctAnswer = Int.random(in: 0...2)    }
 }
 
-struct AfricaFlags_Previews: PreviewProvider {
+struct EuropeFlags_Previews: PreviewProvider {
     static var previews: some View {
-        AfricaFlags()
+        EuropeFlags()
     }
 }

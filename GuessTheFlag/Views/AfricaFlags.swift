@@ -1,14 +1,14 @@
 //
-//  AmericaFlags.swift
+//  AfricaFlags.swift
 //  GuessTheFlag
 //
-//  Created by Marcus Ziadé on 16.10.2019.
+//  Created by Marcus Ziadé on 15.10.2019.
 //  Copyright © 2019 Marcus Ziadé. All rights reserved.
 //
 
 import SwiftUI
 
-struct AmericaFlags: View {
+struct AfricaFlags: View {
     
     let impact = UIImpactFeedbackGenerator()
     let notification = UINotificationFeedbackGenerator()
@@ -17,11 +17,11 @@ struct AmericaFlags: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var alertMessage = ""
-    @State private var countries = FlagStore().americaFlags.shuffled()
+    @State private var countries = FlagStore().africaFlags.shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
-    @State private var score = UserDefaults.standard.integer(forKey: "ScoreAmericas")
-    @State private var playerLevel = UserDefaults.standard.integer(forKey: "LevelAmericas")
+    @State private var score = UserDefaults.standard.integer(forKey: "ScoreAfrica")
+    @State private var playerLevel = UserDefaults.standard.integer(forKey: "LevelAfrica")
     @State private var dragAmount = CGSize.zero
     @State private var rotation = 1
     @State private var didSelectCorrectFlag = true
@@ -30,7 +30,7 @@ struct AmericaFlags: View {
     var body: some View {
         ZStack {
             
-            LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [.red, .black]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
@@ -76,37 +76,18 @@ struct AmericaFlags: View {
                         
                     .rotation3DEffect(.degrees((number == self.correctAnswer) ? Double(self.rotation) : 0), axis: (x: 1, y: 0, z: 0))
                     
-                }.frame(minWidth: 0, maxWidth: 600, minHeight: 0, maxHeight: 400)
-                    .padding(.leading)
-                    .padding(.trailing)
+                }
+                .padding([.leading, .trailing])
                 
                 HStack {
                     
                     Text("XP: \(score)")
-                        .font(.system(size: 20))
-                        .foregroundColor(.white)
-                        .frame(width: 80, height: 20, alignment: .leading)
-                        .padding(.top, 3)
-                        .padding(.bottom, 3)
-                        .padding(.trailing)
-                        .padding(.leading)
-                        .background(Color.blue)
-                        .cornerRadius(15)
-                        .shadow(color: .blue, radius: 2)
+                        .modifier(ExperiencePill())
                     
                     Spacer()
                     
                     Text("Level: \(playerLevel)")
-                        .font(.system(size: 20))
-                        .foregroundColor(.white)
-                        .frame(width: 80, height: 20, alignment: .leading)
-                        .padding(.top, 3)
-                        .padding(.bottom, 3)
-                        .padding(.trailing)
-                        .padding(.leading)
-                        .background(Color.green)
-                        .cornerRadius(15)
-                        .shadow(color: .green, radius: 2)
+                        .modifier(LevelPill())
                     
                     Spacer()
                     
@@ -125,8 +106,7 @@ struct AmericaFlags: View {
                     }).sheet(isPresented: $showAboutScreen, content: { About() })
                     
                 }
-                .padding(.leading)
-                .padding(.trailing)
+                .padding([.leading, .trailing])
                 
                 Spacer()
             }
@@ -174,8 +154,8 @@ struct AmericaFlags: View {
     }
 }
 
-struct AmericaFlags_Previews: PreviewProvider {
+struct AfricaFlags_Previews: PreviewProvider {
     static var previews: some View {
-        AmericaFlags()
+        AfricaFlags()
     }
 }
