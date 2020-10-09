@@ -10,18 +10,19 @@ import SwiftUI
 
 struct TabBarView: View {
     
-    init() {
-        UITabBar.appearance().barTintColor = UIColor.black
-    }
-    
     var body: some View {
         TabView {
             FlagsGameView().tabItem {
                 Image(systemName: "globe")
                 Text("Countries")
             }.tag(1)
+            
+            About().tabItem {
+                Image(systemName: "info.circle")
+                Text("About")
+            }.tag(2)
         }
-        .accentColor(.white)
+        .accentColor(Color(UIColor.systemTeal))
     }
 }
 

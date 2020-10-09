@@ -106,16 +106,24 @@
 		5A2690C82530B38B00C4FC39 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A6E9E9A2530C7570007C148 /* TabBarView.swift */,
+				2C556CB9236708480038F2D5 /* About.swift */,
+				5A6E9EA12530E0510007C148 /* Flag Game */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A6E9EA12530E0510007C148 /* Flag Game */ = {
+			isa = PBXGroup;
+			children = (
 				2C38414223563BB400F56257 /* FlagsGameView.swift */,
 				2C38413E235637B200F56257 /* EuropeFlags.swift */,
 				2C38414423563E2500F56257 /* AsiaFlags.swift */,
 				2C384146235641A900F56257 /* AfricaFlags.swift */,
 				2C384168235765BB00F56257 /* AmericaFlags.swift */,
 				2C96E2C42358B7E600E5D154 /* WorldFlags.swift */,
-				2C556CB9236708480038F2D5 /* About.swift */,
-				5A6E9E9A2530C7570007C148 /* TabBarView.swift */,
 			);
-			path = Views;
+			path = "Flag Game";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

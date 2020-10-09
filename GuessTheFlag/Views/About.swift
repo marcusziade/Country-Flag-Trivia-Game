@@ -26,45 +26,34 @@ struct About: View {
     struct TextStyle: ViewModifier {
         func body(content: Content) -> some View {
             return content
-                .foregroundColor(.white)
+                .foregroundColor(.primary)
                 .padding(.leading, 30)
                 .padding(.trailing, 30)
                 .padding(.bottom, 20)
-                .font(Font.custom("Arial Rounded MT Bold", size: 16))
+                .font(Font.custom("Arial Rounded MT Bold", size: 18))
         }
     }
         
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.green, .black]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [.blue, .orange]), startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
-            Group {
+
+            ScrollView(.vertical, showsIndicators: false, content: {
+                
                 VStack {
-                    
-                    Spacer()
-                    
-                    Text("Master of Flags").modifier(HeadingStyle())
-                    Text("This is Master of Flags, the game where you gather experience points (XP) and level up as you become familiar with the world's flags. There are 196 different flags in this game! Your objective is to learn them all.🤓").multilineTextAlignment(.center).modifier(TextStyle())
-                    Text("You gain 15 XP from a correct answer and lose 10 XP from a wrong answer. The correct answer is indicated by the spinning flag!🌀").multilineTextAlignment(.center).modifier(TextStyle())
-                    Text("You need 450 points to level up.☄️").multilineTextAlignment(.center).modifier(TextStyle())
-                    
-                    Spacer()
-                    
-                    Button("Got it 👍") {
-                        self.impact.impactOccurred()
-                        self.presentationMode.wrappedValue.dismiss()
+                    Group {
+                        VStack {
+                            Spacer()
+                            
+                            Text("Master of Flags").modifier(HeadingStyle())
+                            Text("This is Master of Flags, the game where you gather experience points (XP) and level up as you become familiar with the world's flags. There are 196 different flags in this game! Your objective is to learn them all.🤓").multilineTextAlignment(.center).modifier(TextStyle())
+                            Text("You gain 15 XP from a correct answer and lose 10 XP from a wrong answer. The correct answer is indicated by the spinning flag!🌀").multilineTextAlignment(.center).modifier(TextStyle())
+                            Text("You need 450 points to level up.☄️").multilineTextAlignment(.center).modifier(TextStyle())
+                        }
                     }
-                    .padding(18)
-                    .background(Color.blue)
-                        
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .cornerRadius(10)
-                    .shadow(color: .blue, radius: 5)
-                    
-                    Spacer()
                 }
-            }
+            })
         }
     }
 }
@@ -72,5 +61,6 @@ struct About: View {
 struct About_Previews: PreviewProvider {
     static var previews: some View {
         About()
+            .previewDevice("iPhone SE (1st generation)")
     }
 }
