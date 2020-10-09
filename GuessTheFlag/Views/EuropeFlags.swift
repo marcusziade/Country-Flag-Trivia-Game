@@ -18,9 +18,7 @@ struct EuropeFlags: View {
     @State private var scoreTitle = ""
     @State private var alertMessage = ""
     @State private var flagNumber = 1
-    
     @State private var countries = FlagStore().europeFlags.shuffled()
-    
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var score = UserDefaults.standard.integer(forKey: "ScoreEurope")
     @State private var dragAmount = CGSize.zero
@@ -31,23 +29,27 @@ struct EuropeFlags: View {
     
     var body: some View {
         ZStack {
-            
-            LinearGradient(gradient: Gradient(colors: [.purple, .black]), startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
-            
             VStack {
                 VStack {
                     Text("Tap the flag of")
-                        .foregroundColor(.white)
-                        .padding(.top, 8)
-                        .layoutPriority(1)
                     
                     Text(countries[correctAnswer])
                         .font(.headline)
                         .fontWeight(.black)
-                        .foregroundColor(.white)
+                }
+                
+                HStack(alignment: .bottom) {
+                    Text("Level: \(playerLevel)")
+                        .modifier(LevelPill())
+                    
+                    Spacer()
+                    
+                    Text("XP: \(score)")
+                        .modifier(ExperiencePill())
                     
                 }
+                .padding([.leading, .trailing])
+                
                 ForEach(0 ..< 3) { number in
                     Button(action: {
                         self.selection.selectionChanged()
@@ -59,64 +61,17 @@ struct EuropeFlags: View {
                         self.flagTapped(number)
                     }) {
                         Image(self.countries[number])
-                            .resizable()
-                            .renderingMode(.original)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 2))
-                            .shadow(color: .black, radius: 2)
-                            .offset(self.dragAmount)
-                            .gesture(
-                                DragGesture()
-                                    .onChanged { self.dragAmount = $0.translation }
-                                    .onEnded { _ in
-                                        withAnimation(.spring()) {
-                                            self.dragAmount = .zero
-                                        }
-                                }
-                        )
+                            .flagImageMofifier()
                     }
-                        
                     .rotation3DEffect(.degrees((number == self.correctAnswer) ? Double(self.rotation) : 0), axis: (x: 1, y: 0, z: 0))
-                    
                 }
                 .padding([.leading, .trailing])
-                
-                HStack {
-                    
-                    Text("XP: \(score)")
-                        .modifier(ExperiencePill())
-                    
-                    Spacer()
-                    
-                    Text("Level: \(playerLevel)")
-                        .modifier(LevelPill())
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        self.notification.notificationOccurred(.success)
-                        self.showAboutScreen.toggle()
-                    }, label: {
-                        Image(systemName: "info")
-                            .font(.system(size: 17))
-                            .foregroundColor(.white)
-                            .padding(10)
-                            .background(Color.yellow)
-                            .clipShape(Circle())
-                            .shadow(color: .yellow, radius: 3)
-                        
-                    }).sheet(isPresented: $showAboutScreen, content: { About() })
-                    
-                }
-                .padding([.leading, .trailing])
-                
-                Spacer()
             }
         }
         .alert(isPresented: $showingScore) {
             Alert(title: Text(scoreTitle), message: Text(alertMessage), dismissButton: .default(Text("👏 NEXT 👏")) {
                 self.askQuestion()
-                })
+            })
         }
     }
     
@@ -124,29 +79,21 @@ struct EuropeFlags: View {
         if number == correctAnswer {
             scoreTitle = "Correct ✅\n" + "+15 XP!"
             alertMessage = "That's the flag of \(countries[number])"
-            UIView.animate(withDuration: 0.2) {
-                self.score += 15
-            }
+            self.score += 15
             UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
             
             if score >= 450 {
-                UIView.animate(withDuration: 0.2) {
-                    self.playerLevel += 1
-                    self.score = 0
-                }
+                self.playerLevel += 1
+                self.score = 0
                 UserDefaults.standard.set(self.playerLevel, forKey: "LevelEurope")
                 UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
             }
-            
         } else {
             scoreTitle = "Wrong 🚫\n" + "-10 XP"
             alertMessage = "That's the flag of \(countries[number])"
-            UIView.animate(withDuration: 0.2) {
-                self.score -= 10
-            }
+            self.score -= 10
             UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
         }
-        
         showingScore = true
     }
     
@@ -157,6 +104,11 @@ struct EuropeFlags: View {
 
 struct EuropeFlags_Previews: PreviewProvider {
     static var previews: some View {
-        EuropeFlags()
+        Group {
+            EuropeFlags()
+            EuropeFlags()
+                .preferredColorScheme(.dark)
+                .previewDevice("iPhone SE (1st generation)")
+        }
     }
 }

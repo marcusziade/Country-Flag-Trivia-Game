@@ -14,10 +14,8 @@ struct ExperiencePill: ViewModifier {
             .font(.system(size: 20))
             .foregroundColor(.white)
             .frame(width: 80, height: 20, alignment: .leading)
-            .padding(.top, 3)
-            .padding(.bottom, 3)
-            .padding(.trailing)
-            .padding(.leading)
+            .padding([.top, .bottom], 3)
+            .padding([.leading, .trailing])
             .background(Color.blue)
             .cornerRadius(15)
             .shadow(color: .blue, radius: 2)
@@ -30,12 +28,21 @@ struct LevelPill: ViewModifier {
             .font(.system(size: 20))
             .foregroundColor(.white)
             .frame(width: 80, height: 20, alignment: .leading)
-            .padding(.top, 3)
-            .padding(.bottom, 3)
-            .padding(.trailing)
-            .padding(.leading)
+            .padding([.top, .bottom], 3)
+            .padding([.leading, .trailing])
             .background(Color.green)
             .cornerRadius(15)
             .shadow(color: .green, radius: 2)
+    }
+}
+
+extension Image {
+    func flagImageMofifier() -> some View {
+        self
+            .resizable()
+            .renderingMode(.original)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.primary, lineWidth: 1))
+            .shadow(color: .primary, radius: 2)
     }
 }
