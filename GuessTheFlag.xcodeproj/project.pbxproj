@@ -22,6 +22,13 @@
 		5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C12530A76000C4FC39 /* FlagStore.swift */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A6E9E9B2530C7570007C148 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E9E9A2530C7570007C148 /* TabBarView.swift */; };
+		5ADC6638253AF223001E09B3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6637253AF223001E09B3 /* API.swift */; };
+		5ADC663C253AF421001E09B3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC663B253AF421001E09B3 /* HTTPMethod.swift */; };
+		5ADC6640253AF53C001E09B3 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC663F253AF53C001E09B3 /* Country.swift */; };
+		5ADC6644253AF570001E09B3 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6643253AF570001E09B3 /* Countries.swift */; };
+		5ADC6648253AF7F7001E09B3 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6647253AF7F7001E09B3 /* CountriesListViewController.swift */; };
+		5ADC664D253AF89B001E09B3 /* ForAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC664C253AF89B001E09B3 /* ForAutoLayout.swift */; };
+		5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +49,13 @@
 		5A2690C12530A76000C4FC39 /* FlagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStore.swift; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A6E9E9A2530C7570007C148 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		5ADC6637253AF223001E09B3 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5ADC663B253AF421001E09B3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		5ADC663F253AF53C001E09B3 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		5ADC6643253AF570001E09B3 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		5ADC6647253AF7F7001E09B3 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
+		5ADC664C253AF89B001E09B3 /* ForAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForAutoLayout.swift; sourceTree = "<group>"; };
+		5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +90,11 @@
 			children = (
 				2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */,
 				2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */,
+				5ADC6636253AF21B001E09B3 /* API */,
 				5A2690BE2530A74C00C4FC39 /* Data */,
 				5A2690C82530B38B00C4FC39 /* Views */,
+				5ADC6646253AF7E7001E09B3 /* View Controllers */,
+				5ADC664B253AF88B001E09B3 /* Extensions */,
 				2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */,
 				2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */,
 				2CB7C7042352EC4B0068ADE2 /* Info.plist */,
@@ -124,6 +141,42 @@
 				2C96E2C42358B7E600E5D154 /* WorldFlags.swift */,
 			);
 			path = "Flag Game";
+			sourceTree = "<group>";
+		};
+		5ADC6636253AF21B001E09B3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5ADC663E253AF536001E09B3 /* Models */,
+				5ADC6637253AF223001E09B3 /* API.swift */,
+				5ADC663B253AF421001E09B3 /* HTTPMethod.swift */,
+				5ADC6643253AF570001E09B3 /* Countries.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5ADC663E253AF536001E09B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5ADC663F253AF53C001E09B3 /* Country.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5ADC6646253AF7E7001E09B3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5ADC6647253AF7F7001E09B3 /* CountriesListViewController.swift */,
+				5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5ADC664B253AF88B001E09B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5ADC664C253AF89B001E09B3 /* ForAutoLayout.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,15 +274,22 @@
 			files = (
 				2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */,
 				5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */,
+				5ADC664D253AF89B001E09B3 /* ForAutoLayout.swift in Sources */,
+				5ADC663C253AF421001E09B3 /* HTTPMethod.swift in Sources */,
 				2C38413F235637B200F56257 /* EuropeFlags.swift in Sources */,
+				5ADC6648253AF7F7001E09B3 /* CountriesListViewController.swift in Sources */,
 				2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */,
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,
+				5ADC6644253AF570001E09B3 /* Countries.swift in Sources */,
 				2C384169235765BB00F56257 /* AmericaFlags.swift in Sources */,
 				2C38414323563BB400F56257 /* FlagsGameView.swift in Sources */,
+				5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */,
 				2C556CBA236708480038F2D5 /* About.swift in Sources */,
+				5ADC6638253AF223001E09B3 /* API.swift in Sources */,
 				2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5A6E9E9B2530C7570007C148 /* TabBarView.swift in Sources */,
+				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
 				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
