@@ -21,7 +21,6 @@
 		2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */; };
 		5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C12530A76000C4FC39 /* FlagStore.swift */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
-		5A6E9E9B2530C7570007C148 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E9E9A2530C7570007C148 /* TabBarView.swift */; };
 		5ADC6638253AF223001E09B3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6637253AF223001E09B3 /* API.swift */; };
 		5ADC663C253AF421001E09B3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC663B253AF421001E09B3 /* HTTPMethod.swift */; };
 		5ADC6640253AF53C001E09B3 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC663F253AF53C001E09B3 /* Country.swift */; };
@@ -49,7 +48,6 @@
 		2CB7C7042352EC4B0068ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A2690C12530A76000C4FC39 /* FlagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStore.swift; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
-		5A6E9E9A2530C7570007C148 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		5ADC6637253AF223001E09B3 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5ADC663B253AF421001E09B3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		5ADC663F253AF53C001E09B3 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 		5A2690C82530B38B00C4FC39 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5A6E9E9A2530C7570007C148 /* TabBarView.swift */,
 				2C556CB9236708480038F2D5 /* About.swift */,
 				5A6E9EA12530E0510007C148 /* Flag Game */,
 			);
@@ -291,7 +288,6 @@
 				5ADC6638253AF223001E09B3 /* API.swift in Sources */,
 				2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
-				5A6E9E9B2530C7570007C148 /* TabBarView.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
 				5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */,
 				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
