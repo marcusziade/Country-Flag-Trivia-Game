@@ -40,7 +40,7 @@ struct FlagsGameView: View {
                     AsiaFlags()
                 case 2:
                     AfricaFlags()
-                case 4:
+                case 3:
                     AmericaFlags()
                 default:
                     WorldFlags()
