@@ -29,6 +29,7 @@
 		5ADC6648253AF7F7001E09B3 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6647253AF7F7001E09B3 /* CountriesListViewController.swift */; };
 		5ADC664D253AF89B001E09B3 /* ForAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC664C253AF89B001E09B3 /* ForAutoLayout.swift */; };
 		5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */; };
+		5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC665C253B26E4001E09B3 /* LivePreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		5ADC6647253AF7F7001E09B3 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
 		5ADC664C253AF89B001E09B3 /* ForAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForAutoLayout.swift; sourceTree = "<group>"; };
 		5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		5ADC665C253B26E4001E09B3 /* LivePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				5ADC664C253AF89B001E09B3 /* ForAutoLayout.swift */,
+				5ADC665C253B26E4001E09B3 /* LivePreview.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5A6E9E9B2530C7570007C148 /* TabBarView.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
+				5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */,
 				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
