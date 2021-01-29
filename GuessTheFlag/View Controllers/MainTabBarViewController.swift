@@ -27,7 +27,7 @@ class MainTabBarController: UITabBarController {
     
     let aboutView: UIHostingController<About> = {
         let view = UIHostingController(rootView: About())
-        view.tabBarItem = UITabBarItem(title: "About", image: UIImage(systemName: "doc"), selectedImage: UIImage(systemName: "doc"))
+        view.tabBarItem = UITabBarItem(title: "About", image: UIImage(systemName: "ellipsis.circle"), selectedImage: UIImage(systemName: "ellipsis.circle"))
         return view
     }()
     
@@ -37,7 +37,7 @@ class MainTabBarController: UITabBarController {
         
         viewControllers = [
             flagGameView,
-            countriesViewController,
+//            countriesViewController,
             aboutView
         ]
     }
