@@ -31,6 +31,13 @@ class AboutViewController: UIViewController {
         return button
     }()
 
+    lazy var loader: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView().forAutoLayout()
+        view.hidesWhenStopped = true
+        view.color = .black
+        return view
+    }()
+
     lazy var aboutTextView = UIHostingController(rootView: About())
     lazy var aboutTextViewConstraints = [
         aboutTextView.view.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3),
@@ -56,6 +63,7 @@ class AboutViewController: UIViewController {
 
         install(aboutTextView, to: view, with: aboutTextViewConstraints)
         view.addSubview(button)
+        button.addSubview(loader)
         NSLayoutConstraint.activate([
             button.topAnchor.constraint(equalToSystemSpacingBelow: aboutTextView.view.bottomAnchor, multiplier: 5),
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -64,6 +72,9 @@ class AboutViewController: UIViewController {
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: button.trailingAnchor, multiplier: 4),
             view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: button.bottomAnchor, multiplier: 4),
             button.heightAnchor.constraint(equalToConstant: 55),
+
+            loader.centerYAnchor.constraint(equalTo: button.centerYAnchor),
+            loader.centerXAnchor.constraint(equalTo: button.centerXAnchor),
         ])
 
         fetchProducts()
@@ -74,6 +85,16 @@ class AboutViewController: UIViewController {
         let request = SKProductsRequest(productIdentifiers: Set(Product.allCases.map(\.rawValue)))
         request.delegate = self
         request.start()
+    }
+
+    func isLoading(_ bool: Bool) {
+        if bool {
+            loader.startAnimating()
+            button.setTitle("", for: .normal)
+        } else {
+            loader.stopAnimating()
+            button.setTitle("☕️ \(products[0].localizedTitle) \(products[0].priceLocale.currencySymbol ?? "")\(products[0].price)", for: .normal)
+        }
     }
 
     // MARK: - Selectors
@@ -101,14 +122,19 @@ extension AboutViewController: SKPaymentTransactionObserver {
             switch $0.transactionState {
                 case .purchasing:
                     print("Purchasing")
+                    isLoading(true)
                 case .purchased:
                     print("Purchased")
+                    isLoading(false)
                 case .failed:
                     print("Purchase failed")
+                    isLoading(false)
                 case .restored:
                     print("Purchase restored")
+                    isLoading(false)
                 case .deferred:
                     print("Purhcase deferred")
+                    isLoading(false)
                 @unknown default: break
             }
         }
