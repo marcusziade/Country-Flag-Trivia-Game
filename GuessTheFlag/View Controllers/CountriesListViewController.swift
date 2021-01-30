@@ -46,6 +46,8 @@ class CountriesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.titleView = regionPicker
+        navigationItem.backButtonDisplayMode = .minimal
+        
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -86,6 +88,7 @@ class CountriesListViewController: UIViewController {
     }
 
     func configureDataSource() {
+        dataSource = nil
         let cellRegistration = UICollectionView.CellRegistration<CountryCell, Country> { cell, indexPath, country in
             cell.configure(with: country)
         }
@@ -123,7 +126,6 @@ class CountriesListViewController: UIViewController {
                 !failing.contains($0.flag)
             }
             .collect()
-            .print()
             .assign(to: \.countries, on: self)
             .store(in: &cancellables)
 
@@ -155,6 +157,7 @@ extension CountriesListViewController: UICollectionViewDelegate {
 
         let country = countries[indexPath.row]
         let detailViewController = CountryDetailViewController(country: country)
+        detailViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

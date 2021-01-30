@@ -19,6 +19,7 @@
 		2CB7C6FD2352EC4B0068ADE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */; };
 		2CB7C7002352EC4B0068ADE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */; };
 		2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */; };
+		5A1FBFAD25C5E7EC00E3D721 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFAC25C5E7EC00E3D721 /* PaddingLabel.swift */; };
 		5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C12530A76000C4FC39 /* FlagStore.swift */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
@@ -72,6 +73,7 @@
 		2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CB7C7022352EC4B0068ADE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB7C7042352EC4B0068ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A1FBFAC25C5E7EC00E3D721 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		5A2690C12530A76000C4FC39 /* FlagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStore.swift; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				5AEA07A425C547A900DBA23F /* Reusable.swift */,
 				5AAE718625C55D50003F8118 /* BottomShadowGradient.swift */,
 				5AAE71A625C56DD1003F8118 /* HapticEngine.swift */,
+				5A1FBFAC25C5E7EC00E3D721 /* PaddingLabel.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */,
 				5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */,
 				2C556CBA236708480038F2D5 /* About.swift in Sources */,
+				5A1FBFAD25C5E7EC00E3D721 /* PaddingLabel.swift in Sources */,
 				5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */,
 				5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */,
 				5AAE71A525C56D35003F8118 /* UISegmentControlExtensions.swift in Sources */,
