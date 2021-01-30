@@ -10,83 +10,151 @@ import UIKit
 import Combine
 
 class CountriesListViewController: UIViewController {
+
+    // MARK: - Types
+    enum Section: CaseIterable {
+        case countries
+    }
     
     // MARK: - Properties
     var imageCancellables = Set<AnyCancellable>()
     var cancellables = Set<AnyCancellable>()
     var countries: [Country] = [] {
         didSet {
-            tableView.reloadData()
+            reload()
         }
     }
+    var dataSource: UICollectionViewDiffableDataSource<Section, Country>! = nil
     let api = API()
     
     // MARK: - UI Components
-    lazy var tableView: UITableView = {
-        let view = UITableView().forAutoLayout()
-        view.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        view.dataSource = self
+    lazy private var collectionView: UICollectionView = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).forAutoLayout()
         view.delegate = self
+        view.backgroundColor = .systemBackground
         return view
     }()
+
+    lazy var regionPicker: UISegmentedControl = {
+        let picker = UISegmentedControl(type: Region.self)
+        picker.selectedSegmentIndex = 0
+        picker.addTarget(self, action: #selector(regionChanged), for: .valueChanged)
+        return picker
+    }()
     
-    // MARK: - Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(tableView)
+        navigationItem.titleView = regionPicker
+        view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         
         loadCountries()
     }
     
-    func loadCountries() {
-        api.getCountries()
+    // MARK: - Methods
+    func createLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout {
+            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+
+            let item = NSCollectionLayoutItem(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1.0),
+                    heightDimension: .fractionalHeight(1.0)
+                )
+            )
+            item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
+
+            let containerGroup = NSCollectionLayoutGroup.horizontal(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1.0),
+                    heightDimension: .fractionalWidth(0.4)
+                ),
+                subitem: item,
+                count: 2
+            )
+
+            let section = NSCollectionLayoutSection(group: containerGroup)
+            return section
+        }
+        return layout
+    }
+
+    func configureDataSource() {
+        let cellRegistration = UICollectionView.CellRegistration<CountryCell, Country> { cell, indexPath, country in
+            cell.configure(with: country)
+        }
+
+        dataSource = UICollectionViewDiffableDataSource<Section, Country>(collectionView: collectionView,
+                                                                          cellProvider: { collectionView, indexPath, country -> UICollectionViewCell? in
+            return collectionView.dequeueConfiguredReusableCell(using: cellRegistration,
+                                                                for: indexPath,
+                                                                item: country)
+        })
+
+        reload()
+    }
+
+    func reload() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Country>()
+        snapshot.appendSections([.countries])
+        snapshot.appendItems(countries)
+        dataSource.apply(snapshot)
+    }
+
+    func loadCountries(for region: Region = .europe) {
+
+        let failing = Set<URL>([
+            URL(string: "https://restcountries.eu/data/ecu.svg")!,
+            URL(string: "https://restcountries.eu/data/nic.svg")!,
+        ])
+
+        api.getCountries(for: region)
             .replaceError(with: [])
             .receive(on: DispatchQueue.main)
+            .flatMap {
+                Publishers.Sequence(sequence: $0)
+            }
+            .filter {
+                !failing.contains($0.flag)
+            }
+            .collect()
             .assign(to: \.countries, on: self)
             .store(in: &cancellables)
+
+        configureDataSource()
+    }
+
+    // MARK: - Selectors
+    @objc func regionChanged() {
+        HapticEngine.select.selectionChanged()
+        switch regionPicker.selectedSegmentIndex {
+            case 0:
+                loadCountries(for: .europe)
+            case 1:
+                loadCountries(for: .asia)
+            case 2:
+                loadCountries(for: .africa)
+            case 3:
+                loadCountries(for: .oceania)
+            default:
+                loadCountries(for: .americas)
+        }
     }
 }
 
-extension CountriesListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        countries.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+// MARK: - CollectionView Delegate Methods
+extension CountriesListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
 
         let country = countries[indexPath.row]
-
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-//        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.text = country.name
-        cell.detailTextLabel?.text = country.capital
-        let placeholder = UIImage(systemName: "doc")
-        cell.imageView?.sd_setImage(with: country.flag, placeholderImage: placeholder)
-//        URLSession.shared.dataTaskPublisher(for: URL(string: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg")!)
-//            .map { UIImage(data: $0.data) }
-//            .receive(on: DispatchQueue.main)
-//            .replaceError(with: UIImage().withTintColor(.systemFill))
-//            .print()
-//            .assign(to: \.image, on: cell.imageView!)
-//            .store(in: &self.imageCancellables)
-        return cell
-    }
-}
-
-// MARK: - TableView Delegate Methods
-extension CountriesListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let country = countries[indexPath.row]
-        let detailViewController = CountryDetailViewController(flagImage: country.flag)
+        let detailViewController = CountryDetailViewController(country: country)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
@@ -94,6 +162,6 @@ extension CountriesListViewController: UITableViewDelegate {
 import SwiftUI
 
 struct CountriesListViewController_Preview: PreviewProvider {
-    static var previews: some View = createPreview(for: CountriesListViewController(), mode: .dark)
+    static var previews: some View = createPreview(for: NavigationController(rootViewController: CountriesListViewController()), mode: .dark)
 }
 

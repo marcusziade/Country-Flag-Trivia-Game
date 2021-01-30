@@ -22,8 +22,8 @@ class CountryDetailViewController: UIViewController {
     }()
 
     // MARK: - Init
-    init(flagImage: URL) {
-        flagImageView.sd_setImage(with: flagImage, placeholderImage: UIImage(systemName: "doc"))
+    init(country: Country) {
+        flagImageView.sd_setImage(with: country.flag, placeholderImage: UIImage(systemName: "doc"))
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -47,6 +47,6 @@ class CountryDetailViewController: UIViewController {
 import SwiftUI
 
 struct CountryDetailViewController_Preview: PreviewProvider {
-    static var previews: some View = createPreview(for: CountryDetailViewController(flagImage: URL(string: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg")!), mode: .dark)
+    static var previews: some View = createPreview(for: CountryDetailViewController(country: Country(name: "Country", capital: "Capital", flag: URL(string: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg")!)), mode: .dark)
 }
 

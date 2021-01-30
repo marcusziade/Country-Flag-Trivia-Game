@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+import SDWebImageSVGCoder
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        SDImageCache.shared.config.maxDiskSize = 1000000 * 50 // 50 MB
+
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
+
         return true
     }
 

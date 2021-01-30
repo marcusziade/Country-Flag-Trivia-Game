@@ -18,12 +18,12 @@ class MainTabBarController: UITabBarController {
         return view
     }()
     
-//    let countriesViewController: UINavigationController = {
-//        let viewController = CountriesListViewController()
-//        let navigationController = UINavigationController(rootViewController: viewController)
-//        navigationController.tabBarItem = UITabBarItem(title: "Countries", image: UIImage(systemName: "doc"), selectedImage: UIImage(systemName: "doc.fill"))
-//        return navigationController
-//    }()
+    let countriesViewController: NavigationController = {
+        let viewController = CountriesListViewController()
+        let navigationController = NavigationController(rootViewController: viewController)
+        navigationController.tabBarItem = UITabBarItem(title: "Countries", image: UIImage(systemName: "doc"), selectedImage: UIImage(systemName: "doc.fill"))
+        return navigationController
+    }()
 
     let aboutViewController: AboutViewController = {
         let viewController = AboutViewController()
@@ -37,6 +37,7 @@ class MainTabBarController: UITabBarController {
         view.tintColor = .label
         viewControllers = [
             flagGameView,
+            countriesViewController,
             aboutViewController
         ]
         selectedIndex = 1
