@@ -58,7 +58,6 @@ class API {
                 guard (200..<300).contains(httpResponse.statusCode) else {
                     throw APIError.statusCode(httpResponse.statusCode)
                 }
-                
                 return $0.data
             }
             .eraseToAnyPublisher()

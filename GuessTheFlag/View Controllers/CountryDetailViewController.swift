@@ -44,9 +44,9 @@ class CountryDetailViewController: UIViewController {
     }
 }
 
-import SwiftUI
-
-struct CountryDetailViewController_Preview: PreviewProvider {
-    static var previews: some View = createPreview(for: CountryDetailViewController(country: Country(name: "Country", capital: "Capital", flag: URL(string: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg")!)), mode: .dark)
-}
-
+//import SwiftUI
+//
+//struct CountryDetailViewController_Preview: PreviewProvider {
+//    static var previews: some View = createPreview(for: CountryDetailViewController(country: Country.generateMockCountry()), mode: .dark)
+//}
+//

@@ -23,6 +23,8 @@
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
 		5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */; };
+		5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62D25C5D6D600525C9A /* Currency.swift */; };
+		5A2CC63025C5D6E800525C9A /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62F25C5D6E800525C9A /* Language.swift */; };
 		5A53C2D325C53B9C005ACDFD /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53C2D225C53B9C005ACDFD /* CountryDetailViewController.swift */; };
 		5A53C2E325C54490005ACDFD /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 5A53C2E225C54490005ACDFD /* SDWebImageSVGCoder */; };
 		5A53C2E725C544A3005ACDFD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5A53C2E625C544A3005ACDFD /* SDWebImage */; };
@@ -75,6 +77,8 @@
 		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5A2CC62625C4CCF300525C9A /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		5A2CC62D25C5D6D600525C9A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		5A2CC62F25C5D6E800525C9A /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		5A53C2D225C53B9C005ACDFD /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 		5AAE718625C55D50003F8118 /* BottomShadowGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomShadowGradient.swift; sourceTree = "<group>"; };
 		5AAE718B25C56080003F8118 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				5ADC663F253AF53C001E09B3 /* Country.swift */,
+				5A2CC62D25C5D6D600525C9A /* Currency.swift */,
+				5A2CC62F25C5D6E800525C9A /* Language.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 				5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */,
 				5ADC663C253AF421001E09B3 /* HTTPMethod.swift in Sources */,
 				2C38413F235637B200F56257 /* EuropeFlags.swift in Sources */,
+				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
 				5AEA079D25C5471F00DBA23F /* CountryCell.swift in Sources */,
 				5ADC6648253AF7F7001E09B3 /* CountriesListViewController.swift in Sources */,
 				2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */,
@@ -387,6 +394,7 @@
 				5AAE71A525C56D35003F8118 /* UISegmentControlExtensions.swift in Sources */,
 				5A53C2D325C53B9C005ACDFD /* CountryDetailViewController.swift in Sources */,
 				5ADC6638253AF223001E09B3 /* API.swift in Sources */,
+				5A2CC63025C5D6E800525C9A /* Language.swift in Sources */,
 				2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,

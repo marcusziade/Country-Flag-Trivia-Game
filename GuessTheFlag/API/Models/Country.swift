@@ -17,21 +17,27 @@ struct Country: Codable, Hashable {
     let population: Int
     let latlng: [Double]
     let demonym: String
-    let timezones: String
+    let timezones: [String]
     let borders: [String]
-    let activeName: String
+    let nativeName: String
     let flag: URL
     let currencies: [Currency]
     let languages: [Language]
-}
 
-struct Currency: Codable, Hashable {
-    let code: String
-    let name: String
-    let symbol: String
-}
-
-struct Language: Codable, Hashable {
-    let name: String
-    let nativeName: String
+    static func generateMockCountry() -> Country {
+        return Country(
+            name: "Country",
+            capital: "Capital",
+            subregion: "Sub-Region",
+            population: 4000400,
+            latlng: [33.0, 65.0],
+            demonym: "Demonym",
+            timezones: ["UTC+04:30"],
+            borders: ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
+            nativeName: "Native name",
+            flag: URL(string: "https://restcountries.eu/data/afg.svg")!,
+            currencies: Currency.generateMockCurrencies(),
+            languages: Language.generateMockLanguages()
+        )
+    }
 }

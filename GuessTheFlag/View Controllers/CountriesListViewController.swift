@@ -108,7 +108,6 @@ class CountriesListViewController: UIViewController {
     }
 
     func loadCountries(for region: Region = .europe) {
-
         let failing = Set<URL>([
             URL(string: "https://restcountries.eu/data/ecu.svg")!,
             URL(string: "https://restcountries.eu/data/nic.svg")!,
@@ -124,6 +123,7 @@ class CountriesListViewController: UIViewController {
                 !failing.contains($0.flag)
             }
             .collect()
+            .print()
             .assign(to: \.countries, on: self)
             .store(in: &cancellables)
 
