@@ -126,6 +126,8 @@ extension AboutViewController: SKPaymentTransactionObserver {
                 case .purchased:
                     print("Purchased")
                     isLoading(false)
+                    let transaction: SKPaymentTransaction = $0
+                    SKPaymentQueue.default().finishTransaction(transaction)
                 case .failed:
                     print("Purchase failed")
                     isLoading(false)
