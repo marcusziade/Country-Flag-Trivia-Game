@@ -31,12 +31,6 @@ class MainTabBarController: UITabBarController {
         return viewController
     }()
 
-    let aboutView: UIHostingController<About> = {
-        let view = UIHostingController(rootView: About())
-        view.tabBarItem = UITabBarItem(title: "About", image: UIImage(systemName: "ellipsis.circle"), selectedImage: UIImage(systemName: "ellipsis.circle"))
-        return view
-    }()
-    
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +38,7 @@ class MainTabBarController: UITabBarController {
         viewControllers = [
             flagGameView,
             aboutViewController,
-//            countriesViewController,
-//            aboutView
         ]
-
-        selectedIndex = 1
     }
 }
 
