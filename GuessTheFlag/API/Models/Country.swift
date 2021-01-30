@@ -12,4 +12,6 @@ struct Country: Codable {
     
     // MARK: - Properties
     let name: String
+    let capital: String
+    let flag: URL
 }

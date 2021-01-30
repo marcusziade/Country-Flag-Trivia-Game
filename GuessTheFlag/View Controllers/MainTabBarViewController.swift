@@ -18,12 +18,12 @@ class MainTabBarController: UITabBarController {
         return view
     }()
     
-    let countriesViewController: UINavigationController = {
-        let viewController = CountriesListViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.tabBarItem = UITabBarItem(title: "Countries", image: UIImage(systemName: "doc"), selectedImage: UIImage(systemName: "doc.fill"))
-        return navigationController
-    }()
+//    let countriesViewController: UINavigationController = {
+//        let viewController = CountriesListViewController()
+//        let navigationController = UINavigationController(rootViewController: viewController)
+//        navigationController.tabBarItem = UITabBarItem(title: "Countries", image: UIImage(systemName: "doc"), selectedImage: UIImage(systemName: "doc.fill"))
+//        return navigationController
+//    }()
 
     let aboutViewController: AboutViewController = {
         let viewController = AboutViewController()
@@ -37,14 +37,15 @@ class MainTabBarController: UITabBarController {
         view.tintColor = .label
         viewControllers = [
             flagGameView,
-            aboutViewController,
+            aboutViewController
         ]
+        selectedIndex = 1
     }
 }
 
 import SwiftUI
 
 struct MainTabBarController_Preview: PreviewProvider {
-    static var previews: some View = createPreview(for: MainTabBarController())
+    static var previews: some View = createPreview(for: MainTabBarController(), mode: .dark)
 }
 
