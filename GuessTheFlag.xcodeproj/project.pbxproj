@@ -21,12 +21,14 @@
 		2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */; };
 		5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C12530A76000C4FC39 /* FlagStore.swift */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
+		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
+		5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */; };
 		5ADC6638253AF223001E09B3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6637253AF223001E09B3 /* API.swift */; };
 		5ADC663C253AF421001E09B3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC663B253AF421001E09B3 /* HTTPMethod.swift */; };
 		5ADC6640253AF53C001E09B3 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC663F253AF53C001E09B3 /* Country.swift */; };
 		5ADC6644253AF570001E09B3 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6643253AF570001E09B3 /* Countries.swift */; };
 		5ADC6648253AF7F7001E09B3 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6647253AF7F7001E09B3 /* CountriesListViewController.swift */; };
-		5ADC664D253AF89B001E09B3 /* ForAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC664C253AF89B001E09B3 /* ForAutoLayout.swift */; };
+		5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC664C253AF89B001E09B3 /* UIViewExtensions.swift */; };
 		5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */; };
 		5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC665C253B26E4001E09B3 /* LivePreview.swift */; };
 /* End PBXBuildFile section */
@@ -48,12 +50,15 @@
 		2CB7C7042352EC4B0068ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A2690C12530A76000C4FC39 /* FlagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStore.swift; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		5A2CC62625C4CCF300525C9A /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		5ADC6637253AF223001E09B3 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5ADC663B253AF421001E09B3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		5ADC663F253AF53C001E09B3 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		5ADC6643253AF570001E09B3 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		5ADC6647253AF7F7001E09B3 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
-		5ADC664C253AF89B001E09B3 /* ForAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForAutoLayout.swift; sourceTree = "<group>"; };
+		5ADC664C253AF89B001E09B3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		5ADC665C253B26E4001E09B3 /* LivePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +100,7 @@
 				5A2690C82530B38B00C4FC39 /* Views */,
 				5ADC6646253AF7E7001E09B3 /* View Controllers */,
 				5ADC664B253AF88B001E09B3 /* Extensions */,
+				5A2CC62525C4CCD500525C9A /* Supporting Files */,
 				2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */,
 				2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */,
 				2CB7C7042352EC4B0068ADE2 /* Info.plist */,
@@ -127,6 +133,14 @@
 				5A6E9EA12530E0510007C148 /* Flag Game */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5A2CC62525C4CCD500525C9A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A2CC62625C4CCF300525C9A /* Configuration.storekit */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5A6E9EA12530E0510007C148 /* Flag Game */ = {
@@ -166,6 +180,7 @@
 			children = (
 				5ADC6647253AF7F7001E09B3 /* CountriesListViewController.swift */,
 				5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */,
+				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -173,8 +188,9 @@
 		5ADC664B253AF88B001E09B3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5ADC664C253AF89B001E09B3 /* ForAutoLayout.swift */,
+				5ADC664C253AF89B001E09B3 /* UIViewExtensions.swift */,
 				5ADC665C253B26E4001E09B3 /* LivePreview.swift */,
+				5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,7 +290,7 @@
 			files = (
 				2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */,
 				5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */,
-				5ADC664D253AF89B001E09B3 /* ForAutoLayout.swift in Sources */,
+				5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */,
 				5ADC663C253AF421001E09B3 /* HTTPMethod.swift in Sources */,
 				2C38413F235637B200F56257 /* EuropeFlags.swift in Sources */,
 				5ADC6648253AF7F7001E09B3 /* CountriesListViewController.swift in Sources */,
@@ -285,11 +301,13 @@
 				2C38414323563BB400F56257 /* FlagsGameView.swift in Sources */,
 				5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */,
 				2C556CBA236708480038F2D5 /* About.swift in Sources */,
+				5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */,
 				5ADC6638253AF223001E09B3 /* API.swift in Sources */,
 				2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
 				5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */,
+				5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */,
 				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

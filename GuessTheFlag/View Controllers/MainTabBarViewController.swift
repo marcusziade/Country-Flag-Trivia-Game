@@ -24,7 +24,13 @@ class MainTabBarController: UITabBarController {
         navigationController.tabBarItem = UITabBarItem(title: "Countries", image: UIImage(systemName: "doc"), selectedImage: UIImage(systemName: "doc.fill"))
         return navigationController
     }()
-    
+
+    let aboutViewController: AboutViewController = {
+        let viewController = AboutViewController()
+        viewController.tabBarItem = UITabBarItem(title: "About", image: UIImage(systemName: "ellipsis.circle"), selectedImage: UIImage(systemName: "ellipsis.circle"))
+        return viewController
+    }()
+
     let aboutView: UIHostingController<About> = {
         let view = UIHostingController(rootView: About())
         view.tabBarItem = UITabBarItem(title: "About", image: UIImage(systemName: "ellipsis.circle"), selectedImage: UIImage(systemName: "ellipsis.circle"))
@@ -34,12 +40,15 @@ class MainTabBarController: UITabBarController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.tintColor = .label
         viewControllers = [
             flagGameView,
+            aboutViewController,
 //            countriesViewController,
-            aboutView
+//            aboutView
         ]
+
+        selectedIndex = 1
     }
 }
 
