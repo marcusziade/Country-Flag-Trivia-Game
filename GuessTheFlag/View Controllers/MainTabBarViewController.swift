@@ -14,20 +14,32 @@ class MainTabBarController: UITabBarController {
     // MARK: - UI Components
     let flagGameView: UIHostingController<FlagsGameView> = {
         let view = UIHostingController(rootView: FlagsGameView())
-        view.tabBarItem = UITabBarItem(title: "Flag Game", image: UIImage(systemName: "globe"), selectedImage: UIImage(systemName: "globe"))
+        view.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "gamecontroller"),
+            selectedImage: UIImage(systemName: "gamecontroller.fill")
+        )
         return view
     }()
     
     let countriesViewController: NavigationController = {
         let viewController = CountriesListViewController()
         let navigationController = NavigationController(rootViewController: viewController)
-        navigationController.tabBarItem = UITabBarItem(title: "Countries", image: UIImage(systemName: "doc"), selectedImage: UIImage(systemName: "doc.fill"))
+        navigationController.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "doc.text.magnifyingglass"),
+            selectedImage: UIImage(systemName: "doc.text.magnifyingglass")
+        )
         return navigationController
     }()
 
     let aboutViewController: AboutViewController = {
         let viewController = AboutViewController()
-        viewController.tabBarItem = UITabBarItem(title: "About", image: UIImage(systemName: "ellipsis.circle"), selectedImage: UIImage(systemName: "ellipsis.circle"))
+        viewController.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "ellipsis.circle"),
+            selectedImage: UIImage(systemName: "ellipsis.circle.fill")
+        )
         return viewController
     }()
 
