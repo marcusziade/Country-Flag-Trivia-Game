@@ -20,6 +20,17 @@ class AboutViewController: UIViewController {
     var products: [SKProduct] = []
 
     // MARK: - UI Components
+    let scrollView: UIScrollView = {
+        let view = UIScrollView().forAutoLayout()
+        view.showsVerticalScrollIndicator = false
+        return view
+    }()
+
+    let contentView: UIView = {
+        let view = UIView().forAutoLayout()
+        return view
+    }()
+
     lazy var button: UIButton = {
         let button = UIButton(type: .system).forAutoLayout()
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
@@ -38,46 +49,88 @@ class AboutViewController: UIViewController {
         return view
     }()
 
-    lazy var aboutTextView = UIHostingController(rootView: About())
-    lazy var aboutTextViewConstraints = [
-        aboutTextView.view.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3),
-        aboutTextView.view.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 4),
-        view.trailingAnchor.constraint(equalToSystemSpacingAfter: aboutTextView.view.trailingAnchor, multiplier: 4),
-    ]
-
     private lazy var gradientLayer: CAGradientLayer = {
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
-        gradient.colors = [UIColor.red.cgColor, UIColor.yellow.cgColor]
+        gradient.colors = [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor]
         gradient.startPoint = CGPoint.zero
         gradient.endPoint = CGPoint(x: 0.5, y: 1.5)
         return gradient
+    }()
+
+    let titleLabel: UILabel = {
+        let label = UILabel().forAutoLayout()
+        label.font = UIFont.preferredFont(forTextStyle: .largeTitle, compatibleWith: .init(legibilityWeight: .bold))
+        label.text = "Master of Flags"
+        label.textColor = .white
+        return label
+    }()
+
+    let infoLabel: UILabel = {
+        let label = UILabel().forAutoLayout()
+        label.font = UIFont.preferredFont(forTextStyle: .title2)
+        label.text =
+            """
+            This is Master of Flags, the game where you gather experience points (XP) and level up as you become familiar with the world's flags. There are 196 different flags in this game! Your objective is to learn them all.🤓
+
+            You gain 15 XP from a correct answer and lose 10 XP from a wrong answer. The correct answer is indicated by the spinning flag!🌀
+
+            You need 450 points to level up.☄️
+            """
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
     }()
 
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layer.addSublayer(gradientLayer)
-        aboutTextView.view.backgroundColor = .clear
         SKPaymentQueue.default().add(self)
 
-        install(aboutTextView, to: view, with: aboutTextViewConstraints)
-        view.addSubview(button)
-        button.addSubview(loader)
-        NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalToSystemSpacingBelow: aboutTextView.view.bottomAnchor, multiplier: 5),
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, infoLabel, button]).forAutoLayout()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 48
+        stackView.setCustomSpacing(64, after: infoLabel)
 
-            button.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 4),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: button.trailingAnchor, multiplier: 4),
-            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: button.bottomAnchor, multiplier: 4),
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(stackView)
+
+        button.addSubview(loader)
+
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+
+            stackView.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: contentView.topAnchor, multiplier: 2),
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: contentView.leadingAnchor, multiplier: 3),
+            contentView.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 3),
+            contentView.bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 3),
+
             button.heightAnchor.constraint(equalToConstant: 55),
+            button.widthAnchor.constraint(equalTo: stackView.widthAnchor),
 
             loader.centerYAnchor.constraint(equalTo: button.centerYAnchor),
             loader.centerXAnchor.constraint(equalTo: button.centerXAnchor),
         ])
 
         fetchProducts()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) { [self] in
+            HapticEngine.result.notificationOccurred(.success)
+            scrollView.flashScrollIndicators()
+        }
     }
 
     // MARK: - Methods
