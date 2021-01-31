@@ -86,6 +86,7 @@ class CountryDetailViewController: UIViewController {
 
     let mapView: MKMapView = {
         let view = MKMapView().forAutoLayout()
+        view.mapType = .hybrid
         return view
     }()
 
