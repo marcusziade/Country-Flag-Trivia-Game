@@ -15,7 +15,7 @@ struct Country: Codable, Hashable {
     let capital: String
     let subregion: String
     let population: Int
-    let latlng: [Double]
+    let latlng: [Double]?
     let demonym: String
     let timezones: [String]
     let borders: [String]

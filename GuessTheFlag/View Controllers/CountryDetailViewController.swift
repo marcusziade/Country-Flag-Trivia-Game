@@ -12,6 +12,9 @@ import MapKit
 
 class CountryDetailViewController: UIViewController {
 
+    // MARK: - Properties
+    var location: [Double]! = nil
+
     // MARK: - UI Components
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView().forAutoLayout()
@@ -117,7 +120,6 @@ class CountryDetailViewController: UIViewController {
 
     let mapView: MKMapView = {
         let view = MKMapView().forAutoLayout()
-        view.heightAnchor.constraint(equalToConstant: 350).isActive = true
         return view
     }()
 
@@ -143,9 +145,9 @@ class CountryDetailViewController: UIViewController {
         subregionLabel.text = "Sub-region:\n\(country.subregion)"
         nativeNameLabel.text = "Native name:\n\(country.nativeName)"
         populationLabel.text = "Population:\n\(country.population)"
-        mapView.centerCoordinate = .init(latitude: country.latlng[0], longitude: country.latlng[1])
-
         super.init(nibName: nil, bundle: nil)
+        guard let location = country.latlng else { return }
+        self.location = location
 
         country.timezones.forEach { timeZonesLabel.text?.append("\($0) ") }
         country.currencies.forEach { currenciesLabel.text?.append("| \($0.symbol ?? "") \($0.code ?? "") - \($0.name ?? "") |  ") }
@@ -198,12 +200,27 @@ class CountryDetailViewController: UIViewController {
             mapView.heightAnchor.constraint(equalTo: view.heightAnchor),
             mapView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            mapView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            mapView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).with(priority: .defaultHigh),
 
             mapView.bottomAnchor.constraint(equalToSystemSpacingBelow: goUpButton.bottomAnchor, multiplier: 8),
             mapView.trailingAnchor.constraint(equalToSystemSpacingAfter: goUpButton.trailingAnchor, multiplier: 1),
 
         ])
+
+        configureMapView()
+    }
+
+    // MARK: - Methods
+    private func configureMapView() {
+        if location.count > 0 {
+            mapView.centerCoordinate = CLLocationCoordinate2D(latitude: location[0], longitude: location[1])
+            let country = MKPointAnnotation()
+            country.title = "\(nameLabel.text ?? "")"
+            country.coordinate = CLLocationCoordinate2D(latitude: location[0], longitude: location[1])
+            mapView.addAnnotation(country)
+        } else {
+            mapView.isHidden = true
+        }
     }
 
     // MARK: - Selectors
