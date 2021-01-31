@@ -102,10 +102,23 @@ class CountryDetailViewController: UIViewController {
         return label
     }()
 
-    let geoView: MKMapView = {
+    let mapView: MKMapView = {
         let view = MKMapView().forAutoLayout()
         view.heightAnchor.constraint(equalToConstant: 350).isActive = true
         return view
+    }()
+
+    lazy var goUpButton: UIButton = {
+        let button = UIButton().forAutoLayout()
+        button.setImage(UIImage(systemName: "arrow.up.square.fill"), for: .normal)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .label
+        button.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        button.addTarget(self, action: #selector(goUp), for: .touchDown)
+        return button
     }()
 
     // MARK: - Init
@@ -117,7 +130,7 @@ class CountryDetailViewController: UIViewController {
         subregionLabel.text = "Sub-region: \(country.subregion)"
         nativeNameLabel.text = "Native name: \(country.nativeName)"
         populationLabel.text = "Population: \(country.population)"
-        geoView.centerCoordinate = .init(latitude: country.latlng[0], longitude: country.latlng[1])
+        mapView.centerCoordinate = .init(latitude: country.latlng[0], longitude: country.latlng[1])
 
         super.init(nibName: nil, bundle: nil)
 
@@ -145,7 +158,8 @@ class CountryDetailViewController: UIViewController {
         stackView.spacing = 12
         stackView.alignment = .leading
         contentView.addSubview(stackView)
-        contentView.addSubview(geoView)
+        contentView.addSubview(mapView)
+        mapView.addSubview(goUpButton)
 
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -163,12 +177,28 @@ class CountryDetailViewController: UIViewController {
             flagImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             flagImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 
-            geoView.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 4),
-            geoView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            geoView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            geoView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            mapView.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 4),
+            mapView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            mapView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            mapView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+
+            mapView.bottomAnchor.constraint(equalToSystemSpacingBelow: goUpButton.bottomAnchor, multiplier: 8),
+            mapView.trailingAnchor.constraint(equalToSystemSpacingAfter: goUpButton.trailingAnchor, multiplier: 1),
         ])
     }
+
+    // MARK: - Selectors
+    @objc private func goUp() {
+        HapticEngine.rigid.impactOccurred()
+        scrollView.scrollToTop()
+    }
+}
+extension UIScrollView {
+    func scrollToTop() {
+        let desiredOffset = CGPoint(x: 0, y: -contentInset.top)
+        setContentOffset(desiredOffset, animated: true)
+   }
 }
 
 // MARK: - UIScrollView Delegate Methods
