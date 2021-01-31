@@ -19,6 +19,9 @@ class AboutViewController: UIViewController {
 
     // MARK: - Properties
     var products: [SKProduct] = []
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     // MARK: - UI Components
     let scrollView: UIScrollView = {
@@ -69,14 +72,15 @@ class AboutViewController: UIViewController {
 
     let infoLabel: UILabel = {
         let label = UILabel().forAutoLayout()
-        label.font = UIFont.preferredFont(forTextStyle: .title2)
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
         label.text =
             """
-            This is Master of Flags, the game where you gather experience points (XP) and level up as you become familiar with the world's flags. There are 196 different flags in this game! Your objective is to learn them all.🤓
+            This is Master of Flags, the game where you gather experience points (XP) and level up as you become familiar with the world's flags. There are 196 different flags in this game! Your objective is to learn them all🤓
 
             You gain 15 XP from a correct answer and lose 10 XP from a wrong answer. The correct answer is indicated by the spinning flag!🌀
+            You need 450 points to level up☄️
 
-            You need 450 points to level up.☄️
+            Browse the encyclopedia to improve your geographical knowledge📚
             """
         label.textColor = .white
         label.numberOfLines = 0
