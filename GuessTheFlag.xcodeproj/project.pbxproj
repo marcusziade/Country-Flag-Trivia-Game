@@ -25,6 +25,7 @@
 		5A1FBFB825C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */; };
 		5A1FBFBA25C6C46D00E3D721 /* SpecLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB925C6C46D00E3D721 /* SpecLabel.swift */; };
 		5A1FBFBC25C6C5DD00E3D721 /* UIScrollViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFBB25C6C5DD00E3D721 /* UIScrollViewExtensions.swift */; };
+		5A1FBFBE25C6D27A00E3D721 /* MKMapViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFBD25C6D27A00E3D721 /* MKMapViewExtensions.swift */; };
 		5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C12530A76000C4FC39 /* FlagStore.swift */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
@@ -83,6 +84,7 @@
 		5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsExtensions.swift; sourceTree = "<group>"; };
 		5A1FBFB925C6C46D00E3D721 /* SpecLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecLabel.swift; sourceTree = "<group>"; };
 		5A1FBFBB25C6C5DD00E3D721 /* UIScrollViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtensions.swift; sourceTree = "<group>"; };
+		5A1FBFBD25C6D27A00E3D721 /* MKMapViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewExtensions.swift; sourceTree = "<group>"; };
 		5A2690C12530A76000C4FC39 /* FlagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStore.swift; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				5AAE71A425C56D35003F8118 /* UISegmentControlExtensions.swift */,
 				5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */,
 				5A1FBFBB25C6C5DD00E3D721 /* UIScrollViewExtensions.swift */,
+				5A1FBFBD25C6D27A00E3D721 /* MKMapViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
 				5AEA079D25C5471F00DBA23F /* CountryCell.swift in Sources */,
 				5ADC6648253AF7F7001E09B3 /* CountriesListViewController.swift in Sources */,
+				5A1FBFBE25C6D27A00E3D721 /* MKMapViewExtensions.swift in Sources */,
 				2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */,
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,
 				5ADC6644253AF570001E09B3 /* Countries.swift in Sources */,

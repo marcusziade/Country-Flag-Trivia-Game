@@ -199,14 +199,17 @@ class CountryDetailViewController: UIViewController {
             currenciesLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor),
             languagesLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor)
         ])
-
-        configureMapView()
     }
 
     // MARK: - Methods
     private func configureMapView() {
         if location.count > 0 {
-            mapView.centerCoordinate = CLLocationCoordinate2D(latitude: location[0], longitude: location[1])
+            mapView.moveCenterByOffSet(offSet: CGPoint(x: 100, y: 100), coordinate: CLLocationCoordinate2D(latitude: location[0], longitude: location[1]))
+            mapView.showsTraffic = true
+            UIView.animate(withDuration: 2.5) { [self] in
+                mapView.moveCenterByOffSet(offSet: CGPoint(x: 0, y: 0), coordinate: CLLocationCoordinate2D(latitude: location[0], longitude: location[1]))
+            }
+
             let country = MKPointAnnotation()
             country.title = "\(nameLabel.text ?? "")"
             country.coordinate = CLLocationCoordinate2D(latitude: location[0], longitude: location[1])
@@ -225,6 +228,7 @@ class CountryDetailViewController: UIViewController {
     @objc private func goDown() {
         HapticEngine.rigid.impactOccurred()
         scrollView.scrollsToBottom(animated: true)
+        configureMapView()
     }
 }
 
@@ -238,6 +242,10 @@ extension CountryDetailViewController: UIScrollViewDelegate {
         if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.height {
             scrollView.contentOffset.y = scrollView.contentSize.height - scrollView.bounds.height
         }
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        configureMapView()
     }
 }
 
