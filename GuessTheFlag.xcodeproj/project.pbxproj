@@ -19,7 +19,6 @@
 		2CB7C6FD2352EC4B0068ADE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */; };
 		2CB7C7002352EC4B0068ADE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */; };
 		2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */; };
-		5A1FBFAF25C68C3B00E3D721 /* ThanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFAE25C68C3B00E3D721 /* ThanksViewController.swift */; };
 		5A1FBFB225C68DD200E3D721 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1FBFB125C68DD200E3D721 /* Lottie */; };
 		5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB325C68F6100E3D721 /* coffee.json */; };
 		5A1FBFB825C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */; };
@@ -35,6 +34,7 @@
 		5A53C2D325C53B9C005ACDFD /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53C2D225C53B9C005ACDFD /* CountryDetailViewController.swift */; };
 		5A53C2E325C54490005ACDFD /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 5A53C2E225C54490005ACDFD /* SDWebImageSVGCoder */; };
 		5A53C2E725C544A3005ACDFD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5A53C2E625C544A3005ACDFD /* SDWebImage */; };
+		5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */; };
 		5AAE718725C55D50003F8118 /* BottomShadowGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE718625C55D50003F8118 /* BottomShadowGradient.swift */; };
 		5AAE718C25C56080003F8118 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE718B25C56080003F8118 /* NavigationController.swift */; };
 		5AAE71A525C56D35003F8118 /* UISegmentControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE71A425C56D35003F8118 /* UISegmentControlExtensions.swift */; };
@@ -79,7 +79,6 @@
 		2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CB7C7022352EC4B0068ADE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB7C7042352EC4B0068ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A1FBFAE25C68C3B00E3D721 /* ThanksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksViewController.swift; sourceTree = "<group>"; };
 		5A1FBFB325C68F6100E3D721 /* coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee.json; sourceTree = "<group>"; };
 		5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsExtensions.swift; sourceTree = "<group>"; };
 		5A1FBFB925C6C46D00E3D721 /* SpecLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecLabel.swift; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		5A2CC62D25C5D6D600525C9A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		5A2CC62F25C5D6E800525C9A /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		5A53C2D225C53B9C005ACDFD /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
+		5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateView.swift; sourceTree = "<group>"; };
 		5AAE718625C55D50003F8118 /* BottomShadowGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomShadowGradient.swift; sourceTree = "<group>"; };
 		5AAE718B25C56080003F8118 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5AAE71A425C56D35003F8118 /* UISegmentControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentControlExtensions.swift; sourceTree = "<group>"; };
@@ -183,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				2C556CB9236708480038F2D5 /* About.swift */,
+				5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */,
 				5A6E9EA12530E0510007C148 /* Flag Game */,
 			);
 			path = "SwiftUI Views";
@@ -245,7 +246,6 @@
 				5ADC6647253AF7F7001E09B3 /* CountriesListViewController.swift */,
 				5A53C2D225C53B9C005ACDFD /* CountryDetailViewController.swift */,
 				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
-				5A1FBFAE25C68C3B00E3D721 /* ThanksViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -404,6 +404,7 @@
 				2C38413F235637B200F56257 /* EuropeFlags.swift in Sources */,
 				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
 				5AEA079D25C5471F00DBA23F /* CountryCell.swift in Sources */,
+				5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */,
 				5ADC6648253AF7F7001E09B3 /* CountriesListViewController.swift in Sources */,
 				5A1FBFBE25C6D27A00E3D721 /* MKMapViewExtensions.swift in Sources */,
 				2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */,
@@ -427,7 +428,6 @@
 				5AAE718C25C56080003F8118 /* NavigationController.swift in Sources */,
 				5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */,
 				5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */,
-				5A1FBFAF25C68C3B00E3D721 /* ThanksViewController.swift in Sources */,
 				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
 				5AAE718725C55D50003F8118 /* BottomShadowGradient.swift in Sources */,
 				5A1FBFBA25C6C46D00E3D721 /* SpecLabel.swift in Sources */,
