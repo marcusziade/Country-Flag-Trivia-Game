@@ -216,7 +216,7 @@ class CountryDetailViewController: UIViewController {
             country.coordinate = CLLocationCoordinate2D(latitude: location[0], longitude: location[1])
             mapView.addAnnotation(country)
         } else {
-            mapView.isHidden = true
+            mapView.mapType = .satelliteFlyover
         }
     }
 
