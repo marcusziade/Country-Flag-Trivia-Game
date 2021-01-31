@@ -73,12 +73,12 @@ class CountriesListViewController: UIViewController {
     
     // MARK: - Methods
     func createLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout {
-            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-
+        let layout = UICollectionViewCompositionalLayout { [weak self] _, environment in
+            let columns = self?.columnsFor(traitCollection: environment.traitCollection)
+            let itemDimen: CGFloat = 1.0 / columns!
             let item = NSCollectionLayoutItem(
                 layoutSize: NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1.0),
+                    widthDimension: .fractionalWidth(itemDimen),
                     heightDimension: .fractionalHeight(1.0)
                 )
             )
@@ -87,16 +87,27 @@ class CountriesListViewController: UIViewController {
             let containerGroup = NSCollectionLayoutGroup.horizontal(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1.0),
-                    heightDimension: .fractionalWidth(0.4)
-                ),
-                subitem: item,
-                count: 2
+                    heightDimension: .fractionalWidth(itemDimen)
+                ), subitems: [item]
             )
 
             let section = NSCollectionLayoutSection(group: containerGroup)
             return section
         }
         return layout
+    }
+
+    func columnsFor(traitCollection: UITraitCollection) -> CGFloat {
+        switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
+            case (.compact, .regular): //iPhone Portrait
+                return 2
+            case (.compact, .compact):
+                return 2
+            case (.regular, .regular): //iPad
+                return 5
+            default:
+                return 2
+        }
     }
 
     func configureDataSource() {
