@@ -13,10 +13,11 @@ import MapKit
 class CountryDetailViewController: UIViewController {
 
     // MARK: - UI Components
-    let scrollView: UIScrollView = {
+    lazy var scrollView: UIScrollView = {
         let view = UIScrollView().forAutoLayout()
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
+        view.delegate = self
         return view
     }()
 
@@ -44,7 +45,7 @@ class CountryDetailViewController: UIViewController {
     let capitalLabel: UILabel = {
         let label = UILabel().forAutoLayout()
         label.text = "Capital"
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.numberOfLines = 0
         return label
     }()
@@ -52,7 +53,7 @@ class CountryDetailViewController: UIViewController {
     let subregionLabel: UILabel = {
         let label = UILabel().forAutoLayout()
         label.text = "Sub-region"
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.numberOfLines = 0
         return label
     }()
@@ -60,28 +61,28 @@ class CountryDetailViewController: UIViewController {
     let nativeNameLabel: UILabel = {
         let label = UILabel().forAutoLayout()
         label.text = "Native Name"
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         return label
     }()
 
     let demonymLabel: UILabel = {
         let label = UILabel().forAutoLayout()
         label.text = "Demonym"
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         return label
     }()
 
     let populationLabel: UILabel = {
         let label = UILabel().forAutoLayout()
         label.text = "Population"
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         return label
     }()
 
     let timeZonesLabel: UILabel = {
         let label = UILabel().forAutoLayout()
         label.text = "Timezones: "
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         return label
     }()
 
@@ -89,7 +90,7 @@ class CountryDetailViewController: UIViewController {
         let label = UILabel().forAutoLayout()
         label.text = "Currencies: "
         label.numberOfLines = 0
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         return label
     }()
 
@@ -97,7 +98,7 @@ class CountryDetailViewController: UIViewController {
         let label = UILabel().forAutoLayout()
         label.text = "Languages: "
         label.numberOfLines = 0
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         return label
     }()
 
@@ -170,9 +171,22 @@ class CountryDetailViewController: UIViewController {
     }
 }
 
+// MARK: - UIScrollView Delegate Methods
+extension CountryDetailViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0 {
+            scrollView.contentOffset.y = 0
+        }
+
+        if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.height {
+            scrollView.contentOffset.y = scrollView.contentSize.height - scrollView.bounds.height
+        }
+    }
+}
+
 import SwiftUI
 
 struct CountryDetailViewController_Preview: PreviewProvider {
-    static var previews: some View = createPreview(for: NavigationController(rootViewController: CountryDetailViewController(country: Country.generateMockCountry())), mode: .dark)
+    static var previews: some View = createPreview(for: NavigationController(rootViewController: CountryDetailViewController(country: Country.generateMockCountry())), mode: .light)
 }
 

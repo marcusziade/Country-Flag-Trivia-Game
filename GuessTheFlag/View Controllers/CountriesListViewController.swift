@@ -31,7 +31,7 @@ class CountriesListViewController: UIViewController {
     lazy private var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).forAutoLayout()
         view.delegate = self
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .clear
         return view
     }()
 
@@ -41,13 +41,25 @@ class CountriesListViewController: UIViewController {
         picker.addTarget(self, action: #selector(regionChanged), for: .valueChanged)
         return picker
     }()
+
+    private lazy var gradientLayer: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor.orange.cgColor, UIColor.white.cgColor, UIColor.blue.cgColor, UIColor.white.cgColor, UIColor.cyan.cgColor, UIColor.yellow.cgColor, UIColor.green.cgColor, UIColor.red.cgColor]
+        gradient.startPoint = CGPoint(x: 0.3, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.9, y: 0.8)
+        gradient.opacity = 0.4
+        return gradient
+    }()
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.titleView = regionPicker
         navigationItem.backButtonDisplayMode = .minimal
-        
+        view.backgroundColor = .systemBackground
+
+        view.layer.addSublayer(gradientLayer)
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),

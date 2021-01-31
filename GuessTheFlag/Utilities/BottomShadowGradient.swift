@@ -24,7 +24,7 @@ class BottomShadowGradient: UIView {
         let context = UIGraphicsGetCurrentContext()!
         let gradientColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7089041096)
         let gradientColor2 = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-        let gradient = CGGradient(colorsSpace: nil, colors: [gradientColor2.cgColor, gradientColor.cgColor] as CFArray, locations: [0.1, 0.9])!
+        let gradient = CGGradient(colorsSpace: nil, colors: [gradientColor2.cgColor, gradientColor.cgColor] as CFArray, locations: [0.6, 1.0])!
         let rectangleRect = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: frame.height)
         let rectanglePath = UIBezierPath(rect: rectangleRect)
         context.saveGState()

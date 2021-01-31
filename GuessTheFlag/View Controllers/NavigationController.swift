@@ -18,5 +18,6 @@ class NavigationController: UINavigationController {
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.isTranslucent = true
+        navigationBar.tintColor = .systemTeal
     }
 }

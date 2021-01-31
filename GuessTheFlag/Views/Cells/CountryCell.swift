@@ -20,7 +20,7 @@ class CountryCell: UICollectionViewCell, Reusable {
         let view = UIImageView().forAutoLayout()
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
-        view.image = UIImage(named: "Finland")!
+        view.image = UIImage(named: "Italy")!
         return view
     }()
 
@@ -42,16 +42,10 @@ class CountryCell: UICollectionViewCell, Reusable {
         return label
     }()
 
-    let bottomShadow: UIView = {
-        let gradientView = BottomShadowGradient()
+    let dimmingView: UIView = {
         let view = UIView().forAutoLayout()
-        view.addSubview(gradientView)
-        NSLayoutConstraint.activate([
-            gradientView.topAnchor.constraint(equalTo: view.topAnchor),
-            gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
+        view.backgroundColor = .black
+        view.alpha = 0.25
         return view
     }()
 
@@ -62,7 +56,7 @@ class CountryCell: UICollectionViewCell, Reusable {
         contentView.layer.masksToBounds = true
 
         contentView.addSubview(flagImageView)
-        flagImageView.addSubview(bottomShadow)
+        flagImageView.addSubview(dimmingView)
         let stackView = UIStackView(arrangedSubviews: [nameLabel, capitalLabel]).forAutoLayout().forAutoLayout()
         stackView.axis = .vertical
         stackView.alignment = .leading
@@ -75,10 +69,10 @@ class CountryCell: UICollectionViewCell, Reusable {
             flagImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             flagImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
-            bottomShadow.topAnchor.constraint(equalTo: contentView.topAnchor),
-            bottomShadow.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            bottomShadow.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            bottomShadow.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            dimmingView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            dimmingView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            dimmingView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            dimmingView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
             contentView.bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1),
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: contentView.leadingAnchor, multiplier: 1),
