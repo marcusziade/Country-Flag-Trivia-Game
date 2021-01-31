@@ -1,14 +1,29 @@
 //
-//  PaddingLabel.swift
+//  SpecLabel.swift
 //  GuessTheFlag
 //
-//  Created by Marcus Ziadé on 30.1.2021.
+//  Created by Marcus Ziadé on 31.1.2021.
 //  Copyright © 2021 Marcus Ziadé. All rights reserved.
 //
 
 import UIKit
 
-class PaddingLabel: UILabel {
+class SpecLabel: UILabel {
+
+    init(textColor color: UIColor, text title: String) {
+        super.init(frame: .zero)
+        font = UIFont.preferredFont(forTextStyle: .headline)
+        numberOfLines = 0
+        textAlignment = .center
+        backgroundColor = color
+        text = title
+        textColor = .white
+        padding(8, 8, 0, 0)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     var insets = UIEdgeInsets.zero
 

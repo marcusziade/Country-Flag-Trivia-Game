@@ -31,90 +31,56 @@ class CountryDetailViewController: UIViewController {
 
     let flagImageView: UIImageView = {
         let view = UIImageView().forAutoLayout()
-        view.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 250).isActive = true
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
+        view.isUserInteractionEnabled = true
         return view
     }()
 
-    let nameLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.text = "Country"
+    let nameLabel: SpecLabel = {
+        let label = SpecLabel(textColor: .systemPurple, text: "Country").forAutoLayout()
         label.font = UIFont.preferredFont(forTextStyle: .title1, compatibleWith: .init(legibilityWeight: .bold))
-        label.numberOfLines = 0
-        label.textAlignment = .center
         return label
     }()
 
-    let capitalLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.text = "Capital"
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.numberOfLines = 0
-        label.textAlignment = .center
+    let capitalLabel: SpecLabel = {
+        let label = SpecLabel(textColor: .systemIndigo, text: "Capital").forAutoLayout()
         return label
     }()
 
-    let subregionLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.text = "Sub-region"
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.numberOfLines = 0
-        label.textAlignment = .center
+    let subregionLabel: SpecLabel = {
+        let label = SpecLabel(textColor: .systemBlue, text: "Sub-region").forAutoLayout()
         return label
     }()
 
-    let nativeNameLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.text = "Native Name"
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.numberOfLines = 0
-        label.textAlignment = .center
+    let nativeNameLabel: SpecLabel = {
+        let label = SpecLabel(textColor: .systemGreen, text: "Native Name").forAutoLayout()
         return label
     }()
 
-    let demonymLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.text = "Demonym"
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.numberOfLines = 0
-        label.textAlignment = .center
+    let demonymLabel: SpecLabel = {
+        let label = SpecLabel(textColor: .systemTeal, text: "Demonym").forAutoLayout()
         return label
     }()
 
-    let populationLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.text = "Population"
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.numberOfLines = 0
-        label.textAlignment = .center
+    let populationLabel: SpecLabel = {
+        let label = SpecLabel(textColor: .systemYellow, text: "Population").forAutoLayout()
         return label
     }()
 
-    let timeZonesLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.text = "Timezones:\n"
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.numberOfLines = 0
-        label.textAlignment = .center
+    let timeZonesLabel: SpecLabel = {
+        let label = SpecLabel(textColor: .systemOrange, text: "Timezones:\n").forAutoLayout()
         return label
     }()
 
-    let currenciesLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.text = "Currencies:\n"
-        label.numberOfLines = 0
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.textAlignment = .center
+    let currenciesLabel: SpecLabel = {
+        let label = SpecLabel(textColor: .systemRed, text: "Currencies:\n").forAutoLayout()
         return label
     }()
 
-    let languagesLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.text = "Languages:\n"
-        label.numberOfLines = 0
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.textAlignment = .center
+    let languagesLabel: SpecLabel = {
+        let label = SpecLabel(textColor: .systemPink, text: "Languages:\n").forAutoLayout()
         return label
     }()
 
@@ -133,6 +99,20 @@ class CountryDetailViewController: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 75).isActive = true
         button.widthAnchor.constraint(equalToConstant: 75).isActive = true
         button.addTarget(self, action: #selector(goUp), for: .touchDown)
+        return button
+    }()
+
+    lazy var goDownButton: UIButton = {
+        let button = UIButton().forAutoLayout()
+        button.setImage(UIImage(systemName: "mappin.circle"), for: .normal)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .systemTeal
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        button.addTarget(self, action: #selector(goDown), for: .touchDown)
+        button.addShadow()
         return button
     }()
 
@@ -170,11 +150,12 @@ class CountryDetailViewController: UIViewController {
 
         let stackView = UIStackView(arrangedSubviews: [flagImageView, nameLabel, capitalLabel, subregionLabel, nativeNameLabel, demonymLabel, populationLabel, timeZonesLabel, currenciesLabel, languagesLabel]).forAutoLayout()
         stackView.axis = .vertical
-        stackView.spacing = 12
+        stackView.spacing = 0
         stackView.alignment = .center
         contentView.addSubview(stackView)
         contentView.addSubview(mapView)
         mapView.addSubview(goUpButton)
+        flagImageView.addSubview(goDownButton)
 
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -193,10 +174,10 @@ class CountryDetailViewController: UIViewController {
             flagImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 
             stackView.topAnchor.constraint(equalTo: flagImageView.topAnchor),
-            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: contentView.leadingAnchor, multiplier: 2),
-            contentView.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 2),
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: contentView.leadingAnchor, multiplier: 0),
+            contentView.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 0),
 
-            mapView.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 4),
+            mapView.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 0),
             mapView.heightAnchor.constraint(equalTo: view.heightAnchor),
             mapView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
@@ -204,7 +185,19 @@ class CountryDetailViewController: UIViewController {
 
             mapView.bottomAnchor.constraint(equalToSystemSpacingBelow: goUpButton.bottomAnchor, multiplier: 8),
             mapView.trailingAnchor.constraint(equalToSystemSpacingAfter: goUpButton.trailingAnchor, multiplier: 1),
+            flagImageView.bottomAnchor.constraint(equalToSystemSpacingBelow: goDownButton.bottomAnchor, multiplier: 1),
+            flagImageView.trailingAnchor.constraint(equalToSystemSpacingAfter: goDownButton.trailingAnchor, multiplier: 1.5),
 
+            flagImageView.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            nameLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            capitalLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            subregionLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            nativeNameLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            demonymLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            populationLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            timeZonesLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            currenciesLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            languagesLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor)
         ])
 
         configureMapView()
@@ -228,12 +221,11 @@ class CountryDetailViewController: UIViewController {
         HapticEngine.rigid.impactOccurred()
         scrollView.scrollToTop()
     }
-}
-extension UIScrollView {
-    func scrollToTop() {
-        let desiredOffset = CGPoint(x: 0, y: -contentInset.top)
-        setContentOffset(desiredOffset, animated: true)
-   }
+
+    @objc private func goDown() {
+        HapticEngine.rigid.impactOccurred()
+        scrollView.scrollsToBottom(animated: true)
+    }
 }
 
 // MARK: - UIScrollView Delegate Methods
