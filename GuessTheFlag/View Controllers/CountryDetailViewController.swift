@@ -37,8 +37,9 @@ class CountryDetailViewController: UIViewController {
     let nameLabel: UILabel = {
         let label = UILabel().forAutoLayout()
         label.text = "Country"
-        label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.font = UIFont.preferredFont(forTextStyle: .title1, compatibleWith: .init(legibilityWeight: .bold))
         label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
 
@@ -47,6 +48,7 @@ class CountryDetailViewController: UIViewController {
         label.text = "Capital"
         label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
 
@@ -55,6 +57,7 @@ class CountryDetailViewController: UIViewController {
         label.text = "Sub-region"
         label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
 
@@ -62,6 +65,8 @@ class CountryDetailViewController: UIViewController {
         let label = UILabel().forAutoLayout()
         label.text = "Native Name"
         label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
 
@@ -69,6 +74,8 @@ class CountryDetailViewController: UIViewController {
         let label = UILabel().forAutoLayout()
         label.text = "Demonym"
         label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
 
@@ -76,29 +83,35 @@ class CountryDetailViewController: UIViewController {
         let label = UILabel().forAutoLayout()
         label.text = "Population"
         label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
 
     let timeZonesLabel: UILabel = {
         let label = UILabel().forAutoLayout()
-        label.text = "Timezones: "
+        label.text = "Timezones:\n"
         label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
 
     let currenciesLabel: UILabel = {
         let label = UILabel().forAutoLayout()
-        label.text = "Currencies: "
+        label.text = "Currencies:\n"
         label.numberOfLines = 0
         label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.textAlignment = .center
         return label
     }()
 
     let languagesLabel: UILabel = {
         let label = UILabel().forAutoLayout()
-        label.text = "Languages: "
+        label.text = "Languages:\n"
         label.numberOfLines = 0
         label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.textAlignment = .center
         return label
     }()
 
@@ -125,11 +138,11 @@ class CountryDetailViewController: UIViewController {
     init(country: Country) {
         flagImageView.sd_setImage(with: country.flag, placeholderImage: UIImage())
         nameLabel.text = "\(country.name)"
-        capitalLabel.text = "Capital: \(country.capital)"
-        demonymLabel.text = "Demonym: \(country.demonym)"
-        subregionLabel.text = "Sub-region: \(country.subregion)"
-        nativeNameLabel.text = "Native name: \(country.nativeName)"
-        populationLabel.text = "Population: \(country.population)"
+        capitalLabel.text = "Capital:\n\(country.capital)"
+        demonymLabel.text = "Demonym:\n\(country.demonym)"
+        subregionLabel.text = "Sub-region:\n\(country.subregion)"
+        nativeNameLabel.text = "Native name:\n\(country.nativeName)"
+        populationLabel.text = "Population:\n\(country.population)"
         mapView.centerCoordinate = .init(latitude: country.latlng[0], longitude: country.latlng[1])
 
         super.init(nibName: nil, bundle: nil)
@@ -156,7 +169,7 @@ class CountryDetailViewController: UIViewController {
         let stackView = UIStackView(arrangedSubviews: [flagImageView, nameLabel, capitalLabel, subregionLabel, nativeNameLabel, demonymLabel, populationLabel, timeZonesLabel, currenciesLabel, languagesLabel]).forAutoLayout()
         stackView.axis = .vertical
         stackView.spacing = 12
-        stackView.alignment = .leading
+        stackView.alignment = .center
         contentView.addSubview(stackView)
         contentView.addSubview(mapView)
         mapView.addSubview(goUpButton)
@@ -177,6 +190,10 @@ class CountryDetailViewController: UIViewController {
             flagImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             flagImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 
+            stackView.topAnchor.constraint(equalTo: flagImageView.topAnchor),
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: contentView.leadingAnchor, multiplier: 2),
+            contentView.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 2),
+
             mapView.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 4),
             mapView.heightAnchor.constraint(equalTo: view.heightAnchor),
             mapView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -185,6 +202,7 @@ class CountryDetailViewController: UIViewController {
 
             mapView.bottomAnchor.constraint(equalToSystemSpacingBelow: goUpButton.bottomAnchor, multiplier: 8),
             mapView.trailingAnchor.constraint(equalToSystemSpacingAfter: goUpButton.trailingAnchor, multiplier: 1),
+
         ])
     }
 

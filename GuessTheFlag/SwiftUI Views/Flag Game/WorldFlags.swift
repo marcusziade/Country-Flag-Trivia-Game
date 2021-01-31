@@ -78,19 +78,20 @@ struct WorldFlags: View {
         if number == correctAnswer {
             scoreTitle = "Correct ✅\n" + "+15 XP!"
             alertMessage = "That's the flag of \(countries[number])"
-            UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
+            score += 15
+            UserDefaults.standard.set(self.score, forKey: "ScoreWorld")
             
             if score >= 450 {
                 self.playerLevel += 1
                 self.score = 0
-                UserDefaults.standard.set(self.playerLevel, forKey: "LevelEurope")
-                UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
+                UserDefaults.standard.set(self.playerLevel, forKey: "LevelWorld")
+                UserDefaults.standard.set(self.score, forKey: "ScoreWorld")
             }
         } else {
             scoreTitle = "Wrong 🚫\n" + "-10 XP"
             alertMessage = "That's the flag of \(countries[number])"
             self.score -= 10
-            UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
+            UserDefaults.standard.set(self.score, forKey: "ScoreWorld")
         }
         showingScore = true
     }

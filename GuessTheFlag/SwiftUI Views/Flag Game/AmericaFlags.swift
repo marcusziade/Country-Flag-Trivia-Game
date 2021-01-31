@@ -79,19 +79,19 @@ struct AmericaFlags: View {
             scoreTitle = "Correct ✅\n" + "+15 XP!"
             alertMessage = "That's the flag of \(countries[number])"
             self.score += 15
-            UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
+            UserDefaults.standard.set(self.score, forKey: "ScoreAmericas")
             
             if score >= 450 {
                 self.playerLevel += 1
                 self.score = 0
-                UserDefaults.standard.set(self.playerLevel, forKey: "LevelEurope")
-                UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
+                UserDefaults.standard.set(self.playerLevel, forKey: "LevelAmericas")
+                UserDefaults.standard.set(self.score, forKey: "ScoreAmericas")
             }
         } else {
             scoreTitle = "Wrong 🚫\n" + "-10 XP"
             alertMessage = "That's the flag of \(countries[number])"
             self.score -= 10
-            UserDefaults.standard.set(self.score, forKey: "ScoreEurope")
+            UserDefaults.standard.set(self.score, forKey: "ScoreAmericas")
         }
         showingScore = true
     }
