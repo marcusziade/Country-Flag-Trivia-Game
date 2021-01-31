@@ -8,6 +8,7 @@
 
 import UIKit
 import StoreKit
+import Lottie
 
 class AboutViewController: UIViewController {
 
@@ -83,6 +84,15 @@ class AboutViewController: UIViewController {
         return label
     }()
 
+    private lazy var animationView: AnimationView = {
+        let view = AnimationView(name: "coffee").forAutoLayout()
+        view.contentMode = .scaleAspectFit
+        view.loopMode = .playOnce
+        view.backgroundColor = .clear
+        view.alpha = 0
+        return view
+    }()
+
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,12 +110,13 @@ class AboutViewController: UIViewController {
         contentView.addSubview(stackView)
 
         button.addSubview(loader)
+        view.addSubview(animationView)
 
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -123,6 +134,9 @@ class AboutViewController: UIViewController {
 
             loader.centerYAnchor.constraint(equalTo: button.centerYAnchor),
             loader.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+
+            animationView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
 
         fetchProducts()
@@ -147,6 +161,18 @@ class AboutViewController: UIViewController {
         } else {
             loader.stopAnimating()
             button.setTitle("☕️ \(products[0].localizedTitle) \(products[0].priceLocale.currencySymbol ?? "")\(products[0].price)", for: .normal)
+        }
+    }
+
+    func showCoffeeAnimation() {
+        UIView.animate(withDuration: 0.2) { [self] in
+            animationView.alpha = 1
+        }
+
+        animationView.play { [weak self] _ in
+            UIView.animate(withDuration: 0.2) { [self] in
+                self?.animationView.alpha = 0
+            }
         }
     }
 
@@ -181,6 +207,7 @@ extension AboutViewController: SKPaymentTransactionObserver {
                     isLoading(false)
                     let transaction: SKPaymentTransaction = $0
                     SKPaymentQueue.default().finishTransaction(transaction)
+                    showCoffeeAnimation()
                 case .failed:
                     print("Purchase failed")
                     isLoading(false)

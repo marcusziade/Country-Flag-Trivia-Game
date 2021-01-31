@@ -20,6 +20,9 @@
 		2CB7C7002352EC4B0068ADE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */; };
 		2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */; };
 		5A1FBFAD25C5E7EC00E3D721 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFAC25C5E7EC00E3D721 /* PaddingLabel.swift */; };
+		5A1FBFAF25C68C3B00E3D721 /* ThanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFAE25C68C3B00E3D721 /* ThanksViewController.swift */; };
+		5A1FBFB225C68DD200E3D721 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1FBFB125C68DD200E3D721 /* Lottie */; };
+		5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB325C68F6100E3D721 /* coffee.json */; };
 		5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C12530A76000C4FC39 /* FlagStore.swift */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
@@ -74,6 +77,8 @@
 		2CB7C7022352EC4B0068ADE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB7C7042352EC4B0068ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A1FBFAC25C5E7EC00E3D721 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		5A1FBFAE25C68C3B00E3D721 /* ThanksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksViewController.swift; sourceTree = "<group>"; };
+		5A1FBFB325C68F6100E3D721 /* coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee.json; sourceTree = "<group>"; };
 		5A2690C12530A76000C4FC39 /* FlagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStore.swift; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 			files = (
 				5A53C2E725C544A3005ACDFD /* SDWebImage in Frameworks */,
 				5A53C2E325C54490005ACDFD /* SDWebImageSVGCoder in Frameworks */,
+				5A1FBFB225C68DD200E3D721 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +148,7 @@
 				5AEA07A325C5479E00DBA23F /* Utilities */,
 				5A2CC62525C4CCD500525C9A /* Supporting Files */,
 				2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */,
+				5A1FBFB325C68F6100E3D721 /* coffee.json */,
 				2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */,
 				2CB7C7042352EC4B0068ADE2 /* Info.plist */,
 				2CB7C6FE2352EC4B0068ADE2 /* Preview Content */,
@@ -232,6 +239,7 @@
 				5ADC6647253AF7F7001E09B3 /* CountriesListViewController.swift */,
 				5A53C2D225C53B9C005ACDFD /* CountryDetailViewController.swift */,
 				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
+				5A1FBFAE25C68C3B00E3D721 /* ThanksViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -295,6 +303,7 @@
 			packageProductDependencies = (
 				5A53C2E225C54490005ACDFD /* SDWebImageSVGCoder */,
 				5A53C2E625C544A3005ACDFD /* SDWebImage */,
+				5A1FBFB125C68DD200E3D721 /* Lottie */,
 			);
 			productName = GuessTheFlag;
 			productReference = 2CB7C6F32352EC490068ADE2 /* Master of Flags.app */;
@@ -327,6 +336,7 @@
 			packageReferences = (
 				5A53C2E125C54490005ACDFD /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
 				5A53C2E525C544A3005ACDFD /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				5A1FBFB025C68DD200E3D721 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 2CB7C6F42352EC490068ADE2 /* Products */;
 			projectDirPath = "";
@@ -345,6 +355,7 @@
 				2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */,
 				2CB7C7002352EC4B0068ADE2 /* Preview Assets.xcassets in Resources */,
 				2CB7C6FD2352EC4B0068ADE2 /* Assets.xcassets in Resources */,
+				5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +416,7 @@
 				5AAE718C25C56080003F8118 /* NavigationController.swift in Sources */,
 				5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */,
 				5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */,
+				5A1FBFAF25C68C3B00E3D721 /* ThanksViewController.swift in Sources */,
 				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
 				5AAE718725C55D50003F8118 /* BottomShadowGradient.swift in Sources */,
 			);
@@ -610,6 +622,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A1FBFB025C68DD200E3D721 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.9;
+			};
+		};
 		5A53C2E125C54490005ACDFD /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:SDWebImage/SDWebImageSVGCoder.git";
@@ -629,6 +649,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A1FBFB125C68DD200E3D721 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A1FBFB025C68DD200E3D721 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		5A53C2E225C54490005ACDFD /* SDWebImageSVGCoder */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A53C2E125C54490005ACDFD /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
