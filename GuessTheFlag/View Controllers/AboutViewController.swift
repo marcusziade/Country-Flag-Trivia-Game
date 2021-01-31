@@ -103,15 +103,15 @@ class AboutViewController: UIViewController {
         view.layer.addSublayer(gradientLayer)
         SKPaymentQueue.default().add(self)
 
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, infoLabel, button]).forAutoLayout()
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, infoLabel]).forAutoLayout()
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.spacing = 48
-        stackView.setCustomSpacing(64, after: infoLabel)
 
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(stackView)
+        view.addSubview(button)
 
         button.addSubview(loader)
         view.addSubview(animationView)
@@ -131,7 +131,11 @@ class AboutViewController: UIViewController {
             stackView.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: contentView.topAnchor, multiplier: 2),
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: contentView.leadingAnchor, multiplier: 3),
             contentView.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 3),
-            contentView.bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 3),
+            contentView.bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 10),
+
+            button.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: button.trailingAnchor, multiplier: 3),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: button.bottomAnchor, multiplier: 2),
 
             button.heightAnchor.constraint(equalToConstant: 55),
             button.widthAnchor.constraint(equalTo: stackView.widthAnchor),
