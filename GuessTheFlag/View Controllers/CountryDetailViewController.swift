@@ -14,6 +14,7 @@ class CountryDetailViewController: UIViewController {
 
     // MARK: - Properties
     var location: [Double]! = nil
+    var mapConfigured: Bool = false
 
     // MARK: - UI Components
     lazy var scrollView: UIScrollView = {
@@ -218,6 +219,7 @@ class CountryDetailViewController: UIViewController {
         } else {
             mapView.mapType = .satelliteFlyover
         }
+        mapConfigured = true
     }
 
     // MARK: - Selectors
@@ -229,7 +231,7 @@ class CountryDetailViewController: UIViewController {
     @objc private func goDown() {
         HapticEngine.rigid.impactOccurred()
         scrollView.scrollsToBottom(animated: true)
-        configureMapView()
+        if !mapConfigured { configureMapView() }
     }
 }
 
@@ -246,7 +248,7 @@ extension CountryDetailViewController: UIScrollViewDelegate {
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        configureMapView()
+        if !mapConfigured { configureMapView() }
     }
 }
 
