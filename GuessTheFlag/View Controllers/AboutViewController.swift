@@ -162,6 +162,7 @@ class AboutViewController: UIViewController {
         var parentalGate = ParentalGateView()
         parentalGate.onCancel = { [weak self] in
             guard let self = self else { return }
+            HapticEngine.result.notificationOccurred(.error)
             self.dismiss(animated: true)
             if let tabBarController = UIApplication.shared.windows.first?.rootViewController as? UITabBarController {
                 tabBarController.selectedIndex = 1

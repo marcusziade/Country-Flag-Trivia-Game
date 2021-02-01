@@ -54,12 +54,14 @@ struct ParentalGateView: View {
                 .background(Triangle()
                                 .foregroundColor(.green)
                                 .frame(width: 100, height: 100)
-                                .onLongPressGesture {circleTapped ? onClose?() : print("Triangle Disabled") })
+                                .onTapGesture { !circleTapped ? onCancel?() : print("") }
+                                .onLongPressGesture { circleTapped ? onClose?() : onCancel?() })
 
                 Button("") {}
                 .background(Rectangle()
                                 .foregroundColor(.blue)
                                 .frame(width: 100, height: 100))
+                                .onTapGesture { onCancel?() }
 
                 Button("") {}
                 .background(Circle()
