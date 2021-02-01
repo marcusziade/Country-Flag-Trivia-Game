@@ -155,6 +155,24 @@ class AboutViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.alpha = 0
+
+        var parentalGate = ParentalGateView()
+        parentalGate.onClose = { [weak self] in
+            guard let self = self else { return }
+            self.dismiss(animated: true)
+            HapticEngine.result.notificationOccurred(.success)
+            UIView.animate(withDuration: 0.25) {
+                self.view.alpha = 1
+            }
+        }
+        let viewController = UIHostingController(rootView: parentalGate)
+        viewController.isModalInPresentation = true
+        present(viewController, animated: false)
+    }
+
     // MARK: - Methods
     func fetchProducts() {
         let request = SKProductsRequest(productIdentifiers: Set(Product.allCases.map(\.rawValue)))
