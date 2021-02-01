@@ -25,12 +25,24 @@ struct ParentalGateView: View {
 
     // MARK: - Properties
     var onClose: (() -> Void)?
+    var onCancel: (() -> Void)?
     @State private var circleTapped: Bool = false
 
     // MARK: - UI Layout
     var body: some View {
-        VStack(alignment: .center, spacing: 80) {
-            Spacer()
+        VStack(alignment: .center, spacing: 60) {
+            HStack {
+                Image(systemName: "arrow.left")
+                    .resizable()
+                    .frame(width: 40, height: 33)
+                    .foregroundColor(.red)
+                    .onTapGesture {
+                        HapticEngine.select.selectionChanged()
+                        onCancel?()
+                    }
+                Spacer()
+            }.padding([.leading, .top], 24)
+
             Text("Ask your parents")
                 .font(.largeTitle)
                 .fontWeight(.black)
@@ -60,9 +72,9 @@ struct ParentalGateView: View {
             Text("Tap inside the circle until the circle turns green, then hold triangle.")
                 .multilineTextAlignment(.center)
                 .font(.headline)
-                .padding(.bottom, 80)
-                .padding([.leading, .trailing], 24)
+                .padding([.leading, .trailing], 16)
                 .foregroundColor(.orange)
+            Spacer()
         }
     }
 }

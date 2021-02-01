@@ -160,6 +160,13 @@ class AboutViewController: UIViewController {
         view.alpha = 0
 
         var parentalGate = ParentalGateView()
+        parentalGate.onCancel = { [weak self] in
+            guard let self = self else { return }
+            self.dismiss(animated: true)
+            if let tabBarController = UIApplication.shared.windows.first?.rootViewController as? UITabBarController {
+                tabBarController.selectedIndex = 1
+            }
+        }
         parentalGate.onClose = { [weak self] in
             guard let self = self else { return }
             self.dismiss(animated: true)
@@ -170,7 +177,7 @@ class AboutViewController: UIViewController {
         }
         let viewController = UIHostingController(rootView: parentalGate)
         viewController.isModalInPresentation = true
-        present(viewController, animated: false)
+        present(viewController, animated: true)
     }
 
     // MARK: - Methods
