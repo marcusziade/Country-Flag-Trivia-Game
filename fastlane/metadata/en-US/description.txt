@@ -1,0 +1,5 @@
+This is Master of Flags, the game where you gather experience points (XP) and level up as you become familiar with the world's flags. There are 196 different flags in this game! Your objective is to learn them all.
+
+There are 5 different categories of games. Europe, Asia, Africa, Americas and the whole world. You gain 15 XP from a correct answer and lose 10 XP from a wrong answer. The correct answer is indicated by the spinning flag!
+
+Challenge your friends and see who can get the higher score. Learning can and should be fun!
