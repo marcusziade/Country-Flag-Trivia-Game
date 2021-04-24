@@ -157,28 +157,30 @@ class AboutViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        view.alpha = 0
-
-        var parentalGate = ParentalGateView()
-        parentalGate.onCancel = { [weak self] in
-            guard let self = self else { return }
-            HapticEngine.result.notificationOccurred(.error)
-            self.dismiss(animated: true)
-            if let tabBarController = UIApplication.shared.windows.first?.rootViewController as? UITabBarController {
-                tabBarController.selectedIndex = 1
+        if !Authentication.parentalGateUnlocked {
+            view.alpha = 0
+            var parentalGate = ParentalGateView()
+            parentalGate.onCancel = { [weak self] in
+                guard let self = self else { return }
+                HapticEngine.result.notificationOccurred(.error)
+                self.dismiss(animated: true)
+                if let tabBarController = UIApplication.shared.windows.first?.rootViewController as? UITabBarController {
+                    tabBarController.selectedIndex = 1
+                }
             }
-        }
-        parentalGate.onClose = { [weak self] in
-            guard let self = self else { return }
-            self.dismiss(animated: true)
-            HapticEngine.result.notificationOccurred(.success)
-            UIView.animate(withDuration: 0.25) {
-                self.view.alpha = 1
+            parentalGate.onClose = { [weak self] in
+                guard let self = self else { return }
+                Authentication.parentalGateUnlocked = true
+                self.dismiss(animated: true)
+                HapticEngine.result.notificationOccurred(.success)
+                UIView.animate(withDuration: 0.25) {
+                    self.view.alpha = 1
+                }
             }
+            let viewController = UIHostingController(rootView: parentalGate)
+            viewController.isModalInPresentation = true
+            present(viewController, animated: true)
         }
-        let viewController = UIHostingController(rootView: parentalGate)
-        viewController.isModalInPresentation = true
-        present(viewController, animated: true)
     }
 
     // MARK: - Methods

@@ -34,6 +34,7 @@
 		5A53C2D325C53B9C005ACDFD /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53C2D225C53B9C005ACDFD /* CountryDetailViewController.swift */; };
 		5A53C2E325C54490005ACDFD /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 5A53C2E225C54490005ACDFD /* SDWebImageSVGCoder */; };
 		5A53C2E725C544A3005ACDFD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5A53C2E625C544A3005ACDFD /* SDWebImage */; };
+		5A5C538F2633F5FB00070869 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C538E2633F5FB00070869 /* Authentication.swift */; };
 		5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */; };
 		5AAE718725C55D50003F8118 /* BottomShadowGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE718625C55D50003F8118 /* BottomShadowGradient.swift */; };
 		5AAE718C25C56080003F8118 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE718B25C56080003F8118 /* NavigationController.swift */; };
@@ -92,6 +93,7 @@
 		5A2CC62D25C5D6D600525C9A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		5A2CC62F25C5D6E800525C9A /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		5A53C2D225C53B9C005ACDFD /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
+		5A5C538E2633F5FB00070869 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateView.swift; sourceTree = "<group>"; };
 		5AAE718625C55D50003F8118 /* BottomShadowGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomShadowGradient.swift; sourceTree = "<group>"; };
 		5AAE718B25C56080003F8118 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				5AAE718625C55D50003F8118 /* BottomShadowGradient.swift */,
 				5AAE71A625C56DD1003F8118 /* HapticEngine.swift */,
 				5A1FBFB925C6C46D00E3D721 /* SpecLabel.swift */,
+				5A5C538E2633F5FB00070869 /* Authentication.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
 				5AAE718725C55D50003F8118 /* BottomShadowGradient.swift in Sources */,
 				5A1FBFBA25C6C46D00E3D721 /* SpecLabel.swift in Sources */,
+				5A5C538F2633F5FB00070869 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
