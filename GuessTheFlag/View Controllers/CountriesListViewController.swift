@@ -19,7 +19,6 @@ class CountriesListViewController: UIViewController {
     
     // MARK: - Properties
 
-    private var imageCancellables = Set<AnyCancellable>()
     private var cancellables = Set<AnyCancellable>()
     private var countries: [Country] = [] {
         didSet {
@@ -133,12 +132,15 @@ class CountriesListViewController: UIViewController {
             cell.configure(with: country)
         }
 
-        dataSource = UICollectionViewDiffableDataSource<Section, Country>(collectionView: collectionView,
-                                                                          cellProvider: { collectionView, indexPath, country -> UICollectionViewCell? in
-            return collectionView.dequeueConfiguredReusableCell(using: cellRegistration,
-                                                                for: indexPath,
-                                                                item: country)
-        })
+        dataSource = UICollectionViewDiffableDataSource<Section, Country>(
+            collectionView: collectionView,
+            cellProvider: { collectionView, indexPath, country -> UICollectionViewCell? in
+                return collectionView.dequeueConfiguredReusableCell(
+                    using: cellRegistration,
+                    for: indexPath,
+                    item: country
+                )
+            })
 
         reload()
     }
