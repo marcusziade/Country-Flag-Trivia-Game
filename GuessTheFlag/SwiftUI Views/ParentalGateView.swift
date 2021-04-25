@@ -50,25 +50,38 @@ struct ParentalGateView: View {
 
             Spacer()
             HStack(spacing: 130) {
-                Button("") { HapticEngine.select.selectionChanged() }
-                .background(Triangle()
-                                .foregroundColor(.green)
-                                .frame(width: 100, height: 100)
-                                .onTapGesture { !circleTapped ? onCancel?() : print("") }
-                                .onLongPressGesture { circleTapped ? onClose?() : onCancel?() })
+                Button("") {}
+                    .background(
+                        Triangle()
+                            .foregroundColor(.green)
+                            .frame(width: 100, height: 100)
+                            .onTapGesture {
+                                !circleTapped ? HapticEngine.notification.notificationOccurred(.error) : ()
+                            }
+                            .onLongPressGesture {
+                                circleTapped ? onClose?() : HapticEngine.notification.notificationOccurred(.error)
+                            }
+                    )
 
-                Button("") { HapticEngine.notification.notificationOccurred(.error) }
-                .background(Rectangle()
-                                .foregroundColor(.blue)
-                                .frame(width: 100, height: 100))
-                                .onTapGesture { onCancel?() }
+                Button("") {}
+                    .background(
+                        Rectangle()
+                            .foregroundColor(.blue)
+                            .frame(width: 100, height: 100)
+                    )
+                    .onTapGesture { HapticEngine.notification.notificationOccurred(.error) }
 
-                Button("") { HapticEngine.soft.impactOccurred() }
-                .background(Circle()
-                                .foregroundColor(circleTapped ? .green : .yellow)
-                                .frame(width: 100, height: 100)
-                                .animation(.easeInOut)
-                                .onTapGesture(count: 4) { circleTapped = true })
+                Button("") {}
+                    .background(
+                        Circle()
+                            .foregroundColor(circleTapped ? .green : .yellow)
+                            .frame(width: 100, height: 100)
+                            .animation(.easeInOut)
+                            .onTapGesture(count: 4) {
+                                circleTapped = true
+                                HapticEngine.notification.notificationOccurred(.success)
+                            }
+                    )
             }.padding()
 
             Text("Tap inside the circle until the circle turns green, then hold triangle.")
