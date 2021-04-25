@@ -9,7 +9,9 @@
 import UIKit
 
 class BottomShadowGradient: UIView {
+
     // MARK: - Initializers
+
     init() {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -18,7 +20,9 @@ class BottomShadowGradient: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     // MARK: - Methods
+
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         let context = UIGraphicsGetCurrentContext()!

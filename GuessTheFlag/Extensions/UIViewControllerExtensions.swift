@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - Child Viewcontroller install methods
+
 extension UIViewController {
 
     func install(_ child: UIViewController, to view: UIView, with constraints: [NSLayoutConstraint]) {
@@ -24,5 +26,4 @@ extension UIViewController {
         child.view.removeFromSuperview()
         child.removeFromParent()
     }
-
 }

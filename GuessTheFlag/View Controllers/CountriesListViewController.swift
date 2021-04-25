@@ -12,11 +12,13 @@ import Combine
 class CountriesListViewController: UIViewController {
 
     // MARK: - Types
+
     private enum Section: CaseIterable {
         case countries
     }
     
     // MARK: - Properties
+
     private var imageCancellables = Set<AnyCancellable>()
     private var cancellables = Set<AnyCancellable>()
     private var countries: [Country] = [] {
@@ -28,6 +30,7 @@ class CountriesListViewController: UIViewController {
     private let api = API()
     
     // MARK: - UI Components
+
     private lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).forAutoLayout()
         view.delegate = self
@@ -60,6 +63,7 @@ class CountriesListViewController: UIViewController {
     }()
     
     // MARK: - Lifecycle Methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.alpha = 0
@@ -84,6 +88,7 @@ class CountriesListViewController: UIViewController {
     }
     
     // MARK: - Methods
+
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { [weak self] _, environment in
             let columns = self?.columnsFor(traitCollection: environment.traitCollection)
@@ -171,6 +176,7 @@ class CountriesListViewController: UIViewController {
     }
 
     // MARK: - Selectors
+    
     @objc private func regionChanged() {
         HapticEngine.select.selectionChanged()
         switch regionPicker.selectedSegmentIndex {

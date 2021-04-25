@@ -12,12 +12,14 @@ import Combine
 class API {
     
     // MARK: - Types
+
     enum APIError: Error {
         case invalidResponse
         case statusCode(Int)
     }
     
     // MARK: - Properties
+
     private let baseURL = URL(string: "https://restcountries.eu/rest/v2")!
     
     let session: URLSession = {
@@ -36,6 +38,7 @@ class API {
     }()
     
     // MARK: - Methods
+    
     private func buildURL(path: String, query: [URLQueryItem]?) -> URL {
         var components = URLComponents(url: baseURL.appendingPathComponent(path), resolvingAgainstBaseURL: false)!
         components.queryItems = query

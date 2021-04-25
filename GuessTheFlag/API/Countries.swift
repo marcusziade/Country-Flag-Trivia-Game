@@ -25,13 +25,6 @@ extension API {
             .decode(type: [Country].self, decoder: jsonDecoder)
             .eraseToAnyPublisher()
     }
-        
-    func getEUCountries() -> AnyPublisher<[Country], Error> {
-
-        return get(path: "/region/europe", query: [], headers: [:])
-            .decode(type: [Country].self, decoder: jsonDecoder)
-            .eraseToAnyPublisher()
-    }
 
     func getAllCountries() -> AnyPublisher<[Country], Error> {
         return get(path: "", query: [], headers: [:])

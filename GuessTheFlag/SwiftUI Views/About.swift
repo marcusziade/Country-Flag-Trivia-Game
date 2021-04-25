@@ -10,8 +10,6 @@ import SwiftUI
 
 struct About: View {
     
-    let impact = UIImpactFeedbackGenerator()
-    
     @Environment(\.presentationMode) var presentationMode
     
     struct HeadingStyle: ViewModifier {

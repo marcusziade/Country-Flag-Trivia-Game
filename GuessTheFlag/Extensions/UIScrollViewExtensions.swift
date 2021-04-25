@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - Scroll to bottom and top
+
 extension UIScrollView {
     func scrollToTop() {
         let desiredOffset = CGPoint(x: 0, y: -contentInset.top)

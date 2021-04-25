@@ -13,17 +13,20 @@ import Lottie
 class AboutViewController: UIViewController {
 
     // MARK: - Types
+
     enum Product: String, CaseIterable {
         case buyCoffee = "com.marcusziade.knowtheflag.buycoffee"
     }
 
     // MARK: - Properties
+
     var products: [SKProduct] = []
     override var prefersStatusBarHidden: Bool {
         return true
     }
 
     // MARK: - UI Components
+
     let scrollView: UIScrollView = {
         let view = UIScrollView().forAutoLayout()
         view.showsVerticalScrollIndicator = false
@@ -98,6 +101,7 @@ class AboutViewController: UIViewController {
     }()
 
     // MARK: - Lifecycle methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layer.addSublayer(gradientLayer)
@@ -184,6 +188,7 @@ class AboutViewController: UIViewController {
     }
 
     // MARK: - Methods
+
     func fetchProducts() {
         let request = SKProductsRequest(productIdentifiers: Set(Product.allCases.map(\.rawValue)))
         request.delegate = self
@@ -213,6 +218,7 @@ class AboutViewController: UIViewController {
     }
 
     // MARK: - Selectors
+    
     @objc func buttonPressed() {
         let payment = SKPayment(product: products[0])
         SKPaymentQueue.default().add(payment)

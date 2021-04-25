@@ -28,5 +28,4 @@ extension MKMapView {
 
         return self.convert(point, toCoordinateFrom: self)
     }
-    
 }

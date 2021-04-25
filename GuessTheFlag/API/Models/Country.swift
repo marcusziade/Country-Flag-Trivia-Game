@@ -11,6 +11,7 @@ import Foundation
 struct Country: Codable, Hashable {
     
     // MARK: - Properties
+    
     let name: String
     let capital: String
     let subregion: String

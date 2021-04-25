@@ -13,9 +13,11 @@ import SDWebImage
 class CountryCell: UICollectionViewCell, Reusable {
 
     // MARK: - Properties
+
     var cancellables = Set<AnyCancellable>()
 
     // MARK: - UI Components
+
     let flagImageView: UIImageView = {
         let view = UIImageView().forAutoLayout()
         view.contentMode = .scaleAspectFill
@@ -50,6 +52,7 @@ class CountryCell: UICollectionViewCell, Reusable {
     }()
 
     // MARK: - Init
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.layer.cornerRadius = 8
@@ -57,7 +60,7 @@ class CountryCell: UICollectionViewCell, Reusable {
 
         contentView.addSubview(flagImageView)
         flagImageView.addSubview(dimmingView)
-        let stackView = UIStackView(arrangedSubviews: [nameLabel, capitalLabel]).forAutoLayout().forAutoLayout()
+        let stackView = UIStackView(arrangedSubviews: [nameLabel, capitalLabel]).forAutoLayout()
         stackView.axis = .vertical
         stackView.alignment = .leading
         stackView.spacing = 4
@@ -88,13 +91,6 @@ class CountryCell: UICollectionViewCell, Reusable {
     func configure(with country: Country) {
         nameLabel.text = country.name
         capitalLabel.text = country.capital
-//        URLSession.shared.dataTaskPublisher(for: country.flag)
-//            .map { UIImage(data: $0.data) }
-//            .replaceError(with: UIImage().withTintColor(.systemFill))
-//            .receive(on: DispatchQueue.main)
-//            .assign(to: \.image, on: flagImageView)
-//            .store(in: &cancellables)
-
         flagImageView.sd_setImage(with: country.flag, placeholderImage: UIImage().withTintColor(.systemFill))
     }
 }

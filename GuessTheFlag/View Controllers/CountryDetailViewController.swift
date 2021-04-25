@@ -13,10 +13,12 @@ import MapKit
 class CountryDetailViewController: UIViewController {
 
     // MARK: - Properties
+
     var location: [Double]! = nil
     var mapConfigured: Bool = false
 
     // MARK: - UI Components
+
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView().forAutoLayout()
         view.showsVerticalScrollIndicator = false
@@ -119,6 +121,7 @@ class CountryDetailViewController: UIViewController {
     }()
 
     // MARK: - Init
+
     init(country: Country) {
         flagImageView.sd_setImage(with: country.flag, placeholderImage: UIImage())
         nameLabel.text = "\(country.name)"
@@ -142,6 +145,7 @@ class CountryDetailViewController: UIViewController {
     }
 
     // MARK: - Lifecycle methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -204,6 +208,7 @@ class CountryDetailViewController: UIViewController {
     }
 
     // MARK: - Methods
+
     private func configureMapView() {
         if location.count > 0 {
             mapView.moveCenterByOffSet(offSet: CGPoint(x: 100, y: 100), coordinate: CLLocationCoordinate2D(latitude: location[0], longitude: location[1]))
@@ -223,6 +228,7 @@ class CountryDetailViewController: UIViewController {
     }
 
     // MARK: - Selectors
+
     @objc private func goUp() {
         HapticEngine.rigid.impactOccurred()
         scrollView.scrollToTop()
@@ -236,6 +242,7 @@ class CountryDetailViewController: UIViewController {
 }
 
 // MARK: - UIScrollView Delegate Methods
+
 extension CountryDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0 {

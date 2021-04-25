@@ -9,6 +9,9 @@
 import Foundation
 
 struct Currency: Codable, Hashable {
+
+    // MARK: - Properties
+    
     let code: String?
     let name: String?
     let symbol: String?

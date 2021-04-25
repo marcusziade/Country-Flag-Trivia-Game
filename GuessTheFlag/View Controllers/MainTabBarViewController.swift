@@ -12,6 +12,7 @@ import SwiftUI
 class MainTabBarController: UITabBarController {
     
     // MARK: - UI Components
+
     let flagGameView: UIHostingController<FlagsGameView> = {
         let view = UIHostingController(rootView: FlagsGameView())
         view.tabBarItem = UITabBarItem(
@@ -44,6 +45,7 @@ class MainTabBarController: UITabBarController {
     }()
 
     // MARK: - Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.tintColor = .label

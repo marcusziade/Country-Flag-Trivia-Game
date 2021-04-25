@@ -9,6 +9,9 @@
 import Foundation
 
 struct Language: Codable, Hashable {
+
+    // MARK: - Properties
+    
     let name: String
     let nativeName: String
 
