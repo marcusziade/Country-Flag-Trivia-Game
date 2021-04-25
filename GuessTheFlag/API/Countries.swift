@@ -19,15 +19,11 @@ enum Region: String, CaseIterable {
 
 extension API {
 
+    /// Fetches all countries based on selected region
+    /// - Parameter region: The selected world continent
+    /// - Returns: An array of countries
     func getCountries(for region: Region) -> AnyPublisher<[Country], Error> {
-
         return get(path: "/region/\(region)", query: [], headers: [:])
-            .decode(type: [Country].self, decoder: jsonDecoder)
-            .eraseToAnyPublisher()
-    }
-
-    func getAllCountries() -> AnyPublisher<[Country], Error> {
-        return get(path: "", query: [], headers: [:])
             .decode(type: [Country].self, decoder: jsonDecoder)
             .eraseToAnyPublisher()
     }
