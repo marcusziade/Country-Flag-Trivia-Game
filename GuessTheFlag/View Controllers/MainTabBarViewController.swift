@@ -23,15 +23,14 @@ class MainTabBarController: UITabBarController {
         return view
     }()
     
-    let countriesViewController: NavigationController = {
-        let viewController = CountriesListViewController()
-        let navigationController = NavigationController(rootViewController: viewController)
-        navigationController.tabBarItem = UITabBarItem(
+    let countriesViewController: UIHostingController<CountriesList> = {
+        let view = UIHostingController(rootView: CountriesList())
+        view.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(systemName: "doc.text.magnifyingglass"),
             selectedImage: UIImage(systemName: "doc.text.magnifyingglass")
         )
-        return navigationController
+        return view
     }()
 
     let aboutViewController: AboutViewController = {

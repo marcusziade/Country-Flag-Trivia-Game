@@ -6,15 +6,10 @@
 //  Copyright © 2021 Marcus Ziadé. All rights reserved.
 //
 
+import Kingfisher
 import UIKit
-import Combine
-import SDWebImage
 
 class CountryCell: UICollectionViewCell, Reusable {
-
-    // MARK: - Properties
-
-    var cancellables = Set<AnyCancellable>()
 
     // MARK: - UI Components
 
@@ -81,7 +76,6 @@ class CountryCell: UICollectionViewCell, Reusable {
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: contentView.leadingAnchor, multiplier: 1),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
         ])
-
     }
 
     required init?(coder: NSCoder) {
@@ -89,9 +83,9 @@ class CountryCell: UICollectionViewCell, Reusable {
     }
 
     func configure(with country: Country) {
-        nameLabel.text = country.name
-        capitalLabel.text = country.capital
-        flagImageView.sd_setImage(with: country.flag, placeholderImage: UIImage().withTintColor(.systemFill))
+        nameLabel.text = country.name.common
+        capitalLabel.text = country.capitalCity
+        flagImageView.kf.setImage(with: country.flag)
     }
 }
 

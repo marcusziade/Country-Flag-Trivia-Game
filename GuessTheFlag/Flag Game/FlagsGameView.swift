@@ -11,12 +11,6 @@ import Combine
 
 struct FlagsGameView: View {
     
-    init() {
-        UISegmentedControl.appearance().selectedSegmentTintColor = .systemTeal
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.label], for: .normal)
-    }
-    
     var regions = ["Europe", "Asia", "Africa", "Americas", "World"]
     @State private var selectedRegion = 0
     

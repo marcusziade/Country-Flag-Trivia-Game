@@ -8,21 +8,22 @@
 
 import Foundation
 
-struct Currency: Codable, Hashable {
+struct Currency: Codable, Hashable, Comparable {
+    static func < (lhs: Currency, rhs: Currency) -> Bool {
+        lhs.name == rhs.name
+    }
 
     // MARK: - Properties
     
     let code: String?
-    let name: String?
+    let name: String
     let symbol: String?
 
-    static func generateMockCurrencies() -> [Currency] {
-        return (0...3).map { index -> Currency in
-            return Currency(
-                code: "EUR",
-                name: "Euro",
-                symbol: "€"
-            )
-        }
+    static var mockCurrency: Currency {
+        return Currency(
+            code: "EUR",
+            name: "Euro",
+            symbol: "€"
+        )
     }
 }
