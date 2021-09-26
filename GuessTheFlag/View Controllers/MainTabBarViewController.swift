@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-class MainTabBarController: UITabBarController {
+final class MainTabBarController: UITabBarController {
     
     // MARK: - UI Components
 

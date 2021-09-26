@@ -10,7 +10,7 @@ import UIKit
 import StoreKit
 import Lottie
 
-class AboutViewController: UIViewController {
+final class AboutViewController: UIViewController {
 
     // MARK: - Types
 

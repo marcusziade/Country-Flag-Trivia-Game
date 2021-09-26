@@ -12,7 +12,6 @@
 		2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38414423563E2500F56257 /* AsiaFlags.swift */; };
 		2C384147235641A900F56257 /* AfricaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C384146235641A900F56257 /* AfricaFlags.swift */; };
 		2C384169235765BB00F56257 /* AmericaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C384168235765BB00F56257 /* AmericaFlags.swift */; };
-		2C556CBA236708480038F2D5 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C556CB9236708480038F2D5 /* About.swift */; };
 		2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C96E2C42358B7E600E5D154 /* WorldFlags.swift */; };
 		2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */; };
 		2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */; };
@@ -22,9 +21,6 @@
 		5A1FBFB225C68DD200E3D721 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1FBFB125C68DD200E3D721 /* Lottie */; };
 		5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB325C68F6100E3D721 /* coffee.json */; };
 		5A1FBFB825C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */; };
-		5A1FBFBA25C6C46D00E3D721 /* SpecLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB925C6C46D00E3D721 /* SpecLabel.swift */; };
-		5A1FBFBC25C6C5DD00E3D721 /* UIScrollViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFBB25C6C5DD00E3D721 /* UIScrollViewExtensions.swift */; };
-		5A1FBFBE25C6D27A00E3D721 /* MKMapViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFBD25C6D27A00E3D721 /* MKMapViewExtensions.swift */; };
 		5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C12530A76000C4FC39 /* FlagStore.swift */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
@@ -32,9 +28,6 @@
 		5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62D25C5D6D600525C9A /* Currency.swift */; };
 		5A5C538F2633F5FB00070869 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C538E2633F5FB00070869 /* Authentication.swift */; };
 		5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */; };
-		5AAE718725C55D50003F8118 /* BottomShadowGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE718625C55D50003F8118 /* BottomShadowGradient.swift */; };
-		5AAE718C25C56080003F8118 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE718B25C56080003F8118 /* NavigationController.swift */; };
-		5AAE71A525C56D35003F8118 /* UISegmentControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE71A425C56D35003F8118 /* UISegmentControlExtensions.swift */; };
 		5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE71A625C56DD1003F8118 /* HapticEngine.swift */; };
 		5AD6BEB526FF1905009B276F /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEB426FF1905009B276F /* Name.swift */; };
 		5AD6BEB826FF257B009B276F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AD6BEB726FF257B009B276F /* Kingfisher */; };
@@ -49,7 +42,6 @@
 		5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC664C253AF89B001E09B3 /* UIViewExtensions.swift */; };
 		5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */; };
 		5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC665C253B26E4001E09B3 /* LivePreview.swift */; };
-		5AEA079D25C5471F00DBA23F /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA079C25C5471F00DBA23F /* CountryCell.swift */; };
 		5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA07A425C547A900DBA23F /* Reusable.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +64,6 @@
 		2C38414423563E2500F56257 /* AsiaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsiaFlags.swift; sourceTree = "<group>"; };
 		2C384146235641A900F56257 /* AfricaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfricaFlags.swift; sourceTree = "<group>"; };
 		2C384168235765BB00F56257 /* AmericaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericaFlags.swift; sourceTree = "<group>"; };
-		2C556CB9236708480038F2D5 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		2C96E2C42358B7E600E5D154 /* WorldFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldFlags.swift; sourceTree = "<group>"; };
 		2CB7C6F32352EC490068ADE2 /* Master of Flags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Master of Flags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,9 +74,6 @@
 		2CB7C7042352EC4B0068ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A1FBFB325C68F6100E3D721 /* coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee.json; sourceTree = "<group>"; };
 		5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsExtensions.swift; sourceTree = "<group>"; };
-		5A1FBFB925C6C46D00E3D721 /* SpecLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecLabel.swift; sourceTree = "<group>"; };
-		5A1FBFBB25C6C5DD00E3D721 /* UIScrollViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtensions.swift; sourceTree = "<group>"; };
-		5A1FBFBD25C6D27A00E3D721 /* MKMapViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewExtensions.swift; sourceTree = "<group>"; };
 		5A2690C12530A76000C4FC39 /* FlagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStore.swift; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -94,9 +82,6 @@
 		5A2CC62D25C5D6D600525C9A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		5A5C538E2633F5FB00070869 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateView.swift; sourceTree = "<group>"; };
-		5AAE718625C55D50003F8118 /* BottomShadowGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomShadowGradient.swift; sourceTree = "<group>"; };
-		5AAE718B25C56080003F8118 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		5AAE71A425C56D35003F8118 /* UISegmentControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentControlExtensions.swift; sourceTree = "<group>"; };
 		5AAE71A625C56DD1003F8118 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
 		5AD6BEB426FF1905009B276F /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		5AD6BEBE26FF2A17009B276F /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
@@ -110,7 +95,6 @@
 		5ADC664C253AF89B001E09B3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		5ADC665C253B26E4001E09B3 /* LivePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePreview.swift; sourceTree = "<group>"; };
-		5AEA079C25C5471F00DBA23F /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		5AEA07A425C547A900DBA23F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,7 +134,6 @@
 				2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */,
 				2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */,
 				5ADC6636253AF21B001E09B3 /* API */,
-				5A2690BE2530A74C00C4FC39 /* Data */,
 				5A2690C82530B38B00C4FC39 /* SwiftUI Views */,
 				5ADC6646253AF7E7001E09B3 /* View Controllers */,
 				5A6E9EA12530E0510007C148 /* Flag Game */,
@@ -176,18 +159,9 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5A2690BE2530A74C00C4FC39 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				5A2690C12530A76000C4FC39 /* FlagStore.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		5A2690C82530B38B00C4FC39 /* SwiftUI Views */ = {
 			isa = PBXGroup;
 			children = (
-				2C556CB9236708480038F2D5 /* About.swift */,
 				5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */,
 				5A2690C52530B03300C4FC39 /* ViewModifiers.swift */,
 			);
@@ -227,17 +201,8 @@
 			children = (
 				5AD6BEC226FF3356009B276F /* SwiftUI */,
 				5AD6BEBD26FF2928009B276F /* ViewModels */,
-				5AD6BEBB26FF291D009B276F /* Cells */,
 			);
 			path = Encyclopedia;
-			sourceTree = "<group>";
-		};
-		5AD6BEBB26FF291D009B276F /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				5AEA079C25C5471F00DBA23F /* CountryCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		5AD6BEBD26FF2928009B276F /* ViewModels */ = {
@@ -280,6 +245,7 @@
 			children = (
 				5ADC663E253AF536001E09B3 /* Models */,
 				5ADC6637253AF223001E09B3 /* API.swift */,
+				5A2690C12530A76000C4FC39 /* FlagStore.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -297,7 +263,6 @@
 		5ADC6646253AF7E7001E09B3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5AAE718B25C56080003F8118 /* NavigationController.swift */,
 				5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */,
 				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
 			);
@@ -310,10 +275,7 @@
 				5ADC664C253AF89B001E09B3 /* UIViewExtensions.swift */,
 				5ADC665C253B26E4001E09B3 /* LivePreview.swift */,
 				5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */,
-				5AAE71A425C56D35003F8118 /* UISegmentControlExtensions.swift */,
 				5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */,
-				5A1FBFBB25C6C5DD00E3D721 /* UIScrollViewExtensions.swift */,
-				5A1FBFBD25C6D27A00E3D721 /* MKMapViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -322,9 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				5AEA07A425C547A900DBA23F /* Reusable.swift */,
-				5AAE718625C55D50003F8118 /* BottomShadowGradient.swift */,
 				5AAE71A625C56DD1003F8118 /* HapticEngine.swift */,
-				5A1FBFB925C6C46D00E3D721 /* SpecLabel.swift */,
 				5A5C538E2633F5FB00070869 /* Authentication.swift */,
 			);
 			path = Utilities;
@@ -419,10 +379,8 @@
 				5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */,
 				2C38413F235637B200F56257 /* EuropeFlags.swift in Sources */,
 				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
-				5AEA079D25C5471F00DBA23F /* CountryCell.swift in Sources */,
 				5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */,
 				5AD6BECC26FF492F009B276F /* CountryDetailVM.swift in Sources */,
-				5A1FBFBE25C6D27A00E3D721 /* MKMapViewExtensions.swift in Sources */,
 				2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */,
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,
 				2C384169235765BB00F56257 /* AmericaFlags.swift in Sources */,
@@ -430,24 +388,18 @@
 				2C38414323563BB400F56257 /* FlagsGameView.swift in Sources */,
 				5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */,
 				5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */,
-				2C556CBA236708480038F2D5 /* About.swift in Sources */,
-				5A1FBFBC25C6C5DD00E3D721 /* UIScrollViewExtensions.swift in Sources */,
 				5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */,
 				5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */,
-				5AAE71A525C56D35003F8118 /* UISegmentControlExtensions.swift in Sources */,
 				5ADC6638253AF223001E09B3 /* API.swift in Sources */,
 				2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */,
 				5AD6BECA26FF490E009B276F /* CountryDetail.swift in Sources */,
 				5AD6BEB526FF1905009B276F /* Name.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
-				5AAE718C25C56080003F8118 /* NavigationController.swift in Sources */,
 				5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */,
 				5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */,
 				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
-				5AAE718725C55D50003F8118 /* BottomShadowGradient.swift in Sources */,
 				5AD6BEC126FF2E86009B276F /* CountryListVM.swift in Sources */,
-				5A1FBFBA25C6C46D00E3D721 /* SpecLabel.swift in Sources */,
 				5A5C538F2633F5FB00070869 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -70,6 +70,8 @@ extension Country {
     }
 }
 
+// MARK: - Comparable
+
 extension Country: Comparable {
     static func < (lhs: Country, rhs: Country) -> Bool {
         lhs.id == rhs.id

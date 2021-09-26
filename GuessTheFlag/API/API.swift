@@ -17,7 +17,7 @@ enum Region: String, CaseIterable {
     case americas = "Americas"
 }
 
-class API {
+final class API {
 
     func getCountries() -> AnyPublisher<[Country], Error> {
         Just(Bundle.main.url(forResource: "countries", withExtension: "json"))

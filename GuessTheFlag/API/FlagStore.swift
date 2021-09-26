@@ -8,9 +8,8 @@
 
 import Foundation
 
-class FlagStore {
-    
-    // MARK: - Properties
+final class FlagStore {
+
     let europeFlags = [
         "Albania",
         "Andorra",
