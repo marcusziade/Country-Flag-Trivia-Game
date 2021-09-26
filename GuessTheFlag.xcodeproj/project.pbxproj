@@ -133,11 +133,11 @@
 			children = (
 				2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */,
 				2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */,
+				5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */,
 				5ADC6636253AF21B001E09B3 /* API */,
-				5A2690C82530B38B00C4FC39 /* SwiftUI Views */,
-				5ADC6646253AF7E7001E09B3 /* View Controllers */,
 				5A6E9EA12530E0510007C148 /* Flag Game */,
 				5AD6BEB926FF27E1009B276F /* Encyclopedia */,
+				5AB84C1F2700699700FE1608 /* About */,
 				5ADC664B253AF88B001E09B3 /* Extensions */,
 				5AEA07A325C5479E00DBA23F /* Utilities */,
 				5A2CC62525C4CCD500525C9A /* Supporting Files */,
@@ -157,15 +157,6 @@
 				2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		5A2690C82530B38B00C4FC39 /* SwiftUI Views */ = {
-			isa = PBXGroup;
-			children = (
-				5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */,
-				5A2690C52530B03300C4FC39 /* ViewModifiers.swift */,
-			);
-			path = "SwiftUI Views";
 			sourceTree = "<group>";
 		};
 		5A2CC62525C4CCD500525C9A /* Supporting Files */ = {
@@ -194,6 +185,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5AB84C1F2700699700FE1608 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
+				5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */,
+				5A2690C52530B03300C4FC39 /* ViewModifiers.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		5AD6BEB926FF27E1009B276F /* Encyclopedia */ = {
@@ -258,15 +259,6 @@
 				5AD6BEB426FF1905009B276F /* Name.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		5ADC6646253AF7E7001E09B3 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */,
-				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
-			);
-			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		5ADC664B253AF88B001E09B3 /* Extensions */ = {

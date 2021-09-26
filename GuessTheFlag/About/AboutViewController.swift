@@ -6,15 +6,15 @@
 //  Copyright © 2021 Marcus Ziadé. All rights reserved.
 //
 
-import UIKit
-import StoreKit
 import Lottie
+import StoreKit
+import UIKit
 
 final class AboutViewController: UIViewController {
 
     // MARK: - Types
 
-    enum Product: String, CaseIterable {
+    private enum Product: String, CaseIterable {
         case buyCoffee = "com.marcusziade.knowtheflag.buycoffee"
     }
 
@@ -27,18 +27,18 @@ final class AboutViewController: UIViewController {
 
     // MARK: - UI Components
 
-    let scrollView: UIScrollView = {
+    private let scrollView: UIScrollView = {
         let view = UIScrollView().forAutoLayout()
         view.showsVerticalScrollIndicator = false
         return view
     }()
 
-    let contentView: UIView = {
+    private let contentView: UIView = {
         let view = UIView().forAutoLayout()
         return view
     }()
 
-    lazy var button: UIButton = {
+    private lazy var button: UIButton = {
         let button = UIButton(type: .system).forAutoLayout()
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.setTitle("☕️ Buy me coffee", for: .normal)
@@ -49,7 +49,7 @@ final class AboutViewController: UIViewController {
         return button
     }()
 
-    lazy var loader: UIActivityIndicatorView = {
+    private lazy var loader: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView().forAutoLayout()
         view.hidesWhenStopped = true
         view.color = .black
@@ -65,7 +65,7 @@ final class AboutViewController: UIViewController {
         return gradient
     }()
 
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel().forAutoLayout()
         label.font = UIFont.preferredFont(forTextStyle: .largeTitle, compatibleWith: .init(legibilityWeight: .bold))
         label.text = "Master of Flags"
@@ -73,7 +73,7 @@ final class AboutViewController: UIViewController {
         return label
     }()
 
-    let infoLabel: UILabel = {
+    private let infoLabel: UILabel = {
         let label = UILabel().forAutoLayout()
         label.font = UIFont.preferredFont(forTextStyle: .title3)
         label.text =
@@ -152,11 +152,6 @@ final class AboutViewController: UIViewController {
         ])
 
         fetchProducts()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) { [self] in
-            HapticEngine.result.notificationOccurred(.success)
-            scrollView.flashScrollIndicators()
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -189,13 +184,13 @@ final class AboutViewController: UIViewController {
 
     // MARK: - Methods
 
-    func fetchProducts() {
+    private func fetchProducts() {
         let request = SKProductsRequest(productIdentifiers: Set(Product.allCases.map(\.rawValue)))
         request.delegate = self
         request.start()
     }
 
-    func isLoading(_ bool: Bool) {
+    private func isLoading(_ bool: Bool) {
         if bool {
             loader.startAnimating()
             button.setTitle("", for: .normal)
@@ -205,7 +200,7 @@ final class AboutViewController: UIViewController {
         }
     }
 
-    func showCoffeeAnimation() {
+    private func showCoffeeAnimation() {
         UIView.animate(withDuration: 0.2) { [self] in
             animationView.alpha = 1
         }
@@ -219,7 +214,7 @@ final class AboutViewController: UIViewController {
 
     // MARK: - Selectors
     
-    @objc func buttonPressed() {
+    @objc private func buttonPressed() {
         let payment = SKPayment(product: products[0])
         SKPaymentQueue.default().add(payment)
     }
@@ -270,4 +265,3 @@ import SwiftUI
 struct AboutViewController_Preview: PreviewProvider {
     static var previews: some View = createPreview(for: AboutViewController(), mode: .dark)
 }
-
