@@ -18,6 +18,7 @@
 		2CB7C6FD2352EC4B0068ADE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */; };
 		2CB7C7002352EC4B0068ADE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */; };
 		2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */; };
+		5A0B07E52721DEFE00447A13 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0B07E42721DEFE00447A13 /* countries.json */; };
 		5A1FBFB225C68DD200E3D721 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1FBFB125C68DD200E3D721 /* Lottie */; };
 		5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB325C68F6100E3D721 /* coffee.json */; };
 		5A1FBFB825C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */; };
@@ -31,13 +32,12 @@
 		5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE71A625C56DD1003F8118 /* HapticEngine.swift */; };
 		5AD6BEB526FF1905009B276F /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEB426FF1905009B276F /* Name.swift */; };
 		5AD6BEB826FF257B009B276F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AD6BEB726FF257B009B276F /* Kingfisher */; };
-		5AD6BEBF26FF2A17009B276F /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6BEBE26FF2A17009B276F /* countries.json */; };
 		5AD6BEC126FF2E86009B276F /* CountryListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEC026FF2E86009B276F /* CountryListVM.swift */; };
 		5AD6BEC526FF3368009B276F /* CountriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEC426FF3368009B276F /* CountriesList.swift */; };
 		5AD6BEC826FF3564009B276F /* CountryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEC726FF3564009B276F /* CountryRow.swift */; };
 		5AD6BECA26FF490E009B276F /* CountryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEC926FF490E009B276F /* CountryDetail.swift */; };
 		5AD6BECC26FF492F009B276F /* CountryDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BECB26FF492F009B276F /* CountryDetailVM.swift */; };
-		5ADC6638253AF223001E09B3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6637253AF223001E09B3 /* API.swift */; };
+		5ADC6638253AF223001E09B3 /* CountriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6637253AF223001E09B3 /* CountriesManager.swift */; };
 		5ADC6640253AF53C001E09B3 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC663F253AF53C001E09B3 /* Country.swift */; };
 		5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC664C253AF89B001E09B3 /* UIViewExtensions.swift */; };
 		5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */; };
@@ -72,6 +72,7 @@
 		2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CB7C7022352EC4B0068ADE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB7C7042352EC4B0068ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A0B07E42721DEFE00447A13 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		5A1FBFB325C68F6100E3D721 /* coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee.json; sourceTree = "<group>"; };
 		5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsExtensions.swift; sourceTree = "<group>"; };
 		5A2690C12530A76000C4FC39 /* FlagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStore.swift; sourceTree = "<group>"; };
@@ -84,13 +85,12 @@
 		5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateView.swift; sourceTree = "<group>"; };
 		5AAE71A625C56DD1003F8118 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
 		5AD6BEB426FF1905009B276F /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
-		5AD6BEBE26FF2A17009B276F /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		5AD6BEC026FF2E86009B276F /* CountryListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListVM.swift; sourceTree = "<group>"; };
 		5AD6BEC426FF3368009B276F /* CountriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesList.swift; sourceTree = "<group>"; };
 		5AD6BEC726FF3564009B276F /* CountryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRow.swift; sourceTree = "<group>"; };
 		5AD6BEC926FF490E009B276F /* CountryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetail.swift; sourceTree = "<group>"; };
 		5AD6BECB26FF492F009B276F /* CountryDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailVM.swift; sourceTree = "<group>"; };
-		5ADC6637253AF223001E09B3 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5ADC6637253AF223001E09B3 /* CountriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesManager.swift; sourceTree = "<group>"; };
 		5ADC663F253AF53C001E09B3 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		5ADC664C253AF89B001E09B3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				5A2CC62525C4CCD500525C9A /* Supporting Files */,
 				2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */,
 				5A1FBFB325C68F6100E3D721 /* coffee.json */,
-				5AD6BEBE26FF2A17009B276F /* countries.json */,
+				5A0B07E42721DEFE00447A13 /* countries.json */,
 				2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */,
 				2CB7C7042352EC4B0068ADE2 /* Info.plist */,
 				2CB7C6FE2352EC4B0068ADE2 /* Preview Content */,
@@ -245,7 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				5ADC663E253AF536001E09B3 /* Models */,
-				5ADC6637253AF223001E09B3 /* API.swift */,
+				5ADC6637253AF223001E09B3 /* CountriesManager.swift */,
 				5A2690C12530A76000C4FC39 /* FlagStore.swift */,
 			);
 			path = API;
@@ -352,7 +352,7 @@
 				2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */,
 				2CB7C7002352EC4B0068ADE2 /* Preview Assets.xcassets in Resources */,
 				2CB7C6FD2352EC4B0068ADE2 /* Assets.xcassets in Resources */,
-				5AD6BEBF26FF2A17009B276F /* countries.json in Resources */,
+				5A0B07E52721DEFE00447A13 /* countries.json in Resources */,
 				5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,7 +382,7 @@
 				5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */,
 				5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */,
 				5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */,
-				5ADC6638253AF223001E09B3 /* API.swift in Sources */,
+				5ADC6638253AF223001E09B3 /* CountriesManager.swift in Sources */,
 				2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */,
 				5AD6BECA26FF490E009B276F /* CountryDetail.swift in Sources */,
 				5AD6BEB526FF1905009B276F /* Name.swift in Sources */,

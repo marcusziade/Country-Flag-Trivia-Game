@@ -6,14 +6,18 @@
 //  Copyright © 2021 Marcus Ziadé. All rights reserved.
 //
 
+import CoreLocation
 import SwiftUI
 
 struct CountriesList: View {
     var body: some View {
         NavigationView {
             List(viewModel.filteredCountries) { country in
-                NavigationLink(destination: CountryDetail(country: country))
-                    { CountryRow(country: country) }
+                NavigationLink(destination: CountryDetail(
+                    country: country,
+                    viewModel: CountryDetailVM(coordinate: country.location)
+                ))
+                { CountryRow(country: country) }
             }
             .listStyle(InsetGroupedListStyle())
             .toolbar {
@@ -34,7 +38,7 @@ struct CountriesList: View {
 
     // MARK: - Private
 
-    @StateObject var viewModel = CountryListVM()
+    @StateObject var viewModel: CountryListVM
 }
 
 struct CountriesList_Previews: PreviewProvider {

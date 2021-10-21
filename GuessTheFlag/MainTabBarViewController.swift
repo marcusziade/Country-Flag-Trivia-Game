@@ -24,7 +24,7 @@ final class MainTabBarController: UITabBarController {
     }()
     
     let countriesViewController: UIHostingController<CountriesList> = {
-        let view = UIHostingController(rootView: CountriesList())
+        let view = UIHostingController(rootView: CountriesList(viewModel: CountryListVM()))
         view.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(systemName: "doc.text.magnifyingglass"),

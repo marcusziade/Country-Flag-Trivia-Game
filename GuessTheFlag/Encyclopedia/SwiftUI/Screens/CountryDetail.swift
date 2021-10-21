@@ -32,6 +32,9 @@ struct CountryDetail: View {
                 Section(header: Text("Currencies")) {
                     ForEach(country.countryCurrencies, id: \.self) { Text($0) }
                 }
+                Section(header: Text("Population")) {
+                    Text("\(country.population)")
+                }
                 Section(header: Text("Languages")) {
                     ForEach(country.countryLanguages, id: \.self) { Text($0) }
                 }
@@ -41,6 +44,18 @@ struct CountryDetail: View {
                             .foregroundColor(.blue)
                     }
                 }
+                Section(header: Text("Maps")) {
+                    NavigationLink(destination: Map(coordinateRegion: $viewModel.region).ignoresSafeArea()) {
+                        Label("Apple Maps", systemImage: "map")
+                    }
+                    Link(destination: country.googleMap) {
+                        Label("Google Maps", systemImage: "map")
+                    }
+                    Link(destination: country.openStreetMap) {
+                        Label("Open Street Map", systemImage: "map")
+                    }
+                }
+                .foregroundColor(.blue)
             }
             Spacer()
         }.edgesIgnoringSafeArea(.top)
@@ -48,11 +63,13 @@ struct CountryDetail: View {
 
     // MARK: - Private
 
-    @StateObject var viewModel = CountryDetailVM()
+    @StateObject var viewModel: CountryDetailVM
 }
 
 struct CountryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        CountryDetail(country: Country.mockCountry, viewModel: CountryDetailVM())
+        CountryDetail(country: Country.mockCountry,
+                      viewModel: CountryDetailVM(coordinate: CLLocationCoordinate2D(latitude: 60.1699, longitude: 24.9384))
+        )
     }
 }

@@ -1,5 +1,5 @@
 //
-//  API.swift
+//  CountriesManager.swift
 //  GuessTheFlag
 //
 //  Created by Marcus Ziadé on 17.10.2020.
@@ -17,7 +17,7 @@ enum Region: String, CaseIterable {
     case americas = "Americas"
 }
 
-final class API {
+final class CountriesManager {
 
     func getCountries() -> AnyPublisher<[Country], Error> {
         Just(Bundle.main.url(forResource: "countries", withExtension: "json"))

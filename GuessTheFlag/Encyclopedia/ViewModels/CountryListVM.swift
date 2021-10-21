@@ -32,12 +32,12 @@ final class CountryListVM: ObservableObject {
 
     // MARK: - Private
 
-    private let api = API()
+    private let countriesManager = CountriesManager()
     private var subscriptions = Set<AnyCancellable>()
     private var countries: [Country] = []
 
     private func loadCountries() {
-        api.getCountries()
+        countriesManager.getCountries()
             .replaceError(with: [])
             .receive(on: DispatchQueue.main)
             .sink { [unowned self] in
