@@ -15,20 +15,11 @@ struct FlagGameView: View {
     var body: some View {
         ZStack {
             VStack {
-                VStack {
-                    Text("Tap the flag of")
-                    
-                    Text(manager.countries[manager.correctAnswer])
-                        .font(.headline)
-                        .fontWeight(.black)
-                }
-                
-                HStack(alignment: .bottom) {
-                    Text("Level: \(manager.playerLevel)").modifier(LevelPill())
-                    Spacer()
-                    Text("XP: \(manager.score)").modifier(ExperiencePill())
-                }
-                .padding(.horizontal)
+                FlagGameHeaderView(
+                    answer: manager.countries[manager.correctAnswer],
+                    score: manager.score,
+                    level: manager.playerLevel
+                )
                 
                 ForEach(0..<3) { number in
                     Button {

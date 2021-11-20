@@ -25,6 +25,7 @@
 		5AA44B4B2749169100AB9083 /* FlagGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4A2749169100AB9083 /* FlagGameManager.swift */; };
 		5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4C27491CDA00AB9083 /* Region.swift */; };
 		5AA44B4F2749208A00AB9083 /* FlagGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4E2749208A00AB9083 /* FlagGameView.swift */; };
+		5AA44B51274940F700AB9083 /* FlagGameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */; };
 		5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */; };
 		5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE71A625C56DD1003F8118 /* HapticEngine.swift */; };
 		5AD6BEB526FF1905009B276F /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEB426FF1905009B276F /* Name.swift */; };
@@ -76,6 +77,7 @@
 		5AA44B4A2749169100AB9083 /* FlagGameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameManager.swift; sourceTree = "<group>"; };
 		5AA44B4C27491CDA00AB9083 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		5AA44B4E2749208A00AB9083 /* FlagGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameView.swift; sourceTree = "<group>"; };
+		5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameHeaderView.swift; sourceTree = "<group>"; };
 		5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateView.swift; sourceTree = "<group>"; };
 		5AAE71A625C56DD1003F8118 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
 		5AD6BEB426FF1905009B276F /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				2C38414223563BB400F56257 /* FlagGameContainer.swift */,
 				5AA44B4E2749208A00AB9083 /* FlagGameView.swift */,
+				5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */,
 				5AA44B4A2749169100AB9083 /* FlagGameManager.swift */,
 			);
 			path = "Flag Game";
@@ -367,6 +370,7 @@
 				5AD6BEC826FF3564009B276F /* CountryRow.swift in Sources */,
 				2C38414323563BB400F56257 /* FlagGameContainer.swift in Sources */,
 				5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */,
+				5AA44B51274940F700AB9083 /* FlagGameHeaderView.swift in Sources */,
 				5AA44B4B2749169100AB9083 /* FlagGameManager.swift in Sources */,
 				5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */,
 				5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */,
