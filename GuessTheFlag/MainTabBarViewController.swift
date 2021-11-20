@@ -13,8 +13,8 @@ final class MainTabBarController: UITabBarController {
     
     // MARK: - UI Components
 
-    let flagGameView: UIHostingController<FlagGameContainer> = {
-        let view = UIHostingController(rootView: FlagGameContainer( manager: FlagGameManager()))
+    let flagGameView: UIHostingController<FlagGameView> = {
+        let view = UIHostingController(rootView: FlagGameView( manager: FlagGameManager()))
         view.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(systemName: "gamecontroller"),
