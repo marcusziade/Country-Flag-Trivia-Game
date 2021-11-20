@@ -8,18 +8,21 @@
 
 import Combine
 import Foundation
+import SwiftUI
 
 final class CountryListVM: ObservableObject {
 
     @Published var filteredCountries: [Country] = []
     @Published var selectedRegion: Int = 0
+    
+    let regions = [Region.europe, Region.asia, Region.africa, Region.oceania, Region.americas]
 
     init() {
         loadCountries()
 
         $selectedRegion
             .removeDuplicates()
-            .sink { [unowned self] in
+            .map { [unowned self] in
                 switch $0 {
                 case 0: filteredCountries   = filterAndSort(countries, .europe)
                 case 1: filteredCountries   = filterAndSort(countries, .asia)
@@ -27,7 +30,9 @@ final class CountryListVM: ObservableObject {
                 case 3: filteredCountries   = filterAndSort(countries, .oceania)
                 default: filteredCountries  = filterAndSort(countries, .americas)
                 }
-            }.store(in: &subscriptions)
+            }
+            .sink { _ in UIImpactFeedbackGenerator().impactOccurred() }
+            .store(in: &subscriptions)
     }
 
     // MARK: - Private

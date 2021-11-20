@@ -8,14 +8,9 @@
 
 import Foundation
 
-enum Region: Int, CaseIterable {
+enum Region {
     
-    case europe
-    case asia
-    case africa
-    case americas
-    case world
-    case oceania
+    case europe, asia, africa, americas, world, oceania
     
     var title: String {
         switch self {

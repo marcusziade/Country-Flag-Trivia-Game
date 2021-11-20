@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct FlagGameView: View {
-        
-    @StateObject var manager: FlagGameManager
+    
+    @ObservedObject var manager: FlagGameManager
     
     var body: some View {
         ZStack {
@@ -32,16 +32,12 @@ struct FlagGameView: View {
                 
                 ForEach(0..<3) { number in
                     Button {
-                        HapticEngine.select.selectionChanged()
-                            withAnimation(.interpolatingSpring(mass: 40, stiffness: 500, damping: 200, initialVelocity: 2.2)) {
-                                manager.rotation += 360
-                            }
                         manager.flagTapped(number)
                     } label: {
                         Image(manager.countries[number]) .flagImageMofifier()
                     }
                     .rotation3DEffect(
-                        .degrees(number == manager.correctAnswer ? Double(manager.rotation) : 0),
+                        .degrees(number == manager.correctAnswer ? manager.rotation : 0),
                         axis: (x: 1, y: 0, z: 0)
                     )
                 }

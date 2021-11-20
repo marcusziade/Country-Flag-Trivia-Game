@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Combine
 
 struct FlagGameContainer: View {
     
@@ -20,14 +19,10 @@ struct FlagGameContainer: View {
                     Text(manager.regions[$0].title)
                 }
             }
-            .onReceive(Just(manager.selectedRegion)) { _ in
-                UISelectionFeedbackGenerator().selectionChanged()
-            }
-            .pickerStyle(SegmentedPickerStyle())
+            .pickerStyle(.segmented)
             .padding(.horizontal, 4)
             
             FlagGameView(manager: manager)
-            
         }
         .padding(.bottom, 4)
     }

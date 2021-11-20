@@ -23,7 +23,7 @@ final class FlagGameManager: ObservableObject {
     @Published var correctAnswer = Int.random(in: 0...2)
     
     @Published var dragAmount = CGSize.zero
-    @Published var rotation = 1
+    @Published var rotation: Double = 1
     
     @Published var selectedRegion: Region = .europe
     
@@ -49,6 +49,8 @@ final class FlagGameManager: ObservableObject {
         
         $selectedRegion
             .sink { [unowned self] in
+                UISelectionFeedbackGenerator().selectionChanged()
+                
                 score = UserDefaults.standard.integer(forKey: $0.flagGameScoreKey)
                 playerLevel = UserDefaults.standard.integer(forKey: $0.flagGamePlayerLevelKey)
                 
@@ -60,6 +62,11 @@ final class FlagGameManager: ObservableObject {
     }
     
     func flagTapped(_ number: Int) {
+        HapticEngine.select.selectionChanged()
+        withAnimation(.interpolatingSpring(mass: 40, stiffness: 500, damping: 200, initialVelocity: 2.2)) {
+            rotation += 360
+        }
+        
         number == correctAnswer
         ? win(for: number)
         : lose(for: number)

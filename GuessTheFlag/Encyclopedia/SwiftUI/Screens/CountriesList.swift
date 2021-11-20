@@ -23,14 +23,11 @@ struct CountriesList: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Picker(selection: $viewModel.selectedRegion, label: Text("Picker")) {
-                        ForEach(0..<Region.allCases.count - 1) {
-                            Text(Region.allCases[$0].title)
+                        ForEach(0..<viewModel.regions.count) {
+                            Text(viewModel.regions[$0].title)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                    .onChange(of: viewModel.selectedRegion) { _ in
-                        UIImpactFeedbackGenerator().impactOccurred()
-                    }
                 }
             }
         }
