@@ -48,11 +48,9 @@ struct AsiaFlags: View {
                 ForEach(0 ..< 3) { number in
                     Button(action: {
                         HapticEngine.select.selectionChanged()
-                        if self.didSelectCorrectFlag {
                             withAnimation(.interpolatingSpring(mass: 40, stiffness: 500, damping: 200, initialVelocity: 2.2)) {
                                 self.rotation += 360
                             }
-                        }
                         self.flagTapped(number)
                     }) {
                         Image(self.countries[number])

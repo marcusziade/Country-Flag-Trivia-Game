@@ -49,7 +49,7 @@ final class CountryListVM: ObservableObject {
 
     private func filterAndSort(_ countries: [Country], _ region: Region) -> [Country] {
         return countries
-            .filter { $0.region == region.rawValue }
+            .filter { $0.region == region.title }
             .sorted { $0.name.common < $1.name.common }
     }
 }

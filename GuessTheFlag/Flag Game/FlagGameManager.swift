@@ -1,0 +1,99 @@
+//
+//  FlagGameswift
+//  GuessTheFlag
+//
+//  Created by Marcus Ziadé on 20.11.2021.
+//  Copyright © 2021 Marcus Ziadé. All rights reserved.
+//
+
+import Combine
+import Foundation
+import SwiftUI
+
+final class FlagGameManager: ObservableObject {
+    
+    @Published var countries: [String] = Region.europe.countries
+    
+    @Published var activePickerValue = 0
+    
+    @Published var showingScore = false
+    @Published var scoreTitle = ""
+    @Published var alertMessage = ""
+    
+    @Published var correctAnswer = Int.random(in: 0...2)
+    
+    @Published var dragAmount = CGSize.zero
+    @Published var rotation = 1
+    
+    @Published var selectedRegion: Region = .europe
+    
+    @Published var score = 0
+    @Published var playerLevel = 0
+    
+    let regions = [Region.europe, Region.asia, Region.africa, Region.americas, Region.world]
+    
+    init() {
+        
+        $activePickerValue
+            .removeDuplicates()
+            .sink { [unowned self] in
+                switch $0 {
+                case 0: selectedRegion = .europe
+                case 1: selectedRegion = .asia
+                case 2: selectedRegion = .africa
+                case 3: selectedRegion = .americas
+                default: selectedRegion = .world
+                }
+            }
+            .store(in: &cancellables)
+        
+        $selectedRegion
+            .sink { [unowned self] in
+                score = UserDefaults.standard.integer(forKey: $0.flagGameScoreKey)
+                playerLevel = UserDefaults.standard.integer(forKey: $0.flagGamePlayerLevelKey)
+                
+                countries = $0.countries
+                
+                askQuestion()
+            }
+            .store(in: &cancellables)
+    }
+    
+    func flagTapped(_ number: Int) {
+        number == correctAnswer
+        ? win(for: number)
+        : lose(for: number)
+        
+        showingScore = true
+    }
+    
+    func askQuestion() {
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
+    }
+    
+    // MARK: - Private
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    private func win(for number: Int) {
+        scoreTitle = "Correct ✅\n" + "+15 XP!"
+        alertMessage = "That's the flag of \(countries[number])"
+        score += 15
+        UserDefaults.standard.set(score, forKey: selectedRegion.flagGameScoreKey)
+        
+        if score >= 450 {
+            playerLevel += 1
+            score = 0
+            UserDefaults.standard.set(playerLevel, forKey: selectedRegion.flagGamePlayerLevelKey)
+            UserDefaults.standard.set(score, forKey: selectedRegion.flagGameScoreKey)
+        }
+    }
+    
+    private func lose(for number: Int) {
+        scoreTitle = "Wrong 🚫\n" + "-10 XP"
+        alertMessage = "That's the flag of \(countries[number])"
+        score -= 10
+        UserDefaults.standard.set(score, forKey: selectedRegion.flagGameScoreKey)
+    }
+}

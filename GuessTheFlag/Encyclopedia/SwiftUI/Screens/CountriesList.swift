@@ -23,8 +23,8 @@ struct CountriesList: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Picker(selection: $viewModel.selectedRegion, label: Text("Picker")) {
-                        ForEach(0..<Region.allCases.count) {
-                            Text(Region.allCases[$0].rawValue)
+                        ForEach(0..<Region.allCases.count - 1) {
+                            Text(Region.allCases[$0].title)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())

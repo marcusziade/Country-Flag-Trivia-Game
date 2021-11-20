@@ -9,14 +9,6 @@
 import Foundation
 import Combine
 
-enum Region: String, CaseIterable {
-    case europe = "Europe"
-    case asia = "Asia"
-    case africa = "Africa"
-    case oceania = "Oceania"
-    case americas = "Americas"
-}
-
 final class CountriesManager {
 
     func getCountries() -> AnyPublisher<[Country], Error> {
