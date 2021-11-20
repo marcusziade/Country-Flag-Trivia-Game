@@ -7,12 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C38413F235637B200F56257 /* EuropeFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38413E235637B200F56257 /* EuropeFlags.swift */; };
 		2C38414323563BB400F56257 /* FlagGameContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38414223563BB400F56257 /* FlagGameContainer.swift */; };
-		2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38414423563E2500F56257 /* AsiaFlags.swift */; };
-		2C384147235641A900F56257 /* AfricaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C384146235641A900F56257 /* AfricaFlags.swift */; };
-		2C384169235765BB00F56257 /* AmericaFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C384168235765BB00F56257 /* AmericaFlags.swift */; };
-		2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C96E2C42358B7E600E5D154 /* WorldFlags.swift */; };
 		2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */; };
 		2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */; };
 		2CB7C6FD2352EC4B0068ADE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */; };
@@ -22,7 +17,6 @@
 		5A1FBFB225C68DD200E3D721 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1FBFB125C68DD200E3D721 /* Lottie */; };
 		5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB325C68F6100E3D721 /* coffee.json */; };
 		5A1FBFB825C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */; };
-		5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C12530A76000C4FC39 /* FlagStore.swift */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
 		5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */; };
@@ -62,12 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2C38413E235637B200F56257 /* EuropeFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuropeFlags.swift; sourceTree = "<group>"; };
 		2C38414223563BB400F56257 /* FlagGameContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameContainer.swift; sourceTree = "<group>"; };
-		2C38414423563E2500F56257 /* AsiaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsiaFlags.swift; sourceTree = "<group>"; };
-		2C384146235641A900F56257 /* AfricaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfricaFlags.swift; sourceTree = "<group>"; };
-		2C384168235765BB00F56257 /* AmericaFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericaFlags.swift; sourceTree = "<group>"; };
-		2C96E2C42358B7E600E5D154 /* WorldFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldFlags.swift; sourceTree = "<group>"; };
 		2CB7C6F32352EC490068ADE2 /* Master of Flags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Master of Flags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +67,6 @@
 		5A0B07E42721DEFE00447A13 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		5A1FBFB325C68F6100E3D721 /* coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee.json; sourceTree = "<group>"; };
 		5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsExtensions.swift; sourceTree = "<group>"; };
-		5A2690C12530A76000C4FC39 /* FlagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagStore.swift; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5A2CC62625C4CCF300525C9A /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -179,11 +167,6 @@
 				2C38414223563BB400F56257 /* FlagGameContainer.swift */,
 				5AA44B4E2749208A00AB9083 /* FlagGameView.swift */,
 				5AA44B4A2749169100AB9083 /* FlagGameManager.swift */,
-				2C38413E235637B200F56257 /* EuropeFlags.swift */,
-				2C38414423563E2500F56257 /* AsiaFlags.swift */,
-				2C384146235641A900F56257 /* AfricaFlags.swift */,
-				2C384168235765BB00F56257 /* AmericaFlags.swift */,
-				2C96E2C42358B7E600E5D154 /* WorldFlags.swift */,
 			);
 			path = "Flag Game";
 			sourceTree = "<group>";
@@ -254,7 +237,6 @@
 			children = (
 				5ADC663E253AF536001E09B3 /* Models */,
 				5ADC6637253AF223001E09B3 /* CountriesManager.swift */,
-				5A2690C12530A76000C4FC39 /* FlagStore.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -377,15 +359,11 @@
 				2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */,
 				5AD6BEC526FF3368009B276F /* CountriesList.swift in Sources */,
 				5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */,
-				5A2690C22530A76000C4FC39 /* FlagStore.swift in Sources */,
 				5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */,
-				2C38413F235637B200F56257 /* EuropeFlags.swift in Sources */,
 				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
 				5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */,
 				5AD6BECC26FF492F009B276F /* CountryDetailVM.swift in Sources */,
-				2C96E2C52358B7E600E5D154 /* WorldFlags.swift in Sources */,
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,
-				2C384169235765BB00F56257 /* AmericaFlags.swift in Sources */,
 				5AD6BEC826FF3564009B276F /* CountryRow.swift in Sources */,
 				2C38414323563BB400F56257 /* FlagGameContainer.swift in Sources */,
 				5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */,
@@ -394,7 +372,6 @@
 				5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */,
 				5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */,
 				5ADC6638253AF223001E09B3 /* CountriesManager.swift in Sources */,
-				2C38414523563E2500F56257 /* AsiaFlags.swift in Sources */,
 				5AD6BECA26FF490E009B276F /* CountryDetail.swift in Sources */,
 				5AD6BEB526FF1905009B276F /* Name.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
@@ -402,7 +379,6 @@
 				5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */,
 				5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */,
 				5AA44B4F2749208A00AB9083 /* FlagGameView.swift in Sources */,
-				2C384147235641A900F56257 /* AfricaFlags.swift in Sources */,
 				5AD6BEC126FF2E86009B276F /* CountryListVM.swift in Sources */,
 				5A5C538F2633F5FB00070869 /* Authentication.swift in Sources */,
 			);
