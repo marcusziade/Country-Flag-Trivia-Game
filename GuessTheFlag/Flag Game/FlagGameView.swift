@@ -24,7 +24,8 @@ struct FlagGameView: View {
             FlagGameHeaderView(
                 answer: manager.countries[manager.correctAnswer],
                 score: manager.score,
-                level: manager.playerLevel
+                level: manager.playerLevel,
+                streak: manager.streak
             )
             
             ForEach(0..<3) { number in

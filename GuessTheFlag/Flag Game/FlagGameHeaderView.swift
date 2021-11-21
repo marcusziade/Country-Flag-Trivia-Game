@@ -13,6 +13,7 @@ struct FlagGameHeaderView: View {
     let answer: String
     let score: Int
     let level: Int
+    let streak: Int
     
     var body: some View {
         VStack {
@@ -29,6 +30,13 @@ struct FlagGameHeaderView: View {
                 
                 Spacer()
                 
+                VStack(alignment: .center) {
+                    Text("Current streak").font(.caption2)
+                    Text("\(streak)").bold()
+                }
+                
+                Spacer()
+                
                 Text("XP: \(score)")
                     .modifier(ExperiencePill())
                     .minimumScaleFactor(0.5)
@@ -40,9 +48,9 @@ struct FlagGameHeaderView: View {
 struct FlagGameHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            FlagGameHeaderView(answer: "Finland", score: 30, level: 12)
+            FlagGameHeaderView(answer: "Finland", score: 30, level: 12, streak: 5)
                 .previewLayout(.sizeThatFits)
-            FlagGameHeaderView(answer: "Finland", score: 9999, level: 300)
+            FlagGameHeaderView(answer: "Finland", score: 9999, level: 300, streak: 50)
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
         }

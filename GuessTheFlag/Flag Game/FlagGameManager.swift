@@ -29,6 +29,7 @@ final class FlagGameManager: ObservableObject {
     
     @Published var score = 0
     @Published var playerLevel = 0
+    @Published var streak = 0
     
     let regions = [Region.europe, Region.asia, Region.africa, Region.americas, Region.world]
     
@@ -52,6 +53,7 @@ final class FlagGameManager: ObservableObject {
                 
                 score = UserDefaults.standard.integer(forKey: $0.flagGameScoreKey)
                 playerLevel = UserDefaults.standard.integer(forKey: $0.flagGamePlayerLevelKey)
+                streak = UserDefaults.standard.integer(forKey: $0.flagGameStreakKey)
                 
                 countries = $0.countries
                 
@@ -86,7 +88,9 @@ final class FlagGameManager: ObservableObject {
         scoreTitle = "Correct 🙌\n" + "+15 XP!"
         alertMessage = "That's the flag of \(countries[number])"
         score += 15
+        streak += 1
         UserDefaults.standard.set(score, forKey: selectedRegion.flagGameScoreKey)
+        UserDefaults.standard.set(streak, forKey: selectedRegion.flagGameStreakKey)
         
         if score >= 450 {
             playerLevel += 1
@@ -100,6 +104,8 @@ final class FlagGameManager: ObservableObject {
         scoreTitle = "Wrong ❌\n" + "-10 XP"
         alertMessage = "That's the flag of \(countries[number])"
         score -= 10
+        streak = 0
         UserDefaults.standard.set(score, forKey: selectedRegion.flagGameScoreKey)
+        UserDefaults.standard.set(streak, forKey: selectedRegion.flagGameStreakKey)
     }
 }

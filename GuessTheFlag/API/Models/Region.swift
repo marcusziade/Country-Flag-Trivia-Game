@@ -265,4 +265,15 @@ extension Region {
         case .world: return "LevelWorld"
         }
     }
+    
+    var flagGameStreakKey: String {
+        switch self {
+        case .europe: return "StreakEurope"
+        case .asia: return "StreakAsia"
+        case .africa: return "StreakAfrica"
+        case .oceania: return "StreakOceania"
+        case .americas: return "StreakAmericas"
+        case .world: return "StreakWorld"
+        }
+    }
 }
