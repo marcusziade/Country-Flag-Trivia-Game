@@ -11,96 +11,8 @@ import StoreKit
 import UIKit
 
 final class AboutViewController: UIViewController {
-
-    // MARK: - Types
-
-    private enum Product: String, CaseIterable {
-        case buyCoffee = "com.marcusziade.knowtheflag.buycoffee"
-    }
-
-    // MARK: - Properties
-
-    var products: [SKProduct] = []
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-
-    // MARK: - UI Components
-
-    private let scrollView: UIScrollView = {
-        let view = UIScrollView().forAutoLayout()
-        view.showsVerticalScrollIndicator = false
-        return view
-    }()
-
-    private let contentView: UIView = {
-        let view = UIView().forAutoLayout()
-        return view
-    }()
-
-    private lazy var button: UIButton = {
-        let button = UIButton(type: .system).forAutoLayout()
-        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        button.setTitle("☕️ Buy me coffee", for: .normal)
-        button.layer.cornerRadius = 8
-        button.backgroundColor = .brown
-        button.setTitleColor(.white, for: .normal)
-        button.addShadow(color: .black, offset: CGSize(width: 3.0, height: 3.0), opacity: 0.4, radius: 4.0)
-        return button
-    }()
-
-    private lazy var loader: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView().forAutoLayout()
-        view.hidesWhenStopped = true
-        view.color = .black
-        return view
-    }()
-
-    private lazy var gradientLayer: CAGradientLayer = {
-        let gradient = CAGradientLayer()
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor]
-        gradient.startPoint = CGPoint.zero
-        gradient.endPoint = CGPoint(x: 0.5, y: 1.5)
-        return gradient
-    }()
-
-    private let titleLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.font = UIFont.preferredFont(forTextStyle: .largeTitle, compatibleWith: .init(legibilityWeight: .bold))
-        label.text = "Master of Flags"
-        label.textColor = .white
-        return label
-    }()
-
-    private let infoLabel: UILabel = {
-        let label = UILabel().forAutoLayout()
-        label.font = UIFont.preferredFont(forTextStyle: .title3)
-        label.text =
-            """
-            This is Master of Flags, the game where you gather experience points (XP) and level up as you become familiar with the world's flags. There are 196 different flags in this game! Your objective is to learn them all🤓
-
-            You gain 15 XP from a correct answer and lose 10 XP from a wrong answer. The correct answer is indicated by the spinning flag!🌀
-            You need 450 points to level up☄️
-
-            Browse the encyclopedia to improve your geographical knowledge📚
-            """
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        return label
-    }()
-
-    private lazy var animationView: AnimationView = {
-        let view = AnimationView(name: "coffee").forAutoLayout()
-        view.contentMode = .scaleAspectFit
-        view.loopMode = .playOnce
-        view.backgroundColor = .clear
-        view.alpha = 0
-        return view
-    }()
-
-    // MARK: - Lifecycle methods
+    
+    override var prefersStatusBarHidden: Bool { return true }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,6 +71,7 @@ final class AboutViewController: UIViewController {
         if !Authentication.parentalGateUnlocked {
             view.alpha = 0
             var parentalGate = ParentalGateView()
+            
             parentalGate.onCancel = { [weak self] in
                 guard let self = self else { return }
                 HapticEngine.result.notificationOccurred(.error)
@@ -167,6 +80,7 @@ final class AboutViewController: UIViewController {
                     tabBarController.selectedIndex = 1
                 }
             }
+            
             parentalGate.onClose = { [weak self] in
                 guard let self = self else { return }
                 Authentication.parentalGateUnlocked = true
@@ -176,13 +90,82 @@ final class AboutViewController: UIViewController {
                     self.view.alpha = 1
                 }
             }
+            
             let viewController = UIHostingController(rootView: parentalGate)
             viewController.isModalInPresentation = true
             present(viewController, animated: true)
         }
     }
 
-    // MARK: - Methods
+    // MARK: - Private
+    
+    private enum Product: String, CaseIterable {
+        case buyCoffee = "com.marcusziade.knowtheflag.buycoffee"
+    }
+        
+    private var products: [SKProduct] = []
+        
+    private let scrollView = UIScrollView().configure {
+        $0.showsVerticalScrollIndicator = false
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private let contentView = UIView().configure {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private lazy var button = UIButton().configure {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        $0.setTitle("☕️ Buy me coffee", for: .normal)
+        $0.layer.cornerRadius = 8
+        $0.backgroundColor = .brown
+        $0.setTitleColor(.white, for: .normal)
+        $0.addShadow(color: .black, offset: CGSize(width: 3.0, height: 3.0), opacity: 0.4, radius: 4.0)
+    }
+    
+    private let loader = UIActivityIndicatorView().configure {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.hidesWhenStopped = true
+        $0.color = .white
+    }
+    
+    private lazy var gradientLayer = CAGradientLayer().configure {
+        $0.frame = view.bounds
+        $0.colors = [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor]
+        $0.startPoint = CGPoint.zero
+        $0.endPoint = CGPoint(x: 0.5, y: 1.5)
+    }
+    
+    private let titleLabel = UILabel().configure {
+        $0.font = UIFont.preferredFont(forTextStyle: .largeTitle, compatibleWith: .init(legibilityWeight: .bold))
+        $0.text = "Master of Flags"
+        $0.textColor = .white
+    }
+    
+    private let infoLabel = UILabel().configure {
+        $0.font = UIFont.preferredFont(forTextStyle: .title3)
+        $0.text =
+            """
+            This is Master of Flags, the game where you gather experience points (XP) and level up as you become familiar with the world's flags. There are 196 different flags in this game! Your objective is to learn them all🤓
+            
+            You gain 15 XP from a correct answer and lose 10 XP from a wrong answer. The correct answer is indicated by the spinning flag!🌀
+            You need 450 points to level up☄️
+            
+            Browse the encyclopedia to improve your geographical knowledge📚
+            """
+        $0.textColor = .white
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+    }
+    
+    private lazy var animationView = AnimationView(name: "coffee").configure {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.contentMode = .scaleAspectFit
+        $0.loopMode = .playOnce
+        $0.backgroundColor = .clear
+        $0.alpha = 0
+    }
 
     private func fetchProducts() {
         let request = SKProductsRequest(productIdentifiers: Set(Product.allCases.map(\.rawValue)))
@@ -211,8 +194,6 @@ final class AboutViewController: UIViewController {
             }
         }
     }
-
-    // MARK: - Selectors
     
     @objc private func buttonPressed() {
         let payment = SKPayment(product: products[0])
@@ -221,8 +202,9 @@ final class AboutViewController: UIViewController {
 }
 
 extension AboutViewController: SKProductsRequestDelegate {
+    
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.async { [unowned self] in
             products = response.products
             button.setTitle("☕️ \(products[0].localizedTitle) \(products[0].priceLocale.currencySymbol ?? "")\(products[0].price)", for: .normal)
             button.isHidden = false
@@ -233,26 +215,22 @@ extension AboutViewController: SKProductsRequestDelegate {
 }
 
 extension AboutViewController: SKPaymentTransactionObserver {
+    
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         transactions.forEach {
             switch $0.transactionState {
                 case .purchasing:
-                    print("Purchasing")
                     isLoading(true)
                 case .purchased:
-                    print("Purchased")
                     isLoading(false)
                     let transaction: SKPaymentTransaction = $0
                     SKPaymentQueue.default().finishTransaction(transaction)
                     showCoffeeAnimation()
                 case .failed:
-                    print("Purchase failed")
                     isLoading(false)
                 case .restored:
-                    print("Purchase restored")
                     isLoading(false)
                 case .deferred:
-                    print("Purhcase deferred")
                     isLoading(false)
                 @unknown default: break
             }
@@ -263,5 +241,5 @@ extension AboutViewController: SKPaymentTransactionObserver {
 import SwiftUI
 
 struct AboutViewController_Preview: PreviewProvider {
-    static var previews: some View = createPreview(for: AboutViewController(), mode: .dark)
+    static var previews: some View = createPreview(for: UINavigationController(rootViewController: AboutViewController()), mode: .dark)
 }

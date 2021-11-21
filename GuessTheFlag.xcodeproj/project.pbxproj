@@ -25,6 +25,7 @@
 		5AA44B4B2749169100AB9083 /* FlagGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4A2749169100AB9083 /* FlagGameManager.swift */; };
 		5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4C27491CDA00AB9083 /* Region.swift */; };
 		5AA44B51274940F700AB9083 /* FlagGameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */; };
+		5AA44B53274A363D00AB9083 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B52274A363D00AB9083 /* Configurable.swift */; };
 		5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */; };
 		5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE71A625C56DD1003F8118 /* HapticEngine.swift */; };
 		5AD6BEB526FF1905009B276F /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEB426FF1905009B276F /* Name.swift */; };
@@ -76,6 +77,7 @@
 		5AA44B4A2749169100AB9083 /* FlagGameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameManager.swift; sourceTree = "<group>"; };
 		5AA44B4C27491CDA00AB9083 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameHeaderView.swift; sourceTree = "<group>"; };
+		5AA44B52274A363D00AB9083 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateView.swift; sourceTree = "<group>"; };
 		5AAE71A625C56DD1003F8118 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
 		5AD6BEB426FF1905009B276F /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
@@ -183,7 +185,6 @@
 			children = (
 				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
 				5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */,
-				5A2690C52530B03300C4FC39 /* ViewModifiers.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -269,6 +270,8 @@
 				5AEA07A425C547A900DBA23F /* Reusable.swift */,
 				5AAE71A625C56DD1003F8118 /* HapticEngine.swift */,
 				5A5C538E2633F5FB00070869 /* Authentication.swift */,
+				5A2690C52530B03300C4FC39 /* ViewModifiers.swift */,
+				5AA44B52274A363D00AB9083 /* Configurable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */,
 				5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */,
 				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
+				5AA44B53274A363D00AB9083 /* Configurable.swift in Sources */,
 				5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */,
 				5AD6BECC26FF492F009B276F /* CountryDetailVM.swift in Sources */,
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,
