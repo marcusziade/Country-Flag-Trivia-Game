@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct Triangle: Shape {
+    
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
@@ -23,25 +24,26 @@ struct Triangle: Shape {
 
 struct ParentalGateView: View {
 
-    // MARK: - Properties
     var onClose: (() -> Void)?
     var onCancel: (() -> Void)?
-    @State private var circleTapped: Bool = false
 
-    // MARK: - UI Layout
     var body: some View {
         VStack(alignment: .center, spacing: 60) {
             HStack {
-                Image(systemName: "arrow.left")
-                    .resizable()
-                    .frame(width: 40, height: 33)
-                    .foregroundColor(.red)
-                    .onTapGesture {
-                        HapticEngine.select.selectionChanged()
-                        onCancel?()
-                    }
+                Button {
+                    HapticEngine.rigid.impactOccurred()
+                    onCancel?()
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30)
+                        .foregroundColor(.red)
+                }
+                
                 Spacer()
-            }.padding([.leading, .top], 24)
+            }
+            .padding([.leading, .top], 24)
 
             Text("Ask your parents")
                 .font(.largeTitle)
@@ -49,54 +51,51 @@ struct ParentalGateView: View {
                 .foregroundColor(.blue)
 
             Spacer()
-            HStack(spacing: 130) {
-                Button("") {}
-                    .background(
-                        Triangle()
-                            .foregroundColor(.green)
-                            .frame(width: 100, height: 100)
-                            .onTapGesture {
-                                !circleTapped ? HapticEngine.notification.notificationOccurred(.error) : ()
-                            }
-                            .onLongPressGesture {
-                                circleTapped ? onClose?() : HapticEngine.notification.notificationOccurred(.error)
-                            }
-                    )
+            
+            HStack(spacing: 20) {
+                Button { HapticEngine.notification.notificationOccurred(.error) } label: {
+                    Triangle()
+                        .foregroundColor(.green)
+                        .frame(width: size, height: size)
+                }
 
-                Button("") {}
-                    .background(
-                        Rectangle()
-                            .foregroundColor(.blue)
-                            .frame(width: 100, height: 100)
-                    )
-                    .onTapGesture { HapticEngine.notification.notificationOccurred(.error) }
+                Button { HapticEngine.notification.notificationOccurred(.error) } label: {
+                    Rectangle()
+                        .foregroundColor(.blue)
+                        .frame(width: size, height: size)
+                }
 
-                Button("") {}
-                    .background(
-                        Circle()
-                            .foregroundColor(circleTapped ? .green : .yellow)
-                            .frame(width: 100, height: 100)
-                            .animation(.easeInOut)
-                            .onTapGesture(count: 4) {
-                                circleTapped = true
-                                HapticEngine.notification.notificationOccurred(.success)
-                            }
-                    )
-            }.padding()
+                Button {
+                    HapticEngine.notification.notificationOccurred(.success)
+                    onClose?()
+                } label: {
+                    Circle()
+                        .foregroundColor(.yellow)
+                        .frame(width: size, height: size)
+                }
+            }
+            .shadow(radius: 10)
 
-            Text("Tap inside the circle until the circle turns green, then hold triangle.")
-                .multilineTextAlignment(.center)
+            Text("Tap the circle.")
                 .font(.headline)
-                .padding([.leading, .trailing], 16)
                 .foregroundColor(.orange)
+            
             Spacer()
         }
     }
+    
+    // MARK: - Private
+    
+    private let size: CGFloat = 90
 }
 
 struct ParentalGateView_Previews: PreviewProvider {
     static var previews: some View {
-        ParentalGateView()
-            .preferredColorScheme(.dark)
+        Group {
+            ParentalGateView()
+                .preferredColorScheme(.dark)
+            ParentalGateView()
+                .preferredColorScheme(.light)
+        }
     }
 }
