@@ -26,6 +26,8 @@
 		5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4C27491CDA00AB9083 /* Region.swift */; };
 		5AA44B51274940F700AB9083 /* FlagGameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */; };
 		5AA44B53274A363D00AB9083 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B52274A363D00AB9083 /* Configurable.swift */; };
+		5AA44B57274A3FE200AB9083 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B56274A3FE200AB9083 /* SettingsView.swift */; };
+		5AA44B59274A424700AB9083 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B58274A424700AB9083 /* SettingsViewModel.swift */; };
 		5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */; };
 		5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE71A625C56DD1003F8118 /* HapticEngine.swift */; };
 		5AD6BEB526FF1905009B276F /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEB426FF1905009B276F /* Name.swift */; };
@@ -78,6 +80,8 @@
 		5AA44B4C27491CDA00AB9083 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameHeaderView.swift; sourceTree = "<group>"; };
 		5AA44B52274A363D00AB9083 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		5AA44B56274A3FE200AB9083 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5AA44B58274A424700AB9083 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateView.swift; sourceTree = "<group>"; };
 		5AAE71A625C56DD1003F8118 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
 		5AD6BEB426FF1905009B276F /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 			children = (
 				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
 				5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */,
+				5AA44B56274A3FE200AB9083 /* SettingsView.swift */,
+				5AA44B58274A424700AB9083 /* SettingsViewModel.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -374,11 +380,13 @@
 				5AA44B51274940F700AB9083 /* FlagGameHeaderView.swift in Sources */,
 				5AA44B4B2749169100AB9083 /* FlagGameManager.swift in Sources */,
 				5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */,
+				5AA44B59274A424700AB9083 /* SettingsViewModel.swift in Sources */,
 				5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */,
 				5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */,
 				5ADC6638253AF223001E09B3 /* CountriesManager.swift in Sources */,
 				5AD6BECA26FF490E009B276F /* CountryDetail.swift in Sources */,
 				5AD6BEB526FF1905009B276F /* Name.swift in Sources */,
+				5AA44B57274A3FE200AB9083 /* SettingsView.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
 				5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */,

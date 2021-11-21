@@ -12,12 +12,21 @@ import UIKit
 
 final class AboutViewController: UIViewController {
     
-    override var prefersStatusBarHidden: Bool { return true }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.layer.addSublayer(gradientLayer)
         SKPaymentQueue.default().add(self)
+        
+        #if DEBUG
+        // Debug only until ready and has enough stuff to make sense
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "gear")!,
+            style: .plain,
+            target: self,
+            action: #selector(openSettings)
+        )
+        #endif
 
         let stackView = UIStackView(arrangedSubviews: [titleLabel, infoLabel]).forAutoLayout()
         stackView.axis = .vertical
@@ -204,6 +213,11 @@ final class AboutViewController: UIViewController {
     @objc private func buttonPressed() {
         let payment = SKPayment(product: products[0])
         SKPaymentQueue.default().add(payment)
+    }
+    
+    @objc private func openSettings() {
+        let viewController = UIHostingController(rootView: SettingsView(model: SettingsViewModel()))
+        present(viewController, animated: true)
     }
 }
 

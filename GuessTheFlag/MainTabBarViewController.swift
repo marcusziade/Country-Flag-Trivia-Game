@@ -11,40 +11,6 @@ import SwiftUI
 
 final class MainTabBarController: UITabBarController {
     
-    // MARK: - UI Components
-
-    let flagGameView: UIHostingController<FlagGameView> = {
-        let view = UIHostingController(rootView: FlagGameView( manager: FlagGameManager()))
-        view.tabBarItem = UITabBarItem(
-            title: nil,
-            image: UIImage(systemName: "gamecontroller"),
-            selectedImage: UIImage(systemName: "gamecontroller.fill")
-        )
-        return view
-    }()
-    
-    let countriesViewController: UIHostingController<CountriesList> = {
-        let view = UIHostingController(rootView: CountriesList(viewModel: CountryListVM()))
-        view.tabBarItem = UITabBarItem(
-            title: nil,
-            image: UIImage(systemName: "doc.text.magnifyingglass"),
-            selectedImage: UIImage(systemName: "doc.text.magnifyingglass")
-        )
-        return view
-    }()
-
-    let aboutViewController: AboutViewController = {
-        let viewController = AboutViewController()
-        viewController.tabBarItem = UITabBarItem(
-            title: nil,
-            image: UIImage(systemName: "ellipsis.circle"),
-            selectedImage: UIImage(systemName: "ellipsis.circle.fill")
-        )
-        return viewController
-    }()
-
-    // MARK: - Methods
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.tintColor = .label
@@ -55,6 +21,39 @@ final class MainTabBarController: UITabBarController {
         ]
         selectedIndex = 1
     }
+    
+    // MARK: - Private
+    
+    private let flagGameView: UIHostingController<FlagGameView> = {
+        let view = UIHostingController(rootView: FlagGameView( manager: FlagGameManager()))
+        view.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "gamecontroller"),
+            selectedImage: UIImage(systemName: "gamecontroller.fill")
+        )
+        return view
+    }()
+    
+    private let countriesViewController: UIHostingController<CountriesList> = {
+        let view = UIHostingController(rootView: CountriesList(viewModel: CountryListVM()))
+        view.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "doc.text.magnifyingglass"),
+            selectedImage: UIImage(systemName: "doc.text.magnifyingglass")
+        )
+        return view
+    }()
+    
+    private let aboutViewController: UINavigationController = {
+        let viewController = AboutViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "ellipsis.circle"),
+            selectedImage: UIImage(systemName: "ellipsis.circle.fill")
+        )
+        return navigationController
+    }()
 }
 
 import SwiftUI
