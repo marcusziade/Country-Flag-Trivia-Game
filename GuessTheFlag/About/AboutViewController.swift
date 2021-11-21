@@ -96,6 +96,12 @@ final class AboutViewController: UIViewController {
             present(viewController, animated: true)
         }
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        gradientLayer.frame = view.bounds
+    }
 
     // MARK: - Private
     
@@ -189,7 +195,7 @@ final class AboutViewController: UIViewController {
         }
 
         animationView.play { [weak self] _ in
-            UIView.animate(withDuration: 0.2) { [self] in
+            UIView.animate(withDuration: 0.2) {
                 self?.animationView.alpha = 0
             }
         }
