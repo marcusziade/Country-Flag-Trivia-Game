@@ -21,6 +21,7 @@ struct FlagGameHeaderView: View {
             Text(answer)
                 .font(.headline)
                 .fontWeight(.black)
+            
             HStack(alignment: .bottom) {
                 Text("Level: \(level)")
                     .modifier(LevelPill())
@@ -32,7 +33,6 @@ struct FlagGameHeaderView: View {
                     .modifier(ExperiencePill())
                     .minimumScaleFactor(0.5)
             }
-            .padding(.horizontal)
         }
     }
 }

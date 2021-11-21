@@ -20,40 +20,34 @@ struct FlagGameView: View {
                 }
             }
             .pickerStyle(.segmented)
-            .padding(.horizontal, 4)
             
-            ZStack {
-                VStack {
-                    FlagGameHeaderView(
-                        answer: manager.countries[manager.correctAnswer],
-                        score: manager.score,
-                        level: manager.playerLevel
-                    )
-                    
-                    ForEach(0..<3) { number in
-                        Button {
-                            manager.flagTapped(number)
-                        } label: {
-                            Image(manager.countries[number]) .flagImageMofifier()
-                        }
-                        .rotation3DEffect(
-                            .degrees(number == manager.correctAnswer ? manager.rotation : 0),
-                            axis: (x: 1, y: 0, z: 0)
-                        )
-                    }
-                    .padding(.horizontal)
+            FlagGameHeaderView(
+                answer: manager.countries[manager.correctAnswer],
+                score: manager.score,
+                level: manager.playerLevel
+            )
+            
+            ForEach(0..<3) { number in
+                Button {
+                    manager.flagTapped(number)
+                } label: {
+                    Image(manager.countries[number]) .flagImageMofifier()
                 }
-            }
-            .alert(isPresented: $manager.showingScore) {
-                Alert(
-                    title: Text(manager.scoreTitle),
-                    message: Text(manager.alertMessage),
-                    dismissButton: .default(Text("👏 NEXT 👏"))
-                    { manager.askQuestion() }
+                .rotation3DEffect(
+                    .degrees(number == manager.correctAnswer ? manager.rotation : 0),
+                    axis: (x: 1, y: 0, z: 0)
                 )
             }
         }
+        .padding(.horizontal, 8)
         .padding(.bottom, 4)
+        .actionSheet(isPresented: $manager.showingScore) {
+            ActionSheet(
+                title: Text(manager.scoreTitle),
+                message: Text(manager.alertMessage),
+                buttons: [.default(Text("Next ⏭"), action: { manager.askQuestion() })]
+            )
+        }
     }
 }
 

@@ -33,7 +33,6 @@ final class FlagGameManager: ObservableObject {
     let regions = [Region.europe, Region.asia, Region.africa, Region.americas, Region.world]
     
     init() {
-        
         $activePickerValue
             .removeDuplicates()
             .sink { [unowned self] in
@@ -84,7 +83,7 @@ final class FlagGameManager: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     private func win(for number: Int) {
-        scoreTitle = "Correct ✅\n" + "+15 XP!"
+        scoreTitle = "Correct 🙌\n" + "+15 XP!"
         alertMessage = "That's the flag of \(countries[number])"
         score += 15
         UserDefaults.standard.set(score, forKey: selectedRegion.flagGameScoreKey)
@@ -98,7 +97,7 @@ final class FlagGameManager: ObservableObject {
     }
     
     private func lose(for number: Int) {
-        scoreTitle = "Wrong 🚫\n" + "-10 XP"
+        scoreTitle = "Wrong ❌\n" + "-10 XP"
         alertMessage = "That's the flag of \(countries[number])"
         score -= 10
         UserDefaults.standard.set(score, forKey: selectedRegion.flagGameScoreKey)
