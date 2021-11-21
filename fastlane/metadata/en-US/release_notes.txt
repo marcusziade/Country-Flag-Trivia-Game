@@ -1,5 +1,1 @@
-Master of Flags 2.0 is here. 
-
-New feature: Encyclopedia. Improve your geographical knowledge.
-
-Bug fixes: Points now increase correctly and Africa flags have been restored to all their glory
+Added a streak counter. Rewrote the flag game entirely; This will allow me to further develop the game much faster.

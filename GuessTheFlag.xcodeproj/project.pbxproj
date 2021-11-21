@@ -541,7 +541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusziade.knowtheflag;
 				PRODUCT_NAME = "Master of Flags";
 				SWIFT_VERSION = 5.0;
@@ -564,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusziade.knowtheflag;
 				PRODUCT_NAME = "Master of Flags";
 				SWIFT_VERSION = 5.0;
