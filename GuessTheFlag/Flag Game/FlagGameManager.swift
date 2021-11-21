@@ -85,7 +85,7 @@ final class FlagGameManager: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     private func win(for number: Int) {
-        scoreTitle = "Correct 🙌\n" + "+15 XP!"
+        scoreTitle = "Correct ✅\n" + "+15 XP!"
         alertMessage = "That's the flag of \(countries[number])"
         score += 15
         streak += 1

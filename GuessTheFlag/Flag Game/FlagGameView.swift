@@ -42,11 +42,12 @@ struct FlagGameView: View {
         }
         .padding(.horizontal, 8)
         .padding(.bottom, 4)
-        .actionSheet(isPresented: $manager.showingScore) {
-            ActionSheet(
+        .alert(isPresented: $manager.showingScore) {
+            Alert(
                 title: Text(manager.scoreTitle),
                 message: Text(manager.alertMessage),
-                buttons: [.default(Text("Next ⏭"), action: { manager.askQuestion() })]
+                dismissButton: .default(Text("Next ⏭"))
+                { manager.askQuestion() }
             )
         }
     }
