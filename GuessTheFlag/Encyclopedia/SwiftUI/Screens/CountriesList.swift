@@ -10,6 +10,9 @@ import CoreLocation
 import SwiftUI
 
 struct CountriesList: View {
+    
+    @StateObject var viewModel: CountryListVM
+    
     var body: some View {
         NavigationView {
             List(viewModel.filteredCountries) { country in
@@ -32,10 +35,6 @@ struct CountriesList: View {
             }
         }
     }
-
-    // MARK: - Private
-
-    @StateObject var viewModel: CountryListVM
 }
 
 struct CountriesList_Previews: PreviewProvider {
