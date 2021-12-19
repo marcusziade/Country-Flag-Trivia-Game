@@ -14,8 +14,8 @@ struct CountriesList: View {
         NavigationView {
             List(viewModel.filteredCountries) { country in
                 NavigationLink(destination: CountryDetail(
-                    country: country,
-                    viewModel: CountryDetailVM(coordinate: country.location)
+                    viewModel: CountryDetailVM(coordinate: country.location),
+                    country: country
                 ))
                 { CountryRow(country: country) }
             }
