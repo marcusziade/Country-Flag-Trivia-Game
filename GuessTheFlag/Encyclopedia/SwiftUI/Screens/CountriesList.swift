@@ -22,7 +22,7 @@ struct CountriesList: View {
                 ))
                 { CountryRow(country: country) }
             }
-            .listStyle(InsetGroupedListStyle())
+            .listStyle(.insetGrouped)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Picker(selection: $viewModel.selectedRegion, label: Text("Picker")) {
@@ -34,6 +34,7 @@ struct CountriesList: View {
                 }
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

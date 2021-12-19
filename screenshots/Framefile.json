@@ -1,0 +1,50 @@
+{
+    "device_frame_version": "latest",
+    "default": {
+        "title": {
+            "color": "#545454"
+        },
+        "background": "./white.jpg",
+        "padding": 32,
+        "show_complete_frame": true
+    },
+    
+    "data": [
+        {
+            "filter": "game.portrait",
+            "keyword": {
+                "color": "#d21559"
+            }
+        },
+        {
+            "filter": "encyclopedia.portrait",
+            "keyword": {
+                "color": "#feb909"
+            }
+        },
+        {
+            "filter": "game.landscape.right",
+            "keyword": {
+                "color": "#d21559"
+            }
+        },
+        {
+            "filter": "encyclopedia.landscape.right",
+            "keyword": {
+                "color": "#feb909"
+            }
+        },
+        {
+            "filter": "game.landscape.left",
+            "keyword": {
+                "color": "#d21559"
+            }
+        },
+        {
+            "filter": "encyclopedia.Landscape.left",
+            "keyword": {
+                "color": "#feb909"
+            }
+        }
+    ]
+}

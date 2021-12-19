@@ -1,0 +1,16 @@
+/* 
+  title.strings
+  GuessTheFlag
+
+  Created by Marcus Ziadé on 19.12.2021.
+  Copyright © 2021 Marcus Ziadé. All rights reserved.
+*/
+
+"game.portrait" = "Flag Game";
+"encyclopedia.portrait" = "Encyclopedia";
+
+"game.landscape.right" = " ";
+"encyclopedia.landscape.right" = " ";
+
+"game.landscape.left" = " ";
+"encyclopedia.Landscape.left" = " ";

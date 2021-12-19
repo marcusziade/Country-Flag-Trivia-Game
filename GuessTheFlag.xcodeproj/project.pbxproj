@@ -14,14 +14,18 @@
 		2CB7C7002352EC4B0068ADE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */; };
 		2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */; };
 		5A0B07E52721DEFE00447A13 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0B07E42721DEFE00447A13 /* countries.json */; };
-		5A1FBFB225C68DD200E3D721 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1FBFB125C68DD200E3D721 /* Lottie */; };
 		5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB325C68F6100E3D721 /* coffee.json */; };
 		5A1FBFB825C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
 		5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */; };
 		5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62D25C5D6D600525C9A /* Currency.swift */; };
+		5A55C5ED276F2C4A00594C83 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5A55C5EC276F2C4A00594C83 /* Lottie */; };
+		5A55C5EF276F526C00594C83 /* keyword.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A55C5EE276F526C00594C83 /* keyword.strings */; };
+		5A55C5F1276F52C600594C83 /* title.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A55C5F0276F52C600594C83 /* title.strings */; };
 		5A5C538F2633F5FB00070869 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C538E2633F5FB00070869 /* Authentication.swift */; };
+		5A8FC615276F1C5100C1B468 /* MasterofFlagsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */; };
+		5A8FC61E276F1CB200C1B468 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */; };
 		5AA44B4B2749169100AB9083 /* FlagGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4A2749169100AB9083 /* FlagGameManager.swift */; };
 		5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4C27491CDA00AB9083 /* Region.swift */; };
 		5AA44B51274940F700AB9083 /* FlagGameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */; };
@@ -44,6 +48,16 @@
 		5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC665C253B26E4001E09B3 /* LivePreview.swift */; };
 		5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA07A425C547A900DBA23F /* Reusable.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A8FC618276F1C5100C1B468 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CB7C6EB2352EC490068ADE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CB7C6F22352EC490068ADE2;
+			remoteInfo = GuessTheFlag;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5AAE71A225C5650C003F8118 /* Embed Frameworks */ = {
@@ -75,7 +89,12 @@
 		5A2CC62625C4CCF300525C9A /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		5A2CC62D25C5D6D600525C9A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		5A55C5EE276F526C00594C83 /* keyword.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = keyword.strings; path = "screenshots/en-US/keyword.strings"; sourceTree = SOURCE_ROOT; };
+		5A55C5F0276F52C600594C83 /* title.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = title.strings; path = "screenshots/en-US/title.strings"; sourceTree = SOURCE_ROOT; };
 		5A5C538E2633F5FB00070869 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		5A8FC612276F1C5100C1B468 /* MasterofFlagsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterofFlagsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterofFlagsUITests.swift; sourceTree = "<group>"; };
+		5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = MasterofFlagsUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		5AA44B4A2749169100AB9083 /* FlagGameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameManager.swift; sourceTree = "<group>"; };
 		5AA44B4C27491CDA00AB9083 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameHeaderView.swift; sourceTree = "<group>"; };
@@ -104,7 +123,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AD6BEB826FF257B009B276F /* Kingfisher in Frameworks */,
-				5A1FBFB225C68DD200E3D721 /* Lottie in Frameworks */,
+				5A55C5ED276F2C4A00594C83 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A8FC60F276F1C5100C1B468 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				2CB7C6F52352EC490068ADE2 /* GuessTheFlag */,
+				5A8FC613276F1C5100C1B468 /* MasterofFlagsUITests */,
 				2CB7C6F42352EC490068ADE2 /* Products */,
 				5AAE719E25C5650C003F8118 /* Frameworks */,
 			);
@@ -124,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				2CB7C6F32352EC490068ADE2 /* Master of Flags.app */,
+				5A8FC612276F1C5100C1B468 /* MasterofFlagsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,6 +203,17 @@
 				5AA44B4A2749169100AB9083 /* FlagGameManager.swift */,
 			);
 			path = "Flag Game";
+			sourceTree = "<group>";
+		};
+		5A8FC613276F1C5100C1B468 /* MasterofFlagsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */,
+				5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */,
+				5A55C5EE276F526C00594C83 /* keyword.strings */,
+				5A55C5F0276F52C600594C83 /* title.strings */,
+			);
+			path = MasterofFlagsUITests;
 			sourceTree = "<group>";
 		};
 		5AAE719E25C5650C003F8118 /* Frameworks */ = {
@@ -300,12 +339,30 @@
 			);
 			name = GuessTheFlag;
 			packageProductDependencies = (
-				5A1FBFB125C68DD200E3D721 /* Lottie */,
 				5AD6BEB726FF257B009B276F /* Kingfisher */,
+				5A55C5EC276F2C4A00594C83 /* Lottie */,
 			);
 			productName = GuessTheFlag;
 			productReference = 2CB7C6F32352EC490068ADE2 /* Master of Flags.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5A8FC611276F1C5100C1B468 /* MasterofFlagsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A8FC61C276F1C5100C1B468 /* Build configuration list for PBXNativeTarget "MasterofFlagsUITests" */;
+			buildPhases = (
+				5A8FC60E276F1C5100C1B468 /* Sources */,
+				5A8FC60F276F1C5100C1B468 /* Frameworks */,
+				5A8FC610276F1C5100C1B468 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A8FC619276F1C5100C1B468 /* PBXTargetDependency */,
+			);
+			name = MasterofFlagsUITests;
+			productName = MasterofFlagsUITests;
+			productReference = 5A8FC612276F1C5100C1B468 /* MasterofFlagsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -313,12 +370,16 @@
 		2CB7C6EB2352EC490068ADE2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Marcus Ziadé";
 				TargetAttributes = {
 					2CB7C6F22352EC490068ADE2 = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					5A8FC611276F1C5100C1B468 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 2CB7C6F22352EC490068ADE2;
 					};
 				};
 			};
@@ -332,14 +393,15 @@
 			);
 			mainGroup = 2CB7C6EA2352EC490068ADE2;
 			packageReferences = (
-				5A1FBFB025C68DD200E3D721 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				5AD6BEB626FF257B009B276F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5A55C5EB276F2C4A00594C83 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 2CB7C6F42352EC490068ADE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				2CB7C6F22352EC490068ADE2 /* GuessTheFlag */,
+				5A8FC611276F1C5100C1B468 /* MasterofFlagsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -354,6 +416,15 @@
 				2CB7C6FD2352EC4B0068ADE2 /* Assets.xcassets in Resources */,
 				5A0B07E52721DEFE00447A13 /* countries.json in Resources */,
 				5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A8FC610276F1C5100C1B468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A55C5EF276F526C00594C83 /* keyword.strings in Resources */,
+				5A55C5F1276F52C600594C83 /* title.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +467,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A8FC60E276F1C5100C1B468 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A8FC615276F1C5100C1B468 /* MasterofFlagsUITests.swift in Sources */,
+				5A8FC61E276F1CB200C1B468 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A8FC619276F1C5100C1B468 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CB7C6F22352EC490068ADE2 /* GuessTheFlag */;
+			targetProxy = 5A8FC618276F1C5100C1B468 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */ = {
@@ -572,6 +660,44 @@
 			};
 			name = Release;
 		};
+		5A8FC61A276F1C5100C1B468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4DQK6SRKR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcusziade.MasterofFlagsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GuessTheFlag;
+			};
+			name = Debug;
+		};
+		5A8FC61B276F1C5100C1B468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4DQK6SRKR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcusziade.MasterofFlagsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GuessTheFlag;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -593,15 +719,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5A8FC61C276F1C5100C1B468 /* Build configuration list for PBXNativeTarget "MasterofFlagsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A8FC61A276F1C5100C1B468 /* Debug */,
+				5A8FC61B276F1C5100C1B468 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5A1FBFB025C68DD200E3D721 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		5A55C5EB276F2C4A00594C83 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:airbnb/lottie-ios.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.9;
+				branch = master;
+				kind = branch;
 			};
 		};
 		5AD6BEB626FF257B009B276F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
@@ -615,9 +750,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5A1FBFB125C68DD200E3D721 /* Lottie */ = {
+		5A55C5EC276F2C4A00594C83 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5A1FBFB025C68DD200E3D721 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = 5A55C5EB276F2C4A00594C83 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
 		5AD6BEB726FF257B009B276F /* Kingfisher */ = {
