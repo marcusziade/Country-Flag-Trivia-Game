@@ -45,7 +45,8 @@ struct CountryDetail: View {
                     }
                 }
                 Section(header: Text("Maps")) {
-                    NavigationLink(destination: Map(coordinateRegion: $viewModel.region).ignoresSafeArea()) {
+                    NavigationLink(
+                        destination: Map(coordinateRegion: $viewModel.region).edgesIgnoringSafeArea(.all)) {
                         Label("Apple Maps", systemImage: "map")
                     }
                     Link(destination: country.googleMap) {
