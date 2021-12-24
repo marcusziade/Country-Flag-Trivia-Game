@@ -44,6 +44,7 @@ extension Image {
         self
             .resizable()
             .renderingMode(.original)
+            .scaledToFit()
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.primary, lineWidth: 1))
             .shadow(color: .primary, radius: 2)
