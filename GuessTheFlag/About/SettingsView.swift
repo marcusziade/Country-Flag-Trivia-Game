@@ -11,6 +11,7 @@ import SwiftUI
 struct SettingsView: View {
     
     @StateObject var model: SettingsViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationView {
@@ -21,6 +22,13 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+            .toolbar {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark")
+                }
+            }
         }
         .navigationViewStyle(.stack)
     }
