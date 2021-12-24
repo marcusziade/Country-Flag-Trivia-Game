@@ -30,7 +30,7 @@ struct CountriesList: View {
                             Text(viewModel.regions[$0].title)
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
+                    .pickerStyle(.segmented)
                 }
             }
         }
