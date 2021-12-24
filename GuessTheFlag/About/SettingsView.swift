@@ -15,9 +15,10 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                Section {
-                    Toggle("Enable Haptics", isOn: $model.isHapticsEnabled)
-                }
+                Section("Flag Game") {
+                    Toggle("Hard Mode", isOn: $model.isHardModeEnabled)
+                    Text("Hard mode increases the amount of flag options, making the game more difficult")
+                }                
             }
             .navigationTitle("Settings")
         }

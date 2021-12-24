@@ -28,16 +28,36 @@ struct FlagGameView: View {
                 streak: manager.streak
             )
             
-            ForEach(0..<3) { number in
-                Button {
-                    manager.flagTapped(number)
-                } label: {
-                    Image(manager.countries[number]) .flagImageMofifier()
+            if manager.isHardModeEnabled {
+                ScrollView {
+                    LazyVGrid(columns: manager.flagGridColumns) {
+                        ForEach(0..<8) { number in
+                            Button {
+                                manager.flagTapped(number)
+                            } label: {
+                                Image(manager.countries[number])
+                                    .flagImageMofifier()
+                            }
+                            .rotation3DEffect(
+                                .degrees(number == manager.correctAnswer ? manager.rotation : 0),
+                                axis: (x: 1, y: 0, z: 0)
+                            )
+                        }
+                    }
                 }
-                .rotation3DEffect(
-                    .degrees(number == manager.correctAnswer ? manager.rotation : 0),
-                    axis: (x: 1, y: 0, z: 0)
-                )
+            } else {
+                ForEach(0..<3) { number in
+                    Button {
+                        manager.flagTapped(number)
+                    } label: {
+                        Image(manager.countries[number])
+                            .flagImageMofifier()
+                    }
+                    .rotation3DEffect(
+                        .degrees(number == manager.correctAnswer ? manager.rotation : 0),
+                        axis: (x: 1, y: 0, z: 0)
+                    )
+                }
             }
         }
         .padding(.horizontal, 8)
@@ -50,6 +70,7 @@ struct FlagGameView: View {
                 { manager.askQuestion() }
             )
         }
+        .onAppear { manager.askQuestion() }
     }
 }
 

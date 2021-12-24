@@ -33,6 +33,11 @@ final class FlagGameManager: ObservableObject {
     
     let regions = [Region.europe, Region.asia, Region.africa, Region.americas, Region.world]
     
+    let flagGridColumns: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     init() {
         $activePickerValue
             .removeDuplicates()
@@ -62,6 +67,10 @@ final class FlagGameManager: ObservableObject {
             .store(in: &cancellables)
     }
     
+    var isHardModeEnabled: Bool {
+        UserDefaults.standard.bool(forKey: "isHardModeEnabled")
+    }
+    
     func flagTapped(_ number: Int) {
         HapticEngine.select.selectionChanged()
         withAnimation(.interpolatingSpring(mass: 40, stiffness: 500, damping: 200, initialVelocity: 2.2)) {
@@ -77,7 +86,7 @@ final class FlagGameManager: ObservableObject {
     
     func askQuestion() {
         countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
+        correctAnswer = Int.random(in: isHardModeEnabled ? 0...7 : 0...2)
     }
     
     // MARK: - Private
