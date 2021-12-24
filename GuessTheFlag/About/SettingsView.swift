@@ -18,10 +18,11 @@ struct SettingsView: View {
                 Section("Flag Game") {
                     Toggle("Hard Mode", isOn: $model.isHardModeEnabled)
                     Text("Hard mode increases the amount of flag options, making the game more difficult")
-                }                
+                }
             }
             .navigationTitle("Settings")
         }
+        .navigationViewStyle(.stack)
     }
 }
 

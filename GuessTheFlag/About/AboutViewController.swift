@@ -18,15 +18,12 @@ final class AboutViewController: UIViewController {
         view.layer.addSublayer(gradientLayer)
         SKPaymentQueue.default().add(self)
         
-        #if DEBUG
-        // Debug only until ready and has enough stuff to make sense
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "gear")!,
             style: .plain,
             target: self,
             action: #selector(openSettings)
         )
-        #endif
 
         let stackView = UIStackView(arrangedSubviews: [titleLabel, infoLabel]).forAutoLayout()
         stackView.axis = .vertical
