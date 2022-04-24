@@ -20,6 +20,9 @@ final class SettingsViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = NSLocalizedString("Settings", comment: "Settings nav title")
+        
         view.addAndConstrainSubview(collectionView) {
             $0.edges.equalToSuperview()
         }
@@ -29,12 +32,24 @@ final class SettingsViewController: ViewController {
     
     private let model: SettingsViewModel
     
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: model.viewLayout).configure {
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout).configure {
         $0.dataSource = self
         $0.delegate = self
         
         $0.registerCell(SettingsRegularCell.self)
         $0.registerCell(SettingsHardModeCell.self)
+    }
+    
+    private var viewLayout: UICollectionViewLayout {
+        let sectionProvider = {
+            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            let config = UICollectionLayoutListConfiguration(appearance: .grouped)
+            
+            return NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvironment)
+        }
+        
+        return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
     }
 }
 

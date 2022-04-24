@@ -20,18 +20,6 @@ final class SettingsViewModel: ObservableObject {
         self.settings = settings
     }
     
-    var viewLayout: UICollectionViewLayout {
-        let sectionProvider = {
-            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            
-            let config = UICollectionLayoutListConfiguration(appearance: .grouped)
-            
-            return NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvironment)
-        }
-        
-        return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
-    }
-    
     func setGameDifficulty(with bool: Bool) {
         settings.isHardModeEnabled = bool
     }
