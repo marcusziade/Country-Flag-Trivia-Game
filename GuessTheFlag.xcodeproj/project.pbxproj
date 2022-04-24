@@ -25,6 +25,7 @@
 		5A0DC2BD281533BD007F9359 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2BC281533BD007F9359 /* ViewController.swift */; };
 		5A0DC2BF2815392E007F9359 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2BE2815392E007F9359 /* SettingsCell.swift */; };
 		5A0DC2C128153951007F9359 /* SettingsHardModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2C028153951007F9359 /* SettingsHardModeCell.swift */; };
+		5A0DC2C328157CD2007F9359 /* TipJarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2C228157CD2007F9359 /* TipJarViewController.swift */; };
 		5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB325C68F6100E3D721 /* coffee.json */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
@@ -101,6 +102,7 @@
 		5A0DC2BC281533BD007F9359 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A0DC2BE2815392E007F9359 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		5A0DC2C028153951007F9359 /* SettingsHardModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHardModeCell.swift; sourceTree = "<group>"; };
+		5A0DC2C228157CD2007F9359 /* TipJarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarViewController.swift; sourceTree = "<group>"; };
 		5A1FBFB325C68F6100E3D721 /* coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee.json; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +186,6 @@
 				5A6E9EA12530E0510007C148 /* Flag Game */,
 				5AD6BEB926FF27E1009B276F /* Encyclopedia */,
 				5A0DC2A22814F72E007F9359 /* Settings */,
-				5AB84C1F2700699700FE1608 /* About */,
 				5ADC664B253AF88B001E09B3 /* Extensions */,
 				5AEA07A325C5479E00DBA23F /* Utilities */,
 				5A2CC62525C4CCD500525C9A /* Supporting Files */,
@@ -221,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				5A0DC2A32814F73C007F9359 /* SettingsViewController.swift */,
+				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
+				5A0DC2C228157CD2007F9359 /* TipJarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				5A0DC2BE2815392E007F9359 /* SettingsCell.swift */,
 				5A0DC2B828151454007F9359 /* SettingsRegularCell.swift */,
 				5A0DC2C028153951007F9359 /* SettingsHardModeCell.swift */,
+				5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,15 +292,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5AB84C1F2700699700FE1608 /* About */ = {
-			isa = PBXGroup;
-			children = (
-				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
-				5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */,
-			);
-			path = About;
 			sourceTree = "<group>";
 		};
 		5AD6BEB926FF27E1009B276F /* Encyclopedia */ = {
@@ -535,6 +530,7 @@
 				5A0DC2A42814F73C007F9359 /* SettingsViewController.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
+				5A0DC2C328157CD2007F9359 /* TipJarViewController.swift in Sources */,
 				5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */,
 				5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */,
 				5A0DC2B928151454007F9359 /* SettingsRegularCell.swift in Sources */,

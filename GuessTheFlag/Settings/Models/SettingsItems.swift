@@ -35,7 +35,7 @@ struct SettingsItems {
             color: .systemGreen,
             title: NSLocalizedString("Tip Jar", comment: "Tip Jar title"),
             section: .support,
-            viewController: ViewController(),
+            viewController: TipJarViewController(),
             url: nil
         ),
         
