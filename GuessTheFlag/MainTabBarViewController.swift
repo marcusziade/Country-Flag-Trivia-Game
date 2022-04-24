@@ -28,7 +28,7 @@ final class MainTabBarController: UITabBarController {
             countriesViewController,
             settingsViewController
         ]
-        selectedIndex = 2
+        selectedIndex = 0
     }
     
     // MARK: - Private
