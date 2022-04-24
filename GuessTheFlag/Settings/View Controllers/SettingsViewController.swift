@@ -120,6 +120,7 @@ extension SettingsViewController: UICollectionViewDelegate {
         switch section {
         case .general:
             if let viewController = model.items.general[indexPath.item].viewController {
+                viewController.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(viewController, animated: true)
             } else {
                 break
@@ -128,7 +129,7 @@ extension SettingsViewController: UICollectionViewDelegate {
             break
         case .support:
             if let viewController = model.items.support[indexPath.item].viewController {
-                print(viewController)
+                viewController.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(viewController, animated: true)
             } else {
                 UIApplication.shared.open(model.items.support[indexPath.item].url ?? URL(string: "https://twitter.com/ziademarcus")!)
