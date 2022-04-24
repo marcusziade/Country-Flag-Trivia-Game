@@ -38,7 +38,7 @@ final class MainTabBarController: UITabBarController {
     private lazy var flagGameView: UIHostingController<FlagGameView> = {
         let view = UIHostingController(rootView: FlagGameView(manager: FlagGameManager(settings: self.settings)))
         view.tabBarItem = UITabBarItem(
-            title: nil,
+            title: "Game",
             image: UIImage(systemName: "gamecontroller"),
             selectedImage: UIImage(systemName: "gamecontroller.fill")
         )
@@ -48,7 +48,7 @@ final class MainTabBarController: UITabBarController {
     private let countriesViewController: UIHostingController<CountriesList> = {
         let view = UIHostingController(rootView: CountriesList(viewModel: CountryListVM()))
         view.tabBarItem = UITabBarItem(
-            title: nil,
+            title: "Encyclopedia",
             image: UIImage(systemName: "doc.text.magnifyingglass"),
             selectedImage: UIImage(systemName: "doc.text.magnifyingglass")
         )
@@ -59,7 +59,7 @@ final class MainTabBarController: UITabBarController {
         let viewController = SettingsViewController(model: SettingsViewModel(settings: settings))
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem = UITabBarItem(
-            title: nil,
+            title: "Settings",
             image: UIImage(systemName: "gearshape"),
             selectedImage: UIImage(systemName: "gearshape.fill")
         )
