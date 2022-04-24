@@ -38,16 +38,31 @@ final class SettingsViewController: ViewController {
         
         $0.registerCell(SettingsRegularCell.self)
         $0.registerCell(SettingsHardModeCell.self)
+        $0.registerSupplementaryView(SettingsHeaderView.self, kind: .sectionHeader)
     }
     
     private var viewLayout: UICollectionViewLayout {
         let sectionProvider = {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
+            let sectionLayout: NSCollectionLayoutSection
+            
             var config = UICollectionLayoutListConfiguration(appearance: .grouped)
             config.showsSeparators = false
+            sectionLayout = NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvironment)
             
-            return NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvironment)
+            let header = NSCollectionLayoutBoundarySupplementaryItem.create(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .absolute(40)
+                ),
+                elementKind: .sectionHeader,
+                alignment: .topLeading
+            )
+            
+            sectionLayout.boundarySupplementaryItems = [header]
+            
+            return sectionLayout
         }
         
         return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
@@ -118,6 +133,21 @@ extension SettingsViewController: UICollectionViewDelegate {
             } else {
                 UIApplication.shared.open(model.items.support[indexPath.item].url ?? URL(string: "https://twitter.com/ziademarcus")!)
             }
+        }
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
+        guard let section = SettingsSection(rawValue: indexPath.section) else { return UICollectionReusableView() }
+        return collectionView.dequeueSupplementaryView(
+            SettingsHeaderView.self,
+            kind: .sectionHeader,
+            indexPath: indexPath
+        ).configure {
+            $0.title = section.headerTitle
         }
     }
 }
