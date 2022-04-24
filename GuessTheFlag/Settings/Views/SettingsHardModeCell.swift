@@ -17,7 +17,7 @@ final class SettingsHardModeCell: SettingsCell {
         super.init(frame: frame)
         
         contentView.addAndConstrainSubview(toggleView) {
-            $0.top.right.bottom.equalToSuperview().inset(16)
+            $0.top.right.bottom.equalToSuperview().inset(24)
         }
     }
     

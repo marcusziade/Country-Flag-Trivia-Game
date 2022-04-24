@@ -44,7 +44,8 @@ final class SettingsViewController: ViewController {
         let sectionProvider = {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
-            let config = UICollectionLayoutListConfiguration(appearance: .grouped)
+            var config = UICollectionLayoutListConfiguration(appearance: .grouped)
+            config.showsSeparators = false
             
             return NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvironment)
         }

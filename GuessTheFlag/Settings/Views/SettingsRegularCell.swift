@@ -15,7 +15,7 @@ final class SettingsRegularCell: SettingsCell {
         super.init(frame: frame)
         
         contentView.addAndConstrainSubview(accessoryView) {
-            $0.top.right.bottom.equalToSuperview().inset(16)
+            $0.top.right.bottom.equalToSuperview().inset(24)
         }
     }
     
@@ -33,3 +33,13 @@ final class SettingsRegularCell: SettingsCell {
         $0.contentMode = .scaleAspectFit
     }
 }
+
+#if DEBUG
+
+import SwiftUI
+
+struct SettingsRegularCell_Preview: PreviewProvider {
+    static var previews: some View = createPreview(for: SettingsRegularCell(), width: 300, height: 80)
+}
+
+#endif
