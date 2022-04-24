@@ -14,8 +14,18 @@
 		2CB7C7002352EC4B0068ADE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */; };
 		2CB7C7032352EC4B0068ADE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */; };
 		5A0B07E52721DEFE00447A13 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0B07E42721DEFE00447A13 /* countries.json */; };
+		5A0DC2A42814F73C007F9359 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2A32814F73C007F9359 /* SettingsViewController.swift */; };
+		5A0DC2A72814F9E5007F9359 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0DC2A62814F9E5007F9359 /* SnapKit */; };
+		5A0DC2AA2814FAB9007F9359 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2A92814FAB9007F9359 /* SettingsSection.swift */; };
+		5A0DC2AC2814FB5A007F9359 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2AB2814FB5A007F9359 /* UICollectionView+Ext.swift */; };
+		5A0DC2B0281506C4007F9359 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2AF281506C4007F9359 /* SettingsItem.swift */; };
+		5A0DC2B328150806007F9359 /* SettingsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2B228150806007F9359 /* SettingsItems.swift */; };
+		5A0DC2B728150D2C007F9359 /* SettingsItemBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2B628150D2C007F9359 /* SettingsItemBadgeView.swift */; };
+		5A0DC2B928151454007F9359 /* SettingsRegularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2B828151454007F9359 /* SettingsRegularCell.swift */; };
+		5A0DC2BD281533BD007F9359 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2BC281533BD007F9359 /* ViewController.swift */; };
+		5A0DC2BF2815392E007F9359 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2BE2815392E007F9359 /* SettingsCell.swift */; };
+		5A0DC2C128153951007F9359 /* SettingsHardModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2C028153951007F9359 /* SettingsHardModeCell.swift */; };
 		5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB325C68F6100E3D721 /* coffee.json */; };
-		5A1FBFB825C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
 		5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */; };
@@ -23,14 +33,13 @@
 		5A55C5ED276F2C4A00594C83 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5A55C5EC276F2C4A00594C83 /* Lottie */; };
 		5A55C5EF276F526C00594C83 /* keyword.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A55C5EE276F526C00594C83 /* keyword.strings */; };
 		5A55C5F1276F52C600594C83 /* title.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A55C5F0276F52C600594C83 /* title.strings */; };
-		5A5C538F2633F5FB00070869 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C538E2633F5FB00070869 /* Authentication.swift */; };
+		5A5C538F2633F5FB00070869 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C538E2633F5FB00070869 /* Settings.swift */; };
 		5A8FC615276F1C5100C1B468 /* MasterofFlagsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */; };
 		5A8FC61E276F1CB200C1B468 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */; };
 		5AA44B4B2749169100AB9083 /* FlagGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4A2749169100AB9083 /* FlagGameManager.swift */; };
 		5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4C27491CDA00AB9083 /* Region.swift */; };
 		5AA44B51274940F700AB9083 /* FlagGameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */; };
 		5AA44B53274A363D00AB9083 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B52274A363D00AB9083 /* Configurable.swift */; };
-		5AA44B57274A3FE200AB9083 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B56274A3FE200AB9083 /* SettingsView.swift */; };
 		5AA44B59274A424700AB9083 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B58274A424700AB9083 /* SettingsViewModel.swift */; };
 		5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */; };
 		5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE71A625C56DD1003F8118 /* HapticEngine.swift */; };
@@ -82,8 +91,17 @@
 		2CB7C7022352EC4B0068ADE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB7C7042352EC4B0068ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0B07E42721DEFE00447A13 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		5A0DC2A32814F73C007F9359 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5A0DC2A92814FAB9007F9359 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		5A0DC2AB2814FB5A007F9359 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		5A0DC2AF281506C4007F9359 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
+		5A0DC2B228150806007F9359 /* SettingsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItems.swift; sourceTree = "<group>"; };
+		5A0DC2B628150D2C007F9359 /* SettingsItemBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemBadgeView.swift; sourceTree = "<group>"; };
+		5A0DC2B828151454007F9359 /* SettingsRegularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRegularCell.swift; sourceTree = "<group>"; };
+		5A0DC2BC281533BD007F9359 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5A0DC2BE2815392E007F9359 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		5A0DC2C028153951007F9359 /* SettingsHardModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHardModeCell.swift; sourceTree = "<group>"; };
 		5A1FBFB325C68F6100E3D721 /* coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee.json; sourceTree = "<group>"; };
-		5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsExtensions.swift; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5A2CC62625C4CCF300525C9A /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -91,7 +109,7 @@
 		5A2CC62D25C5D6D600525C9A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		5A55C5EE276F526C00594C83 /* keyword.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = keyword.strings; path = "screenshots/en-US/keyword.strings"; sourceTree = SOURCE_ROOT; };
 		5A55C5F0276F52C600594C83 /* title.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = title.strings; path = "screenshots/en-US/title.strings"; sourceTree = SOURCE_ROOT; };
-		5A5C538E2633F5FB00070869 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		5A5C538E2633F5FB00070869 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		5A8FC612276F1C5100C1B468 /* MasterofFlagsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterofFlagsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterofFlagsUITests.swift; sourceTree = "<group>"; };
 		5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = MasterofFlagsUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -99,7 +117,6 @@
 		5AA44B4C27491CDA00AB9083 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameHeaderView.swift; sourceTree = "<group>"; };
 		5AA44B52274A363D00AB9083 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
-		5AA44B56274A3FE200AB9083 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5AA44B58274A424700AB9083 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateView.swift; sourceTree = "<group>"; };
 		5AAE71A625C56DD1003F8118 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
@@ -122,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A0DC2A72814F9E5007F9359 /* SnapKit in Frameworks */,
 				5AD6BEB826FF257B009B276F /* Kingfisher in Frameworks */,
 				5A55C5ED276F2C4A00594C83 /* Lottie in Frameworks */,
 			);
@@ -165,6 +183,7 @@
 				5ADC6636253AF21B001E09B3 /* API */,
 				5A6E9EA12530E0510007C148 /* Flag Game */,
 				5AD6BEB926FF27E1009B276F /* Encyclopedia */,
+				5A0DC2A22814F72E007F9359 /* Settings */,
 				5AB84C1F2700699700FE1608 /* About */,
 				5ADC664B253AF88B001E09B3 /* Extensions */,
 				5AEA07A325C5479E00DBA23F /* Utilities */,
@@ -185,6 +204,54 @@
 				2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A0DC2A22814F72E007F9359 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5A0DC2B428150C6A007F9359 /* Models */,
+				5A0DC2B528150D17007F9359 /* Views */,
+				5A0DC2AD2814FC3C007F9359 /* View Controllers */,
+				5A0DC2AE2814FC52007F9359 /* View Models */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5A0DC2AD2814FC3C007F9359 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A0DC2A32814F73C007F9359 /* SettingsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5A0DC2AE2814FC52007F9359 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				5AA44B58274A424700AB9083 /* SettingsViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		5A0DC2B428150C6A007F9359 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A0DC2B228150806007F9359 /* SettingsItems.swift */,
+				5A0DC2A92814FAB9007F9359 /* SettingsSection.swift */,
+				5A0DC2AF281506C4007F9359 /* SettingsItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A0DC2B528150D17007F9359 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A0DC2B628150D2C007F9359 /* SettingsItemBadgeView.swift */,
+				5A0DC2BE2815392E007F9359 /* SettingsCell.swift */,
+				5A0DC2B828151454007F9359 /* SettingsRegularCell.swift */,
+				5A0DC2C028153951007F9359 /* SettingsHardModeCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5A2CC62525C4CCD500525C9A /* Supporting Files */ = {
@@ -228,8 +295,6 @@
 			children = (
 				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
 				5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */,
-				5AA44B56274A3FE200AB9083 /* SettingsView.swift */,
-				5AA44B58274A424700AB9083 /* SettingsViewModel.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -304,7 +369,7 @@
 				5ADC664C253AF89B001E09B3 /* UIViewExtensions.swift */,
 				5ADC665C253B26E4001E09B3 /* LivePreview.swift */,
 				5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */,
-				5A1FBFB725C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift */,
+				5A0DC2AB2814FB5A007F9359 /* UICollectionView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,9 +379,10 @@
 			children = (
 				5AEA07A425C547A900DBA23F /* Reusable.swift */,
 				5AAE71A625C56DD1003F8118 /* HapticEngine.swift */,
-				5A5C538E2633F5FB00070869 /* Authentication.swift */,
+				5A5C538E2633F5FB00070869 /* Settings.swift */,
 				5A2690C52530B03300C4FC39 /* ViewModifiers.swift */,
 				5AA44B52274A363D00AB9083 /* Configurable.swift */,
+				5A0DC2BC281533BD007F9359 /* ViewController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -341,6 +407,7 @@
 			packageProductDependencies = (
 				5AD6BEB726FF257B009B276F /* Kingfisher */,
 				5A55C5EC276F2C4A00594C83 /* Lottie */,
+				5A0DC2A62814F9E5007F9359 /* SnapKit */,
 			);
 			productName = GuessTheFlag;
 			productReference = 2CB7C6F32352EC490068ADE2 /* Master of Flags.app */;
@@ -395,6 +462,7 @@
 			packageReferences = (
 				5AD6BEB626FF257B009B276F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				5A55C5EB276F2C4A00594C83 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				5A0DC2A52814F9E5007F9359 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 2CB7C6F42352EC490068ADE2 /* Products */;
 			projectDirPath = "";
@@ -435,35 +503,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A1FBFB825C6B55B00E3D721 /* NSLayoutConstraintsExtensions.swift in Sources */,
 				2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */,
 				5AD6BEC526FF3368009B276F /* CountriesList.swift in Sources */,
 				5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */,
 				5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */,
 				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
 				5AA44B53274A363D00AB9083 /* Configurable.swift in Sources */,
+				5A0DC2B328150806007F9359 /* SettingsItems.swift in Sources */,
 				5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */,
 				5AD6BECC26FF492F009B276F /* CountryDetailVM.swift in Sources */,
+				5A0DC2C128153951007F9359 /* SettingsHardModeCell.swift in Sources */,
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,
 				5AD6BEC826FF3564009B276F /* CountryRow.swift in Sources */,
+				5A0DC2AA2814FAB9007F9359 /* SettingsSection.swift in Sources */,
 				2C38414323563BB400F56257 /* FlagGameView.swift in Sources */,
+				5A0DC2B728150D2C007F9359 /* SettingsItemBadgeView.swift in Sources */,
 				5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */,
+				5A0DC2BF2815392E007F9359 /* SettingsCell.swift in Sources */,
+				5A0DC2B0281506C4007F9359 /* SettingsItem.swift in Sources */,
 				5AA44B51274940F700AB9083 /* FlagGameHeaderView.swift in Sources */,
 				5AA44B4B2749169100AB9083 /* FlagGameManager.swift in Sources */,
+				5A0DC2BD281533BD007F9359 /* ViewController.swift in Sources */,
 				5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */,
 				5AA44B59274A424700AB9083 /* SettingsViewModel.swift in Sources */,
 				5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */,
 				5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */,
 				5ADC6638253AF223001E09B3 /* CountriesManager.swift in Sources */,
 				5AD6BECA26FF490E009B276F /* CountryDetail.swift in Sources */,
+				5A0DC2AC2814FB5A007F9359 /* UICollectionView+Ext.swift in Sources */,
 				5AD6BEB526FF1905009B276F /* Name.swift in Sources */,
-				5AA44B57274A3FE200AB9083 /* SettingsView.swift in Sources */,
+				5A0DC2A42814F73C007F9359 /* SettingsViewController.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
 				5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */,
 				5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */,
+				5A0DC2B928151454007F9359 /* SettingsRegularCell.swift in Sources */,
 				5AD6BEC126FF2E86009B276F /* CountryListVM.swift in Sources */,
-				5A5C538F2633F5FB00070869 /* Authentication.swift in Sources */,
+				5A5C538F2633F5FB00070869 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +807,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A0DC2A52814F9E5007F9359 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 		5A55C5EB276F2C4A00594C83 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:airbnb/lottie-ios.git";
@@ -750,6 +834,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A0DC2A62814F9E5007F9359 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A0DC2A52814F9E5007F9359 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		5A55C5EC276F2C4A00594C83 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A55C5EB276F2C4A00594C83 /* XCRemoteSwiftPackageReference "lottie-ios" */;

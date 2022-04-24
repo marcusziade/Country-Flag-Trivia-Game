@@ -10,7 +10,7 @@ import Lottie
 import StoreKit
 import UIKit
 
-final class AboutViewController: UIViewController {
+final class AboutViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +18,6 @@ final class AboutViewController: UIViewController {
         view.layer.addSublayer(gradientLayer)
         SKPaymentQueue.default().add(self)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "gear")!,
-            style: .plain,
-            target: self,
-            action: #selector(openSettings)
-        )
-
         let stackView = UIStackView(arrangedSubviews: [titleLabel, infoLabel]).forAutoLayout()
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -74,27 +67,21 @@ final class AboutViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if !Authentication.parentalGateUnlocked {
-            view.alpha = 0
+        if !Settings.parentalGateUnlocked {
             var parentalGate = ParentalGateView()
             
             parentalGate.onCancel = { [weak self] in
                 guard let self = self else { return }
                 HapticEngine.result.notificationOccurred(.error)
                 self.dismiss(animated: true)
-                if let tabBarController = UIApplication.shared.windows.first?.rootViewController as? UITabBarController {
-                    tabBarController.selectedIndex = 1
-                }
+                self.navigationController?.popToRootViewController(animated: true)
             }
             
             parentalGate.onClose = { [weak self] in
                 guard let self = self else { return }
-                Authentication.parentalGateUnlocked = true
+                Settings.parentalGateUnlocked = true
                 self.dismiss(animated: true)
                 HapticEngine.result.notificationOccurred(.success)
-                UIView.animate(withDuration: 0.25) {
-                    self.view.alpha = 1
-                }
             }
             
             let viewController = UIHostingController(rootView: parentalGate)
@@ -210,11 +197,6 @@ final class AboutViewController: UIViewController {
     @objc private func buttonPressed() {
         let payment = SKPayment(product: products[0])
         SKPaymentQueue.default().add(payment)
-    }
-    
-    @objc private func openSettings() {
-        let viewController = UIHostingController(rootView: SettingsView(model: SettingsViewModel()))
-        present(viewController, animated: true)
     }
 }
 

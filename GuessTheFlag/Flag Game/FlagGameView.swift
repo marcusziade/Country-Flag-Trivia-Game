@@ -15,7 +15,7 @@ struct FlagGameView: View {
     var body: some View {
         VStack {
             Picker(selection: $manager.activePickerValue, label: Text("Pick region")) {
-                ForEach(0 ..< manager.regions.count) {
+                ForEach(0 ..< manager.regions.count, id: \.self) {
                     Text(manager.regions[$0].title)
                 }
             }
@@ -77,8 +77,8 @@ struct FlagGameView: View {
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            FlagGameView(manager: FlagGameManager())
-            FlagGameView(manager: FlagGameManager())
+            FlagGameView(manager: FlagGameManager(settings: Settings()))
+            FlagGameView(manager: FlagGameManager(settings: Settings()))
                 .preferredColorScheme(.dark)
                 .previewDevice("iPhone SE (1st generation)")
         }

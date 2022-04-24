@@ -11,21 +11,32 @@ import SwiftUI
 
 final class MainTabBarController: UITabBarController {
     
+    init(settings: Settings) {
+        self.settings = settings
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.tintColor = .label
         viewControllers = [
             flagGameView,
             countriesViewController,
-            aboutViewController
+            settingsViewController
         ]
         selectedIndex = 1
     }
     
     // MARK: - Private
     
-    private let flagGameView: UIHostingController<FlagGameView> = {
-        let view = UIHostingController(rootView: FlagGameView( manager: FlagGameManager()))
+    private let settings: Settings
+    
+    private lazy var flagGameView: UIHostingController<FlagGameView> = {
+        let view = UIHostingController(rootView: FlagGameView(manager: FlagGameManager(settings: self.settings)))
         view.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(systemName: "gamecontroller"),
@@ -44,13 +55,13 @@ final class MainTabBarController: UITabBarController {
         return view
     }()
     
-    private let aboutViewController: UINavigationController = {
-        let viewController = AboutViewController()
+    private lazy var settingsViewController: UINavigationController = {
+        let viewController = SettingsViewController(model: SettingsViewModel(settings: settings))
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem = UITabBarItem(
             title: nil,
-            image: UIImage(systemName: "ellipsis.circle"),
-            selectedImage: UIImage(systemName: "ellipsis.circle.fill")
+            image: UIImage(systemName: "gearshape"),
+            selectedImage: UIImage(systemName: "gearshape.fill")
         )
         return navigationController
     }()
@@ -59,6 +70,6 @@ final class MainTabBarController: UITabBarController {
 import SwiftUI
 
 struct MainTabBarController_Preview: PreviewProvider {
-    static var previews: some View = createPreview(for: MainTabBarController(), mode: .dark)
+    static var previews: some View = createPreview(for: MainTabBarController(settings: Settings()), mode: .dark)
 }
 
