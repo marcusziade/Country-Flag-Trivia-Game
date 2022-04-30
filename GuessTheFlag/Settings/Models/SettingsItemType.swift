@@ -12,6 +12,10 @@ import UIKit
 enum SettingsItemType: CaseIterable {
     case hardMode, about, tipJar, feedback, rate, share
     
+    var id: SettingsItemType {
+        return self
+    }
+    
     var image: String {
         switch self {
         case .hardMode:

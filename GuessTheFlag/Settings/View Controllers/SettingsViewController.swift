@@ -122,17 +122,25 @@ extension SettingsViewController: UICollectionViewDelegate {
             if let viewController = model.items.general[indexPath.item].viewController {
                 viewController.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(viewController, animated: true)
-            } else {
-                break
             }
+            
         case .game:
             break
+            
         case .support:
-            if let viewController = model.items.support[indexPath.item].viewController {
-                viewController.hidesBottomBarWhenPushed = true
-                navigationController?.pushViewController(viewController, animated: true)
-            } else {
-                UIApplication.shared.open(model.items.support[indexPath.item].url ?? URL(string: "https://twitter.com/ziademarcus")!)
+            let supportItem = model.items.support[indexPath.item]
+            switch supportItem.id {
+            case .feedback:
+                UIApplication.shared.open(supportItem.url!)
+            case .rate:
+                print("Rate")
+            case .share:
+                print("Share")
+            default:
+                if let viewController = supportItem.viewController {
+                    viewController.hidesBottomBarWhenPushed = true
+                    navigationController?.pushViewController(viewController, animated: true)
+                }
             }
         }
     }

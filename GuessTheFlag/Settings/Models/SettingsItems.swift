@@ -12,6 +12,7 @@ struct SettingsItems {
     
     private let items: [SettingsItem] = SettingsItemType.allCases.map {
         SettingsItem(
+            id: $0.id,
             image: $0.image,
             color: $0.color,
             title: $0.title,
