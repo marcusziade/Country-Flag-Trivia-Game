@@ -26,7 +26,7 @@ struct CountriesList: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Picker(selection: $viewModel.selectedRegion, label: Text("Picker")) {
-                        ForEach(0..<viewModel.regions.count) {
+                        ForEach(0..<viewModel.regions.count, id: \.self) {
                             Text(viewModel.regions[$0].title)
                         }
                     }

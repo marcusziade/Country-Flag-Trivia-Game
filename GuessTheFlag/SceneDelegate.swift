@@ -20,9 +20,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = MainTabBarController()
+            window.rootViewController = MainTabBarController(settings: settings)
             self.window = window
             window.makeKeyAndVisible()
         }
     }
+    
+    // MARK: - Private
+    
+    private let settings = Settings()
 }

@@ -1,5 +1,5 @@
 //
-//  Authentication.swift
+//  Settings.swift
 //  GuessTheFlag
 //
 //  Created by Marcus Ziadé on 24.4.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Authentication {
+class Settings {
 
     static var parentalGateUnlocked: Bool {
         get {
@@ -16,6 +16,15 @@ class Authentication {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "parentalGateUnlocked")
+        }
+    }
+    
+    var isHardModeEnabled: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "isHardModeEnabled")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "isHardModeEnabled")
         }
     }
 }

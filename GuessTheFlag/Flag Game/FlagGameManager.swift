@@ -38,7 +38,11 @@ final class FlagGameManager: ObservableObject {
         GridItem(.flexible())
     ]
     
-    init() {
+    let settings: Settings
+    
+    init(settings: Settings) {
+        self.settings = settings
+        
         $activePickerValue
             .removeDuplicates()
             .sink { [unowned self] in
@@ -68,7 +72,7 @@ final class FlagGameManager: ObservableObject {
     }
     
     var isHardModeEnabled: Bool {
-        UserDefaults.standard.bool(forKey: "isHardModeEnabled")
+        return UserDefaults.standard.bool(forKey: "isHardModeEnabled")
     }
     
     func flagTapped(_ number: Int) {
