@@ -10,13 +10,6 @@ import Combine
 import Foundation
 import StoreKit
 
-enum Product: String, CaseIterable {
-    case buyCoffee = "com.marcusziade.knowtheflag.buycoffee"
-    case smallTip = "com.marcusziade.knowtheflag.smalltip"
-    case avocado = "com.marcusziade.knowtheflag.avocado"
-    case lunch = "com.marcusziade.knowtheflag.lunch"
-}
-
 enum TransationState {
     case purchasing, purchased, failed, restored, deferred
 }
@@ -40,7 +33,7 @@ final class TipJarViewModel: NSObject {
     }
     
     func fetchProducts() {
-        let request = SKProductsRequest(productIdentifiers: Set(Product.allCases.map(\.rawValue)))
+        let request = SKProductsRequest(productIdentifiers: Set(TipJarProduct.allCases.map(\.id)))
         request.delegate = self
         request.start()
     }

@@ -61,6 +61,10 @@
 		5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */; };
 		5ADC665D253B26E4001E09B3 /* LivePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC665C253B26E4001E09B3 /* LivePreview.swift */; };
 		5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA07A425C547A900DBA23F /* Reusable.swift */; };
+		5AF367B8281D85AD0048A424 /* TipJarProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF367B7281D85AD0048A424 /* TipJarProduct.swift */; };
+		5AF367BA281D871E0048A424 /* tip.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AF367B9281D871E0048A424 /* tip.json */; };
+		5AF367BE281D87C70048A424 /* avocado.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AF367BD281D87C70048A424 /* avocado.json */; };
+		5AF367C0281D88A20048A424 /* lunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AF367BF281D88A20048A424 /* lunch.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +146,10 @@
 		5ADC6650253AFAE4001E09B3 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		5ADC665C253B26E4001E09B3 /* LivePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePreview.swift; sourceTree = "<group>"; };
 		5AEA07A425C547A900DBA23F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		5AF367B7281D85AD0048A424 /* TipJarProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarProduct.swift; sourceTree = "<group>"; };
+		5AF367B9281D871E0048A424 /* tip.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tip.json; sourceTree = "<group>"; };
+		5AF367BD281D87C70048A424 /* avocado.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = avocado.json; sourceTree = "<group>"; };
+		5AF367BF281D88A20048A424 /* lunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lunch.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,13 +201,12 @@
 				5ADC6636253AF21B001E09B3 /* API */,
 				5A6E9EA12530E0510007C148 /* Flag Game */,
 				5AD6BEB926FF27E1009B276F /* Encyclopedia */,
+				5AF367B3281D85630048A424 /* Tip Jar */,
 				5A0DC2A22814F72E007F9359 /* Settings */,
 				5ADC664B253AF88B001E09B3 /* Extensions */,
 				5AEA07A325C5479E00DBA23F /* Utilities */,
 				5A2CC62525C4CCD500525C9A /* Supporting Files */,
-				2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */,
-				5A1FBFB325C68F6100E3D721 /* coffee.json */,
-				5A0B07E42721DEFE00447A13 /* countries.json */,
+				5AF367BB281D87260048A424 /* Resources */,
 				2CB7C7012352EC4B0068ADE2 /* LaunchScreen.storyboard */,
 				2CB7C7042352EC4B0068ADE2 /* Info.plist */,
 				2CB7C6FE2352EC4B0068ADE2 /* Preview Content */,
@@ -232,7 +239,6 @@
 			children = (
 				5A0DC2A32814F73C007F9359 /* SettingsViewController.swift */,
 				5A2CC62225C4C93A00525C9A /* AboutViewController.swift */,
-				5A0DC2C228157CD2007F9359 /* TipJarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -241,7 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				5AA44B58274A424700AB9083 /* SettingsViewModel.swift */,
-				5A0DC2C428158782007F9359 /* TipJarViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -402,6 +407,61 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		5AF367B3281D85630048A424 /* Tip Jar */ = {
+			isa = PBXGroup;
+			children = (
+				5AF367B4281D856F0048A424 /* Models */,
+				5AF367B5281D85720048A424 /* View Controllers */,
+				5AF367B6281D85760048A424 /* View Models */,
+			);
+			path = "Tip Jar";
+			sourceTree = "<group>";
+		};
+		5AF367B4281D856F0048A424 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5AF367B7281D85AD0048A424 /* TipJarProduct.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5AF367B5281D85720048A424 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A0DC2C228157CD2007F9359 /* TipJarViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5AF367B6281D85760048A424 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A0DC2C428158782007F9359 /* TipJarViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		5AF367BB281D87260048A424 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */,
+				5A0B07E42721DEFE00447A13 /* countries.json */,
+				5AF367BC281D87290048A424 /* Lottie */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5AF367BC281D87290048A424 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				5A1FBFB325C68F6100E3D721 /* coffee.json */,
+				5AF367B9281D871E0048A424 /* tip.json */,
+				5AF367BD281D87C70048A424 /* avocado.json */,
+				5AF367BF281D88A20048A424 /* lunch.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -498,7 +558,10 @@
 				2CB7C7002352EC4B0068ADE2 /* Preview Assets.xcassets in Resources */,
 				2CB7C6FD2352EC4B0068ADE2 /* Assets.xcassets in Resources */,
 				5A0B07E52721DEFE00447A13 /* countries.json in Resources */,
+				5AF367C0281D88A20048A424 /* lunch.json in Resources */,
 				5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */,
+				5AF367BA281D871E0048A424 /* tip.json in Resources */,
+				5AF367BE281D87C70048A424 /* avocado.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +595,7 @@
 				5A1D493D281CF32E001DDAD2 /* AppStoreReviewManager.swift in Sources */,
 				5AD6BEC826FF3564009B276F /* CountryRow.swift in Sources */,
 				5A0DC2AA2814FAB9007F9359 /* SettingsSection.swift in Sources */,
+				5AF367B8281D85AD0048A424 /* TipJarProduct.swift in Sources */,
 				2C38414323563BB400F56257 /* FlagGameView.swift in Sources */,
 				5A0DC2B728150D2C007F9359 /* SettingsItemBadgeView.swift in Sources */,
 				5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */,
