@@ -28,6 +28,7 @@
 		5A0DC2C328157CD2007F9359 /* TipJarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2C228157CD2007F9359 /* TipJarViewController.swift */; };
 		5A0DC2C528158782007F9359 /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2C428158782007F9359 /* TipJarViewModel.swift */; };
 		5A0DC2C728159DF7007F9359 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2C628159DF7007F9359 /* SettingsHeaderView.swift */; };
+		5A1D493A281CEC95001DDAD2 /* SettingsItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D4939281CEC95001DDAD2 /* SettingsItemType.swift */; };
 		5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB325C68F6100E3D721 /* coffee.json */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
@@ -107,6 +108,7 @@
 		5A0DC2C228157CD2007F9359 /* TipJarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarViewController.swift; sourceTree = "<group>"; };
 		5A0DC2C428158782007F9359 /* TipJarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarViewModel.swift; sourceTree = "<group>"; };
 		5A0DC2C628159DF7007F9359 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
+		5A1D4939281CEC95001DDAD2 /* SettingsItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemType.swift; sourceTree = "<group>"; };
 		5A1FBFB325C68F6100E3D721 /* coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee.json; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				5A0DC2B228150806007F9359 /* SettingsItems.swift */,
 				5A0DC2A92814FAB9007F9359 /* SettingsSection.swift */,
 				5A0DC2AF281506C4007F9359 /* SettingsItem.swift */,
+				5A1D4939281CEC95001DDAD2 /* SettingsItemType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */,
 				5ADC6638253AF223001E09B3 /* CountriesManager.swift in Sources */,
 				5AD6BECA26FF490E009B276F /* CountryDetail.swift in Sources */,
+				5A1D493A281CEC95001DDAD2 /* SettingsItemType.swift in Sources */,
 				5A0DC2AC2814FB5A007F9359 /* UICollectionView+Ext.swift in Sources */,
 				5AD6BEB526FF1905009B276F /* Name.swift in Sources */,
 				5A0DC2A42814F73C007F9359 /* SettingsViewController.swift in Sources */,

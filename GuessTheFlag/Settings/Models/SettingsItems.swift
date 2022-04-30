@@ -7,64 +7,27 @@
 //
 
 import Foundation
-import UIKit
 
 struct SettingsItems {
     
-    private let data: [SettingsItem] = [
+    private let items: [SettingsItem] = SettingsItemType.allCases.map {
         SettingsItem(
-            image: "gamecontroller",
-            color: .systemPurple,
-            title: NSLocalizedString("Enable Hard Mode", comment: "Enable hard mode title"),
-            section: .game,
-            viewController: nil,
-            url: nil
-        ),
-        
-        SettingsItem(
-            image: "info.circle",
-            color: .systemBlue,
-            title: NSLocalizedString("About", comment: "About title"),
-            section: .general,
-            viewController: AboutViewController(),
-            url: nil
-        ),
-        
-        SettingsItem(
-            image: "dollarsign.square",
-            color: .systemGreen,
-            title: NSLocalizedString("Tip Jar", comment: "Tip Jar title"),
-            section: .support,
-            viewController: TipJarViewController(),
-            url: nil
-        ),
-        
-        SettingsItem(
-            image: "person.wave.2",
-            color: .systemYellow,
-            title: NSLocalizedString("Send Feedback", comment: "Send Feedback title"),
-            section: .support,
-            viewController: nil,
-            url: URL(string: "https://twitter.com/ziademarcus")!
-        ),
-        
-        SettingsItem(
-            image: "text.badge.star",
-            color: .systemOrange,
-            title: NSLocalizedString("Rate Master of Flags", comment: "Rate title"),
-            section: .support,
-            viewController: nil,
-            url: nil
-        ),
-    ]
+            image: $0.image,
+            color: $0.color,
+            title: $0.title,
+            section: $0.section,
+            viewController: $0.viewController,
+            url: $0.url
+        )
+    }
     
     let general: [SettingsItem]
     let game: [SettingsItem]
     let support: [SettingsItem]
     
     init() {
-        general = data.filter { $0.section == .general }
-        game = data.filter { $0.section == .game }
-        support = data.filter { $0.section == .support }
+        general = items.filter { $0.section == .general }
+        game = items.filter { $0.section == .game }
+        support = items.filter { $0.section == .support }
     }
 }
