@@ -25,7 +25,7 @@ final class MainTabBarController: UITabBarController {
         view.tintColor = .label
         viewControllers = [
             flagGameView,
-            countriesViewController,
+            encyclopediaView,
             settingsViewController
         ]
         selectedIndex = 0
@@ -35,36 +35,35 @@ final class MainTabBarController: UITabBarController {
     
     private let settings: Settings
     
-    private lazy var flagGameView: UIHostingController<FlagGameView> = {
-        let view = UIHostingController(rootView: FlagGameView(manager: FlagGameManager(settings: self.settings)))
-        view.tabBarItem = UITabBarItem(
+    private lazy var flagGameView = UIHostingController(
+        rootView: FlagGameView(manager: FlagGameManager(settings: self.settings))
+    ).configure {
+        $0.tabBarItem = UITabBarItem(
             title: NSLocalizedString("Game", comment: "Game tab bar title"),
             image: UIImage(systemName: "gamecontroller"),
             selectedImage: UIImage(systemName: "gamecontroller.fill")
         )
-        return view
-    }()
+    }
     
-    private let countriesViewController: UIHostingController<CountriesList> = {
-        let view = UIHostingController(rootView: CountriesList(viewModel: CountryListVM()))
-        view.tabBarItem = UITabBarItem(
+    private let encyclopediaView = UIHostingController(
+        rootView: CountriesList(viewModel: CountryListVM())
+    ).configure {
+        $0.tabBarItem = UITabBarItem(
             title: NSLocalizedString("Encyclopedia", comment: "Encyclopedia tab bar title"),
             image: UIImage(systemName: "doc.text.magnifyingglass"),
             selectedImage: UIImage(systemName: "doc.text.magnifyingglass")
         )
-        return view
-    }()
+    }
     
-    private lazy var settingsViewController: UINavigationController = {
-        let viewController = SettingsViewController(model: SettingsViewModel(settings: settings))
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.tabBarItem = UITabBarItem(
+    private lazy var settingsViewController = UINavigationController(
+        rootViewController: SettingsViewController(model: SettingsViewModel(settings: self.settings))
+    ).configure {
+        $0.tabBarItem = UITabBarItem(
             title: NSLocalizedString("Settings", comment: "Settings tab bar title"),
             image: UIImage(systemName: "gearshape"),
             selectedImage: UIImage(systemName: "gearshape.fill")
         )
-        return navigationController
-    }()
+    }
 }
 
 import SwiftUI
