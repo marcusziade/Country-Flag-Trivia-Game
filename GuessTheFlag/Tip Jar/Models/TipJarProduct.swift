@@ -9,11 +9,11 @@
 import Foundation
 
 enum TipJarProduct: String, CaseIterable {
-    case buyCoffee, smallTip, avocado, lunch
+    case coffee, smallTip, avocado, lunch
     
     var id: String {
         switch self {
-        case .buyCoffee:
+        case .coffee:
             return "com.marcusziade.knowtheflag.buycoffee"
         case .smallTip:
             return "com.marcusziade.knowtheflag.smalltip"
@@ -26,12 +26,12 @@ enum TipJarProduct: String, CaseIterable {
     
     var title: String {
         switch self {
-        case .buyCoffee:
+        case .coffee:
             return NSLocalizedString("Caffè latte", comment: "latte title label")
         case .smallTip:
             return NSLocalizedString("Small tip", comment: "Small tip title label")
         case .avocado:
-            return NSLocalizedString("1x Avocado", comment: "Avocade title label")
+            return NSLocalizedString("Avocado", comment: "Avocade title label")
         case .lunch:
             return NSLocalizedString("Lunch", comment: "Lunch title label")
         }
@@ -39,7 +39,7 @@ enum TipJarProduct: String, CaseIterable {
     
     var animation: String {
         switch self {
-        case .buyCoffee:
+        case .coffee:
             return "coffee"
         case .smallTip:
             return "tip"
