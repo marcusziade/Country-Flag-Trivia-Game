@@ -10,13 +10,58 @@
       "internalID" : "F795D689",
       "localizations" : [
         {
-          "description" : "Buy me coffee",
+          "description" : "Thank you so much, kind stranger",
           "displayName" : "Buy me coffee",
           "locale" : "en_US"
         }
       ],
       "productID" : "com.marcusziade.knowtheflag.buycoffee",
       "referenceName" : "Buy Me Coffee",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "AD25BB76",
+      "localizations" : [
+        {
+          "description" : "All tips are appreciated",
+          "displayName" : "Small tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.marcusziade.knowtheflag.smalltip",
+      "referenceName" : "Small tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "16EF0905",
+      "localizations" : [
+        {
+          "description" : "Your avocado contribution is appreciated",
+          "displayName" : "One avocado",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.marcusziade.knowtheflag.avocado",
+      "referenceName" : "One avocado",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "12.99",
+      "familyShareable" : false,
+      "internalID" : "4686F074",
+      "localizations" : [
+        {
+          "description" : "Thank you for your lunch contribution",
+          "displayName" : "Buy lunch",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.marcusziade.knowtheflag.lunch",
+      "referenceName" : "Buy lunch",
       "type" : "Consumable"
     }
   ],
@@ -28,6 +73,6 @@
   ],
   "version" : {
     "major" : 1,
-    "minor" : 1
+    "minor" : 2
   }
 }

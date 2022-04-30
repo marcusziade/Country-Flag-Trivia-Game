@@ -12,6 +12,9 @@ import StoreKit
 
 enum Product: String, CaseIterable {
     case buyCoffee = "com.marcusziade.knowtheflag.buycoffee"
+    case smallTip = "com.marcusziade.knowtheflag.smalltip"
+    case avocado = "com.marcusziade.knowtheflag.avocado"
+    case lunch = "com.marcusziade.knowtheflag.lunch"
 }
 
 enum TransationState {
