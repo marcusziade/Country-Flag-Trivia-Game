@@ -69,6 +69,6 @@ final class MainTabBarController: UITabBarController {
 import SwiftUI
 
 struct MainTabBarController_Preview: PreviewProvider {
-    static var previews: some View = createPreview(for: MainTabBarController(settings: Settings()), mode: .dark)
+    static var previews: some View = Preview(for: MainTabBarController(settings: Settings()))
 }
 

@@ -165,8 +165,5 @@ import SwiftUI
 
 struct TipJarViewController_Preview: PreviewProvider {
     
-    static var previews: some View = createPreview(
-        for: UINavigationController(rootViewController: TipJarViewController()),
-        mode: .dark
-    )
+    static var previews: some View = Preview(for: TipJarViewController())
 }

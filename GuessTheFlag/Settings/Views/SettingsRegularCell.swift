@@ -39,7 +39,9 @@ final class SettingsRegularCell: SettingsCell {
 import SwiftUI
 
 struct SettingsRegularCell_Preview: PreviewProvider {
-    static var previews: some View = createPreview(for: SettingsRegularCell(), width: 300, height: 80)
+    static var previews: some View = Preview(for: SettingsRegularCell())
+        .previewLayout(.fixed(width: 300, height: 75))
+        .preferredColorScheme(.dark)
 }
 
 #endif

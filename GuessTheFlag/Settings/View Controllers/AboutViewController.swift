@@ -83,5 +83,5 @@ final class AboutViewController: ViewController {
 import SwiftUI
 
 struct AboutViewController_Preview: PreviewProvider {
-    static var previews: some View = createPreview(for: UINavigationController(rootViewController: AboutViewController()), mode: .dark)
+    static var previews: some View = Preview(for: UINavigationController(rootViewController: AboutViewController()))
 }
