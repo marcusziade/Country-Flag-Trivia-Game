@@ -29,6 +29,7 @@
 		5A0DC2C528158782007F9359 /* TipJarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2C428158782007F9359 /* TipJarViewModel.swift */; };
 		5A0DC2C728159DF7007F9359 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DC2C628159DF7007F9359 /* SettingsHeaderView.swift */; };
 		5A1D493A281CEC95001DDAD2 /* SettingsItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D4939281CEC95001DDAD2 /* SettingsItemType.swift */; };
+		5A1D493D281CF32E001DDAD2 /* AppStoreReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D493C281CF32E001DDAD2 /* AppStoreReviewManager.swift */; };
 		5A1FBFB425C68F6100E3D721 /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBFB325C68F6100E3D721 /* coffee.json */; };
 		5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2690C52530B03300C4FC39 /* ViewModifiers.swift */; };
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
@@ -109,6 +110,7 @@
 		5A0DC2C428158782007F9359 /* TipJarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarViewModel.swift; sourceTree = "<group>"; };
 		5A0DC2C628159DF7007F9359 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		5A1D4939281CEC95001DDAD2 /* SettingsItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemType.swift; sourceTree = "<group>"; };
+		5A1D493C281CF32E001DDAD2 /* AppStoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReviewManager.swift; sourceTree = "<group>"; };
 		5A1FBFB325C68F6100E3D721 /* coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee.json; sourceTree = "<group>"; };
 		5A2690C52530B03300C4FC39 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A2CC62225C4C93A00525C9A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				5A0DC2B528150D17007F9359 /* Views */,
 				5A0DC2AD2814FC3C007F9359 /* View Controllers */,
 				5A0DC2AE2814FC52007F9359 /* View Models */,
+				5A1D493B281CF30F001DDAD2 /* Managers */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -265,6 +268,14 @@
 				5A0DC2C628159DF7007F9359 /* SettingsHeaderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5A1D493B281CF30F001DDAD2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5A1D493C281CF32E001DDAD2 /* AppStoreReviewManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		5A2CC62525C4CCD500525C9A /* Supporting Files */ = {
@@ -518,6 +529,7 @@
 				5AD6BECC26FF492F009B276F /* CountryDetailVM.swift in Sources */,
 				5A0DC2C128153951007F9359 /* SettingsHardModeCell.swift in Sources */,
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,
+				5A1D493D281CF32E001DDAD2 /* AppStoreReviewManager.swift in Sources */,
 				5AD6BEC826FF3564009B276F /* CountryRow.swift in Sources */,
 				5A0DC2AA2814FAB9007F9359 /* SettingsSection.swift in Sources */,
 				2C38414323563BB400F56257 /* FlagGameView.swift in Sources */,

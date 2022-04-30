@@ -133,9 +133,13 @@ extension SettingsViewController: UICollectionViewDelegate {
             case .feedback:
                 UIApplication.shared.open(supportItem.url!)
             case .rate:
-                print("Rate")
+                AppStoreReviewManager.requestReview()
             case .share:
-                print("Share")
+                let title = NSLocalizedString("Share Master of Flags", comment: "Share title label")
+                let appStoreURL = URL(string: "https://apps.apple.com/app/master-of-flags/id1484270248")!
+                let shareViewController = UIActivityViewController(activityItems: [title, appStoreURL], applicationActivities: nil)
+                shareViewController.popoverPresentationController?.sourceView = view
+                present(shareViewController, animated: true)
             default:
                 if let viewController = supportItem.viewController {
                     viewController.hidesBottomBarWhenPushed = true
