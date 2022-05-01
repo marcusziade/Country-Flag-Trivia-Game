@@ -40,6 +40,7 @@
 		5A55C5F1276F52C600594C83 /* title.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A55C5F0276F52C600594C83 /* title.strings */; };
 		5A5C538F2633F5FB00070869 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C538E2633F5FB00070869 /* Settings.swift */; };
 		5A6A50F1281E5B1700FEC19E /* TipJarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A50F0281E5B1700FEC19E /* TipJarSection.swift */; };
+		5A6A50F5281EA4B200FEC19E /* StoreKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A50F4281EA4B200FEC19E /* StoreKit+Ext.swift */; };
 		5A8FC615276F1C5100C1B468 /* MasterofFlagsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */; };
 		5A8FC61E276F1CB200C1B468 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */; };
 		5AA44B4B2749169100AB9083 /* FlagGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4A2749169100AB9083 /* FlagGameManager.swift */; };
@@ -127,6 +128,7 @@
 		5A55C5F0276F52C600594C83 /* title.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = title.strings; path = "screenshots/en-US/title.strings"; sourceTree = SOURCE_ROOT; };
 		5A5C538E2633F5FB00070869 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		5A6A50F0281E5B1700FEC19E /* TipJarSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarSection.swift; sourceTree = "<group>"; };
+		5A6A50F4281EA4B200FEC19E /* StoreKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreKit+Ext.swift"; sourceTree = "<group>"; };
 		5A8FC612276F1C5100C1B468 /* MasterofFlagsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterofFlagsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterofFlagsUITests.swift; sourceTree = "<group>"; };
 		5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = MasterofFlagsUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -393,6 +395,7 @@
 				5ADC664C253AF89B001E09B3 /* UIViewExtensions.swift */,
 				5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */,
 				5A0DC2AB2814FB5A007F9359 /* UICollectionView+Ext.swift */,
+				5A6A50F4281EA4B200FEC19E /* StoreKit+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A6A50F5281EA4B200FEC19E /* StoreKit+Ext.swift in Sources */,
 				2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */,
 				5AD6BEC526FF3368009B276F /* CountriesList.swift in Sources */,
 				5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */,
