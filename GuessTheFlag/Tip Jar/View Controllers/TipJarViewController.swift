@@ -79,6 +79,7 @@ final class TipJarViewController: ViewController {
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout).configure {
         $0.dataSource = self
         $0.delegate = self
+        $0.backgroundColor = .clear
         $0.registerCell(TipJarCell.self)
     }
     
