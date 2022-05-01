@@ -19,7 +19,7 @@ final class TipJarViewModel: NSObject {
     var onTransactionStateChanged = PassthroughSubject<TransationState, Never>()
     var onProductsLoaded = PassthroughSubject<Void, Never>()
     
-    var products: [SKProduct] = []
+    var products = CurrentValueSubject<[SKProduct], Never>([])
     
     override init() {
         super.init()
@@ -28,7 +28,7 @@ final class TipJarViewModel: NSObject {
     }
     
     func buttonPressed() {
-        let payment = SKPayment(product: products[0])
+        let payment = SKPayment(product: products.value[0])
         SKPaymentQueue.default().add(payment)
     }
     
@@ -44,7 +44,7 @@ final class TipJarViewModel: NSObject {
 extension TipJarViewModel: SKProductsRequestDelegate {
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        products = response.products
+        products.send(response.products)
         onProductsLoaded.send()
         
         print("Valid products: ", products)
