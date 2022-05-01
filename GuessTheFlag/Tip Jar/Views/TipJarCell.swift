@@ -16,6 +16,8 @@ final class TipJarCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        contentView.addShadow()
+        
         contentView.addAndConstrainSubview(animationView) {
             $0.top.horizontalEdges.equalToSuperview()
         }
@@ -37,19 +39,19 @@ final class TipJarCell: UICollectionViewCell {
         
         titleLabel.text = product.title
         priceLabel.text = product.price
+        titleLabelContainerView.backgroundColor = product.color
     }
     
     // MARK: - Private
     
     private let animationView = AnimationView().configure {
         $0.contentMode = .scaleAspectFit
-        $0.backgroundColor = .red
+        $0.backgroundColor = .white
         $0.layer.cornerRadius = 12
         $0.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
     private lazy var titleLabelContainerView = UIView().configure {
-        $0.backgroundColor = .systemFill
         $0.layer.cornerRadius = 12
         $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
@@ -68,10 +70,12 @@ final class TipJarCell: UICollectionViewCell {
     
     private let titleLabel = UILabel().configure {
         $0.font = UIFont.preferredFont(forTextStyle: .title3, compatibleWith: .init(legibilityWeight: .bold))
+        $0.textColor = .white
     }
     
     private let priceLabel = UILabel().configure {
         $0.font = UIFont.preferredFont(forTextStyle: .headline)
+        $0.textColor = .white
     }
 }
 
@@ -83,7 +87,7 @@ struct TipJarCell_Preview: PreviewProvider {
     
     static var previews: some View = Preview(for: TipJarCell().configure { $0.configure(with: MockTipJarProduct()) })
         .previewLayout(.fixed(width: 350, height: 400))
-        .preferredColorScheme(.dark)
+        .preferredColorScheme(.light)
         .padding()
 }
 

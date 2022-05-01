@@ -14,6 +14,7 @@ protocol TipJarProductProtocol {
     var title: String { get }
     var animation: String { get }
     var price: String { get }
+    var color: UIColor { get }
 }
 
 struct TipJarProduct: TipJarProductProtocol {
@@ -59,6 +60,19 @@ struct TipJarProduct: TipJarProductProtocol {
         }
     }
     
+    var color: UIColor {
+        switch productType {
+        case .coffee:
+            return .systemBrown
+        case .smallTip:
+            return .systemGray
+        case .avocado:
+            return .systemGreen
+        case .lunch:
+            return .systemTeal
+        }
+    }
+    
     // MARK: - Private
     
     private let productType: ProductType
@@ -70,4 +84,5 @@ struct MockTipJarProduct: TipJarProductProtocol {
     let title = "Avocado"
     let animation = "avocado"
     let price = "12.99€"
+    let color = UIColor.systemGreen
 }
