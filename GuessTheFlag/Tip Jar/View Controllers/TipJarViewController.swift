@@ -24,8 +24,8 @@ final class TipJarViewController: ViewController {
             $0.edges.equalToSuperview()
         }
         
-        view.addAndConstrainSubview(loaderView) {
-            $0.center.equalToSuperview()
+        view.addAndConstrainSubview(loadingView) {
+            $0.edges.equalToSuperview()
         }
         
         view.addAndConstrainSubview(animationView) {
@@ -33,12 +33,14 @@ final class TipJarViewController: ViewController {
             $0.centerX.equalToSuperview()
         }
         
+        model.fetchProducts()
         startListeningForStoreKit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         openParentalGateIfNeeded()
+        collectionView.reloadData()
     }
     
     override func viewWillLayoutSubviews() {
@@ -58,9 +60,9 @@ final class TipJarViewController: ViewController {
     private var isLoading: Bool = true {
         didSet {
             if isLoading {
-                loaderView.startAnimating()
+                loadingView.start()
             } else {
-                loaderView.stopAnimating()
+                loadingView.stop()
                 collectionView.reloadData()
             }
         }
@@ -131,11 +133,8 @@ final class TipJarViewController: ViewController {
         return section
 
     }
-    
-    private let loaderView = UIActivityIndicatorView().configure {
-        $0.hidesWhenStopped = true
-        $0.color = .white
-    }
+
+    private var loadingView = LoadingView(state: .loading)
     
     private let animationView = AnimationView().configure {
         $0.contentMode = .scaleAspectFit
@@ -145,14 +144,14 @@ final class TipJarViewController: ViewController {
     }
     
     private func showPurchaseSuccesfulAnimation(for product: TipJarProduct) {
-        UIView.animate(withDuration: 0.2) { [self] in
+        UIView.animate(withDuration: 0.3) { [self] in
             animationView.alpha = 1
         }
         
         animationView.animation = Animation.named(product.animation)
         
         animationView.play { [weak self] _ in
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.3) {
                 self?.animationView.alpha = 0
             }
         }
@@ -162,15 +161,18 @@ final class TipJarViewController: ViewController {
         model.onTransactionStateChanged.sink { [unowned self] transationsState in
             switch transationsState {
             case .purchasing:
-                print("Purchasing")
+                loadingView.state = .purchasing
             case .purchased:
+                loadingView.state = .purchased
                 showPurchaseSuccesfulAnimation(for: model.selectedProduct!)
             case .failed:
-                print("failed")
+                loadingView.state = .failed
             case .restored:
                 print("restored")
             case .deferred:
                 print("deferred")
+            case .error:
+                loadingView.state = .error
             }
             
             isLoading = transationsState == .purchasing
