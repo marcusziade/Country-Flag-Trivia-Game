@@ -12,6 +12,6 @@ import StoreKit
 enum AppStoreReviewManager {
     
     static func requestReview() {
-        SKStoreReviewController.requestReview()
+        SKStoreReviewController.requestReviewInCurrentScene()
     }
 }
