@@ -42,6 +42,8 @@
 		5A6A50F1281E5B1700FEC19E /* TipJarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A50F0281E5B1700FEC19E /* TipJarSection.swift */; };
 		5A6A50F5281EA4B200FEC19E /* StoreKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A50F4281EA4B200FEC19E /* StoreKit+Ext.swift */; };
 		5A6A50F7281EBB2100FEC19E /* TipJarTransactionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A50F6281EBB2100FEC19E /* TipJarTransactionState.swift */; };
+		5A6A50F9281ECF8B00FEC19E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A50F8281ECF8B00FEC19E /* LoadingView.swift */; };
+		5A6A50FB281ED24400FEC19E /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A50FA281ED24400FEC19E /* LoadingState.swift */; };
 		5A8FC615276F1C5100C1B468 /* MasterofFlagsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */; };
 		5A8FC61E276F1CB200C1B468 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */; };
 		5AA44B4B2749169100AB9083 /* FlagGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4A2749169100AB9083 /* FlagGameManager.swift */; };
@@ -131,6 +133,8 @@
 		5A6A50F0281E5B1700FEC19E /* TipJarSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarSection.swift; sourceTree = "<group>"; };
 		5A6A50F4281EA4B200FEC19E /* StoreKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreKit+Ext.swift"; sourceTree = "<group>"; };
 		5A6A50F6281EBB2100FEC19E /* TipJarTransactionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarTransactionState.swift; sourceTree = "<group>"; };
+		5A6A50F8281ECF8B00FEC19E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5A6A50FA281ED24400FEC19E /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		5A8FC612276F1C5100C1B468 /* MasterofFlagsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterofFlagsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterofFlagsUITests.swift; sourceTree = "<group>"; };
 		5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = MasterofFlagsUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -433,6 +437,7 @@
 				5AF367B7281D85AD0048A424 /* TipJarProduct.swift */,
 				5A6A50F0281E5B1700FEC19E /* TipJarSection.swift */,
 				5A6A50F6281EBB2100FEC19E /* TipJarTransactionState.swift */,
+				5A6A50FA281ED24400FEC19E /* LoadingState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				5AF367C2281D8ADF0048A424 /* TipJarCell.swift */,
+				5A6A50F8281ECF8B00FEC19E /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -606,6 +612,7 @@
 				5AD6BEC526FF3368009B276F /* CountriesList.swift in Sources */,
 				5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */,
 				5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */,
+				5A6A50F9281ECF8B00FEC19E /* LoadingView.swift in Sources */,
 				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
 				5AA44B53274A363D00AB9083 /* Configurable.swift in Sources */,
 				5A0DC2B328150806007F9359 /* SettingsItems.swift in Sources */,
@@ -622,6 +629,7 @@
 				2C38414323563BB400F56257 /* FlagGameView.swift in Sources */,
 				5A0DC2B728150D2C007F9359 /* SettingsItemBadgeView.swift in Sources */,
 				5AF367C3281D8ADF0048A424 /* TipJarCell.swift in Sources */,
+				5A6A50FB281ED24400FEC19E /* LoadingState.swift in Sources */,
 				5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */,
 				5A0DC2BF2815392E007F9359 /* SettingsCell.swift in Sources */,
 				5A0DC2B0281506C4007F9359 /* SettingsItem.swift in Sources */,

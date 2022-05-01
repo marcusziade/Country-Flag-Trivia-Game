@@ -22,7 +22,6 @@ final class TipJarViewModel: NSObject {
         super.init()
         
         SKPaymentQueue.default().add(self)
-        fetchProducts()
     }
     
     func productSelected(for indexPath: IndexPath) {
@@ -46,6 +45,10 @@ extension TipJarViewModel: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         products.send(response.products.map { TipJarProduct(product: $0) })
         onProductsLoaded.send()
+        
+        if response.products.isEmpty {
+            onTransactionStateChanged.send(.error)
+        }
         
         print("Valid products: ", products)
         print("Invalid products: ", response.invalidProductIdentifiers)
