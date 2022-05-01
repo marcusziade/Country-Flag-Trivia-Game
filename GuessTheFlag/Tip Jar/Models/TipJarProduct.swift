@@ -13,6 +13,7 @@ protocol TipJarProductProtocol {
     
     var title: String { get }
     var animation: String { get }
+    var price: String { get }
 }
 
 struct TipJarProduct: TipJarProductProtocol {
@@ -31,30 +32,18 @@ struct TipJarProduct: TipJarProductProtocol {
         self.productType = ProductType(rawValue: skProduct.productIdentifier)!
     }
     
-    var id: String {
-        switch productType {
-        case .coffee:
-            return "com.marcusziade.knowtheflag.buycoffee"
-        case .smallTip:
-            return "com.marcusziade.knowtheflag.smalltip"
-        case .avocado:
-            return "com.marcusziade.knowtheflag.avocado"
-        case .lunch:
-            return "com.marcusziade.knowtheflag.lunch"
-        }
+    var title: String {
+        skProduct.localizedTitle
     }
     
-    var title: String {
-        switch productType {
-        case .coffee:
-            return NSLocalizedString("Caffè latte", comment: "latte title label")
-        case .smallTip:
-            return NSLocalizedString("Small tip", comment: "Small tip title label")
-        case .avocado:
-            return NSLocalizedString("Avocado", comment: "Avocade title label")
-        case .lunch:
-            return NSLocalizedString("Lunch", comment: "Lunch title label")
-        }
+    var description: String {
+        skProduct.localizedDescription
+    }
+    
+    var price: String {
+        let symbol = skProduct.priceLocale.currencySymbol ?? ""
+        let price = skProduct.price
+        return "\(price)\(symbol)"
     }
     
     var animation: String {
@@ -79,5 +68,6 @@ struct TipJarProduct: TipJarProductProtocol {
 
 struct MockTipJarProduct: TipJarProductProtocol {
     let title = "Avocado"
-    let animation = "Avocado"
+    let animation = "avocado"
+    let price = "12.99€"
 }
