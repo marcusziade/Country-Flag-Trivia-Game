@@ -40,6 +40,7 @@ final class TipJarViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         openParentalGateIfNeeded()
+        // Force starts the animations inside the cells
         collectionView.reloadData()
     }
     
@@ -106,7 +107,7 @@ final class TipJarViewController: ViewController {
             heightDimension: .fractionalHeight(1)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = .init(top: .zero, leading: 6, bottom: .zero, trailing: 6)
+        item.contentInsets = .init(top: .zero, leading: 4, bottom: .zero, trailing: 4)
         
         var size: (width: Double, height: Double)
         switch deviceIdiom {
@@ -123,15 +124,14 @@ final class TipJarViewController: ViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
         group.edgeSpacing = NSCollectionLayoutEdgeSpacing(
             leading: .fixed(0),
-            top: .fixed(8),
+            top: .fixed(4),
             trailing: .fixed(0),
-            bottom: .fixed(8)
+            bottom: .fixed(4)
         )
         
         let section = NSCollectionLayoutSection(group: group)
         
         return section
-
     }
 
     private var loadingView = LoadingView(state: .loading)
