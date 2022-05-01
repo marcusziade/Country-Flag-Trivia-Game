@@ -30,7 +30,7 @@ final class TipJarCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with product: TipJarProduct) {
+    func configure(with product: TipJarProductProtocol) {
         animationView.animation = Animation.named(product.animation)
         animationView.play()
         animationView.loopMode = .loop
@@ -69,7 +69,7 @@ import SwiftUI
 
 struct TipJarCell_Preview: PreviewProvider {
     
-    static var previews: some View = Preview(for: TipJarCell().configure { $0.configure(with: .avocado) })
+    static var previews: some View = Preview(for: TipJarCell().configure { $0.configure(with: MockTipJarProduct()) })
         .previewLayout(.fixed(width: 280, height: 280))
         .preferredColorScheme(.dark)
         .padding()

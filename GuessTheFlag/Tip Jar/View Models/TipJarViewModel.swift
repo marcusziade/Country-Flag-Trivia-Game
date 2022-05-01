@@ -10,30 +10,30 @@ import Combine
 import Foundation
 import StoreKit
 
-enum TransationState {
-    case purchasing, purchased, failed, restored, deferred
-}
-
 final class TipJarViewModel: NSObject {
     
-    var onTransactionStateChanged = PassthroughSubject<TransationState, Never>()
+    var onTransactionStateChanged = PassthroughSubject<TipJarTransactionState, Never>()
     var onProductsLoaded = PassthroughSubject<Void, Never>()
     
-    var products = CurrentValueSubject<[SKProduct], Never>([])
+    var products = CurrentValueSubject<[TipJarProduct], Never>([])
+    var selectedProduct: TipJarProduct? = nil
     
     override init() {
         super.init()
         
         SKPaymentQueue.default().add(self)
+        fetchProducts()
     }
     
-    func buttonPressed() {
-        let payment = SKPayment(product: products.value[0])
+    func productSelected(for indexPath: IndexPath) {
+        selectedProduct = products.value[indexPath.item]
+        guard let validProduct = selectedProduct else { return }
+        let payment = SKPayment(product: validProduct.skProduct)
         SKPaymentQueue.default().add(payment)
     }
     
     func fetchProducts() {
-        let request = SKProductsRequest(productIdentifiers: Set(TipJarProduct.allCases.map(\.id)))
+        let request = SKProductsRequest(productIdentifiers: Set(TipJarProduct.ProductType.allCases.map { $0.rawValue }) )
         request.delegate = self
         request.start()
     }
@@ -44,7 +44,7 @@ final class TipJarViewModel: NSObject {
 extension TipJarViewModel: SKProductsRequestDelegate {
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        products.send(response.products)
+        products.send(response.products.map { TipJarProduct(product: $0) })
         onProductsLoaded.send()
         
         print("Valid products: ", products)
@@ -63,7 +63,7 @@ extension TipJarViewModel: SKPaymentTransactionObserver {
                 onTransactionStateChanged.send(.purchasing)
                 
             case .purchased:
-                onTransactionStateChanged.send(.purchased)
+                onTransactionStateChanged.send(.purchased(product: selectedProduct!))
                 let transaction: SKPaymentTransaction = $0
                 SKPaymentQueue.default().finishTransaction(transaction)
                 

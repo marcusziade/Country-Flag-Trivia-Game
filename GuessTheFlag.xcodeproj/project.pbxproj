@@ -41,6 +41,7 @@
 		5A5C538F2633F5FB00070869 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C538E2633F5FB00070869 /* Settings.swift */; };
 		5A6A50F1281E5B1700FEC19E /* TipJarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A50F0281E5B1700FEC19E /* TipJarSection.swift */; };
 		5A6A50F5281EA4B200FEC19E /* StoreKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A50F4281EA4B200FEC19E /* StoreKit+Ext.swift */; };
+		5A6A50F7281EBB2100FEC19E /* TipJarTransactionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A50F6281EBB2100FEC19E /* TipJarTransactionState.swift */; };
 		5A8FC615276F1C5100C1B468 /* MasterofFlagsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */; };
 		5A8FC61E276F1CB200C1B468 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */; };
 		5AA44B4B2749169100AB9083 /* FlagGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B4A2749169100AB9083 /* FlagGameManager.swift */; };
@@ -129,6 +130,7 @@
 		5A5C538E2633F5FB00070869 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		5A6A50F0281E5B1700FEC19E /* TipJarSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarSection.swift; sourceTree = "<group>"; };
 		5A6A50F4281EA4B200FEC19E /* StoreKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreKit+Ext.swift"; sourceTree = "<group>"; };
+		5A6A50F6281EBB2100FEC19E /* TipJarTransactionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarTransactionState.swift; sourceTree = "<group>"; };
 		5A8FC612276F1C5100C1B468 /* MasterofFlagsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterofFlagsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8FC614276F1C5100C1B468 /* MasterofFlagsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterofFlagsUITests.swift; sourceTree = "<group>"; };
 		5A8FC61D276F1CB200C1B468 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = MasterofFlagsUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -430,6 +432,7 @@
 			children = (
 				5AF367B7281D85AD0048A424 /* TipJarProduct.swift */,
 				5A6A50F0281E5B1700FEC19E /* TipJarSection.swift */,
+				5A6A50F6281EBB2100FEC19E /* TipJarTransactionState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				5AD6BECA26FF490E009B276F /* CountryDetail.swift in Sources */,
 				5A1D493A281CEC95001DDAD2 /* SettingsItemType.swift in Sources */,
 				5A0DC2AC2814FB5A007F9359 /* UICollectionView+Ext.swift in Sources */,
+				5A6A50F7281EBB2100FEC19E /* TipJarTransactionState.swift in Sources */,
 				5AD6BEB526FF1905009B276F /* Name.swift in Sources */,
 				5A0DC2A42814F73C007F9359 /* SettingsViewController.swift in Sources */,
 				5A0DC2C528158782007F9359 /* TipJarViewModel.swift in Sources */,
