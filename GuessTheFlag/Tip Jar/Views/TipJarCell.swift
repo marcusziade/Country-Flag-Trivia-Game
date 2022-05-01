@@ -31,18 +31,17 @@ final class TipJarCell: UICollectionViewCell {
     }
     
     func configure(with product: TipJarProduct) {
-        animation = product.animation
+        animationView.animation = Animation.named(product.animation)
+        animationView.play()
+        animationView.loopMode = .loop
+        
         titleLabel.text = product.title
     }
     
     // MARK: - Private
     
-    private var animation: String?
-    
-    private lazy var animationView = AnimationView(name: animation ?? "").configure {
-        $0.play()
+    private let animationView = AnimationView().configure {
         $0.contentMode = .scaleAspectFit
-        $0.loopMode = .loop
         $0.backgroundColor = .red
         $0.layer.cornerRadius = 12
         $0.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
@@ -70,7 +69,7 @@ import SwiftUI
 
 struct TipJarCell_Preview: PreviewProvider {
     
-    static var previews: some View = Preview(for: TipJarCell().configure { $0.configure(with: .coffee) })
+    static var previews: some View = Preview(for: TipJarCell().configure { $0.configure(with: .avocado) })
         .previewLayout(.fixed(width: 280, height: 280))
         .preferredColorScheme(.dark)
         .padding()

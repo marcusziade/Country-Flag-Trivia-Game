@@ -245,7 +245,7 @@ extension TipJarViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.dequeueCell(TipJarCell.self, forIndexPath: indexPath).configure {
-            $0.configure(with: .avocado)
+            $0.configure(with: .coffee)
         }
     }
 }
