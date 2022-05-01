@@ -75,6 +75,7 @@ final class LoadingView: UIView {
 
     private let titleLabel = UILabel().configure {
         $0.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
+        $0.textColor = .white
 #if DEBUG
         $0.text = "Loading"
 #endif
