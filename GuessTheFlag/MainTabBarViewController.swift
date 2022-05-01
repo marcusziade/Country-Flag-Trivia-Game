@@ -28,7 +28,7 @@ final class MainTabBarController: UITabBarController {
             encyclopediaView,
             settingsViewController
         ]
-        selectedIndex = 0
+        selectedIndex = 2
     }
     
     // MARK: - Private

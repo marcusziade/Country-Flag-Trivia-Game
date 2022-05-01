@@ -46,10 +46,6 @@ final class TipJarCell: UICollectionViewCell {
         $0.backgroundColor = .red
         $0.layer.cornerRadius = 12
         $0.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        
-        $0.snp.makeConstraints { make in
-            make.height.equalTo(200)
-        }
     }
     
     private lazy var titleLabelContainerView = UIView().configure {
@@ -65,9 +61,6 @@ final class TipJarCell: UICollectionViewCell {
     private let titleLabel = UILabel().configure {
         $0.font = UIFont.preferredFont(forTextStyle: .title3, compatibleWith: .init(legibilityWeight: .bold))
         $0.textAlignment = .center
-#if DEBUG
-        $0.text = "Avocado"
-#endif
     }
 }
 
