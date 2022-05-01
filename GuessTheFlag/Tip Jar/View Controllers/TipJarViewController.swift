@@ -24,22 +24,15 @@ final class TipJarViewController: ViewController {
             $0.edges.equalToSuperview()
         }
         
-//        view.addAndConstrainSubview(button) {
-//            $0.center.equalToSuperview()
-//            $0.height.equalTo(50)
-//            $0.width.equalTo(250)
-//        }
-//
-//        button.addAndConstrainSubview(loaderView) {
-//            $0.center.equalToSuperview()
-//        }
+        view.addAndConstrainSubview(loaderView) {
+            $0.center.equalToSuperview()
+        }
         
         view.addAndConstrainSubview(animationView) {
             $0.bottom.equalToSuperview()
             $0.centerX.equalToSuperview()
         }
         
-        model.fetchProducts()
         startListeningForStoreKit()
     }
     
@@ -66,12 +59,8 @@ final class TipJarViewController: ViewController {
         didSet {
             if isLoading {
                 loaderView.startAnimating()
-                button.setTitle("", for: .normal)
             } else {
                 loaderView.stopAnimating()
-                let products = model.products.value
-                button.setTitle("☕️ \(products[0].localizedTitle) \(products[0].priceLocale.currencySymbol ?? "")\(products[0].price)", for: .normal)
-                print(model.products.value.count)
                 collectionView.reloadData()
             }
         }
@@ -86,6 +75,7 @@ final class TipJarViewController: ViewController {
     
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout).configure {
         $0.dataSource = self
+        $0.delegate = self
         $0.registerCell(TipJarCell.self)
     }
     
@@ -142,31 +132,24 @@ final class TipJarViewController: ViewController {
 
     }
     
-    private lazy var button = UIButton().configure {
-        $0.layer.cornerRadius = 8
-        $0.backgroundColor = .brown
-        $0.setTitleColor(.white, for: .normal)
-        $0.addShadow(color: .black, offset: CGSize(width: 3.0, height: 3.0), opacity: 0.4, radius: 4.0)
-        
-        $0.addAction(UIAction { [unowned self] _ in model.buttonPressed() }, for: .touchUpInside)
-    }
-    
     private let loaderView = UIActivityIndicatorView().configure {
         $0.hidesWhenStopped = true
         $0.color = .white
     }
     
-    private let animationView = AnimationView(name: "coffee").configure {
+    private let animationView = AnimationView().configure {
         $0.contentMode = .scaleAspectFit
         $0.loopMode = .playOnce
         $0.backgroundColor = .clear
         $0.alpha = 0
     }
     
-    private func showCoffeeAnimation() {
+    private func showPurchaseSuccesfulAnimation(for product: TipJarProduct) {
         UIView.animate(withDuration: 0.2) { [self] in
             animationView.alpha = 1
         }
+        
+        animationView.animation = Animation.named(product.animation)
         
         animationView.play { [weak self] _ in
             UIView.animate(withDuration: 0.2) {
@@ -176,12 +159,12 @@ final class TipJarViewController: ViewController {
     }
     
     private func startListeningForStoreKit() {
-        model.onTransactionStateChanged.sink { [unowned self] state in
-            switch state {
+        model.onTransactionStateChanged.sink { [unowned self] transationsState in
+            switch transationsState {
             case .purchasing:
                 print("Purchasing")
             case .purchased:
-                showCoffeeAnimation()
+                showPurchaseSuccesfulAnimation(for: model.selectedProduct!)
             case .failed:
                 print("failed")
             case .restored:
@@ -190,7 +173,7 @@ final class TipJarViewController: ViewController {
                 print("deferred")
             }
             
-            isLoading = state == .purchasing
+            isLoading = transationsState == .purchasing
         }
         .store(in: &cancellables)
         
@@ -245,7 +228,18 @@ extension TipJarViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.dequeueCell(TipJarCell.self, forIndexPath: indexPath).configure {
-            $0.configure(with: .coffee)
+            $0.configure(with: model.products.value[indexPath.item])
+        }
+    }
+}
+
+extension TipJarViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let section = TipJarSection(rawValue: indexPath.section) else { return }
+        switch section {
+        case .tips:
+            model.productSelected(for: indexPath)
         }
     }
 }

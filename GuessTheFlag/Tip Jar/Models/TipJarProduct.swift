@@ -7,12 +7,32 @@
 //
 
 import Foundation
+import StoreKit
 
-enum TipJarProduct: String, CaseIterable {
-    case coffee, smallTip, avocado, lunch
+protocol TipJarProductProtocol {
+    
+    var title: String { get }
+    var animation: String { get }
+}
+
+struct TipJarProduct: TipJarProductProtocol {
+    
+    enum ProductType: String, CaseIterable {
+        case coffee = "com.marcusziade.knowtheflag.buycoffee"
+        case smallTip = "com.marcusziade.knowtheflag.smalltip"
+        case avocado = "com.marcusziade.knowtheflag.avocado"
+        case lunch = "com.marcusziade.knowtheflag.lunch"
+    }
+    
+    let skProduct: SKProduct
+    
+    init(product: SKProduct) {
+        self.skProduct = product
+        self.productType = ProductType(rawValue: skProduct.productIdentifier)!
+    }
     
     var id: String {
-        switch self {
+        switch productType {
         case .coffee:
             return "com.marcusziade.knowtheflag.buycoffee"
         case .smallTip:
@@ -25,7 +45,7 @@ enum TipJarProduct: String, CaseIterable {
     }
     
     var title: String {
-        switch self {
+        switch productType {
         case .coffee:
             return NSLocalizedString("Caffè latte", comment: "latte title label")
         case .smallTip:
@@ -38,7 +58,7 @@ enum TipJarProduct: String, CaseIterable {
     }
     
     var animation: String {
-        switch self {
+        switch productType {
         case .coffee:
             return "coffee"
         case .smallTip:
@@ -49,4 +69,15 @@ enum TipJarProduct: String, CaseIterable {
             return "lunch"
         }
     }
+    
+    // MARK: - Private
+    
+    private let productType: ProductType
+}
+
+// MARK: - Mock
+
+struct MockTipJarProduct: TipJarProductProtocol {
+    let title = "Avocado"
+    let animation = "Avocado"
 }
