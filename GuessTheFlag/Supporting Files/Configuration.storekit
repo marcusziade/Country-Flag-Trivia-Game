@@ -11,7 +11,7 @@
       "localizations" : [
         {
           "description" : "Thank you so much, kind stranger",
-          "displayName" : "Buy me coffee",
+          "displayName" : "Caffè latte",
           "locale" : "en_US"
         }
       ],
@@ -41,7 +41,7 @@
       "localizations" : [
         {
           "description" : "Your avocado contribution is appreciated",
-          "displayName" : "One avocado",
+          "displayName" : "Avocado",
           "locale" : "en_US"
         }
       ],
@@ -56,7 +56,7 @@
       "localizations" : [
         {
           "description" : "Thank you for your lunch contribution",
-          "displayName" : "Buy lunch",
+          "displayName" : "Lunch",
           "locale" : "en_US"
         }
       ],
