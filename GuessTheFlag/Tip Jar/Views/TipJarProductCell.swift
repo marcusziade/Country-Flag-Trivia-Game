@@ -1,5 +1,5 @@
 //
-//  TipJarCell.swift
+//  TipJarProductCell.swift
 //  GuessTheFlag
 //
 //  Created by Marcus Ziadé on 30.4.2022.
@@ -11,7 +11,7 @@ import Lottie
 import SnapKit
 import UIKit
 
-final class TipJarCell: UICollectionViewCell {
+final class TipJarProductCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -85,7 +85,7 @@ import SwiftUI
 
 struct TipJarCell_Preview: PreviewProvider {
     
-    static var previews: some View = Preview(for: TipJarCell().configure { $0.configure(with: MockTipJarProduct()) })
+    static var previews: some View = Preview(for: TipJarProductCell().configure { $0.configure(with: MockTipJarProduct()) })
         .previewLayout(.fixed(width: 350, height: 400))
         .preferredColorScheme(.light)
         .padding()

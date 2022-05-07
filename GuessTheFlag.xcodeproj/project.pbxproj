@@ -35,6 +35,9 @@
 		5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62225C4C93A00525C9A /* AboutViewController.swift */; };
 		5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */; };
 		5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62D25C5D6D600525C9A /* Currency.swift */; };
+		5A4F3EBB28269B9000B31B55 /* TipJarLegalFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F3EBA28269B9000B31B55 /* TipJarLegalFooterView.swift */; };
+		5A4F3EBD2826A08D00B31B55 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F3EBC2826A08D00B31B55 /* UIButton+Ext.swift */; };
+		5A4F3EBF2826B25F00B31B55 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F3EBE2826B25F00B31B55 /* TermsView.swift */; };
 		5A55C5ED276F2C4A00594C83 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5A55C5EC276F2C4A00594C83 /* Lottie */; };
 		5A55C5EF276F526C00594C83 /* keyword.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A55C5EE276F526C00594C83 /* keyword.strings */; };
 		5A55C5F1276F52C600594C83 /* title.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A55C5F0276F52C600594C83 /* title.strings */; };
@@ -69,7 +72,7 @@
 		5AF367BA281D871E0048A424 /* tip.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AF367B9281D871E0048A424 /* tip.json */; };
 		5AF367BE281D87C70048A424 /* avocado.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AF367BD281D87C70048A424 /* avocado.json */; };
 		5AF367C0281D88A20048A424 /* lunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AF367BF281D88A20048A424 /* lunch.json */; };
-		5AF367C3281D8ADF0048A424 /* TipJarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF367C2281D8ADF0048A424 /* TipJarCell.swift */; };
+		5AF367C3281D8ADF0048A424 /* TipJarProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF367C2281D8ADF0048A424 /* TipJarProductCell.swift */; };
 		5AF367C5281D91C20048A424 /* LivePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF367C4281D91C20048A424 /* LivePreview.swift */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +130,9 @@
 		5A2CC62625C4CCF300525C9A /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		5A2CC62D25C5D6D600525C9A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		5A4F3EBA28269B9000B31B55 /* TipJarLegalFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarLegalFooterView.swift; sourceTree = "<group>"; };
+		5A4F3EBC2826A08D00B31B55 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		5A4F3EBE2826B25F00B31B55 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		5A55C5EE276F526C00594C83 /* keyword.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = keyword.strings; path = "screenshots/en-US/keyword.strings"; sourceTree = SOURCE_ROOT; };
 		5A55C5F0276F52C600594C83 /* title.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = title.strings; path = "screenshots/en-US/title.strings"; sourceTree = SOURCE_ROOT; };
 		5A5C538E2633F5FB00070869 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -160,7 +166,7 @@
 		5AF367B9281D871E0048A424 /* tip.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tip.json; sourceTree = "<group>"; };
 		5AF367BD281D87C70048A424 /* avocado.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = avocado.json; sourceTree = "<group>"; };
 		5AF367BF281D88A20048A424 /* lunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lunch.json; sourceTree = "<group>"; };
-		5AF367C2281D8ADF0048A424 /* TipJarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarCell.swift; sourceTree = "<group>"; };
+		5AF367C2281D8ADF0048A424 /* TipJarProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarProductCell.swift; sourceTree = "<group>"; };
 		5AF367C4281D91C20048A424 /* LivePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -402,6 +408,7 @@
 				5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */,
 				5A0DC2AB2814FB5A007F9359 /* UICollectionView+Ext.swift */,
 				5A6A50F4281EA4B200FEC19E /* StoreKit+Ext.swift */,
+				5A4F3EBC2826A08D00B31B55 /* UIButton+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -482,8 +489,10 @@
 		5AF367C1281D8AD00048A424 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5AF367C2281D8ADF0048A424 /* TipJarCell.swift */,
+				5AF367C2281D8ADF0048A424 /* TipJarProductCell.swift */,
 				5A6A50F8281ECF8B00FEC19E /* LoadingView.swift */,
+				5A4F3EBA28269B9000B31B55 /* TipJarLegalFooterView.swift */,
+				5A4F3EBE2826B25F00B31B55 /* TermsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -627,8 +636,9 @@
 				5A0DC2AA2814FAB9007F9359 /* SettingsSection.swift in Sources */,
 				5AF367B8281D85AD0048A424 /* TipJarProduct.swift in Sources */,
 				2C38414323563BB400F56257 /* FlagGameView.swift in Sources */,
+				5A4F3EBD2826A08D00B31B55 /* UIButton+Ext.swift in Sources */,
 				5A0DC2B728150D2C007F9359 /* SettingsItemBadgeView.swift in Sources */,
-				5AF367C3281D8ADF0048A424 /* TipJarCell.swift in Sources */,
+				5AF367C3281D8ADF0048A424 /* TipJarProductCell.swift in Sources */,
 				5A6A50FB281ED24400FEC19E /* LoadingState.swift in Sources */,
 				5AEA07A525C547A900DBA23F /* Reusable.swift in Sources */,
 				5A0DC2BF2815392E007F9359 /* SettingsCell.swift in Sources */,
@@ -647,12 +657,14 @@
 				5A6A50F7281EBB2100FEC19E /* TipJarTransactionState.swift in Sources */,
 				5AD6BEB526FF1905009B276F /* Name.swift in Sources */,
 				5A0DC2A42814F73C007F9359 /* SettingsViewController.swift in Sources */,
+				5A4F3EBB28269B9000B31B55 /* TipJarLegalFooterView.swift in Sources */,
 				5A0DC2C528158782007F9359 /* TipJarViewModel.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5A0DC2C728159DF7007F9359 /* SettingsHeaderView.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
 				5A0DC2C328157CD2007F9359 /* TipJarViewController.swift in Sources */,
 				5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */,
+				5A4F3EBF2826B25F00B31B55 /* TermsView.swift in Sources */,
 				5A0DC2B928151454007F9359 /* SettingsRegularCell.swift in Sources */,
 				5AD6BEC126FF2E86009B276F /* CountryListVM.swift in Sources */,
 				5A5C538F2633F5FB00070869 /* Settings.swift in Sources */,

@@ -9,6 +9,7 @@
 import Combine
 import Foundation
 import Lottie
+import SafariServices
 import SnapKit
 import SwiftUI
 import UIKit
@@ -80,7 +81,9 @@ final class TipJarViewController: ViewController {
         $0.dataSource = self
         $0.delegate = self
         $0.backgroundColor = .clear
-        $0.registerCell(TipJarCell.self)
+        
+        $0.registerCell(TipJarProductCell.self)
+        $0.registerSupplementaryView(TipJarLegalFooterView.self, kind: .layoutFooter)
     }
     
     private var viewLayout: UICollectionViewLayout {
@@ -95,6 +98,15 @@ final class TipJarViewController: ViewController {
             case .tips:
                 sectionLayout = tipsLayout
             }
+            
+            let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(160))
+            let footer = NSCollectionLayoutBoundarySupplementaryItem.create(
+                layoutSize: footerSize,
+                elementKind: .layoutFooter,
+                alignment: .bottom
+            )
+            
+            sectionLayout.boundarySupplementaryItems = [footer]
             
             return sectionLayout
         }
@@ -134,7 +146,7 @@ final class TipJarViewController: ViewController {
         
         return section
     }
-
+    
     private var loadingView = LoadingView(state: .loading)
     
     private let animationView = AnimationView().configure {
@@ -230,8 +242,12 @@ extension TipJarViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueCell(TipJarCell.self, forIndexPath: indexPath).configure {
-            $0.configure(with: model.products.value[indexPath.item])
+        guard let section = TipJarSection(rawValue: indexPath.section) else { return UICollectionViewCell() }
+        switch section {
+        case .tips:
+            return collectionView.dequeueCell(TipJarProductCell.self, forIndexPath: indexPath).configure {
+                $0.configure(with: model.products.value[indexPath.item])
+            }
         }
     }
 }
@@ -243,6 +259,34 @@ extension TipJarViewController: UICollectionViewDelegate {
         switch section {
         case .tips:
             model.productSelected(for: indexPath)
+        }
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
+        return collectionView.dequeueSupplementaryView(
+            TipJarLegalFooterView.self,
+            kind: .layoutFooter,
+            indexPath: indexPath
+        ).configure {
+            $0.onPolicyPressed = { [unowned self] in
+                let safariConfig = SFSafariViewController.Configuration()
+                safariConfig.entersReaderIfAvailable = true
+                present(
+                    SFSafariViewController(
+                        url: URL(string: "https://pages.flycricket.io/know-your-flags/privacy.html")!,
+                        configuration: safariConfig
+                    ),
+                    animated: true
+                )
+            }
+            
+            $0.onTermsPressed = { [unowned self] in
+                present(UIHostingController(rootView: TermsView()), animated: true)
+            }
         }
     }
 }
