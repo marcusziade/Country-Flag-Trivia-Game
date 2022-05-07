@@ -204,17 +204,15 @@ final class TipJarViewController: ViewController {
         if !Settings.parentalGateUnlocked {
             var parentalGate = ParentalGateView()
             
-            parentalGate.onCancel = { [weak self] in
-                guard let self = self else { return }
+            parentalGate.onCancel = { [unowned self] in
                 HapticEngine.result.notificationOccurred(.error)
-                self.dismiss(animated: true)
-                self.navigationController?.popToRootViewController(animated: true)
+                dismiss(animated: true)
+                navigationController?.popToRootViewController(animated: true)
             }
             
-            parentalGate.onClose = { [weak self] in
-                guard let self = self else { return }
+            parentalGate.onClose = { [unowned self] in
                 Settings.parentalGateUnlocked = true
-                self.dismiss(animated: true)
+                dismiss(animated: true)
                 HapticEngine.result.notificationOccurred(.success)
             }
             
