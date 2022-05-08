@@ -36,6 +36,8 @@
 		5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */; };
 		5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CC62D25C5D6D600525C9A /* Currency.swift */; };
 		5A3EC8612827849D00BFB359 /* QuickActionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC8602827849D00BFB359 /* QuickActionManager.swift */; };
+		5A3EC8642827958200BFB359 /* SiriShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC8632827958200BFB359 /* SiriShortcutManager.swift */; };
+		5A3EC8662827A08E00BFB359 /* SiriShortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EC8652827A08E00BFB359 /* SiriShortcut.swift */; };
 		5A4F3EBB28269B9000B31B55 /* TipJarLegalFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F3EBA28269B9000B31B55 /* TipJarLegalFooterView.swift */; };
 		5A4F3EBD2826A08D00B31B55 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F3EBC2826A08D00B31B55 /* UIButton+Ext.swift */; };
 		5A4F3EBF2826B25F00B31B55 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F3EBE2826B25F00B31B55 /* TermsView.swift */; };
@@ -132,6 +134,8 @@
 		5A2CC62825C4D01500525C9A /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		5A2CC62D25C5D6D600525C9A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		5A3EC8602827849D00BFB359 /* QuickActionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionManager.swift; sourceTree = "<group>"; };
+		5A3EC8632827958200BFB359 /* SiriShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutManager.swift; sourceTree = "<group>"; };
+		5A3EC8652827A08E00BFB359 /* SiriShortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcut.swift; sourceTree = "<group>"; };
 		5A4F3EBA28269B9000B31B55 /* TipJarLegalFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarLegalFooterView.swift; sourceTree = "<group>"; };
 		5A4F3EBC2826A08D00B31B55 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		5A4F3EBE2826B25F00B31B55 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				5AF367B3281D85630048A424 /* Tip Jar */,
 				5A0DC2A22814F72E007F9359 /* Settings */,
 				5A3EC85F2827847500BFB359 /* Quick Actions */,
+				5A3EC8622827957200BFB359 /* Siri Shortcuts */,
 				5ADC664B253AF88B001E09B3 /* Extensions */,
 				5AEA07A325C5479E00DBA23F /* Utilities */,
 				5A2CC62525C4CCD500525C9A /* Supporting Files */,
@@ -318,6 +323,15 @@
 				5A3EC8602827849D00BFB359 /* QuickActionManager.swift */,
 			);
 			path = "Quick Actions";
+			sourceTree = "<group>";
+		};
+		5A3EC8622827957200BFB359 /* Siri Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				5A3EC8632827958200BFB359 /* SiriShortcutManager.swift */,
+				5A3EC8652827A08E00BFB359 /* SiriShortcut.swift */,
+			);
+			path = "Siri Shortcuts";
 			sourceTree = "<group>";
 		};
 		5A6E9EA12530E0510007C148 /* Flag Game */ = {
@@ -660,6 +674,7 @@
 				5A0DC2BD281533BD007F9359 /* ViewController.swift in Sources */,
 				5ADC6651253AFAE4001E09B3 /* MainTabBarViewController.swift in Sources */,
 				5AA44B59274A424700AB9083 /* SettingsViewModel.swift in Sources */,
+				5A3EC8662827A08E00BFB359 /* SiriShortcut.swift in Sources */,
 				5A2CC62925C4D01500525C9A /* UIViewControllerExtensions.swift in Sources */,
 				5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */,
 				5ADC6638253AF223001E09B3 /* CountriesManager.swift in Sources */,
@@ -671,6 +686,7 @@
 				5A0DC2A42814F73C007F9359 /* SettingsViewController.swift in Sources */,
 				5A4F3EBB28269B9000B31B55 /* TipJarLegalFooterView.swift in Sources */,
 				5A0DC2C528158782007F9359 /* TipJarViewModel.swift in Sources */,
+				5A3EC8642827958200BFB359 /* SiriShortcutManager.swift in Sources */,
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5A0DC2C728159DF7007F9359 /* SettingsHeaderView.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,

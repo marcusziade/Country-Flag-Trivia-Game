@@ -44,6 +44,8 @@ final class MainTabBarController: UITabBarController {
     
     private let settings: Settings
     
+    private let siriShortcutManager = SiriShortcutManager()
+    
     private lazy var flagGameView = UIHostingController(
         rootView: FlagGameView(manager: FlagGameManager(settings: self.settings))
     ).configure {
