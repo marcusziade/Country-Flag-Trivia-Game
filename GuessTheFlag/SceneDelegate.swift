@@ -26,10 +26,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.makeKeyAndVisible()
         }
         
-        // This is needed when the app is opened from a terminated state
-        if let shortcutItem = connectionOptions.shortcutItem {
-            quickActionManager.handleShortcutItem(shortcutItem, window: window) { _ in }
-        }
+        handleShortcutsIfAppTerminated(for: connectionOptions)
     }
     
     // MARK: - Quick actions
@@ -42,8 +39,32 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         quickActionManager.handleShortcutItem(shortcutItem, window: window, completionHandler: completionHandler)
     }
     
+    // MARK: - Siri shortcuts
+    
+    func scene(_ scene: UIScene, willContinueUserActivityWithType userActivityType: String) {
+        guard let shortcut = SiriShortcut(rawValue: userActivityType) else { return }
+        siriShortcutManager.handleSiriShortcut(shortcut, window: window)
+    }
+    
     // MARK: - Private
     
     private let settings = Settings()
     private let quickActionManager = QuickActionManager()
+    private let siriShortcutManager = SiriShortcutManager()
+    
+    /// Configures shortcuts when they are launched when the app is terminated
+    private func handleShortcutsIfAppTerminated(for options: UIScene.ConnectionOptions) {
+        // Quick actions
+        if let shortcutItem = options.shortcutItem {
+            quickActionManager.handleShortcutItem(shortcutItem, window: window) { _ in }
+        }
+        
+        // Siri shortcuts
+        if
+            let activity = options.userActivities.map(\.activityType).first,
+            let shortcut = SiriShortcut(rawValue: activity)
+        {
+            siriShortcutManager.handleSiriShortcut(shortcut, window: window)
+        }
+    }
 }

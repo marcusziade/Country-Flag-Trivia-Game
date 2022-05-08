@@ -10,6 +10,7 @@ import CoreSpotlight
 import Foundation
 import Intents
 import MobileCoreServices
+import UIKit
 
 final class SiriShortcutManager {
     
@@ -25,5 +26,17 @@ final class SiriShortcutManager {
             $0.isEligibleForSearch = true
             $0.isEligibleForPrediction = true
         }
+    }
+    
+    func handleSiriShortcut(
+        _ shortcut: SiriShortcut,
+        window: UIWindow?
+    ) {
+        guard let tabBarController = window?.rootViewController as? MainTabBarController else {
+            assertionFailure("Failed to find tab bar controller")
+            return
+        }
+        
+        tabBarController.handleSiriShortcut(shortcut)
     }
 }
