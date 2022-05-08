@@ -9,16 +9,12 @@
 import Foundation
 import UIKit
 
-enum SiriShortcut {
-    case game, encyclopedia
+enum SiriShortcut: String {
+    case game = "com.marcusziade.masterofflags.game"
+    case encyclopedia = "com.marcusziade.masterofflags.encyclopedia"
     
     var activityType: String {
-        switch self {
-        case .game:
-            return "com.marcusziade.masterofflags.game"
-        case .encyclopedia:
-            return "com.marcusziade.masterofflags.encyclopedia"
-        }
+        return rawValue
     }
     
     var thumbnail: UIImage {
