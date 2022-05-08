@@ -25,6 +25,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+        
+        // This is needed when the app is opened from a terminated state
+        if let shortcutItem = connectionOptions.shortcutItem {
+            quickActionManager.handleShortcutItem(shortcutItem, window: window) { _ in }
+        }
     }
     
     // MARK: - Quick actions
@@ -34,32 +39,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         performActionFor shortcutItem: UIApplicationShortcutItem,
         completionHandler: @escaping (Bool) -> Void
     ) {
-        handleShortcutItem(shortcutItem, completionHandler: completionHandler)
+        quickActionManager.handleShortcutItem(shortcutItem, window: window, completionHandler: completionHandler)
     }
     
     // MARK: - Private
     
     private let settings = Settings()
     private let quickActionManager = QuickActionManager()
-    
-    private func handleShortcutItem(
-        _ item: UIApplicationShortcutItem?,
-        completionHandler: ((Bool) -> Void)
-    ) {
-        guard let tabBarController = window?.rootViewController as? MainTabBarController else {
-            assertionFailure("Failed to find tab bar controller")
-            completionHandler(false)
-            return
-        }
-        
-        guard let shortcut = QuickActionManager.ShortcutIdentifier(rawValue: item?.type ?? "") else {
-            assertionFailure("Unknown app shortcut identifier \(item?.type ?? "")")
-            completionHandler(false)
-            return
-        }
-        
-        tabBarController.handleShortcut(shortcut)
-        
-        completionHandler(true)
-    }
 }
