@@ -31,6 +31,17 @@ final class MainTabBarController: UITabBarController {
         selectedIndex = 0
     }
     
+    func handleShortcut(_ shortcut: QuickActionManager.ShortcutIdentifier) {
+        loadViewIfNeeded()
+        
+        switch shortcut {
+        case .game:
+            selectedIndex = 0
+        case .encyclopedia:
+            selectedIndex = 1
+        }
+    }
+    
     // MARK: - Private
     
     private let settings: Settings
