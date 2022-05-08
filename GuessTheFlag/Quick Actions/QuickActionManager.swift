@@ -51,6 +51,28 @@ final class QuickActionManager {
         application.shortcutItems = []
     }
     
+    func handleShortcutItem(
+        _ item: UIApplicationShortcutItem?,
+        window: UIWindow?,
+        completionHandler: ((Bool) -> Void)
+    ) {
+        guard let tabBarController = window?.rootViewController as? MainTabBarController else {
+            assertionFailure("Failed to find tab bar controller")
+            completionHandler(false)
+            return
+        }
+        
+        guard let shortcut = QuickActionManager.ShortcutIdentifier(rawValue: item?.type ?? "") else {
+            assertionFailure("Unknown app shortcut identifier \(item?.type ?? "")")
+            completionHandler(false)
+            return
+        }
+        
+        tabBarController.handleShortcut(shortcut)
+        
+        completionHandler(true)
+    }
+    
     // MARK: - Private
     
     private let application = UIApplication.shared
