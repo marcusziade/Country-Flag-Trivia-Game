@@ -32,8 +32,6 @@ final class MainTabBarController: UITabBarController {
     }
     
     func handleShortcut(_ shortcut: QuickActionManager.ShortcutIdentifier) {
-        loadViewIfNeeded()
-        
         switch shortcut {
         case .game:
             selectedIndex = 0
