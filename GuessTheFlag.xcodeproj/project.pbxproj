@@ -58,7 +58,6 @@
 		5AA44B51274940F700AB9083 /* FlagGameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */; };
 		5AA44B53274A363D00AB9083 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B52274A363D00AB9083 /* Configurable.swift */; };
 		5AA44B59274A424700AB9083 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B58274A424700AB9083 /* SettingsViewModel.swift */; };
-		5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */; };
 		5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE71A625C56DD1003F8118 /* HapticEngine.swift */; };
 		5AD6BEB526FF1905009B276F /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEB426FF1905009B276F /* Name.swift */; };
 		5AD6BEB826FF257B009B276F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AD6BEB726FF257B009B276F /* Kingfisher */; };
@@ -157,7 +156,6 @@
 		5AA44B50274940F600AB9083 /* FlagGameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameHeaderView.swift; sourceTree = "<group>"; };
 		5AA44B52274A363D00AB9083 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		5AA44B58274A424700AB9083 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateView.swift; sourceTree = "<group>"; };
 		5AAE71A625C56DD1003F8118 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
 		5AD6BEB426FF1905009B276F /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		5AD6BEC026FF2E86009B276F /* CountryListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListVM.swift; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 				5A0DC2BE2815392E007F9359 /* SettingsCell.swift */,
 				5A0DC2B828151454007F9359 /* SettingsRegularCell.swift */,
 				5A0DC2C028153951007F9359 /* SettingsHardModeCell.swift */,
-				5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */,
 				5A0DC2C628159DF7007F9359 /* SettingsHeaderView.swift */,
 			);
 			path = Views;
@@ -661,7 +658,6 @@
 				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
 				5AA44B53274A363D00AB9083 /* Configurable.swift in Sources */,
 				5A0DC2B328150806007F9359 /* SettingsItems.swift in Sources */,
-				5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */,
 				5AD6BECC26FF492F009B276F /* CountryDetailVM.swift in Sources */,
 				5A0DC2C128153951007F9359 /* SettingsHardModeCell.swift in Sources */,
 				5AF367C5281D91C20048A424 /* LivePreview.swift in Sources */,

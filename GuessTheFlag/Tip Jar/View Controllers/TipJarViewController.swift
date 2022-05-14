@@ -40,7 +40,6 @@ final class TipJarViewController: ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        openParentalGateIfNeeded()
         // Force starts the animations inside the cells
         collectionView.reloadData()
     }
@@ -198,28 +197,6 @@ final class TipJarViewController: ViewController {
             }
         }
         .store(in: &cancellables)
-    }
-    
-    private func openParentalGateIfNeeded() {
-        if !Settings.parentalGateUnlocked {
-            var parentalGate = ParentalGateView()
-            
-            parentalGate.onCancel = { [unowned self] in
-                HapticEngine.result.notificationOccurred(.error)
-                dismiss(animated: true)
-                navigationController?.popToRootViewController(animated: true)
-            }
-            
-            parentalGate.onClose = { [unowned self] in
-                Settings.parentalGateUnlocked = true
-                dismiss(animated: true)
-                HapticEngine.result.notificationOccurred(.success)
-            }
-            
-            let viewController = UIHostingController(rootView: parentalGate)
-            viewController.isModalInPresentation = true
-            present(viewController, animated: true)
-        }
     }
 }
 
