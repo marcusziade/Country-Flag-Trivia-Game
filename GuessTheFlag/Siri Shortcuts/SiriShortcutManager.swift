@@ -17,7 +17,7 @@ final class SiriShortcutManager {
     func createShortcut(for shortcut: SiriShortcut) -> NSUserActivity {
         return NSUserActivity(activityType: shortcut.activityType).configure {
             $0.title = shortcut.title
-            let attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeItem as String)
+            let attributes = CSSearchableItemAttributeSet(contentType: .item)
             attributes.contentDescription = shortcut.description
             attributes.thumbnailData = shortcut.thumbnail.jpegData(compressionQuality: 1.0)
             $0.contentAttributeSet = attributes
