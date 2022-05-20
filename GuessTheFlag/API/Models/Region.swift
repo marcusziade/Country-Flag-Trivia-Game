@@ -9,9 +9,9 @@
 import Foundation
 
 enum Region {
-    
+
     case europe, asia, africa, americas, world, oceania
-    
+
     var title: String {
         switch self {
         case .europe: return "Europe"
@@ -27,7 +27,7 @@ enum Region {
 // MARK: - Countries
 
 extension Region {
-    
+
     var countries: [String] {
         switch self {
         case .europe: return europeCountries
@@ -38,7 +38,7 @@ extension Region {
         case .world: return allCountries
         }
     }
-    
+
     var europeCountries: [String] {
         [
             "Albania",
@@ -85,7 +85,7 @@ extension Region {
             "Switzerland",
             "Ukraine",
             "United Kingdom",
-            "Vatican City"
+            "Vatican City",
         ]
     }
     var asiaCountries: [String] {
@@ -136,7 +136,7 @@ extension Region {
             "United Arab Emirates",
             "Uzbekistan",
             "Vietnam",
-            "Yemen"
+            "Yemen",
         ]
     }
     var africaCountries: [String] {
@@ -193,7 +193,7 @@ extension Region {
             "Tunisia",
             "Uganda",
             "Zambia",
-            "Zimbabwe"
+            "Zimbabwe",
         ]
     }
     var americaCountries: [String] {
@@ -232,7 +232,7 @@ extension Region {
             "The United States",
             "Trinidad and Tobago",
             "Uruguay",
-            "Venezuela"
+            "Venezuela",
         ]
     }
     var allCountries: [String] {
@@ -254,7 +254,7 @@ extension Region {
         case .world: return "ScoreWorld"
         }
     }
-    
+
     var flagGamePlayerLevelKey: String {
         switch self {
         case .europe: return "LevelEurope"
@@ -265,7 +265,7 @@ extension Region {
         case .world: return "LevelWorld"
         }
     }
-    
+
     var flagGameStreakKey: String {
         switch self {
         case .europe: return "StreakEurope"

@@ -10,7 +10,7 @@ import Foundation
 
 enum SettingsSection: Int, CaseIterable {
     case general, game, support
-    
+
     var headerTitle: String {
         switch self {
         case .general:

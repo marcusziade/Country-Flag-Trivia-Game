@@ -10,7 +10,7 @@ import Foundation
 import StoreKit
 
 protocol TipJarProductProtocol {
-    
+
     var title: String { get }
     var animation: String { get }
     var price: String { get }
@@ -18,35 +18,35 @@ protocol TipJarProductProtocol {
 }
 
 struct TipJarProduct: TipJarProductProtocol {
-    
+
     enum ProductType: String, CaseIterable {
         case coffee = "com.marcusziade.knowtheflag.buycoffee"
         case smallTip = "com.marcusziade.knowtheflag.smalltip"
         case avocado = "com.marcusziade.knowtheflag.avocado"
         case lunch = "com.marcusziade.knowtheflag.lunch"
     }
-    
+
     let skProduct: SKProduct
-    
+
     init(product: SKProduct) {
         self.skProduct = product
         self.productType = ProductType(rawValue: skProduct.productIdentifier)!
     }
-    
+
     var title: String {
         skProduct.localizedTitle
     }
-    
+
     var description: String {
         skProduct.localizedDescription
     }
-    
+
     var price: String {
         let symbol = skProduct.priceLocale.currencySymbol ?? ""
         let price = skProduct.price
         return "\(price)\(symbol)"
     }
-    
+
     var animation: String {
         switch productType {
         case .coffee:
@@ -59,7 +59,7 @@ struct TipJarProduct: TipJarProductProtocol {
             return "lunch"
         }
     }
-    
+
     var color: UIColor {
         switch productType {
         case .coffee:
@@ -72,9 +72,9 @@ struct TipJarProduct: TipJarProductProtocol {
             return .systemTeal
         }
     }
-    
+
     // MARK: - Private
-    
+
     private let productType: ProductType
 }
 

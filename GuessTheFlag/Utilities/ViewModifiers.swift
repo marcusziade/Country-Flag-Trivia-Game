@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct ExperiencePill: ViewModifier {
-    
+
     func body(content: Content) -> some View {
-        return content
+        return
+            content
             .font(.system(size: 20))
             .foregroundColor(.white)
             .frame(width: 80, height: 20, alignment: .leading)
@@ -24,9 +25,10 @@ struct ExperiencePill: ViewModifier {
 }
 
 struct LevelPill: ViewModifier {
-    
+
     func body(content: Content) -> some View {
-        return content
+        return
+            content
             .font(.system(size: 20))
             .foregroundColor(.white)
             .frame(width: 80, height: 20, alignment: .leading)
@@ -39,7 +41,7 @@ struct LevelPill: ViewModifier {
 }
 
 extension Image {
-    
+
     func flagImageMofifier() -> some View {
         self
             .resizable()

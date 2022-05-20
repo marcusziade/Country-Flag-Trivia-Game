@@ -14,7 +14,7 @@ struct Currency: Codable, Hashable, Comparable {
     }
 
     // MARK: - Properties
-    
+
     let code: String?
     let name: String
     let symbol: String?

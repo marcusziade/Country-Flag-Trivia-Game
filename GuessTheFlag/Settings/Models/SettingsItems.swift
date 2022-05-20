@@ -9,7 +9,7 @@
 import Foundation
 
 struct SettingsItems {
-    
+
     private let items: [SettingsItem] = SettingsItemType.allCases.map {
         SettingsItem(
             id: $0.id,
@@ -21,11 +21,11 @@ struct SettingsItems {
             url: $0.url
         )
     }
-    
+
     let general: [SettingsItem]
     let game: [SettingsItem]
     let support: [SettingsItem]
-    
+
     init() {
         general = items.filter { $0.section == .general }
         game = items.filter { $0.section == .game }

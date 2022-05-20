@@ -11,11 +11,11 @@ import UIKit
 
 enum SettingsItemType: CaseIterable {
     case hardMode, about, tipJar, feedback, rate, share
-    
+
     var id: SettingsItemType {
         return self
     }
-    
+
     var image: String {
         switch self {
         case .hardMode:
@@ -32,7 +32,7 @@ enum SettingsItemType: CaseIterable {
             return "square.and.arrow.up"
         }
     }
-    
+
     var color: UIColor {
         switch self {
         case .hardMode:
@@ -49,7 +49,7 @@ enum SettingsItemType: CaseIterable {
             return .systemPink
         }
     }
-    
+
     var title: String {
         switch self {
         case .hardMode:
@@ -66,7 +66,7 @@ enum SettingsItemType: CaseIterable {
             return NSLocalizedString("Share Master of Flags", comment: "Share title")
         }
     }
-    
+
     var section: SettingsSection {
         switch self {
         case .hardMode:
@@ -83,7 +83,7 @@ enum SettingsItemType: CaseIterable {
             return .support
         }
     }
-    
+
     var viewController: ViewController? {
         switch self {
         case .hardMode:
@@ -100,7 +100,7 @@ enum SettingsItemType: CaseIterable {
             return nil
         }
     }
-    
+
     var url: URL? {
         switch self {
         case .hardMode:

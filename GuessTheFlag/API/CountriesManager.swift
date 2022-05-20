@@ -6,8 +6,8 @@
 //  Copyright © 2020 Marcus Ziadé. All rights reserved.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 final class CountriesManager {
 
@@ -18,7 +18,7 @@ final class CountriesManager {
             .decode(type: [Country].self, decoder: jsonDecoder)
             .eraseToAnyPublisher()
     }
-    
+
     private let jsonDecoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601

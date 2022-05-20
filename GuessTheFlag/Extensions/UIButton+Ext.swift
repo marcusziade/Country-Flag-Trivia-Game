@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Button configurations
 
 extension UIButton.Configuration {
-    
+
     /// The button config for the tip jar legal footer buttons
     /// - Parameter title: The title string to use for the button title
     static func tipJarLegal(with title: String) -> Self {

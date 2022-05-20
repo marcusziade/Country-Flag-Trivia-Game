@@ -10,17 +10,18 @@ import CoreLocation
 import SwiftUI
 
 struct CountriesList: View {
-    
+
     @StateObject var viewModel: CountryListVM
-    
+
     var body: some View {
         NavigationView {
             List(viewModel.filteredCountries) { country in
-                NavigationLink(destination: CountryDetail(
-                    viewModel: CountryDetailVM(coordinate: country.location),
-                    country: country
-                ))
-                { CountryRow(country: country) }
+                NavigationLink(
+                    destination: CountryDetail(
+                        viewModel: CountryDetailVM(coordinate: country.location),
+                        country: country
+                    )
+                ) { CountryRow(country: country) }
             }
             .listStyle(.insetGrouped)
             .toolbar {

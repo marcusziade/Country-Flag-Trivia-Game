@@ -9,34 +9,34 @@
 import SwiftUI
 
 struct FlagGameHeaderView: View {
-    
+
     let answer: String
     let score: Int
     let level: Int
     let streak: Int
-    
+
     var body: some View {
         VStack {
             Text("Tap the flag of")
-            
+
             Text(answer)
                 .font(.headline)
                 .fontWeight(.black)
-            
+
             HStack(alignment: .bottom) {
                 Text("Level: \(level)")
                     .modifier(LevelPill())
                     .minimumScaleFactor(0.5)
-                
+
                 Spacer()
-                
+
                 VStack(alignment: .center) {
                     Text("Current streak").font(.caption2)
                     Text("\(streak)").bold()
                 }
-                
+
                 Spacer()
-                
+
                 Text("XP: \(score)")
                     .modifier(ExperiencePill())
                     .minimumScaleFactor(0.5)

@@ -9,25 +9,25 @@
 import SwiftUI
 
 struct FlagGameView: View {
-    
+
     @StateObject var manager: FlagGameManager
-    
+
     var body: some View {
         VStack {
             Picker(selection: $manager.activePickerValue, label: Text("Pick region")) {
-                ForEach(0 ..< manager.regions.count, id: \.self) {
+                ForEach(0..<manager.regions.count, id: \.self) {
                     Text(manager.regions[$0].title)
                 }
             }
             .pickerStyle(.segmented)
-            
+
             FlagGameHeaderView(
                 answer: manager.countries[manager.correctAnswer],
                 score: manager.score,
                 level: manager.playerLevel,
                 streak: manager.streak
             )
-            
+
             if manager.isHardModeEnabled {
                 ScrollView {
                     LazyVGrid(columns: manager.flagGridColumns) {
@@ -66,8 +66,7 @@ struct FlagGameView: View {
             Alert(
                 title: Text(manager.scoreTitle),
                 message: Text(manager.alertMessage),
-                dismissButton: .default(Text("Next ⏭"))
-                { manager.askQuestion() }
+                dismissButton: .default(Text("Next ⏭")) { manager.askQuestion() }
             )
         }
         .onAppear { manager.askQuestion() }

@@ -16,7 +16,7 @@ struct CountryRow: View {
     var body: some View {
         HStack {
             KFImage(country.flag)
-                .placeholder{ ProgressView() }
+                .placeholder { ProgressView() }
                 .resizable()
                 .frame(width: 100, height: 50)
                 .scaledToFit()

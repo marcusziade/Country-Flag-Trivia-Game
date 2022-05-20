@@ -12,11 +12,11 @@ import UIKit
 enum SiriShortcut: String {
     case game = "com.marcusziade.masterofflags.game"
     case encyclopedia = "com.marcusziade.masterofflags.encyclopedia"
-    
+
     var activityType: String {
         return rawValue
     }
-    
+
     var thumbnail: UIImage {
         switch self {
         case .game:
@@ -25,7 +25,7 @@ enum SiriShortcut: String {
             return UIImage(systemName: "doc.text.magnifyingglass")!
         }
     }
-    
+
     var title: String {
         switch self {
         case .game:
@@ -34,7 +34,7 @@ enum SiriShortcut: String {
             return "Launch the encyclopedia"
         }
     }
-    
+
     var description: String {
         switch self {
         case .game:
@@ -43,7 +43,7 @@ enum SiriShortcut: String {
             return "Study more countries"
         }
     }
-    
+
     var phrase: String {
         switch self {
         case .game:

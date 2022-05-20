@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct SettingsItem {
-    
+
     let id: SettingsItemType
     let image: String
     let color: UIColor

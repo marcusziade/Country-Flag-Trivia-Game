@@ -11,7 +11,7 @@ import UIKit
 
 enum LoadingState: String {
     case loading, purchasing, failed, purchased, error
-    
+
     var title: String {
         switch self {
         case .loading:
@@ -26,7 +26,7 @@ enum LoadingState: String {
             return NSLocalizedString("Error loading products", comment: "Purchased title label")
         }
     }
-    
+
     var color: UIColor {
         switch self {
         case .loading:

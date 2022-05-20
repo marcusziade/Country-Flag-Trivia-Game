@@ -27,14 +27,14 @@ enum TipJarTransactionState: Equatable {
             return false
         }
     }
-    
+
     case purchasing
     case purchased(product: TipJarProduct)
     case failed
     case restored
     case deferred
     case error
-    
+
     var title: String {
         switch self {
         case .purchasing:

@@ -13,7 +13,7 @@ import MobileCoreServices
 import UIKit
 
 final class SiriShortcutManager {
-    
+
     func createShortcut(for shortcut: SiriShortcut) -> NSUserActivity {
         return NSUserActivity(activityType: shortcut.activityType).configure {
             $0.title = shortcut.title
@@ -27,7 +27,7 @@ final class SiriShortcutManager {
             $0.isEligibleForPrediction = true
         }
     }
-    
+
     func handleSiriShortcut(
         _ shortcut: SiriShortcut,
         window: UIWindow?
@@ -36,7 +36,7 @@ final class SiriShortcutManager {
             assertionFailure("Failed to find tab bar controller")
             return
         }
-        
+
         tabBarController.handleSiriShortcut(shortcut)
     }
 }

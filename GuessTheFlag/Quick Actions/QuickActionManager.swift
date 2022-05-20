@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 final class QuickActionManager {
-    
+
     enum ShortcutIdentifier: String, CaseIterable {
         case game, encyclopedia
-        
+
         var localizedTitle: String {
             switch self {
             case .game:
@@ -22,7 +22,7 @@ final class QuickActionManager {
                 return NSLocalizedString("Encyclopedia", comment: "")
             }
         }
-        
+
         var icon: UIApplicationShortcutIcon {
             switch self {
             case .game:
@@ -31,7 +31,7 @@ final class QuickActionManager {
                 return UIApplicationShortcutIcon(systemImageName: "doc.text.magnifyingglass")
             }
         }
-        
+
         var shortcut: UIApplicationShortcutItem {
             UIApplicationShortcutItem(
                 type: rawValue,
@@ -41,16 +41,16 @@ final class QuickActionManager {
             )
         }
     }
-    
+
     func create() {
         let shortcuts = ShortcutIdentifier.allCases.map(\.shortcut)
         application.shortcutItems = shortcuts
     }
-    
+
     func disable() {
         application.shortcutItems = []
     }
-    
+
     func handleShortcutItem(
         _ item: UIApplicationShortcutItem?,
         window: UIWindow?,
@@ -61,19 +61,19 @@ final class QuickActionManager {
             completionHandler(false)
             return
         }
-        
+
         guard let shortcut = QuickActionManager.ShortcutIdentifier(rawValue: item?.type ?? "") else {
             assertionFailure("Unknown app shortcut identifier \(item?.type ?? "")")
             completionHandler(false)
             return
         }
-        
+
         tabBarController.handleShortcut(shortcut)
-        
+
         completionHandler(true)
     }
-    
+
     // MARK: - Private
-    
+
     private let application = UIApplication.shared
 }
