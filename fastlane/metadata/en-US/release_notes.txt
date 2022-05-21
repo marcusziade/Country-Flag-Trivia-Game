@@ -1,1 +1,9 @@
-Added a streak counter. Rewrote the flag game entirely; This will allow me to further develop the game much faster.
+New
+
+- Added Home screen Quick Actions (Hold the app icon)
+
+- Added Siri Shortcuts (They work automatically, or you can manually configure them in the Shortcuts app)
+
+- General improvements and fixes
+
+Keep learning :)
