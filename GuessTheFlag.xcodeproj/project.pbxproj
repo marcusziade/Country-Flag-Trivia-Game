@@ -202,7 +202,7 @@
 		2CB7C6EA2352EC490068ADE2 = {
 			isa = PBXGroup;
 			children = (
-				2CB7C6F52352EC490068ADE2 /* GuessTheFlag */,
+				2CB7C6F52352EC490068ADE2 /* master-of-flags */,
 				5A8FC613276F1C5100C1B468 /* MasterofFlagsUITests */,
 				2CB7C6F42352EC490068ADE2 /* Products */,
 				5AAE719E25C5650C003F8118 /* Frameworks */,
@@ -218,7 +218,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2CB7C6F52352EC490068ADE2 /* GuessTheFlag */ = {
+		2CB7C6F52352EC490068ADE2 /* master-of-flags */ = {
 			isa = PBXGroup;
 			children = (
 				2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */,
@@ -239,7 +239,7 @@
 				2CB7C7042352EC4B0068ADE2 /* Info.plist */,
 				2CB7C6FE2352EC4B0068ADE2 /* Preview Content */,
 			);
-			path = GuessTheFlag;
+			path = "master-of-flags";
 			sourceTree = "<group>";
 		};
 		2CB7C6FE2352EC4B0068ADE2 /* Preview Content */ = {
@@ -864,10 +864,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlag/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"master-of-flags/Preview Content\"";
 				DEVELOPMENT_TEAM = P4DQK6SRKR;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = GuessTheFlag/Info.plist;
+				INFOPLIST_FILE = "master-of-flags/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -887,10 +887,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlag/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"master-of-flags/Preview Content\"";
 				DEVELOPMENT_TEAM = P4DQK6SRKR;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = GuessTheFlag/Info.plist;
+				INFOPLIST_FILE = "master-of-flags/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
