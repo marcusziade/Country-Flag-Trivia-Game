@@ -210,6 +210,7 @@ final class TipJarViewController: ViewController {
                 HapticEngine.result.notificationOccurred(.error)
                 dismiss(animated: true)
                 navigationController?.popToRootViewController(animated: true)
+                splitViewController?.setViewController(nil, for: .secondary)
             }
             
             parentalGate.onClose = { [unowned self] in

@@ -60,6 +60,9 @@
 		5AA44B59274A424700AB9083 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44B58274A424700AB9083 /* SettingsViewModel.swift */; };
 		5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */; };
 		5AAE71A725C56DD1003F8118 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE71A625C56DD1003F8118 /* HapticEngine.swift */; };
+		5AB4A6D8286896E400B953C6 /* SidebarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB4A6D7286896E400B953C6 /* SidebarVC.swift */; };
+		5AB4A6DE2868985800B953C6 /* SplitViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB4A6DD2868985800B953C6 /* SplitViewDelegate.swift */; };
+		5AB4A6E028689E4000B953C6 /* UISplitViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB4A6DF28689E4000B953C6 /* UISplitViewController+Ext.swift */; };
 		5AD6BEB526FF1905009B276F /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEB426FF1905009B276F /* Name.swift */; };
 		5AD6BEB826FF257B009B276F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AD6BEB726FF257B009B276F /* Kingfisher */; };
 		5AD6BEC126FF2E86009B276F /* CountryListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6BEC026FF2E86009B276F /* CountryListVM.swift */; };
@@ -159,6 +162,9 @@
 		5AA44B58274A424700AB9083 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		5AA6895B25C70A6A008E20DB /* ParentalGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateView.swift; sourceTree = "<group>"; };
 		5AAE71A625C56DD1003F8118 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
+		5AB4A6D7286896E400B953C6 /* SidebarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarVC.swift; sourceTree = "<group>"; };
+		5AB4A6DD2868985800B953C6 /* SplitViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewDelegate.swift; sourceTree = "<group>"; };
+		5AB4A6DF28689E4000B953C6 /* UISplitViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISplitViewController+Ext.swift"; sourceTree = "<group>"; };
 		5AD6BEB426FF1905009B276F /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		5AD6BEC026FF2E86009B276F /* CountryListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListVM.swift; sourceTree = "<group>"; };
 		5AD6BEC426FF3368009B276F /* CountriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesList.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 				2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */,
 				2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */,
 				5ADC6636253AF21B001E09B3 /* API */,
+				5AB4A6DC286897FD00B953C6 /* SplitView */,
 				5A3EC86A2827A7F600BFB359 /* Tab Bar */,
 				5A6E9EA12530E0510007C148 /* Flag Game */,
 				5AD6BEB926FF27E1009B276F /* Encyclopedia */,
@@ -373,6 +380,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5AB4A6DC286897FD00B953C6 /* SplitView */ = {
+			isa = PBXGroup;
+			children = (
+				5AB4A6D7286896E400B953C6 /* SidebarVC.swift */,
+				5AB4A6DD2868985800B953C6 /* SplitViewDelegate.swift */,
+			);
+			path = SplitView;
+			sourceTree = "<group>";
+		};
 		5AD6BEB926FF27E1009B276F /* Encyclopedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +461,7 @@
 				5A0DC2AB2814FB5A007F9359 /* UICollectionView+Ext.swift */,
 				5A6A50F4281EA4B200FEC19E /* StoreKit+Ext.swift */,
 				5A4F3EBC2826A08D00B31B55 /* UIButton+Ext.swift */,
+				5AB4A6DF28689E4000B953C6 /* UISplitViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -658,6 +675,7 @@
 				5AA44B4D27491CDA00AB9083 /* Region.swift in Sources */,
 				5ADC664D253AF89B001E09B3 /* UIViewExtensions.swift in Sources */,
 				5A6A50F9281ECF8B00FEC19E /* LoadingView.swift in Sources */,
+				5AB4A6D8286896E400B953C6 /* SidebarVC.swift in Sources */,
 				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
 				5AA44B53274A363D00AB9083 /* Configurable.swift in Sources */,
 				5A0DC2B328150806007F9359 /* SettingsItems.swift in Sources */,
@@ -668,6 +686,7 @@
 				5A6A50F1281E5B1700FEC19E /* TipJarSection.swift in Sources */,
 				2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */,
 				5A1D493D281CF32E001DDAD2 /* AppStoreReviewManager.swift in Sources */,
+				5AB4A6DE2868985800B953C6 /* SplitViewDelegate.swift in Sources */,
 				5AD6BEC826FF3564009B276F /* CountryRow.swift in Sources */,
 				5A0DC2AA2814FAB9007F9359 /* SettingsSection.swift in Sources */,
 				5A3EC8612827849D00BFB359 /* QuickActionManager.swift in Sources */,
@@ -702,6 +721,7 @@
 				5A2690C62530B03300C4FC39 /* ViewModifiers.swift in Sources */,
 				5A0DC2C728159DF7007F9359 /* SettingsHeaderView.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
+				5AB4A6E028689E4000B953C6 /* UISplitViewController+Ext.swift in Sources */,
 				5A0DC2C328157CD2007F9359 /* TipJarViewController.swift in Sources */,
 				5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */,
 				5A4F3EBF2826B25F00B31B55 /* TermsView.swift in Sources */,

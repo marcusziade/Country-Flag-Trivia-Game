@@ -16,24 +16,46 @@ enum Tab: Int, CaseIterable {
         switch self {
         case .game:
             return UITabBarItem(
-                title: NSLocalizedString("Game", comment: "Game tab bar title"),
-                image: UIImage(systemName: "gamecontroller"),
+                title: title,
+                image: icon,
                 tag: 0
             )
 
         case .encyclopedia:
             return UITabBarItem(
-                title: NSLocalizedString("Encyclopedia", comment: "Encyclopedia tab bar title"),
-                image: UIImage(systemName: "doc.text.magnifyingglass"),
+                title: title,
+                image: icon,
                 tag: 1
             )
 
         case .settings:
             return UITabBarItem(
-                title: NSLocalizedString("Settings", comment: "Settings tab bar title"),
-                image: UIImage(systemName: "gearshape"),
+                title: title,
+                image: icon,
                 tag: 2
             )
+        }
+    }
+
+    var title: String {
+        switch self {
+        case .game:
+            return NSLocalizedString("Game", comment: "Game tab bar title")
+        case .encyclopedia:
+            return NSLocalizedString("Encyclopedia", comment: "Encyclopedia tab bar title")
+        case .settings:
+            return NSLocalizedString("Settings", comment: "Settings tab bar title")
+        }
+    }
+
+    var icon: UIImage {
+        switch self {
+        case .game:
+            return UIImage(systemName: "gamecontroller")!
+        case .encyclopedia:
+            return UIImage(systemName: "doc.text.magnifyingglass")!
+        case .settings:
+            return UIImage(systemName: "gearshape")!
         }
     }
 }

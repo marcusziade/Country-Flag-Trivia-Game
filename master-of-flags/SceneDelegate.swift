@@ -21,7 +21,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             quickActionManager.create()
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = MainTabBarController(settings: settings)
+            window.rootViewController = splitViewController
             self.window = window
             window.makeKeyAndVisible()
         }
@@ -48,7 +48,6 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // MARK: - Private
 
-    private let settings = Settings()
     private let quickActionManager = QuickActionManager()
     private let siriShortcutManager = SiriShortcutManager()
 
@@ -66,4 +65,25 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             siriShortcutManager.handleSiriShortcut(shortcut, window: window)
         }
     }
+
+    // MARK: SplitView Configuration
+
+    private let settings = Settings()
+    private lazy var sidebarVC = SidebarVC(settings: settings)
+    private lazy var tabBarController = MainTabBarController(settings: settings)
+
+    private lazy var splitViewController: UISplitViewController = {
+        let vc = UISplitViewController(style: .tripleColumn)
+        vc.preferredDisplayMode = .automatic
+        vc.setViewController(sidebarVC, for: .supplementary)
+        vc.setViewController(tabBarController, for: .compact)
+        vc.setViewController(
+            UIHostingController(rootView: FlagGameView(manager: FlagGameManager(settings: self.settings))),
+            for: .secondary
+        )
+        vc.delegate = splitViewDelegate
+        return vc
+    }()
+
+    private let splitViewDelegate = SplitViewDelegate()
 }

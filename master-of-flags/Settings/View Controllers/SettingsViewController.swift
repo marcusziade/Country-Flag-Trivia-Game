@@ -122,7 +122,9 @@ extension SettingsViewController: UICollectionViewDelegate {
         case .general:
             if let viewController = model.items.general[indexPath.item].viewController {
                 viewController.hidesBottomBarWhenPushed = true
-                navigationController?.pushViewController(viewController, animated: true)
+//                navigationController?.pushViewController(viewController, animated: true)
+                splitViewController?.setViewController(nil, for: .secondary)
+                splitViewController?.setViewController(viewController, for: .secondary)
             }
 
         case .game:
@@ -145,7 +147,10 @@ extension SettingsViewController: UICollectionViewDelegate {
             default:
                 if let viewController = supportItem.viewController {
                     viewController.hidesBottomBarWhenPushed = true
-                    navigationController?.pushViewController(viewController, animated: true)
+//                    navigationController?.pushViewController(viewController, animated: true)
+//                    splitViewController?.show(viewController, sender: self)
+                    splitViewController?.setViewController(nil, for: .secondary)
+                    splitViewController?.setViewController(viewController, for: .secondary)
                 }
             }
         }
