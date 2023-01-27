@@ -1,10 +1,3 @@
-//
-//  UICollectionView+Ext.swift
-//  master-of-universe
-//
-//  Created by Marcus Ziadé on 19.2.2022.
-//
-
 import Foundation
 import UIKit
 
@@ -139,3 +132,5 @@ extension NSCollectionLayoutBoundarySupplementaryItem {
         )
     }
 }
+
+

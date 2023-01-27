@@ -1,11 +1,3 @@
-//
-//  TipJarLegalFooterView.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 7.5.2022.
-//  Copyright © 2022 Marcus Ziadé. All rights reserved.
-//
-
 import Foundation
 import SnapKit
 import UIKit
@@ -70,3 +62,5 @@ final class TipJarLegalFooterView: UICollectionReusableView {
     }
 
 #endif
+
+

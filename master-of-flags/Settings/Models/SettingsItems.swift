@@ -1,11 +1,3 @@
-//
-//  SettingsItems.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 24.4.2022.
-//  Copyright © 2022 Marcus Ziadé. All rights reserved.
-//
-
 import Foundation
 
 struct SettingsItems {
@@ -32,3 +24,5 @@ struct SettingsItems {
         support = items.filter { $0.section == .support }
     }
 }
+
+

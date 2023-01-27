@@ -1,11 +1,3 @@
-//
-//  SettingsSection.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 24.4.2022.
-//  Copyright © 2022 Marcus Ziadé. All rights reserved.
-//
-
 import Foundation
 
 enum SettingsSection: Int, CaseIterable {
@@ -22,3 +14,5 @@ enum SettingsSection: Int, CaseIterable {
         }
     }
 }
+
+

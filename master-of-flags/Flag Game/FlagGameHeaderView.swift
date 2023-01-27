@@ -1,11 +1,3 @@
-//
-//  FlagGameHeaderView.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 20.11.2021.
-//  Copyright © 2021 Marcus Ziadé. All rights reserved.
-//
-
 import SwiftUI
 
 struct FlagGameHeaderView: View {
@@ -56,3 +48,5 @@ struct FlagGameHeaderView_Previews: PreviewProvider {
         }
     }
 }
+
+

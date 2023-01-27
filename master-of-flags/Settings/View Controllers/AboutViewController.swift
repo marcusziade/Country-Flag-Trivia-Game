@@ -1,11 +1,3 @@
-//
-//  AboutViewController.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 30.1.2021.
-//  Copyright © 2021 Marcus Ziadé. All rights reserved.
-//
-
 import SwiftUI
 import UIKit
 
@@ -84,3 +76,5 @@ final class AboutViewController: ViewController {
 struct AboutViewController_Preview: PreviewProvider {
     static var previews: some View = Preview(for: UINavigationController(rootViewController: AboutViewController()))
 }
+
+

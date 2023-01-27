@@ -1,11 +1,3 @@
-//
-//  TipJarViewController.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 24.4.2022.
-//  Copyright © 2022 Marcus Ziadé. All rights reserved.
-//
-
 import Combine
 import Foundation
 import Lottie
@@ -296,3 +288,5 @@ struct TipJarViewController_Preview: PreviewProvider {
 
     static var previews: some View = Preview(for: TipJarViewController())
 }
+
+

@@ -1,11 +1,3 @@
-//
-//  ParentalGateView.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 31.1.2021.
-//  Copyright © 2021 Marcus Ziadé. All rights reserved.
-//
-
 import SwiftUI
 
 struct Triangle: Shape {
@@ -99,3 +91,5 @@ struct ParentalGateView_Previews: PreviewProvider {
         }
     }
 }
+
+

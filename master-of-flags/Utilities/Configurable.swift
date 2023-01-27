@@ -1,11 +1,3 @@
-//
-//  Configurable.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 21.11.2021.
-//  Copyright © 2021 Marcus Ziadé. All rights reserved.
-//
-
 import Foundation
 
 public protocol Configurable {
@@ -24,3 +16,5 @@ public extension Configurable {
 }
 
 extension NSObject: Configurable {}
+
+

@@ -1,11 +1,3 @@
-//
-//  MasterofFlagsUITests.swift
-//  MasterofFlagsUITests
-//
-//  Created by Marcus Ziadé on 19.12.2021.
-//  Copyright © 2021 Marcus Ziadé. All rights reserved.
-//
-
 import XCTest
 
 final class MasterofFlagsUITests: XCTestCase {
@@ -50,3 +42,5 @@ final class MasterofFlagsUITests: XCTestCase {
         snapshot("encyclopedia.Landscape.left")
     }
 }
+
+

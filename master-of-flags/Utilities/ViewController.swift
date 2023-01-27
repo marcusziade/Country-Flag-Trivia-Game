@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 24.4.2022.
-//  Copyright © 2022 Marcus Ziadé. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -19,3 +11,5 @@ class ViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+

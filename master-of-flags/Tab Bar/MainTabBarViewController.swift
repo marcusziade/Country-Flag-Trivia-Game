@@ -1,11 +1,3 @@
-//
-//  MainTabBarViewController.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 17.10.2020.
-//  Copyright © 2020 Marcus Ziadé. All rights reserved.
-//
-
 import SwiftUI
 import UIKit
 
@@ -99,3 +91,5 @@ extension MainTabBarController {
 struct MainTabBarController_Preview: PreviewProvider {
     static var previews: some View = Preview(for: MainTabBarController(settings: Settings()))
 }
+
+

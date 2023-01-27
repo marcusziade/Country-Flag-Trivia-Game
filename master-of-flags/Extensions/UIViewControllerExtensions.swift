@@ -1,11 +1,3 @@
-//
-//  UIViewControllerExtensions.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 30.1.2021.
-//  Copyright © 2021 Marcus Ziadé. All rights reserved.
-//
-
 import UIKit
 
 // MARK: - Child Viewcontroller install methods
@@ -27,3 +19,5 @@ extension UIViewController {
         child.removeFromParent()
     }
 }
+
+

@@ -1,11 +1,3 @@
-//
-//  Region.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 20.11.2021.
-//  Copyright © 2021 Marcus Ziadé. All rights reserved.
-//
-
 import Foundation
 
 enum Region {
@@ -277,3 +269,5 @@ extension Region {
         }
     }
 }
+
+

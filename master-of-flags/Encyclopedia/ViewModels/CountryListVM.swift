@@ -1,11 +1,3 @@
-//
-//  CountryListVM.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 25.9.2021.
-//  Copyright © 2021 Marcus Ziadé. All rights reserved.
-//
-
 import Combine
 import Foundation
 import SwiftUI
@@ -59,3 +51,5 @@ final class CountryListVM: ObservableObject {
             .sorted { $0.name.common < $1.name.common }
     }
 }
+
+

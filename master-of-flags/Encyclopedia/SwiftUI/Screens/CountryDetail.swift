@@ -1,11 +1,3 @@
-//
-//  CountryDetail.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 25.9.2021.
-//  Copyright © 2021 Marcus Ziadé. All rights reserved.
-//
-
 import Kingfisher
 import MapKit
 import SwiftUI
@@ -82,3 +74,5 @@ struct CountryDetail_Previews: PreviewProvider {
         )
     }
 }
+
+

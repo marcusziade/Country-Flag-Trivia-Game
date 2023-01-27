@@ -1,11 +1,3 @@
-//
-//  ViewModifiers.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 9.10.2020.
-//  Copyright © 2020 Marcus Ziadé. All rights reserved.
-//
-
 import SwiftUI
 
 struct ExperiencePill: ViewModifier {
@@ -52,3 +44,5 @@ extension Image {
             .shadow(color: .primary, radius: 2)
     }
 }
+
+

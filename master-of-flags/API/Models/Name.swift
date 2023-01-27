@@ -1,11 +1,3 @@
-//
-//  Name.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 25.9.2021.
-//  Copyright © 2021 Marcus Ziadé. All rights reserved.
-//
-
 import Foundation
 
 struct Name: Codable, Hashable, Comparable {
@@ -16,3 +8,5 @@ struct Name: Codable, Hashable, Comparable {
     let official: String
     let common: String
 }
+
+

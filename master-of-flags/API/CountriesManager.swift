@@ -1,11 +1,3 @@
-//
-//  CountriesManager.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 17.10.2020.
-//  Copyright © 2020 Marcus Ziadé. All rights reserved.
-//
-
 import Combine
 import Foundation
 
@@ -26,3 +18,5 @@ final class CountriesManager {
         return decoder
     }()
 }
+
+

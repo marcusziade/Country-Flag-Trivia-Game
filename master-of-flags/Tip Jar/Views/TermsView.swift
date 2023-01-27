@@ -1,11 +1,3 @@
-//
-//  TermsView.swift
-//  GuessTheFlag
-//
-//  Created by Marcus Ziadé on 7.5.2022.
-//  Copyright © 2022 Marcus Ziadé. All rights reserved.
-//
-
 import SwiftUI
 
 struct TermsView: View {
@@ -148,3 +140,5 @@ struct TermsView_Previews: PreviewProvider {
         TermsView()
     }
 }
+
+
