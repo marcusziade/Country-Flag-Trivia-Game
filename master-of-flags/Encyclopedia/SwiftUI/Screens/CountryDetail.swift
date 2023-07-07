@@ -5,34 +5,34 @@ struct CountryDetail: View {
     
     @StateObject var viewModel: CountryDetailVM
     
-    let country: Country
-    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                AsyncImage(url: country.flag) {
+                AsyncImage(url: viewModel.country.flag) {
                     $0.image?
                         .resizable()
                         .frame(height: 250)
                 }
                 
                 VStack(alignment: .leading, spacing: 20) {
-                    Text(country.name.official).font(.title).fontWeight(.bold).padding(.top)
+                    Text(viewModel.country.name.official)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.top)
                     
-                    DetailSection(header: "Capital") { Text(country.capitalCity) }
-                    DetailSection(header: "Capital") { Text(country.capitalCity) }
-                    DetailSection(header: "Region") { Text(country.region) }
-                    DetailSection(header: "Population") { Text("\(country.population)") }
+                    DetailSection(header: "Capital") { Text(viewModel.country.capitalCity) }
+                    DetailSection(header: "Region") { Text(viewModel.country.region) }
+                    DetailSection(header: "Population") { Text("\(viewModel.country.population)") }
                     
                     DetailSection(header: "Currencies") {
-                        ForEach(country.countryCurrencies, id: \.self) { Text($0) }
+                        ForEach(viewModel.country.countryCurrencies, id: \.self) { Text($0) }
                     }
                     
                     DetailSection(header: "Languages") {
-                        ForEach(country.countryLanguages, id: \.self) { Text($0) }
+                        ForEach(viewModel.country.countryLanguages, id: \.self) { Text($0) }
                     }
                     
-                    if let url = URL(string: "https://en.wikipedia.org/wiki/\(country.name.common)") {
+                    if let url = viewModel.wikipediaURL {
                         Link(destination: url) {
                             Text("Study on Wikipedia")
                                 .font(.headline)
@@ -41,7 +41,7 @@ struct CountryDetail: View {
                         .padding(.vertical)
                     }
                     
-                    MapsSection(country: country, viewModel: viewModel)
+                    MapsSection(country: viewModel.country, viewModel: viewModel)
                 }
                 .padding(.horizontal)
                 Spacer()

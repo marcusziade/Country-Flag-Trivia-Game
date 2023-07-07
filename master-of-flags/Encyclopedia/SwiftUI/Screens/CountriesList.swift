@@ -10,9 +10,7 @@ struct CountriesList: View {
             List(viewModel.filteredCountries) { country in
                 NavigationLink(
                     destination: CountryDetail(
-                        viewModel: CountryDetailVM(coordinate: country.location),
-                        country: country
-                    )
+                        viewModel: CountryDetailVM(country: country))
                 ) { CountryRow(country: country) }
             }
             .listStyle(.insetGrouped)
