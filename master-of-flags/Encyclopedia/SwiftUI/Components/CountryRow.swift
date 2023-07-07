@@ -1,4 +1,3 @@
-import Kingfisher
 import SwiftUI
 
 struct CountryRow: View {
@@ -7,11 +6,12 @@ struct CountryRow: View {
 
     var body: some View {
         HStack {
-            KFImage(country.flag)
-                .placeholder { ProgressView() }
-                .resizable()
-                .frame(width: 100, height: 50)
-                .scaledToFit()
+            AsyncImage(url: country.flag) {
+                $0.image?
+                    .resizable()
+                    .frame(width: 100, height: 50)
+                    .scaledToFit()
+            }
 
             VStack(alignment: .leading) {
                 Text(country.name.common)

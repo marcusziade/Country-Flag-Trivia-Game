@@ -1,4 +1,3 @@
-import Kingfisher
 import MapKit
 import SwiftUI
 
@@ -10,10 +9,12 @@ struct CountryDetail: View {
 
     var body: some View {
         VStack {
-            KFImage(country.flag)
-                .placeholder { ProgressView() }
-                .resizable()
-                .frame(height: 250)
+            AsyncImage(url: country.flag) {
+                $0.image?
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 250)
+            }
 
             Form {
                 Text(country.name.official).font(.title)
