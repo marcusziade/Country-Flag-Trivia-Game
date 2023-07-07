@@ -64,7 +64,7 @@ extension Country {
     static var mockCountry: Country {
         return Country(
             name: Name(official: "Country name official", common: "Country"),
-            region: "Sub-Region",
+            region: "Europe",
             population: 144_829_202,
             latlng: [33.0, 65.0],
             languages: ["eng": "English"],

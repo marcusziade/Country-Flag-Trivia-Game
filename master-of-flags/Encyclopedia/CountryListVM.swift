@@ -9,7 +9,9 @@ final class CountryListVM: ObservableObject {
 
     let regions = [Region.europe, Region.asia, Region.africa, Region.oceania, Region.americas]
 
-    init() {
+    init(countriesManager: CountriesManaging = CountriesManager()) {
+        self.countriesManager = countriesManager
+        
         loadCountries()
 
         $selectedRegion
@@ -29,7 +31,7 @@ final class CountryListVM: ObservableObject {
 
     // MARK: - Private
 
-    private let countriesManager = CountriesManager()
+    private let countriesManager: CountriesManaging
     private var subscriptions = Set<AnyCancellable>()
     private var countries: [Country] = []
 

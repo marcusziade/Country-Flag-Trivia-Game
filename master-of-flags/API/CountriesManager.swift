@@ -1,7 +1,11 @@
 import Combine
 import Foundation
 
-final class CountriesManager {
+protocol CountriesManaging {
+    func getCountries() -> AnyPublisher<[Country], Error>
+}
+
+final class CountriesManager: CountriesManaging {
 
     func getCountries() -> AnyPublisher<[Country], Error> {
         Just(Bundle.main.url(forResource: "countries", withExtension: "json"))
@@ -17,4 +21,13 @@ final class CountriesManager {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }()
+}
+
+final class MockCountriesManager: CountriesManaging {
+    
+    func getCountries() -> AnyPublisher<[Country], Error> {
+        Just([Country.mockCountry])
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+    }
 }
