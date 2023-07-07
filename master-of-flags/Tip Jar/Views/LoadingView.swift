@@ -1,5 +1,4 @@
 import Foundation
-import SnapKit
 import UIKit
 
 final class LoadingView: UIView {
@@ -15,21 +14,25 @@ final class LoadingView: UIView {
         self.state = state
         super.init(frame: .zero)
 
-        addAndConstrainSubview(blurView) {
-            $0.edges.equalToSuperview()
-        }
-
         let stackView = UIStackView(arrangedSubviews: [titleLabelContainerView, loaderView])
             .configure {
+                $0.translatesAutoresizingMaskIntoConstraints = false
                 $0.axis = .vertical
                 $0.spacing = 32
                 $0.alignment = .center
             }
-
-        addAndConstrainSubview(stackView) {
-            $0.top.equalToSuperview().inset(120)
-            $0.horizontalEdges.equalToSuperview()
-        }
+        
+        addSubviews(blurView, stackView)
+        NSLayoutConstraint.activate([
+            blurView.topAnchor.constraint(equalTo: topAnchor),
+            blurView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            blurView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            blurView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 15),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+        ])
     }
 
     required init?(coder: NSCoder) {
@@ -56,6 +59,7 @@ final class LoadingView: UIView {
         .configure {
             let effect = UIBlurEffect(style: .systemChromeMaterial)
             $0.effect = effect
+            $0.translatesAutoresizingMaskIntoConstraints = false
         }
 
     private lazy var titleLabelContainerView = UIView()
@@ -85,11 +89,11 @@ final class LoadingView: UIView {
 
 #if DEBUG
 
-    import SwiftUI
+import SwiftUI
 
-    struct LoadingView_Preview: PreviewProvider {
-        static var previews: some View = Preview(for: LoadingView(state: .loading))
-            .preferredColorScheme(.dark)
-    }
+struct LoadingView_Preview: PreviewProvider {
+    static var previews: some View = Preview(for: LoadingView(state: .loading))
+        .preferredColorScheme(.dark)
+}
 
 #endif

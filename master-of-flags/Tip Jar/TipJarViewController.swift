@@ -2,7 +2,6 @@ import Combine
 import Foundation
 import Lottie
 import SafariServices
-import SnapKit
 import SwiftUI
 import UIKit
 
@@ -12,20 +11,23 @@ final class TipJarViewController: ViewController {
         super.viewDidLoad()
 
         view.layer.addSublayer(gradientLayer)
+        
+        view.addSubviews(collectionView, loadingView, animationView)
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-        view.addAndConstrainSubview(collectionView) {
-            $0.edges.equalToSuperview()
-        }
-
-        view.addAndConstrainSubview(loadingView) {
-            $0.edges.equalToSuperview()
-        }
-
-        view.addAndConstrainSubview(animationView) {
-            $0.bottom.equalToSuperview()
-            $0.centerX.equalToSuperview()
-        }
-
+            loadingView.topAnchor.constraint(equalTo: view.topAnchor),
+            loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
+        
         model.fetchProducts()
         startListeningForStoreKit()
     }
@@ -75,6 +77,7 @@ final class TipJarViewController: ViewController {
             $0.dataSource = self
             $0.delegate = self
             $0.backgroundColor = .clear
+            $0.translatesAutoresizingMaskIntoConstraints = false
 
             $0.registerCell(TipJarProductCell.self)
             $0.registerSupplementaryView(TipJarLegalFooterView.self, kind: .layoutFooter)
@@ -144,6 +147,7 @@ final class TipJarViewController: ViewController {
     }
 
     private var loadingView = LoadingView(state: .loading)
+        .configure { $0.translatesAutoresizingMaskIntoConstraints = false }
 
     private let animationView = AnimationView()
         .configure {
@@ -151,6 +155,7 @@ final class TipJarViewController: ViewController {
             $0.loopMode = .playOnce
             $0.backgroundColor = .clear
             $0.alpha = 0
+            $0.translatesAutoresizingMaskIntoConstraints = false
         }
 
     private func showPurchaseSuccesfulAnimation(for product: TipJarProduct) {
@@ -294,5 +299,7 @@ extension TipJarViewController: UICollectionViewDelegate {
 
 struct TipJarViewController_Preview: PreviewProvider {
 
-    static var previews: some View = Preview(for: TipJarViewController())
+    static var previews: some View = Preview(
+        for: UINavigationController(rootViewController: TipJarViewController())
+    )
 }

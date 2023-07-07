@@ -1,27 +1,31 @@
 import Foundation
-import SnapKit
 import UIKit
+import SwiftUI
 
 class SettingsCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        contentView.addAndConstrainSubview(blurView) {
-            $0.horizontalEdges.equalToSuperview().inset(12)
-            $0.verticalEdges.equalToSuperview().inset(4)
-        }
-
         let stackView = UIStackView(arrangedSubviews: [itemBadgeView, titleLabel])
             .configure {
+                $0.translatesAutoresizingMaskIntoConstraints = false
                 $0.spacing = 12
                 $0.alignment = .center
             }
 
-        contentView.addAndConstrainSubview(stackView) {
-            $0.horizontalEdges.equalTo(blurView.snp.horizontalEdges).inset(12)
-            $0.verticalEdges.equalToSuperview().inset(4)
-        }
+        contentView.addSubviews(blurView, stackView)
+        NSLayoutConstraint.activate([
+            blurView.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0.5),
+            blurView.leadingAnchor.constraint(equalToSystemSpacingAfter: contentView.leadingAnchor, multiplier: 1.5),
+            contentView.trailingAnchor.constraint(equalToSystemSpacingAfter: blurView.trailingAnchor, multiplier: 1.5),
+            contentView.bottomAnchor.constraint(equalToSystemSpacingBelow: blurView.bottomAnchor, multiplier: 0.5),
+            
+            stackView.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0.5),
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: blurView.leadingAnchor, multiplier: 1.5),
+            blurView.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1.5),
+            blurView.bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 0.5),
+        ])
     }
 
     @available(*, unavailable)
@@ -46,10 +50,18 @@ class SettingsCell: UICollectionViewCell {
             $0.effect = effect
             $0.layer.cornerRadius = 12
             $0.clipsToBounds = true
+            $0.translatesAutoresizingMaskIntoConstraints = false
         }
 
     private lazy var containerView = UIView()
         .configure {
+            $0.translatesAutoresizingMaskIntoConstraints = false
             $0.layer.cornerRadius = 12
         }
+}
+
+struct SettingsCell_Preview: PreviewProvider {
+    static var previews: some View = Preview(for: SettingsCell())
+        .previewLayout(.sizeThatFits)
+        .preferredColorScheme(.dark)
 }

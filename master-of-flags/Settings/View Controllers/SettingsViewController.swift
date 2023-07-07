@@ -1,5 +1,5 @@
 import Foundation
-import SnapKit
+import SwiftUI
 import UIKit
 
 final class SettingsViewController: ViewController {
@@ -15,9 +15,13 @@ final class SettingsViewController: ViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = NSLocalizedString("Settings", comment: "Settings nav title")
 
-        view.addAndConstrainSubview(collectionView) {
-            $0.edges.equalToSuperview()
-        }
+        view.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
     }
 
     // MARK: - Private
@@ -26,6 +30,7 @@ final class SettingsViewController: ViewController {
 
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
         .configure {
+            $0.translatesAutoresizingMaskIntoConstraints = false
             $0.dataSource = self
             $0.delegate = self
 
@@ -163,4 +168,12 @@ extension SettingsViewController: UICollectionViewDelegate {
                 $0.title = section.headerTitle
             }
     }
+}
+
+struct SettingsViewController_Preview: PreviewProvider {
+    
+    static var previews: some View = Preview(
+        for: SettingsViewController(model: SettingsViewModel(settings: Settings()))
+    )
+    .preferredColorScheme(.dark)
 }

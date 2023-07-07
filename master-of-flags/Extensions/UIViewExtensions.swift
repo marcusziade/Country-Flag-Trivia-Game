@@ -1,5 +1,4 @@
 import Foundation
-import SnapKit
 import UIKit
 
 // MARK: - For autolayout
@@ -46,26 +45,6 @@ extension UIView {
             self.alpha = 0
         }
         .startAnimation()
-    }
-}
-
-// MARK: - SnapKit Extensions
-
-extension UIView {
-
-    func addAndConstrainSubview(
-        _ subview: UIView,
-        at index: Int? = nil,
-        _ makeConstraints: ((ConstraintMaker) -> Void)
-    ) {
-        if let index = index {
-            insertSubview(subview, at: index)
-        } else {
-            addSubview(subview)
-        }
-        subview.snp.makeConstraints {
-            makeConstraints($0)
-        }
     }
 }
 

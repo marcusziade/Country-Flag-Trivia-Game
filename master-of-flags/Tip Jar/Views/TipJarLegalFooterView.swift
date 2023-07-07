@@ -1,5 +1,4 @@
 import Foundation
-import SnapKit
 import UIKit
 
 final class TipJarLegalFooterView: UICollectionReusableView {
@@ -17,15 +16,18 @@ final class TipJarLegalFooterView: UICollectionReusableView {
 
         let contentStackView = UIStackView(arrangedSubviews: [captionLabel, buttonStackView])
             .configure {
+                $0.translatesAutoresizingMaskIntoConstraints = false
                 $0.axis = .vertical
                 $0.alignment = .center
                 $0.spacing = 24
             }
-
-        addAndConstrainSubview(contentStackView) {
-            $0.top.equalToSuperview().inset(32)
-            $0.horizontalEdges.equalToSuperview()
-        }
+        
+        addSubview(contentStackView)
+        NSLayoutConstraint.activate([
+            contentStackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 4),
+            contentStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+        ])
     }
 
     required init?(coder: NSCoder) {
@@ -57,12 +59,12 @@ final class TipJarLegalFooterView: UICollectionReusableView {
 
 #if DEBUG
 
-    import SwiftUI
+import SwiftUI
 
-    struct TipJarFooterCell_Preview: PreviewProvider {
-        static var previews: some View = Preview(for: TipJarLegalFooterView())
-            .previewLayout(.fixed(width: 400, height: 150))
-            .preferredColorScheme(.dark)
-    }
+struct TipJarFooterCell_Preview: PreviewProvider {
+    static var previews: some View = Preview(for: TipJarLegalFooterView())
+        .previewLayout(.fixed(width: 400, height: 150))
+        .preferredColorScheme(.dark)
+}
 
 #endif

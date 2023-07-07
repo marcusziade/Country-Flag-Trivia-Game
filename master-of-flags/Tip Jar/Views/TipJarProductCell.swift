@@ -1,6 +1,5 @@
 import Foundation
 import Lottie
-import SnapKit
 import UIKit
 
 final class TipJarProductCell: UICollectionViewCell {
@@ -9,15 +8,18 @@ final class TipJarProductCell: UICollectionViewCell {
         super.init(frame: frame)
 
         contentView.addShadow()
-
-        contentView.addAndConstrainSubview(animationView) {
-            $0.top.horizontalEdges.equalToSuperview()
-        }
-
-        contentView.addAndConstrainSubview(titleLabelContainerView) {
-            $0.top.equalTo(animationView.snp.bottom)
-            $0.horizontalEdges.bottom.equalToSuperview()
-        }
+        
+        contentView.addSubviews(animationView, titleLabelContainerView)
+        NSLayoutConstraint.activate([
+            animationView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            animationView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            animationView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            
+            titleLabelContainerView.topAnchor.constraint(equalTo: animationView.bottomAnchor),
+            titleLabelContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            titleLabelContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            titleLabelContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+        ])
     }
 
     required init?(coder: NSCoder) {
@@ -38,6 +40,7 @@ final class TipJarProductCell: UICollectionViewCell {
 
     private let animationView = AnimationView()
         .configure {
+            $0.translatesAutoresizingMaskIntoConstraints = false
             $0.contentMode = .scaleAspectFit
             $0.backgroundColor = .white
             $0.layer.cornerRadius = 12
@@ -46,6 +49,7 @@ final class TipJarProductCell: UICollectionViewCell {
 
     private lazy var titleLabelContainerView = UIView()
         .configure {
+            $0.translatesAutoresizingMaskIntoConstraints = false
             $0.layer.cornerRadius = 12
             $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
 
@@ -78,16 +82,16 @@ final class TipJarProductCell: UICollectionViewCell {
 
 #if DEBUG
 
-    import SwiftUI
+import SwiftUI
 
-    struct TipJarCell_Preview: PreviewProvider {
-
-        static var previews: some View = Preview(
-            for: TipJarProductCell().configure { $0.configure(with: MockTipJarProduct()) }
-        )
+struct TipJarCell_Preview: PreviewProvider {
+    
+    static var previews: some View = Preview(
+        for: TipJarProductCell().configure { $0.configure(with: MockTipJarProduct()) }
+    )
         .previewLayout(.fixed(width: 350, height: 400))
         .preferredColorScheme(.light)
         .padding()
-    }
+}
 
 #endif
