@@ -6,7 +6,7 @@ struct Country: Codable, Identifiable {
     let name: Name
     let region: String
     let population: Int
-    private let latlng: [Double]?
+    let latlng: [Double]?
     private let languages: [String: String]?
     private let flags: [String: URL]
     private let currencies: [String: Currency]?

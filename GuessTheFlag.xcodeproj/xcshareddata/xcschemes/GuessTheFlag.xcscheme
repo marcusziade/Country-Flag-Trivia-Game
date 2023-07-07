@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +36,17 @@
                BlueprintIdentifier = "5A8FC611276F1C5100C1B468"
                BuildableName = "MasterofFlagsUITests.xctest"
                BlueprintName = "MasterofFlagsUITests"
+               ReferencedContainer = "container:GuessTheFlag.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5A6B79F72A58988000CA22CD"
+               BuildableName = "Master of FlagsTests.xctest"
+               BlueprintName = "Master of FlagsTests"
                ReferencedContainer = "container:GuessTheFlag.xcodeproj">
             </BuildableReference>
          </TestableReference>
