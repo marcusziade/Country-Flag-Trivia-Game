@@ -374,45 +374,13 @@
 		5AD6BEB926FF27E1009B276F /* Encyclopedia */ = {
 			isa = PBXGroup;
 			children = (
-				5AD6BEC226FF3356009B276F /* SwiftUI */,
-				5AD6BEBD26FF2928009B276F /* ViewModels */,
-			);
-			path = Encyclopedia;
-			sourceTree = "<group>";
-		};
-		5AD6BEBD26FF2928009B276F /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
+				5AD6BEC726FF3564009B276F /* CountryRow.swift */,
+				5AD6BEC426FF3368009B276F /* CountriesList.swift */,
+				5AD6BEC926FF490E009B276F /* CountryDetail.swift */,
 				5AD6BEC026FF2E86009B276F /* CountryListVM.swift */,
 				5AD6BECB26FF492F009B276F /* CountryDetailVM.swift */,
 			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		5AD6BEC226FF3356009B276F /* SwiftUI */ = {
-			isa = PBXGroup;
-			children = (
-				5AD6BEC626FF3558009B276F /* Components */,
-				5AD6BEC326FF3359009B276F /* Screens */,
-			);
-			path = SwiftUI;
-			sourceTree = "<group>";
-		};
-		5AD6BEC326FF3359009B276F /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				5AD6BEC426FF3368009B276F /* CountriesList.swift */,
-				5AD6BEC926FF490E009B276F /* CountryDetail.swift */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		5AD6BEC626FF3558009B276F /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				5AD6BEC726FF3564009B276F /* CountryRow.swift */,
-			);
-			path = Components;
+			path = Encyclopedia;
 			sourceTree = "<group>";
 		};
 		5ADC6636253AF21B001E09B3 /* API */ = {
@@ -464,6 +432,8 @@
 		5AF367B3281D85630048A424 /* Tip Jar */ = {
 			isa = PBXGroup;
 			children = (
+				5A0DC2C228157CD2007F9359 /* TipJarViewController.swift */,
+				5A0DC2C428158782007F9359 /* TipJarViewModel.swift */,
 				5AF367B4281D856F0048A424 /* Models */,
 				5AF367C1281D8AD00048A424 /* Views */,
 				5AF367B5281D85720048A424 /* View Controllers */,
@@ -486,7 +456,6 @@
 		5AF367B5281D85720048A424 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5A0DC2C228157CD2007F9359 /* TipJarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -494,7 +463,6 @@
 		5AF367B6281D85760048A424 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				5A0DC2C428158782007F9359 /* TipJarViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
