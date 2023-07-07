@@ -69,5 +69,3 @@ final class QuickActionManager {
 
     private let application = UIApplication.shared
 }
-
-

@@ -57,5 +57,3 @@ public extension UICollectionView {
             ofKind: elementKind, withReuseIdentifier: T.reuseIdentifier, for: indexPath) as! T
     }
 }
-
-

@@ -24,5 +24,3 @@ struct SettingsItems {
         support = items.filter { $0.section == .support }
     }
 }
-
-

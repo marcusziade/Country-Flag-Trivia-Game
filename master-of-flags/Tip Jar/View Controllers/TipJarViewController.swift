@@ -62,21 +62,23 @@ final class TipJarViewController: ViewController {
         }
     }
 
-    private lazy var gradientLayer = CAGradientLayer().configure {
-        $0.frame = view.bounds
-        $0.colors = [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor]
-        $0.startPoint = CGPoint.zero
-        $0.endPoint = CGPoint(x: 0.5, y: 1.5)
-    }
+    private lazy var gradientLayer = CAGradientLayer()
+        .configure {
+            $0.frame = view.bounds
+            $0.colors = [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor]
+            $0.startPoint = CGPoint.zero
+            $0.endPoint = CGPoint(x: 0.5, y: 1.5)
+        }
 
-    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout).configure {
-        $0.dataSource = self
-        $0.delegate = self
-        $0.backgroundColor = .clear
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
+        .configure {
+            $0.dataSource = self
+            $0.delegate = self
+            $0.backgroundColor = .clear
 
-        $0.registerCell(TipJarProductCell.self)
-        $0.registerSupplementaryView(TipJarLegalFooterView.self, kind: .layoutFooter)
-    }
+            $0.registerCell(TipJarProductCell.self)
+            $0.registerSupplementaryView(TipJarLegalFooterView.self, kind: .layoutFooter)
+        }
 
     private var viewLayout: UICollectionViewLayout {
         let sectionProvider = {
@@ -143,12 +145,13 @@ final class TipJarViewController: ViewController {
 
     private var loadingView = LoadingView(state: .loading)
 
-    private let animationView = AnimationView().configure {
-        $0.contentMode = .scaleAspectFit
-        $0.loopMode = .playOnce
-        $0.backgroundColor = .clear
-        $0.alpha = 0
-    }
+    private let animationView = AnimationView()
+        .configure {
+            $0.contentMode = .scaleAspectFit
+            $0.loopMode = .playOnce
+            $0.backgroundColor = .clear
+            $0.alpha = 0
+        }
 
     private func showPurchaseSuccesfulAnimation(for product: TipJarProduct) {
         UIView.animate(withDuration: 0.3) { [self] in
@@ -165,51 +168,53 @@ final class TipJarViewController: ViewController {
     }
 
     private func startListeningForStoreKit() {
-        model.onTransactionStateChanged.sink { [unowned self] transationsState in
-            switch transationsState {
-            case .purchasing:
-                loadingView.state = .purchasing
-            case .purchased:
-                loadingView.state = .purchased
-                showPurchaseSuccesfulAnimation(for: model.selectedProduct!)
-            case .failed:
-                loadingView.state = .failed
-            case .restored:
-                print("restored")
-            case .deferred:
-                print("deferred")
-            case .error:
-                loadingView.state = .error
-            }
+        model.onTransactionStateChanged
+            .sink { [unowned self] transationsState in
+                switch transationsState {
+                case .purchasing:
+                    loadingView.state = .purchasing
+                case .purchased:
+                    loadingView.state = .purchased
+                    showPurchaseSuccesfulAnimation(for: model.selectedProduct!)
+                case .failed:
+                    loadingView.state = .failed
+                case .restored:
+                    print("restored")
+                case .deferred:
+                    print("deferred")
+                case .error:
+                    loadingView.state = .error
+                }
 
-            isLoading = transationsState == .purchasing
-        }
-        .store(in: &cancellables)
-
-        model.onProductsLoaded.sink { [unowned self] in
-            DispatchQueue.main.async { [self] in
-                isLoading = false
+                isLoading = transationsState == .purchasing
             }
-        }
-        .store(in: &cancellables)
+            .store(in: &cancellables)
+
+        model.onProductsLoaded
+            .sink { [unowned self] in
+                DispatchQueue.main.async { [self] in
+                    isLoading = false
+                }
+            }
+            .store(in: &cancellables)
     }
-    
+
     private func openParentalGateIfNeeded() {
         if !Settings.parentalGateUnlocked {
             var parentalGate = ParentalGateView()
-            
+
             parentalGate.onCancel = { [unowned self] in
                 HapticEngine.result.notificationOccurred(.error)
                 dismiss(animated: true)
                 navigationController?.popToRootViewController(animated: true)
             }
-            
+
             parentalGate.onClose = { [unowned self] in
                 Settings.parentalGateUnlocked = true
                 dismiss(animated: true)
                 HapticEngine.result.notificationOccurred(.success)
             }
-            
+
             let viewController = UIHostingController(rootView: parentalGate)
             viewController.isModalInPresentation = true
             present(viewController, animated: true)
@@ -238,9 +243,10 @@ extension TipJarViewController: UICollectionViewDataSource {
         guard let section = TipJarSection(rawValue: indexPath.section) else { return UICollectionViewCell() }
         switch section {
         case .tips:
-            return collectionView.dequeueCell(TipJarProductCell.self, forIndexPath: indexPath).configure {
-                $0.configure(with: model.products.value[indexPath.item])
-            }
+            return collectionView.dequeueCell(TipJarProductCell.self, forIndexPath: indexPath)
+                .configure {
+                    $0.configure(with: model.products.value[indexPath.item])
+                }
         }
     }
 }
@@ -260,27 +266,29 @@ extension TipJarViewController: UICollectionViewDelegate {
         viewForSupplementaryElementOfKind kind: String,
         at indexPath: IndexPath
     ) -> UICollectionReusableView {
-        return collectionView.dequeueSupplementaryView(
-            TipJarLegalFooterView.self,
-            kind: .layoutFooter,
-            indexPath: indexPath
-        ).configure {
-            $0.onPolicyPressed = { [unowned self] in
-                let safariConfig = SFSafariViewController.Configuration()
-                safariConfig.entersReaderIfAvailable = true
-                present(
-                    SFSafariViewController(
-                        url: URL(string: "https://pages.flycricket.io/know-your-flags/privacy.html")!,
-                        configuration: safariConfig
-                    ),
-                    animated: true
-                )
-            }
+        return
+            collectionView.dequeueSupplementaryView(
+                TipJarLegalFooterView.self,
+                kind: .layoutFooter,
+                indexPath: indexPath
+            )
+            .configure {
+                $0.onPolicyPressed = { [unowned self] in
+                    let safariConfig = SFSafariViewController.Configuration()
+                    safariConfig.entersReaderIfAvailable = true
+                    present(
+                        SFSafariViewController(
+                            url: URL(string: "https://pages.flycricket.io/know-your-flags/privacy.html")!,
+                            configuration: safariConfig
+                        ),
+                        animated: true
+                    )
+                }
 
-            $0.onTermsPressed = { [unowned self] in
-                present(UIHostingController(rootView: TermsView()), animated: true)
+                $0.onTermsPressed = { [unowned self] in
+                    present(UIHostingController(rootView: TermsView()), animated: true)
+                }
             }
-        }
     }
 }
 
@@ -288,5 +296,3 @@ struct TipJarViewController_Preview: PreviewProvider {
 
     static var previews: some View = Preview(for: TipJarViewController())
 }
-
-

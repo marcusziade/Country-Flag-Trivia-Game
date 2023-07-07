@@ -24,14 +24,15 @@ final class SettingsViewController: ViewController {
 
     private let model: SettingsViewModel
 
-    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout).configure {
-        $0.dataSource = self
-        $0.delegate = self
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
+        .configure {
+            $0.dataSource = self
+            $0.delegate = self
 
-        $0.registerCell(SettingsRegularCell.self)
-        $0.registerCell(SettingsHardModeCell.self)
-        $0.registerSupplementaryView(SettingsHeaderView.self, kind: .sectionHeader)
-    }
+            $0.registerCell(SettingsRegularCell.self)
+            $0.registerCell(SettingsHardModeCell.self)
+            $0.registerSupplementaryView(SettingsHeaderView.self, kind: .sectionHeader)
+        }
 
     private var viewLayout: UICollectionViewLayout {
         let sectionProvider = {
@@ -86,20 +87,23 @@ extension SettingsViewController: UICollectionViewDataSource {
         guard let section = SettingsSection(rawValue: indexPath.section) else { return UICollectionViewCell() }
         switch section {
         case .general:
-            return collectionView.dequeueCell(SettingsRegularCell.self, forIndexPath: indexPath).configure {
-                $0.configure(with: model.items.general[indexPath.item])
-            }
-        case .game:
-            return collectionView.dequeueCell(SettingsHardModeCell.self, forIndexPath: indexPath).configure {
-                $0.configure(with: model.items.game[indexPath.item], isEnabled: model.settings.isHardModeEnabled)
-                $0.onHardModeToggled = { [unowned self] in
-                    model.settings.isHardModeEnabled = $0
+            return collectionView.dequeueCell(SettingsRegularCell.self, forIndexPath: indexPath)
+                .configure {
+                    $0.configure(with: model.items.general[indexPath.item])
                 }
-            }
+        case .game:
+            return collectionView.dequeueCell(SettingsHardModeCell.self, forIndexPath: indexPath)
+                .configure {
+                    $0.configure(with: model.items.game[indexPath.item], isEnabled: model.settings.isHardModeEnabled)
+                    $0.onHardModeToggled = { [unowned self] in
+                        model.settings.isHardModeEnabled = $0
+                    }
+                }
         case .support:
-            return collectionView.dequeueCell(SettingsRegularCell.self, forIndexPath: indexPath).configure {
-                $0.configure(with: model.items.support[indexPath.item])
-            }
+            return collectionView.dequeueCell(SettingsRegularCell.self, forIndexPath: indexPath)
+                .configure {
+                    $0.configure(with: model.items.support[indexPath.item])
+                }
         }
     }
 }
@@ -149,14 +153,14 @@ extension SettingsViewController: UICollectionViewDelegate {
         at indexPath: IndexPath
     ) -> UICollectionReusableView {
         guard let section = SettingsSection(rawValue: indexPath.section) else { return UICollectionReusableView() }
-        return collectionView.dequeueSupplementaryView(
-            SettingsHeaderView.self,
-            kind: .sectionHeader,
-            indexPath: indexPath
-        ).configure {
-            $0.title = section.headerTitle
-        }
+        return
+            collectionView.dequeueSupplementaryView(
+                SettingsHeaderView.self,
+                kind: .sectionHeader,
+                indexPath: indexPath
+            )
+            .configure {
+                $0.title = section.headerTitle
+            }
     }
 }
-
-

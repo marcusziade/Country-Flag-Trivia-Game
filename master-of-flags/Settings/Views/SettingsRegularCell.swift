@@ -21,9 +21,10 @@ final class SettingsRegularCell: SettingsCell {
 
     // MARK: - Private
 
-    private let accessoryView = UIImageView(image: UIImage(systemName: "chevron.forward")).configure {
-        $0.contentMode = .scaleAspectFit
-    }
+    private let accessoryView = UIImageView(image: UIImage(systemName: "chevron.forward"))
+        .configure {
+            $0.contentMode = .scaleAspectFit
+        }
 }
 
 #if DEBUG
@@ -37,5 +38,3 @@ final class SettingsRegularCell: SettingsCell {
     }
 
 #endif
-
-

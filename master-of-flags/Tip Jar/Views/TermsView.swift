@@ -140,5 +140,3 @@ struct TermsView_Previews: PreviewProvider {
         TermsView()
     }
 }
-
-

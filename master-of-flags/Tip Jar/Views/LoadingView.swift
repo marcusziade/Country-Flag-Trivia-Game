@@ -19,11 +19,12 @@ final class LoadingView: UIView {
             $0.edges.equalToSuperview()
         }
 
-        let stackView = UIStackView(arrangedSubviews: [titleLabelContainerView, loaderView]).configure {
-            $0.axis = .vertical
-            $0.spacing = 32
-            $0.alignment = .center
-        }
+        let stackView = UIStackView(arrangedSubviews: [titleLabelContainerView, loaderView])
+            .configure {
+                $0.axis = .vertical
+                $0.spacing = 32
+                $0.alignment = .center
+            }
 
         addAndConstrainSubview(stackView) {
             $0.top.equalToSuperview().inset(120)
@@ -51,31 +52,35 @@ final class LoadingView: UIView {
 
     // MARK: - Private
 
-    private let blurView = UIVisualEffectView().configure {
-        let effect = UIBlurEffect(style: .systemChromeMaterial)
-        $0.effect = effect
-    }
-
-    private lazy var titleLabelContainerView = UIView().configure {
-        $0.layer.cornerRadius = 6
-        $0.backgroundColor = .systemFill
-        $0.addAndConstrainSubview(titleLabel) {
-            $0.verticalEdges.equalToSuperview().inset(8)
-            $0.horizontalEdges.equalToSuperview().inset(16)
+    private let blurView = UIVisualEffectView()
+        .configure {
+            let effect = UIBlurEffect(style: .systemChromeMaterial)
+            $0.effect = effect
         }
-    }
 
-    private let titleLabel = UILabel().configure {
-        $0.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
-        $0.textColor = .white
-        #if DEBUG
-            $0.text = "Loading"
-        #endif
-    }
+    private lazy var titleLabelContainerView = UIView()
+        .configure {
+            $0.layer.cornerRadius = 6
+            $0.backgroundColor = .systemFill
+            $0.addAndConstrainSubview(titleLabel) {
+                $0.verticalEdges.equalToSuperview().inset(8)
+                $0.horizontalEdges.equalToSuperview().inset(16)
+            }
+        }
 
-    private let loaderView = UIActivityIndicatorView(style: .large).configure {
-        $0.startAnimating()
-    }
+    private let titleLabel = UILabel()
+        .configure {
+            $0.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
+            $0.textColor = .white
+            #if DEBUG
+                $0.text = "Loading"
+            #endif
+        }
+
+    private let loaderView = UIActivityIndicatorView(style: .large)
+        .configure {
+            $0.startAnimating()
+        }
 }
 
 #if DEBUG
@@ -88,5 +93,3 @@ final class LoadingView: UIView {
     }
 
 #endif
-
-

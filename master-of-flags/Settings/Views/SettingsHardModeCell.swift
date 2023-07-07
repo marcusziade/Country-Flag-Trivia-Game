@@ -24,13 +24,12 @@ final class SettingsHardModeCell: SettingsCell {
 
     // MARK: - Private
 
-    private lazy var toggleView = UISwitch().configure {
-        $0.addTarget(self, action: #selector(hardModeToggled), for: .valueChanged)
-    }
+    private lazy var toggleView = UISwitch()
+        .configure {
+            $0.addTarget(self, action: #selector(hardModeToggled), for: .valueChanged)
+        }
 
     @objc private func hardModeToggled() {
         onHardModeToggled?(toggleView.isOn)
     }
 }
-
-

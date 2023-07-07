@@ -86,5 +86,3 @@ extension Country: Comparable {
         lhs.id == rhs.id
     }
 }
-
-

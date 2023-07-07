@@ -14,5 +14,3 @@ enum SettingsSection: Int, CaseIterable {
         }
     }
 }
-
-

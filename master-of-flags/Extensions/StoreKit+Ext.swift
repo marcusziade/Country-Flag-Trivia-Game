@@ -11,5 +11,3 @@ extension SKStoreReviewController {
         }
     }
 }
-
-

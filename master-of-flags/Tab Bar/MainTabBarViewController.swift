@@ -49,19 +49,22 @@ final class MainTabBarController: UITabBarController {
 
     private lazy var flagGameView = UIHostingController(
         rootView: FlagGameView(manager: FlagGameManager(settings: self.settings))
-    ).configure {
+    )
+    .configure {
         $0.tabBarItem = Tab.game.item
     }
 
     private let encyclopediaView = UIHostingController(
         rootView: CountriesList(viewModel: CountryListVM())
-    ).configure {
+    )
+    .configure {
         $0.tabBarItem = Tab.encyclopedia.item
     }
 
     private lazy var settingsViewController = UINavigationController(
         rootViewController: SettingsViewController(model: SettingsViewModel(settings: self.settings))
-    ).configure {
+    )
+    .configure {
         $0.tabBarItem = Tab.settings.item
     }
 }
@@ -91,5 +94,3 @@ extension MainTabBarController {
 struct MainTabBarController_Preview: PreviewProvider {
     static var previews: some View = Preview(for: MainTabBarController(settings: Settings()))
 }
-
-

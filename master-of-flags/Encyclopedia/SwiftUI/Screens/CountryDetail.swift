@@ -75,5 +75,3 @@ struct CountryDetail_Previews: PreviewProvider {
         )
     }
 }
-
-

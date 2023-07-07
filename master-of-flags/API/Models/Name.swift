@@ -8,5 +8,3 @@ struct Name: Codable, Hashable, Comparable {
     let official: String
     let common: String
 }
-
-

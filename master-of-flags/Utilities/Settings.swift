@@ -10,7 +10,7 @@ class Settings {
             UserDefaults.standard.set(newValue, forKey: "parentalGateUnlocked")
         }
     }
-    
+
     var isHardModeEnabled: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "isHardModeEnabled")
@@ -20,5 +20,3 @@ class Settings {
         }
     }
 }
-
-

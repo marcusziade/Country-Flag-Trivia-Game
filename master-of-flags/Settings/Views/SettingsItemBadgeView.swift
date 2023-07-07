@@ -28,23 +28,23 @@ final class SettingsItemBadgeView: UIView {
 
     // MARK: - Private
 
-    private let backgroundView = UIView().configure {
-        $0.layer.cornerRadius = 6
-        $0.backgroundColor = .systemPurple
-    }
+    private let backgroundView = UIView()
+        .configure {
+            $0.layer.cornerRadius = 6
+            $0.backgroundColor = .systemPurple
+        }
 
-    private let itemImageView = UIImageView().configure {
-        $0.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        $0.widthAnchor.constraint(equalToConstant: 25).isActive = true
-        $0.contentMode = .scaleAspectFit
-        $0.tintColor = .white
-        $0.image = UIImage(systemName: "gamecontroller")
-    }
+    private let itemImageView = UIImageView()
+        .configure {
+            $0.heightAnchor.constraint(equalToConstant: 25).isActive = true
+            $0.widthAnchor.constraint(equalToConstant: 25).isActive = true
+            $0.contentMode = .scaleAspectFit
+            $0.tintColor = .white
+            $0.image = UIImage(systemName: "gamecontroller")
+        }
 }
 
 struct ItemImageView_Preview: PreviewProvider {
     static var previews: some View = Preview(for: SettingsItemBadgeView())
         .previewLayout(.sizeThatFits)
 }
-
-

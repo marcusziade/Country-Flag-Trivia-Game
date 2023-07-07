@@ -7,5 +7,3 @@ final class HapticEngine {
     static let select = UISelectionFeedbackGenerator()
     static let result = UINotificationFeedbackGenerator()
 }
-
-

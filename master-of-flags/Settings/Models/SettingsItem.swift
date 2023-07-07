@@ -11,5 +11,3 @@ struct SettingsItem {
     let viewController: ViewController?
     let url: URL?
 }
-
-

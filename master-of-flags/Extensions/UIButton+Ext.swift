@@ -18,5 +18,3 @@ extension UIButton.Configuration {
         return config
     }
 }
-
-

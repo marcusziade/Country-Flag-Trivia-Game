@@ -36,39 +36,44 @@ final class TipJarProductCell: UICollectionViewCell {
 
     // MARK: - Private
 
-    private let animationView = AnimationView().configure {
-        $0.contentMode = .scaleAspectFit
-        $0.backgroundColor = .white
-        $0.layer.cornerRadius = 12
-        $0.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-    }
-
-    private lazy var titleLabelContainerView = UIView().configure {
-        $0.layer.cornerRadius = 12
-        $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, priceLabel]).configure {
-            $0.axis = .vertical
-            $0.spacing = 4
-            $0.distribution = .fillEqually
-            $0.alignment = .center
+    private let animationView = AnimationView()
+        .configure {
+            $0.contentMode = .scaleAspectFit
+            $0.backgroundColor = .white
+            $0.layer.cornerRadius = 12
+            $0.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         }
 
-        $0.addAndConstrainSubview(stackView) {
-            $0.verticalEdges.equalToSuperview().inset(8)
-            $0.horizontalEdges.equalToSuperview().inset(12)
+    private lazy var titleLabelContainerView = UIView()
+        .configure {
+            $0.layer.cornerRadius = 12
+            $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+
+            let stackView = UIStackView(arrangedSubviews: [titleLabel, priceLabel])
+                .configure {
+                    $0.axis = .vertical
+                    $0.spacing = 4
+                    $0.distribution = .fillEqually
+                    $0.alignment = .center
+                }
+
+            $0.addAndConstrainSubview(stackView) {
+                $0.verticalEdges.equalToSuperview().inset(8)
+                $0.horizontalEdges.equalToSuperview().inset(12)
+            }
         }
-    }
 
-    private let titleLabel = UILabel().configure {
-        $0.font = UIFont.preferredFont(forTextStyle: .title3, compatibleWith: .init(legibilityWeight: .bold))
-        $0.textColor = .white
-    }
+    private let titleLabel = UILabel()
+        .configure {
+            $0.font = UIFont.preferredFont(forTextStyle: .title3, compatibleWith: .init(legibilityWeight: .bold))
+            $0.textColor = .white
+        }
 
-    private let priceLabel = UILabel().configure {
-        $0.font = UIFont.preferredFont(forTextStyle: .headline)
-        $0.textColor = .white
-    }
+    private let priceLabel = UILabel()
+        .configure {
+            $0.font = UIFont.preferredFont(forTextStyle: .headline)
+            $0.textColor = .white
+        }
 }
 
 #if DEBUG
@@ -86,5 +91,3 @@ final class TipJarProductCell: UICollectionViewCell {
     }
 
 #endif
-
-

@@ -269,5 +269,3 @@ extension Region {
         }
     }
 }
-
-

@@ -17,5 +17,3 @@ final class CountryDetailVM: ObservableObject {
         )
     }
 }
-
-

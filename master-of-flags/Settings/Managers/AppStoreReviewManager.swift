@@ -7,5 +7,3 @@ enum AppStoreReviewManager {
         SKStoreReviewController.requestReviewInCurrentScene()
     }
 }
-
-

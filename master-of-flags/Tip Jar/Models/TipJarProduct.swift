@@ -78,5 +78,3 @@ struct MockTipJarProduct: TipJarProductProtocol {
     let price = "12.99€"
     let color = UIColor.systemGreen
 }
-
-

@@ -36,14 +36,16 @@ extension UIView {
     func fadeIn(duration: TimeInterval) {
         UIViewPropertyAnimator(duration: duration, curve: .linear) {
             self.alpha = 1
-        }.startAnimation()
+        }
+        .startAnimation()
     }
 
     // Fades a view out linearly with a given duration
     func fadeOut(duration: TimeInterval) {
         UIViewPropertyAnimator(duration: duration, curve: .linear) {
             self.alpha = 0
-        }.startAnimation()
+        }
+        .startAnimation()
     }
 }
 
@@ -75,5 +77,3 @@ extension UIView {
         subviews.forEach { addSubview($0) }
     }
 }
-
-

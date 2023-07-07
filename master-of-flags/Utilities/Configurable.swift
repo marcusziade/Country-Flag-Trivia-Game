@@ -16,5 +16,3 @@ public extension Configurable {
 }
 
 extension NSObject: Configurable {}
-
-

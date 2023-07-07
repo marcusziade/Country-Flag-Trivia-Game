@@ -48,5 +48,3 @@ struct FlagGameHeaderView_Previews: PreviewProvider {
         }
     }
 }
-
-

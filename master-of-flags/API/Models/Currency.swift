@@ -19,5 +19,3 @@ struct Currency: Codable, Hashable, Comparable {
         )
     }
 }
-
-

@@ -26,9 +26,8 @@ final class SettingsHeaderView: UICollectionReusableView {
 
     // MARK: - Private
 
-    private let titleLabel = UILabel().configure {
-        $0.font = UIFont.preferredFont(forTextStyle: .title3, compatibleWith: .init(legibilityWeight: .bold))
-    }
+    private let titleLabel = UILabel()
+        .configure {
+            $0.font = UIFont.preferredFont(forTextStyle: .title3, compatibleWith: .init(legibilityWeight: .bold))
+        }
 }
-
-

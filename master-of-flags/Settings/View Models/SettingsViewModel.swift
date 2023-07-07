@@ -20,5 +20,3 @@ final class SettingsViewModel: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
 }
-
-

@@ -44,5 +44,3 @@ extension Image {
             .shadow(color: .primary, radius: 2)
     }
 }
-
-

@@ -114,5 +114,3 @@ final class FlagGameManager: ObservableObject {
         UserDefaults.standard.set(streak, forKey: selectedRegion.flagGameStreakKey)
     }
 }
-
-

@@ -18,5 +18,3 @@ final class CountriesManager {
         return decoder
     }()
 }
-
-

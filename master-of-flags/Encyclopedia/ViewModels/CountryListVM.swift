@@ -51,5 +51,3 @@ final class CountryListVM: ObservableObject {
             .sorted { $0.name.common < $1.name.common }
     }
 }
-
-

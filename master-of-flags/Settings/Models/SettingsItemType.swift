@@ -110,5 +110,3 @@ enum SettingsItemType: CaseIterable {
         }
     }
 }
-
-

@@ -10,15 +10,17 @@ final class TipJarLegalFooterView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        let buttonStackView = UIStackView(arrangedSubviews: [policyButton, termsButton]).configure {
-            $0.spacing = 32
-        }
+        let buttonStackView = UIStackView(arrangedSubviews: [policyButton, termsButton])
+            .configure {
+                $0.spacing = 32
+            }
 
-        let contentStackView = UIStackView(arrangedSubviews: [captionLabel, buttonStackView]).configure {
-            $0.axis = .vertical
-            $0.alignment = .center
-            $0.spacing = 24
-        }
+        let contentStackView = UIStackView(arrangedSubviews: [captionLabel, buttonStackView])
+            .configure {
+                $0.axis = .vertical
+                $0.alignment = .center
+                $0.spacing = 24
+            }
 
         addAndConstrainSubview(contentStackView) {
             $0.top.equalToSuperview().inset(32)
@@ -32,13 +34,15 @@ final class TipJarLegalFooterView: UICollectionReusableView {
 
     // MARK: - Private
 
-    private let captionLabel = UILabel().configure {
-        $0.font = UIFont.preferredFont(forTextStyle: .footnote)
-        $0.text = NSLocalizedString("Payments will be charged to your Apple Account after confirmation", comment: "")
-        $0.numberOfLines = 0
-        $0.textAlignment = .center
-        $0.textColor = .white
-    }
+    private let captionLabel = UILabel()
+        .configure {
+            $0.font = UIFont.preferredFont(forTextStyle: .footnote)
+            $0.text = NSLocalizedString(
+                "Payments will be charged to your Apple Account after confirmation", comment: "")
+            $0.numberOfLines = 0
+            $0.textAlignment = .center
+            $0.textColor = .white
+        }
 
     private lazy var policyButton = UIButton(
         configuration: .tipJarLegal(with: "Privacy policy"),
@@ -62,5 +66,3 @@ final class TipJarLegalFooterView: UICollectionReusableView {
     }
 
 #endif
-
-

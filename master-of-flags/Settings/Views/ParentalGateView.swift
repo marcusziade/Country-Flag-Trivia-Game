@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Triangle: Shape {
-    
+
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
@@ -32,7 +32,7 @@ struct ParentalGateView: View {
                         .frame(width: 30)
                         .foregroundColor(.red)
                 }
-                
+
                 Spacer()
             }
             .padding([.leading, .top], 24)
@@ -43,15 +43,19 @@ struct ParentalGateView: View {
                 .foregroundColor(.blue)
 
             Spacer()
-            
+
             HStack(spacing: 20) {
-                Button { HapticEngine.notification.notificationOccurred(.error) } label: {
+                Button {
+                    HapticEngine.notification.notificationOccurred(.error)
+                } label: {
                     Triangle()
                         .foregroundColor(.green)
                         .frame(width: size, height: size)
                 }
 
-                Button { HapticEngine.notification.notificationOccurred(.error) } label: {
+                Button {
+                    HapticEngine.notification.notificationOccurred(.error)
+                } label: {
                     Rectangle()
                         .foregroundColor(.blue)
                         .frame(width: size, height: size)
@@ -71,13 +75,13 @@ struct ParentalGateView: View {
             Text("Tap the circle.")
                 .font(.headline)
                 .foregroundColor(.orange)
-            
+
             Spacer()
         }
     }
-    
+
     // MARK: - Private
-    
+
     private let size: CGFloat = 90
 }
 
@@ -91,5 +95,3 @@ struct ParentalGateView_Previews: PreviewProvider {
         }
     }
 }
-
-

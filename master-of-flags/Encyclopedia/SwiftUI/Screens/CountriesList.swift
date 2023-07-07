@@ -37,5 +37,3 @@ struct CountriesList_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
-
-

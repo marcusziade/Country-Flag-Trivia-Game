@@ -45,5 +45,3 @@ enum SiriShortcut: String {
         }
     }
 }
-
-

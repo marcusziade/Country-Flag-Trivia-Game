@@ -29,5 +29,3 @@ struct CountryRow_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
     }
 }
-
-
