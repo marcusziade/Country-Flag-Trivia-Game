@@ -84,6 +84,7 @@
 		5AF367C0281D88A20048A424 /* lunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AF367BF281D88A20048A424 /* lunch.json */; };
 		5AF367C3281D8ADF0048A424 /* TipJarProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF367C2281D8ADF0048A424 /* TipJarProductCell.swift */; };
 		5AF367C5281D91C20048A424 /* LivePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF367C4281D91C20048A424 /* LivePreview.swift */; };
+		EE8F3678186806B89E211243 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = 77B2B420DD248BD4F7C35A33 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +198,7 @@
 		5AF367BF281D88A20048A424 /* lunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lunch.json; sourceTree = "<group>"; };
 		5AF367C2281D8ADF0048A424 /* TipJarProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarProductCell.swift; sourceTree = "<group>"; };
 		5AF367C4281D91C20048A424 /* LivePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePreview.swift; sourceTree = "<group>"; };
+		77B2B420DD248BD4F7C35A33 /* .gitignore */ = {isa = PBXFileReference; includeInIndex = 1; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				2CB7C6F32352EC490068ADE2 /* Master of Flags.app */,
 				5A8FC612276F1C5100C1B468 /* MasterofFlagsUITests.xctest */,
 				5A6B79F82A58988000CA22CD /* Master of FlagsTests.xctest */,
+				77B2B420DD248BD4F7C35A33 /* .gitignore */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				5A0DC2B928151454007F9359 /* SettingsRegularCell.swift in Sources */,
 				5AD6BEC126FF2E86009B276F /* CountryListVM.swift in Sources */,
 				5A5C538F2633F5FB00070869 /* Settings.swift in Sources */,
+				EE8F3678186806B89E211243 /* .gitignore in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -851,7 +855,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -906,7 +910,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -926,7 +930,7 @@
 				DEVELOPMENT_TEAM = P4DQK6SRKR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "master-of-flags/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -949,7 +953,7 @@
 				DEVELOPMENT_TEAM = P4DQK6SRKR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "master-of-flags/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -974,7 +978,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcusziade.Master-of-FlagsTests";
@@ -999,7 +1003,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcusziade.Master-of-FlagsTests";
@@ -1019,7 +1023,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P4DQK6SRKR;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusziade.MasterofFlagsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1038,7 +1042,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P4DQK6SRKR;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcusziade.MasterofFlagsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
