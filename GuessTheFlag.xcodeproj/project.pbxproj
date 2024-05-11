@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153D98150C9EEFBA6CECB5C1 /* CountryDetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7614CED35476958F71CB6 /* CountryDetailMapView.swift */; };
 		2C38414323563BB400F56257 /* FlagGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38414223563BB400F56257 /* FlagGameView.swift */; };
 		2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */; };
 		2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */; };
@@ -126,6 +127,7 @@
 		2CB7C6FF2352EC4B0068ADE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CB7C7022352EC4B0068ADE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB7C7042352EC4B0068ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CE7614CED35476958F71CB6 /* CountryDetailMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CountryDetailMapView.swift; sourceTree = "<group>"; };
 		5A0B07E42721DEFE00447A13 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		5A0DC2A32814F73C007F9359 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5A0DC2A92814FAB9007F9359 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				5A502D692A589CA3005006BD /* CountryListVM_Tests.swift */,
 				5AD6BECB26FF492F009B276F /* CountryDetailVM.swift */,
 				5A6B7A012A58989F00CA22CD /* CountryDetailVM_Tests.swift */,
+				3CE7614CED35476958F71CB6 /* CountryDetailMapView.swift */,
 			);
 			path = Encyclopedia;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				5AD6BEC126FF2E86009B276F /* CountryListVM.swift in Sources */,
 				5A5C538F2633F5FB00070869 /* Settings.swift in Sources */,
 				EE8F3678186806B89E211243 /* .gitignore in Sources */,
+				153D98150C9EEFBA6CECB5C1 /* CountryDetailMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
