@@ -42,5 +42,3 @@ final class MasterofFlagsUITests: XCTestCase {
         snapshot("encyclopedia.Landscape.left")
     }
 }
-
-
