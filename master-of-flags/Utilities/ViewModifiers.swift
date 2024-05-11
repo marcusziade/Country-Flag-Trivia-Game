@@ -32,6 +32,18 @@ struct LevelPill: ViewModifier {
     }
 }
 
+struct LinkLabelStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.headline)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+    }
+}
+
 extension Image {
 
     func flagImageMofifier() -> some View {
