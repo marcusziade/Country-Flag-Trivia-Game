@@ -2,7 +2,7 @@ import XCTest
 
 final class MasterofFlagsUITests: XCTestCase {
     
-    override func setUp() {
+    @MainActor override func setUp() {
         super.setUp()
         
         let app = XCUIApplication()
@@ -10,7 +10,7 @@ final class MasterofFlagsUITests: XCTestCase {
         app.launch()
     }
     
-    func testGameView() {
+    @MainActor func testGameView() {
         let tabBar = XCUIApplication().tabBars
         let firstTab = tabBar.buttons.element(boundBy: 0)
         
@@ -26,7 +26,7 @@ final class MasterofFlagsUITests: XCTestCase {
         snapshot("game.landscape.left")
     }
     
-    func testEncyclopediaView() {
+    @MainActor func testEncyclopediaView() {
         let tabBar = XCUIApplication().tabBars
         let secondTab = tabBar.buttons.element(boundBy: 1)
         
