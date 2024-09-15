@@ -15,7 +15,7 @@ struct CountryDetail: View {
                 }
 
                 // test id
-                GoogleAdBannerView(unitID: "ca-app-pub-3940256099942544/2435281174")
+                GoogleAdBannerView(unitID: GoogleAdIdentifiers.top_banner_country_detail)
                     .frame(height: 50)
 
                 VStack(alignment: .leading, spacing: 20) {
@@ -52,7 +52,7 @@ struct CountryDetail: View {
                 Spacer()
 
                 // test id
-                GoogleAdBannerView(unitID: "ca-app-pub-3940256099942544/2435281174")
+                GoogleAdBannerView(unitID: GoogleAdIdentifiers.bottom_banner_country_detail)
                     .frame(height: 50)
             }
         }

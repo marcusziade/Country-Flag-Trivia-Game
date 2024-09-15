@@ -11,6 +11,7 @@
 		2C1451142C968395009AE997 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1451132C968395009AE997 /* GoogleMobileAds */; };
 		2C1451162C968E2B009AE997 /* GoogleAdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1451152C968E2B009AE997 /* GoogleAdBannerView.swift */; };
 		2C38414323563BB400F56257 /* FlagGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38414223563BB400F56257 /* FlagGameView.swift */; };
+		2C95C9EE2C969BC7004798BE /* GoogleAdIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C95C9ED2C969BC7004798BE /* GoogleAdIdentifiers.swift */; };
 		2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */; };
 		2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */; };
 		2CB7C6FD2352EC4B0068ADE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB7C6FC2352EC4B0068ADE2 /* Assets.xcassets */; };
@@ -109,6 +110,7 @@
 /* Begin PBXFileReference section */
 		2C1451152C968E2B009AE997 /* GoogleAdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdBannerView.swift; sourceTree = "<group>"; };
 		2C38414223563BB400F56257 /* FlagGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameView.swift; sourceTree = "<group>"; };
+		2C95C9ED2C969BC7004798BE /* GoogleAdIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdIdentifiers.swift; sourceTree = "<group>"; };
 		2CB7C6F32352EC490068ADE2 /* Master of Flags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Master of Flags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				5A0DC2BC281533BD007F9359 /* ViewController.swift */,
 				5AF367C4281D91C20048A424 /* LivePreview.swift */,
 				2C1451152C968E2B009AE997 /* GoogleAdBannerView.swift */,
+				2C95C9ED2C969BC7004798BE /* GoogleAdIdentifiers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				5A0DC2C728159DF7007F9359 /* SettingsHeaderView.swift in Sources */,
 				5ADC6640253AF53C001E09B3 /* Country.swift in Sources */,
 				5A0DC2C328157CD2007F9359 /* TipJarViewController.swift in Sources */,
+				2C95C9EE2C969BC7004798BE /* GoogleAdIdentifiers.swift in Sources */,
 				5A2CC62325C4C93A00525C9A /* AboutViewController.swift in Sources */,
 				5A4F3EBF2826B25F00B31B55 /* TermsView.swift in Sources */,
 				5A0DC2B928151454007F9359 /* SettingsRegularCell.swift in Sources */,
