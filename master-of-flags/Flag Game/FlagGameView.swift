@@ -51,6 +51,10 @@ struct FlagGameView: View {
                     )
                 }
             }
+
+            // test id
+            GoogleAdBannerView(unitID: "ca-app-pub-3940256099942544/2435281174")
+                .frame(height: 50)
         }
         .padding(.horizontal, 8)
         .padding(.bottom, 4)

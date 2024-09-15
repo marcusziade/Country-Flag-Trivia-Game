@@ -13,7 +13,11 @@ struct CountryDetail: View {
                         .resizable()
                         .frame(height: 250)
                 }
-                
+
+                // test id
+                GoogleAdBannerView(unitID: "ca-app-pub-3940256099942544/2435281174")
+                    .frame(height: 50)
+
                 VStack(alignment: .leading, spacing: 20) {
                     Group {
                         Text(viewModel.country.name.official)
@@ -46,6 +50,10 @@ struct CountryDetail: View {
                     CountryDetailMapView(country: viewModel.country, viewModel: viewModel)
                 }
                 Spacer()
+
+                // test id
+                GoogleAdBannerView(unitID: "ca-app-pub-3940256099942544/2435281174")
+                    .frame(height: 50)
             }
         }
         .edgesIgnoringSafeArea(.top)

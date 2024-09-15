@@ -1,3 +1,4 @@
+import GoogleMobileAds
 import SwiftUI
 import UIKit
 
@@ -19,6 +20,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         handleShortcutsIfAppTerminated(for: connectionOptions)
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
 
     // MARK: - Quick actions

@@ -9,6 +9,10 @@ struct FlagGameHeaderView: View {
 
     var body: some View {
         VStack {
+            // test id
+            GoogleAdBannerView(unitID: "ca-app-pub-3940256099942544/2435281174")
+                .frame(height: 50)
+
             Text("Tap the flag of")
 
             Text(answer)

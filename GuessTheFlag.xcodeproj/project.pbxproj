@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		153D98150C9EEFBA6CECB5C1 /* CountryDetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7614CED35476958F71CB6 /* CountryDetailMapView.swift */; };
+		2C1451142C968395009AE997 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1451132C968395009AE997 /* GoogleMobileAds */; };
+		2C1451162C968E2B009AE997 /* GoogleAdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1451152C968E2B009AE997 /* GoogleAdBannerView.swift */; };
 		2C38414323563BB400F56257 /* FlagGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38414223563BB400F56257 /* FlagGameView.swift */; };
 		2CB7C6F72352EC490068ADE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */; };
 		2CB7C6F92352EC490068ADE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7C6F82352EC490068ADE2 /* SceneDelegate.swift */; };
@@ -105,6 +107,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C1451152C968E2B009AE997 /* GoogleAdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdBannerView.swift; sourceTree = "<group>"; };
 		2C38414223563BB400F56257 /* FlagGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagGameView.swift; sourceTree = "<group>"; };
 		2CB7C6F32352EC490068ADE2 /* Master of Flags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Master of Flags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB7C6F62352EC490068ADE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1451142C968395009AE997 /* GoogleMobileAds in Frameworks */,
 				5A0DC2A72814F9E5007F9359 /* SnapKit in Frameworks */,
 				5A55C5ED276F2C4A00594C83 /* Lottie in Frameworks */,
 			);
@@ -443,6 +447,7 @@
 				5AA44B52274A363D00AB9083 /* Configurable.swift */,
 				5A0DC2BC281533BD007F9359 /* ViewController.swift */,
 				5AF367C4281D91C20048A424 /* LivePreview.swift */,
+				2C1451152C968E2B009AE997 /* GoogleAdBannerView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -537,6 +542,7 @@
 			packageProductDependencies = (
 				5A55C5EC276F2C4A00594C83 /* Lottie */,
 				5A0DC2A62814F9E5007F9359 /* SnapKit */,
+				2C1451132C968395009AE997 /* GoogleMobileAds */,
 			);
 			productName = GuessTheFlag;
 			productReference = 2CB7C6F32352EC490068ADE2 /* Master of Flags.app */;
@@ -591,6 +597,7 @@
 			packageReferences = (
 				5A55C5EB276F2C4A00594C83 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				5A0DC2A52814F9E5007F9359 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2C1451122C968395009AE997 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 2CB7C6F42352EC490068ADE2 /* Products */;
 			projectDirPath = "";
@@ -643,6 +650,7 @@
 				5A2CC62E25C5D6D600525C9A /* Currency.swift in Sources */,
 				5AA44B53274A363D00AB9083 /* Configurable.swift in Sources */,
 				5A0DC2B328150806007F9359 /* SettingsItems.swift in Sources */,
+				2C1451162C968E2B009AE997 /* GoogleAdBannerView.swift in Sources */,
 				5AA6895C25C70A6A008E20DB /* ParentalGateView.swift in Sources */,
 				5AD6BECC26FF492F009B276F /* CountryDetailVM.swift in Sources */,
 				5A0DC2C128153951007F9359 /* SettingsHardModeCell.swift in Sources */,
@@ -959,6 +967,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2C1451122C968395009AE997 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.9.0;
+			};
+		};
 		5A0DC2A52814F9E5007F9359 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -978,6 +994,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2C1451132C968395009AE997 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C1451122C968395009AE997 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		5A0DC2A62814F9E5007F9359 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A0DC2A52814F9E5007F9359 /* XCRemoteSwiftPackageReference "SnapKit" */;
