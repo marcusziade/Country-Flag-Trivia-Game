@@ -1,2 +1,6 @@
 .nvim/
+**/*.xcuserstate
 buildServer.json
+/xcuserdata
+GuessTheFlag.xcodeproj/project.xcworkspace/xcuserdata
+GuessTheFlag.xcodeproj/project.xcworkspace/xcuserdata/marcus.xcuserdatad/UserInterfaceState.xcuserstate
